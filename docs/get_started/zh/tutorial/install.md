@@ -61,7 +61,9 @@ xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root �
 我们可以通过 `xmake update` 命令来快速进行自我更新和升级，默认是升级到最新版本，当然也可以指定升级或者回退到某个 tag 版本：
 
 ```bash
-xmake update v3.0.4
+# 如果不是 force 的话, xmake 版本一样就会跳过安装, 不会精确到 git tag / branch
+# 例如 xmake v3.0.4+dev.39db22335 版本也会跳过
+xmake update --force v3.0.4
 ```
 
 我们也可以指定更新到 master/dev 分支版本：
@@ -71,20 +73,20 @@ xmake update master
 xmake update dev
 ```
 
-从指定 git 源更新
+从指定 git 源更新：
 
 ```bash
 # 指定 github 源
-xmake update github:xmake-io/xmake#master
+xmake update github:TOMO-CAT/xmake#master
 
 # 指定 gitee 源
-xmake update gitee:tboox/xmake#dev
+xmake update gitee:tomocat/xmake#dev
 ```
 
-如果xmake/core没动过，仅仅更新xmake的lua脚本改动，可以加`-s/--scriptonly`快速更新lua脚本
+如果 xmake/core 没动过，仅仅更新 xmake 的 lua 脚本改动，可以加 `-s/--scriptonly` 快速更新 lua 脚本：
 
 ```bash
-xmake update -s dev
+xmake update --scriptonly --force dev
 ```
 
 ## 卸载
