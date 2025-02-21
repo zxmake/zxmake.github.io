@@ -7,7 +7,7 @@
 ```bash
 # 安装软件
 sudo apt install python3 python3-pip git
-pip3 install teedoc
+pip3 install teedoc -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 更新软件
 pip3 install -U teedoc
@@ -22,15 +22,15 @@ git clone https://github.com/teedoc/teedoc.github.io my_site
 
 # 安装插件
 cd xmake-teedoc
-teedoc install
+teedoc -i https://pypi.tuna.tsinghua.edu.cn/simple install
 ```
 
 ## 运行
 
 ```bash
 # 构建所有的 html 页面以及拷贝资源文件
-teedoc serve
+teedoc build
 
 # 启动一个 HTTP 服务
-teedoc build
+teedoc serve
 ```
