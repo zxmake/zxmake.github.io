@@ -15,8 +15,8 @@
                 "position": "left"
             },
             {
-                "url": "/blog/",
-                "label": "博客",
+                "url": "/dev/",
+                "label": "开发文档",
                 "position": "left"
             },
             {
