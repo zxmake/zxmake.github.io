@@ -63,7 +63,7 @@ xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root �
 ```bash
 # 如果不是 force 的话, xmake 版本一样就会跳过安装, 不会精确到 git tag / branch
 # 例如 xmake v3.0.4+dev.39db22335 版本也会跳过
-xmake update --force v3.0.4
+xmake update --force --diagnosis --verbose v3.0.4
 ```
 
 我们也可以指定更新到 master/dev 分支版本：
@@ -94,5 +94,7 @@ xmake update --scriptonly --force dev
 最后，我们如果要卸载 xmake，也是支持的：
 
 ```bash
-xmake update --uninstall --diagnosis --verbose
+rm -rf /usr/local/share/xmake
+rm /usr/local/bin/xrepo
+rm /usr/local/bin/xmake
 ```
