@@ -1,4 +1,6 @@
 items:
--   label: 快速入门
+-   label: 新手教程
 -   label: 安装
     file: tutorial/install.md
+-   label: 快速入门
+    file: tutorial/quick-start.md
