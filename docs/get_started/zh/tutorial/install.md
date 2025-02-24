@@ -94,5 +94,5 @@ xmake update --scriptonly --force dev
 最后，我们如果要卸载 xmake，也是支持的：
 
 ```bash
-xmake update --uninstall
+xmake update --uninstall --diagnosis --verbose
 ```
