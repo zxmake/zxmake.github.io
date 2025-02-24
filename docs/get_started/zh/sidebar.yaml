@@ -4,3 +4,5 @@ items:
     file: tutorial/install.md
 -   label: 快速入门
     file: tutorial/quick-start.md
+-   label: 工程例子
+    file: tutorial/project-examples.md
