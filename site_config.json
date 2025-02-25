@@ -1,11 +1,11 @@
 {
     "site_name": "mysite",
     "site_slogon": "",
-    "site_root_url": "/",
-    "site_domain": "my_name.github.io",
+    "site_root_url": "/xmake-teedoc/",
+    "site_domain": "tomo-cat.github.io",
     "site_protocol": "https",
     "config_template_dir": "config",
-    "source": "https://github.com/my_name/my_name.github.io/blob/main",
+    "source": "https://github.com/TOMO-CAT/xmake-teedoc",
     "route": {
         "docs": {
             "/get_started/zh/": "docs/get_started/zh"
