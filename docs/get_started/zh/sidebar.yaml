@@ -10,6 +10,8 @@ items:
     file: tutorial/configuration.md
 -   label: 环境变量
     file: tutorial/environment-variables.md
+-   label: 语法描述
+    file: tutorial/syntax-description.md
 -   label: target 编译目标
 -   label: option 选项
 -   label: package 包管理
