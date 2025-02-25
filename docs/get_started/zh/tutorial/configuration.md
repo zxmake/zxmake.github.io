@@ -728,3 +728,72 @@ $ xmake f -p linux --sdk=/user/toolsdk --ar=armv7-linux-ar
 ```
 
 如果存在`AR`环境变量的话，会优先使用当前环境变量中指定的值。
+
+## 全局配置
+
+我们也可以将一些常用配置保存到全局配置中，来简化频繁地输入：
+
+例如:
+
+```bash
+$ xmake g --ndk=~/files/android-ndk-r10e/
+```
+
+现在，我们重新配置和编译 `android` 程序：
+
+```bash
+$ xmake f -p android
+$ xmake
+```
+
+以后，就不需要每次重复配置 `--ndk=参数了。
+
+> 每个命令都有其简写，例如: `xmake g` 或者 `xmake global`。
+
+## 清除配置
+
+有时候，配置出了问题编译不过，或者需要重新检测各种依赖库和接口，可以加上 `-c` 参数，清除缓存的配置，强制重新检测和配置：
+
+```bash
+$ xmake f -c
+$ xmake
+```
+
+或者：
+
+```bash
+$ xmake f -p iphoneos -c
+$ xmake
+```
+
+## 导入导出配置
+
+我们还可以导入导出已经配置好的配置集，方便配置的快速迁移。
+
+### 导出配置
+
+```bash
+$ xmake f --export=/tmp/config.txt
+$ xmake f -m debug --xxx=y --export=/tmp/config.txt
+```
+
+### 导入配置
+
+```bash
+$ xmake f --import=/tmp/config.txt
+$ xmake f -m debug --xxx=y --import=/tmp/config.txt
+```
+
+### 导出配置（带菜单）
+
+```bash
+$ xmake f --menu --export=/tmp/config.txt
+$ xmake f --menu -m debug --xxx=y --export=/tmp/config.txt
+```
+
+### 导入配置（带菜单）
+
+```bash
+$ xmake f --menu --import=/tmp/config.txt
+$ xmake f --menu -m debug --xxx=y --import=/tmp/config.txt
+```

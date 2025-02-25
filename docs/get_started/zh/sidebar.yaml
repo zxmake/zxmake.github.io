@@ -8,3 +8,9 @@ items:
     file: tutorial/project-examples.md
 -   label: 配置说明
     file: tutorial/configuration.md
+-   label: 环境变量
+    file: tutorial/environment-variables.md
+-   label: target 编译目标
+-   label: option 选项
+-   label: package 包管理
+-   label: toolchain 工具链
