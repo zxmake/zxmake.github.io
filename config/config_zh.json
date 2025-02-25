@@ -10,7 +10,7 @@
         "home_url": "/",
         "items": [
             {
-                "url": "/get_started/zh/",
+                "url": "/get_started/zh/tutorial/quick-start.md",
                 "label": "安装使用",
                 "position": "left"
             },
