@@ -40,21 +40,20 @@
         }
     },
     "plugins": {
-        "teedoc-plugin-markdown-parser":{
+        "teedoc-plugin-markdown-parser": {
             "from": "pypi",
-            "config": {
-            }
+            "config": {}
         },
-        "teedoc-plugin-theme-default":{
+        "teedoc-plugin-theme-default": {
             "from": "pypi",
             "config": {
                 "dark": true,
-                "env":{
+                "env": {
                     "main_color": "#4caf7d"
                 }
             }
         },
-        "teedoc-plugin-search":{
+        "teedoc-plugin-search": {
             "from": "pypi",
             "config": {
                 "search_hint": "Search"
@@ -62,8 +61,7 @@
         },
         "teedoc-plugin-blog": {
             "from": "pypi",
-            "config": {
-            }
+            "config": {}
         },
         "teedoc-plugin-assets": {
             "from": "pypi",
@@ -74,7 +72,7 @@
                 "footer_items": [
                     "/static/js/custom.js"
                 ],
-                "env":{
+                "env": {
                     "main_color": "#4caf7d",
                     "second_color": "#0a7d43"
                 }
@@ -82,7 +80,7 @@
         }
     },
     "rebuild_changes_delay": 1,
-    "robots":{
+    "robots": {
         "User-agent": "*"
     },
     "layout_root_dir": "layout"
