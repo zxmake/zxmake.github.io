@@ -1,7 +1,7 @@
 {
     "site_name": "mysite",
     "site_slogon": "",
-    "site_root_url": "/xmake-teedoc/",
+    "site_root_url": "/",
     "site_domain": "tomo-cat.github.io",
     "site_protocol": "https",
     "config_template_dir": "config",
