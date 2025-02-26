@@ -1,10 +1,10 @@
 {
     "locale": "en",
     "navbar": {
-        "title": "my_site",
+        "title": "xmake",
         "logo": {
-            "alt": "my_site logo",
-            "src": "/static/image/logo.png"
+            "alt": "logo",
+            "src": "/static/image/logo-1600.png"
         },
         "home_url": "/en/",
         "items": [
