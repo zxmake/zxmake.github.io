@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>描述域 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/tutorial/description-scope.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/tutorial/description-scope.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class=""></span></a></li>
+<li class="active_parent with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+<li class="not_active no_link sidebar_category"><span class="label">target 编译目标</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">option 选项</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">package 包管理</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">rule 规则</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">toolchain 工具链</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">plugin 插件</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">其他特性</span></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>描述域</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-02-26">
+                                    2025-02-26
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/description-scope.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83">命名规范</h2>
+<p>接口的命名，是有按照预定义的一些规范来命名的，这样更加方便理解和易于使用，目前命名按照如下一些规则：</p>
+<table>
+<thead>
+<tr>
+  <th>接口规则</th>
+  <th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>is_</code>, <code>has_</code> 前缀的接口</td>
+  <td>表示为条件判断</td>
+</tr>
+<tr>
+  <td><code>set_</code> 前缀的接口</td>
+  <td>表示为覆盖设置</td>
+</tr>
+<tr>
+  <td><code>add_</code> 前缀的接口</td>
+  <td>表示为追加设置</td>
+</tr>
+<tr>
+  <td><code>s</code> 后缀的接口</td>
+  <td>表示支持多值传入，例如：<code>add_files(&quot;*.c&quot;, &quot;test.cpp&quot;)</code></td>
+</tr>
+<tr>
+  <td><code>on_</code> 前缀的接口</td>
+  <td>表示为覆盖内置脚本</td>
+</tr>
+<tr>
+  <td><code>before_</code> 前缀的接口</td>
+  <td>表示为在内置脚本运行前，执行此脚本</td>
+</tr>
+<tr>
+  <td><code>after_</code> 前缀的接口</td>
+  <td>表示为在内置脚本运行后，执行此脚本</td>
+</tr>
+<tr>
+  <td><code>scope(&quot;name&quot;)</code> 的接口</td>
+  <td>表示为定义一个描述域，例如：<code>target(&quot;xxx&quot;)</code>, <code>option(&quot;xxx&quot;)</code></td>
+</tr>
+<tr>
+  <td>描述域 / 描述设置</td>
+  <td>建议缩进表示</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD">条件判断</h2>
+<p>条件判断的 api，一般用于必须要处理特定平台的编译逻辑的场合。通常跟 lua 的 if 语句配合使用。</p>
+<h3 id="is_os">is_os</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E6%9E%84%E5%BB%BA%E7%9B%AE%E6%A0%87%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">判断当前构建目标的操作系统</h4>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前操作系统是 ios
+if is_os(&quot;ios&quot;) then
+    add_files(&quot;src/xxx/*.m&quot;)
+end
+</code></pre>
+<p>目前支持的操作系统有：</p>
+<ul>
+<li>linux</li>
+<li>android</li>
+<li>macosx</li>
+<li>ios</li>
+</ul>
+<h3 id="is_arch">is_arch</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E7%BC%96%E8%AF%91%E6%9E%B6%E6%9E%84">判断当前编译架构</h4>
+<p>用于检测编译配置：<code>xmake f -a armv7</code></p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前架构是 x86_64 或者 i386
+if is_arch(&quot;x86_64&quot;, &quot;i386&quot;) then
+    add_files(&quot;src/xxx/*.c&quot;)
+end
+
+-- 如果当前平台是 armv7, arm64, armv7s, armv7-a
+if is_arch(&quot;armv7&quot;, &quot;arm64&quot;, &quot;armv7s&quot;, &quot;armv7-a&quot;) then
+    -- ...
+end
+</code></pre>
+<p>如果像上面那样一个个去判断所有 arm 架构，也许会很繁琐，毕竟每个平台的架构类型很多，xmake 提供了比 <a href="#targetadd_files"  >add_files</a> 更强的 lua 正则表达式匹配模式，来更加简洁的进行判断：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前平台是 arm 平台
+if is_arch(&quot;arm.*&quot;) then
+    -- ...
+end
+</code></pre>
+<p>用 <code>.*</code> 就可以匹配所有了。</p>
+<h3 id="is_plat">is_plat</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E7%BC%96%E8%AF%91%E5%B9%B3%E5%8F%B0">判断当前编译平台</h4>
+<p>用于检测编译配置：<code>xmake f -p iphoneos</code></p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前平台是 android
+if is_plat(&quot;android&quot;) then
+    add_files(&quot;src/xxx/*.c&quot;)
+end
+
+-- 如果当前平台是 macosx 或者 iphoneos
+if is_plat(&quot;macosx&quot;, &quot;iphoneos&quot;) then
+    add_frameworks(&quot;Foundation&quot;)
+end
+</code></pre>
+<p>目前支持的平台有：</p>
+<ul>
+<li>cross</li>
+<li>linux</li>
+<li>macosx</li>
+<li>android</li>
+<li>iphoneos</li>
+<li>watchos</li>
+</ul>
+<p>当然你也可以自己扩展添加自己的平台，甚至直接指定自己的平台名：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p other --sdk=...
+</code></pre>
+<p>如果指定的平台名不存在，就会自动切到 <code>cross</code> 平台进行交叉编译，但是却可以通过 <code>is_plat(&quot;other&quot;)</code> 来判断自己的平台逻辑。</p>
+<h3 id="is_host">is_host</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">判断当前主机环境的操作系统</h4>
+<p>有些编译平台是可以在多个不同的操作系统进行构建的，例如：android 的 ndk 就支持 linux 和 macOS 环境。</p>
+<p>这个时候就可以通过这个接口，区分当前是在哪个系统环境下进行的构建。</p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前主机环境是 linux
+if is_host(&quot;linux&quot;) then
+    add_includedirs(&quot;/usr/includess&quot;)
+else
+    add_includedirs(&quot;.&quot;)
+end
+</code></pre>
+<p>目前支持的主机环境有：</p>
+<ul>
+<li>linux</li>
+<li>macosx</li>
+</ul>
+<p>你也可以通过 <a href="/zh-cn/manual/builtin_variables?id=varhost"  >$(host)</a> 内置变量或者 <a href="/zh-cn/manual/builtin_modules?id=oshost"  >os.host</a> 接口，来进行获取</p>
+<h3 id="is_cross">is_cross</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E5%B9%B3%E5%8F%B0%E6%98%AF%E5%90%A6%E4%B8%BA%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">判断当前平台是否为交叉编译</h4>
+<p>如果当前的目标架构和平台，不是当前的主机平台，属于交叉编译，这个接口就会返回 true。</p>
+<h3 id="is_mode">is_mode</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F">判断当前编译模式</h4>
+<p>用于检测编译配置：<code>xmake f -m debug</code></p>
+<p>编译模式的类型并不是内置的，可以自由指定，一般指定：<code>debug</code>, <code>release</code>, <code>profile</code> 这些就够用了，当然你也可以在 xmake.lua 使用其他模式名来判断。</p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果当前编译模式是 debug
+if is_mode(&quot;debug&quot;) then
+
+    -- 添加 DEBUG 编译宏
+    add_defines(&quot;DEBUG&quot;)
+
+    -- 启用调试符号
+    set_symbols(&quot;debug&quot;)
+
+    -- 禁用优化
+    set_optimize(&quot;none&quot;)
+
+end
+
+-- 如果是 release 或者 profile 模式
+if is_mode(&quot;release&quot;, &quot;profile&quot;) then
+
+    -- 如果是 release 模式
+    if is_mode(&quot;release&quot;) then
+
+        -- 隐藏符号
+        set_symbols(&quot;hidden&quot;)
+
+        -- strip 所有符号
+        set_strip(&quot;all&quot;)
+
+        -- 忽略帧指针
+        add_cxflags(&quot;-fomit-frame-pointer&quot;)
+        add_mxflags(&quot;-fomit-frame-pointer&quot;)
+
+    -- 如果是 profile 模式
+    else
+
+        -- 启用调试符号
+        set_symbols(&quot;debug&quot;)
+
+    end
+
+    -- 添加扩展指令集
+    add_vectorexts(&quot;sse2&quot;, &quot;sse3&quot;, &quot;ssse3&quot;, &quot;mmx&quot;)
+end
+</code></pre>
+<h3 id="is_kind">is_kind</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8D%E7%BC%96%E8%AF%91%E7%B1%BB%E5%9E%8B">判断当前编译类型</h4>
+<p>判断当前是否编译的是动态库还是静态库，用于检测编译配置：<code>xmake f -k [static|shared]</code></p>
+<p>一般用于如下场景：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;)
+
+    -- 通过配置设置目标的 kind
+    set_kind(&quot;$(kind)&quot;)
+    add_files(&quot;src/*c&quot;)
+
+    -- 如果当前编译的是静态库，那么添加指定文件
+    if is_kind(&quot;static&quot;) then
+        add_files(&quot;src/xxx.c&quot;)
+    end
+</code></pre>
+<p>编译配置的时候，可手动切换，编译类型：</p>
+
+<pre class="language-bash"><code class="language-bash"># 编译静态库
+$ xmake f -k static
+$ xmake
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash"># 编译动态库
+$ xmake f -k shared
+$ xmake
+</code></pre>
+<h3 id="is_config">is_config</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E6%8C%87%E5%AE%9A%E9%85%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E4%B8%BA%E7%BB%99%E5%AE%9A%E7%9A%84%E5%80%BC">判断指定配置是否为给定的值</h4>
+<p>用于判断指定配置是否为给定的值，可用于描述域。</p>
+<p>例如：</p>
+
+<pre class="language-console"><code class="language-console">$ xmake f --test=hello1
+</code></pre>
+
+<pre class="language-lua"><code class="language-lua">-- 自定义一个配置选项到命令行菜单
+option(&quot;test&quot;, function()
+    set_showmenu(true)
+    set_description(&quot;The test config option&quot;)
+end)
+
+-- 如果自定义的 test 配置值是 hello1 或者 hello2
+if is_config(&quot;test&quot;, &quot;hello1&quot;, &quot;hello2&quot;) then
+    add_defines(&quot;HELLO&quot;)
+end
+</code></pre>
+<p>可以用来根据配置值增加对应的依赖包，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 根据 lua_flavor 的配置值，选择依赖 lua 还是 luajit
+option(&quot;lua_flavor&quot;, function()
+    set_showmenu(true)
+    set_values(&quot;luajit&quot;, &quot;lua&quot;)
+end)
+if is_config(&quot;lua_flavor&quot;, &quot;luajit&quot;) then
+    add_requires(&quot;luajit&quot;)
+elseif is_config(&quot;lua_flavor&quot;, &quot;lua&quot;) then
+    add_requires(&quot;lua&quot;)
+end
+</code></pre>
+<p>不仅如此，我们还可以设置模式匹配规则去判断值，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 如果自定义的 test 配置值带有 hello 前缀
+if is_config(&quot;test&quot;, &quot;hello.*&quot;) then
+    add_defines(&quot;HELLO&quot;)
+end
+</code></pre>
+<blockquote>
+<p>此接口不仅能够判断通过 <a href="#option"  >option</a> 定义的自定义配置选项，同时还能判断内置的全局配置、本地配置</p>
+</blockquote>
+<h3 id="has_config">has_config</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E9%85%8D%E7%BD%AE%E6%98%AF%E5%90%A6%E5%90%AF%E7%94%A8%E6%88%96%E8%80%85%E5%AD%98%E5%9C%A8">判断配置是否启用或者存在</h4>
+<p>用于检测自定义或者内置的编译配置是否存在或启用，可用于描述域。</p>
+<p>例如以下配置情况，都会返回 true:</p>
+
+<pre class="language-console"><code class="language-console"># 启用某个配置选项（如果是 boolean 类型配置）
+$ xmake f --test1=y
+$ xmake f --test1=yes
+$ xmake f --test1=true
+
+# 设置某个配置选项的值
+$ xmake f --test2=value
+</code></pre>
+
+<pre class="language-lua"><code class="language-lua">-- 如果 test1 或者 test2 被设置或者启用
+if has_config(&quot;test1&quot;, &quot;test2&quot;) then
+    add_defines(&quot;TEST&quot;)
+end
+</code></pre>
+<p>而下面的情况则会禁用配置，返回 false：</p>
+
+<pre class="language-console"><code class="language-console"># 禁用配置（如果是 boolean 类型配置）
+$ xmake f --test1=n
+$ xmake f --test1=no
+$ xmake f --test1=false
+</code></pre>
+<blockquote>
+<p>此接口不仅能够判断内置的全局配置、本地配置，同时还可以判断通过 <a href="#option"  >option</a> 定义的自定义配置选项。</p>
+</blockquote>
+<h3 id="has_package">has_package</h3>
+<h4 id="%E5%88%A4%E6%96%AD%E4%BE%9D%E8%B5%96%E5%8C%85%E6%98%AF%E5%90%A6%E5%90%AF%E7%94%A8%E6%88%96%E8%80%85%E5%AD%98%E5%9C%A8">判断依赖包是否启用或者存在</h4>
+<p>此接口用于检测远程依赖包是否存在或启用，可用于描述域。</p>
+<p>一般配合 <a href="/zh-cn/manual/global_interfaces?id=add_requires"  >add_requires</a> 一起使用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox&quot;, {optional = true})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;tbox&quot;)
+
+    if has_package(&quot;tbox&quot;) then
+        add_defines(&quot;HAVE_TBOX&quot;)
+    end
+end)
+</code></pre>
+<p>如果通过 <code>add_requires</code> 添加的可选依赖包，远程下载安装失败，或者当前平台不支持导致实际上没有被正常安装上，那么 <code>has_package</code> 就会返回 false，表示不存在，然后对其他 flags 定义甚至源文件编译控制做一些特殊处理。</p>
+<blockquote>
+<p>此接口跟 <a href="#has_config"  >has_config</a> 的区别在于，<a href="#has_config"  >has_config</a> 用于 <a href="#option"  >option</a>，而它用于 <a href="#add_requires"  >add_requires</a>。</p>
+</blockquote>
+<h2 id="%E5%85%A8%E5%B1%80%E6%8E%A5%E5%8F%A3">全局接口</h2>
+<p>全局接口影响整个工程描述，被调用后，后面被包含进来的所有子 <code>xmake.lua</code> 都会受影响。</p>
+<h3 id="includes">includes</h3>
+<h4 id="%E6%B7%BB%E5%8A%A0%E5%AD%90%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95">添加子工程文件和目录</h4>
+<p>我们能够使用此接口添加工程子文件 (xmake.lua) 或者带有 xmake.lua 的工程子目录。</p>
+
+<pre class="language-none"><code class="language-none">projectdir
+  - subdirs
+    - xmake.lua
+  - src
+</code></pre>
+<p>添加子工程目录：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;subdirs&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+end)
+</code></pre>
+<p>或者添加子工程文件：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;subdirs/xmake.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+end)
+</code></pre>
+<p>我们也可以通过模式匹配的方式，递归添加多个工程子目录文件：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;**/xmake.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+end)
+</code></pre>
+<p>includes 包含内置的一些辅助配置脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check&quot;)
+</code></pre>
+<p>会引入内置提供的一些检测辅助接口。</p>
+<p>还有</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/qt&quot;)
+</code></pre>
+<p>会引入一些内置的 Qt 相关辅助接口。</p>
+<p>其中 <code>@builtin</code> 是告诉 xmake 从内置的 includes 目录中引入配置脚本。</p>
+<p>也就是这个路径下的配置文件：<a href="https://github.com/xmake-io/xmake/tree/master/xmake/includes"  target="_blank">includes</a></p>
+<p>我们可以向上面那样，按目录整个引入，也可以引入单个配置文件，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check/check_cfuncs.lua&quot;)
+</code></pre>
+<p>仅仅引入 check 目录下 check_cfuncs 相关的辅助脚本。</p>
+<p>而通过 <code>@builtin</code> 我们就能很好的区分是引入当前用户工程目录下的文件，还是 xmake 安装目录下的内置文件。</p>
+<h3 id="set_project">set_project</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E5%B7%A5%E7%A8%8B%E5%90%8D">设置工程名</h4>
+<p>设置工程名，在 doxygen 自动文档生成插件、工程文件生成插件中会用到，一般设置在 xmake.lua 的最开头，当然放在其他地方也是可以的</p>
+
+<pre class="language-lua"><code class="language-lua">-- 设置工程名
+set_project(&quot;xutil&quot;)
+
+-- 设置工程版本
+set_version(&quot;1.5.1&quot;)
+</code></pre>
+<h3 id="set_version">set_version</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E5%B7%A5%E7%A8%8B%E7%89%88%E6%9C%AC">设置工程版本</h4>
+<p>设置项目版本，可以放在 xmake.lua 任何地方，一般放在最开头，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">set_version(&quot;1.5.1&quot;)
+</code></pre>
+<p>支持 buildversion 的配置：</p>
+
+<pre class="language-lua"><code class="language-lua">set_version(&quot;1.5.1&quot;, {build = &quot;%Y%m%d%H%M&quot;})
+</code></pre>
+<p>我们也能够添加版本宏定义到头文件，请参考：<a href="/manual/project_target?id=add-template-configuration-files"  >add_configfiles</a></p>
+<blockquote>
+<p>我们可以全局设置版本，但现在我们也可以在 target 域去单独设置它。</p>
+</blockquote>
+<p>同时支持配置 soname 版本，用于控制 so/dylib 动态库的版本兼容性控制。</p>
+<p>我们可以配置 soname 的版本后缀名称，xmake 会在编译、安装动态库的时候，自动生成符号链接，执行指定版本的动态库。</p>
+<p>例如，如果我们配置：</p>
+
+<pre class="language-lua"><code class="language-lua">set_version(&quot;1.0.1&quot;, {soname = true})
+</code></pre>
+<p>xmake 会自动解析版本号的 major 版本作为 soname 版本，生成的结构如下：</p>
+
+<pre class="language-none"><code class="language-none">└── lib
+    ├── libfoo.1.0.1.dylib
+    ├── libfoo.1.dylib -&gt; libfoo.1.0.1.dylib
+    └── libfoo.dylib -&gt; libfoo.1.dylib
+</code></pre>
+<p>当然，我们也可以指定 soname 到特定的版本命名：</p>
+
+<pre class="language-lua"><code class="language-lua">set_version(&quot;1.0.1&quot;, {soname = &quot;1.0&quot;}) -&gt; libfoo.so.1.0, libfoo.1.0.dylib
+set_version(&quot;1.0.1&quot;, {soname = &quot;1&quot;}) -&gt; libfoo.so.1, libfoo.1.dylib
+set_version(&quot;1.0.1&quot;, {soname = &quot;A&quot;}) -&gt; libfoo.so.A, libfoo.A.dylib
+set_version(&quot;1.0.1&quot;, {soname = &quot;&quot;}) -&gt; libfoo.so, libfoo.dylib
+</code></pre>
+<p>而如果没设置 soname，那么默认不开启 soname 版本兼容控制：</p>
+
+<pre class="language-lua"><code class="language-lua">set_version(&quot;1.0.1&quot;) -&gt; libfoo.so, libfoo.dylib
+</code></pre>
+<h3 id="set_xmakever">set_xmakever</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E6%9C%80%E5%B0%8F-xmake-%E7%89%88%E6%9C%AC">设置最小 xmake 版本</h4>
+<p>用于处理 xmake 版本兼容性问题，如果项目的 <code>xmake.lua</code>，通过这个接口设置了最小 xmake 版本支持，那么用户环境装的 xmake 低于要求的版本，就会提示错误。</p>
+<p>一般情况下，建议默认对其进行设置，这样对用户比较友好，如果 <code>xmake.lua</code> 中用到了高版本的 api 接口，用户那边至少可以知道是否因为版本不对导致的构建失败。</p>
+<p>设置如下：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 设置最小版本为：2.1.0，低于此版本的 xmake 编译此工程将会提示版本错误信息
+set_xmakever(&quot;2.1.0&quot;)
+</code></pre>
+<h3 id="add_moduledirs">add_moduledirs</h3>
+<h4 id="%E6%B7%BB%E5%8A%A0%E6%A8%A1%E5%9D%97%E7%9B%AE%E5%BD%95">添加模块目录</h4>
+<p>xmake 内置的扩展模块都在 <code>xmake/modules</code> 目录下，可通过 <a href="#import"  >import</a> 来导入他们，如果自己在工程里面实现了一些扩展模块，<br />
+可以放置在这个接口指定的目录下，import 也就会能找到，并且优先进行导入。</p>
+<h3 id="add_plugindirs">add_plugindirs</h3>
+<h4 id="%E6%B7%BB%E5%8A%A0%E6%8F%92%E4%BB%B6%E7%9B%AE%E5%BD%95">添加插件目录</h4>
+<p>xmake 内置的插件都是放在 <code>xmake/plugins</code> 目录下，但是对于用户自定义的一些特定工程的插件，如果不想放置在 xmake 安装目录下，那么可以在 <code>xmake.lua</code> 中进行配置指定的其他插件路径。</p>
+
+<pre class="language-lua"><code class="language-lua">-- 将当前工程下的 plugins 目录设置为自定义插件目录
+add_plugindirs(&quot;$(projectdir)/plugins&quot;)
+</code></pre>
+<p>这样，xmake 在编译此工程的时候，也就加载这些插件。</p>
+<h3 id="get_config">get_config</h3>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%BB%99%E5%AE%9A%E7%9A%84%E9%85%8D%E7%BD%AE%E5%80%BC">获取给定的配置值</h4>
+<p>此接口用于快速获取给定的配置值，可用于描述域。</p>
+
+<pre class="language-lua"><code class="language-lua">if get_config(&quot;myconfig&quot;) == &quot;xxx&quot; then
+    add_defines(&quot;HELLO&quot;)
+end
+</code></pre>
+<h3 id="set_config">set_config</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E7%BB%99%E5%AE%9A%E7%9A%84%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE%E5%80%BC">设置给定的默认配置值</h4>
+<p>此接口从 2.2.2 版本开始引入，用于快速在 xmake.lua 中设置一个默认配置值，仅用于描述域。</p>
+<p>之前很多配置，包括编译工具链，构建目录等只能通过 <code>$ xmake f --name=value</code> 的方式来配置，如果我们想写死在 xmake.lua 提供一个默认值，就可以通过下面的方式来配置：</p>
+
+<pre class="language-lua"><code class="language-lua">set_config(&quot;name&quot;, &quot;value&quot;)
+set_config(&quot;buildir&quot;, &quot;other/buildir&quot;)
+set_config(&quot;cc&quot;, &quot;gcc&quot;)
+set_config(&quot;ld&quot;, &quot;g++&quot;)
+</code></pre>
+<p>不过，我们还是可以通过 <code>$ xmake f --name=value</code> 的方式，去修改 xmake.lua 中的默认配置。</p>
+<h3 id="add_requires">add_requires</h3>
+<h4 id="%E6%B7%BB%E5%8A%A0%E9%9C%80%E8%A6%81%E7%9A%84%E4%BE%9D%E8%B5%96%E5%8C%85">添加需要的依赖包</h4>
+<p>xmake 的依赖包管理是完全支持语义版本选择的，例如：&quot;~1.6.1&quot;，对于语义版本的具体描述见：<a href="https://semver.org/"  target="_blank">https://semver.org/</a></p>
+<h5 id="%E8%AF%AD%E4%B9%89%E7%89%88%E6%9C%AC">语义版本</h5>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox 1.6.*&quot;, &quot;pcre 8.x&quot;, &quot;libpng ^1.18&quot;)
+add_requires(&quot;libpng ~1.16&quot;, &quot;zlib 1.1.2 ||&gt;=1.2.11 &lt;1.3.0&quot;)
+</code></pre>
+<p>目前 xmake 使用的语义版本解析器是 <a href="https://github.com/uael"  target="_blank">uael</a> 贡献的 <a href="https://github.com/uael/sv"  target="_blank">sv</a> 库，里面也有对版本描述写法的详细说明，可以参考下：<a href="https://github.com/uael/sv#versions"  target="_blank">版本描述说明</a></p>
+<h5 id="%E6%9C%80%E8%BF%91%E7%89%88%E6%9C%AC">最近版本</h5>
+<p>当然，如果我们对当前的依赖包的版本没有特殊要求，那么可以直接这么写：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox&quot;, &quot;libpng&quot;, &quot;zlib&quot;)
+</code></pre>
+<p>默认，没设置版本号，xmake 会选取最近版本的包，等价于 <code>add_requires(&quot;zlib latest&quot;)</code></p>
+<h5 id="%E5%88%86%E6%94%AF%E9%80%89%E6%8B%A9">分支选择</h5>
+<p>这会使用已知的最新版本包，或者是 master 分支的源码编译的包，如果当前包有 git repo 地址，我们也能指定特定分支版本：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox master&quot;)
+add_requires(&quot;tbox dev&quot;)
+</code></pre>
+<p>如果指定的依赖包当前平台不支持，或者编译安装失败了，那么 xmake 会编译报错，这对于有些必须要依赖某些包才能工作的项目，这是合理的。<br />
+但是如果有些包是可选的依赖，即使没有也可以正常编译使用的话，可以设置为可选包：</p>
+<h5 id="Git-commit-%E9%80%89%E6%8B%A9">Git commit 选择</h5>
+<p>我们可以对 git 维护的包直接指定 git commit 来选择版本。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox e807230557aac69e4d583c75626e3a7ebdb922f8&quot;)
+</code></pre>
+<h5 id="%E5%8F%AF%E9%80%89%E5%8C%85">可选包</h5>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {optional = true})
+</code></pre>
+<h5 id="%E7%A6%81%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%8C%85">禁用系统包</h5>
+<p>默认的设置，xmake 会去优先检测系统库是否存在（如果没设置版本要求），如果用户完全不想使用系统库以及第三方包管理提供的库，那么可以设置：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {system = false})
+</code></pre>
+<h5 id="%E7%A6%81%E7%94%A8%E5%8C%85%E6%A0%A1%E9%AA%8C">禁用包校验</h5>
+<p>默认包安装，对于下载的包都是会去自动校验完整性，避免被篡改，但是如果安装一些未知新版本的包，就不行了。</p>
+<p>用户可以通过 <code>{verify = false}</code> 强行禁用包完整性校验来临时安装他们（但通常不推荐这么做）。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {verify = false})
+</code></pre>
+<h5 id="%E4%BD%BF%E7%94%A8%E8%B0%83%E8%AF%95%E5%8C%85">使用调试包</h5>
+<p>如果我们想同时源码调试依赖包，那么可以设置为使用 debug 版本的包（当然前提是这个包支持 debug 编译）：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {debug = true})
+</code></pre>
+<p>如果当前包还不支持 debug 编译，可在仓库中提交修改编译规则，对 debug 进行支持，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;openssl&quot;, function()
+    on_install(&quot;linux&quot;, &quot;macosx&quot;, function (package)
+        os.vrun(&quot;./config %s --prefix=\&quot;%s\&quot;&quot;, package:debug() and&quot;--debug&quot;or&quot;&quot;, package:installdir())
+        os.vrun(&quot;make -j4&quot;)
+        os.vrun(&quot;make install&quot;)
+    end)
+end)
+</code></pre>
+<h5 id="%E4%BD%9C%E4%B8%BA%E7%A7%81%E6%9C%89%E5%8C%85%E4%BD%BF%E7%94%A8">作为私有包使用</h5>
+<p>如果这个包，我们仅仅用于包定义，不想对外默认导出 links/linkdirs 信息，可以作为私有包提供。</p>
+<p>这通常对于做包时候，很有用。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;test&quot;)
+    add_deps(&quot;zlib&quot;, {private = true})
+    on_install(function (package)
+        local zlib = package:dep(&quot;zlib&quot;):fetch()
+        -- TODO
+    end)
+</code></pre>
+<p>如果自己定义的一个 test 包，私有依赖一个 zlib 包，等待 zlib 安装完成后，获取里面的包文件信息做进一步处理安装，但是 zlib 包本身不会再对外导出 links/linkdirs。</p>
+<p>尽管，<code>add_requires</code> 也支持这个选项，但是不对外导出 links/linkdirs，所以通常不会去这么用，仅仅对于做包很有帮助。</p>
+<h5 id="%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E5%BA%93">使用动态库</h5>
+<p>默认的包安装的是静态库，如果要启用动态库，可以配置如下：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {configs = {shared = true}})
+</code></pre>
+<blockquote>
+<p>当然，前提是这个包的定义里面，有对 <code>package:config(&quot;shared&quot;)</code> 判断处理，官方 xmake-repo 仓库里面，通常都是严格区分支持的。</p>
+</blockquote>
+<h5 id="%E7%A6%81%E7%94%A8-pic-%E6%94%AF%E6%8C%81">禁用 pic 支持</h5>
+<p>默认安装的 linux 包，都是开启 pic 编译的，这对于动态库中依赖静态库非常有用，但如果想禁用 pic，也是可以的。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {configs = {pic = false}})
+</code></pre>
+<h5 id="%E7%89%B9%E5%AE%9A%E9%85%8D%E7%BD%AE%E5%8C%85">特定配置包</h5>
+<p>某些包在编译时候有各种编译选项，我们也可以传递进来：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;boost&quot;, {configs = {context = true, coroutine = true}})
+</code></pre>
+<p>比如上面，安装的 boost 包，是启用了它内部的一些子模块特性（带有协程模块支持的包）。</p>
+<p>当然，具体支持哪些配置，每个包都是不同的，可以通过 <code>xmake require --info boost</code> 命令查看里面的 configs 部分列表。</p>
+<p>因为，每个包定义里面，都会有自己的配置选项，并且通过 <code>package:config(&quot;coroutine&quot;)</code> 在安装时候去判断启用它们。</p>
+<h5 id="%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E5%8C%85">安装第三方管理器的包</h5>
+<p>目前支持安装下面这些第三方包管理器中包。</p>
+<ul>
+<li>Conan (conan::openssl/1.1.1g)</li>
+<li>Conda (conda::libpng 1.3.67)</li>
+<li>Vcpkg (vcpkg::ffmpeg)</li>
+<li>Homebrew/Linuxbrew (brew::pcre2/libpcre2-8)</li>
+<li>Pacman on archlinux/msys2 (pacman::libcurl)</li>
+<li>Apt on ubuntu/debian (apt::zlib1g-dev)</li>
+<li>Clib (clib::clibs/bytes@0.0.4)</li>
+<li>Dub (dub::log 0.4.3)</li>
+<li>Portage on Gentoo/Linux (portage::libhandy)</li>
+</ul>
+<p>例如添加 conan 的依赖包：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;conan::zlib/1.2.11&quot;, {alias = &quot;zlib&quot;, debug = true})
+add_requires(&quot;conan::openssl/1.1.1g&quot;, {alias = &quot;openssl&quot;,
+    configs = {options = &quot;OpenSSL:shared=True&quot;}})
+
+target(&quot;test&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;openssl&quot;, &quot;zlib&quot;)
+</code></pre>
+<p>执行 xmake 进行编译后：</p>
+
+<pre class="language-console"><code class="language-console">ruki:test_package ruki$ xmake
+checking for the architecture ... x86_64
+checking for the Xcode directory ... /Applications/Xcode.app
+checking for the SDK version of Xcode ... 10.14
+note: try installing these packages (pass -y to skip confirm)?
+  -&gt; conan::zlib/1.2.11  (debug)
+  -&gt; conan::openssl/1.1.1g
+please input: y (y/n)
+
+  =&gt; installing conan::zlib/1.2.11 .. ok
+  =&gt; installing conan::openssl/1.1.1g .. ok
+
+[0%]: cache compiling.release src/main.c
+[100%]: linking.release test
+</code></pre>
+<p>关于这个的完整介绍和所有第三方包的安装使用，可以参考文档：<a href="https://xmake.io/#/zh-cn/package/remote_package?id=%e7%ac%ac%e4%b8%89%e6%96%b9%e4%be%9d%e8%b5%96%e5%8c%85%e5%ae%89%e8%a3%85"  target="_blank">第三方依赖包安装</a></p>
+<h5 id="%E5%8F%A6%E4%B8%80%E7%A7%8D%E7%AE%80%E5%8C%96%E7%9A%84%E9%85%8D%E7%BD%AE%E8%AF%AD%E6%B3%95">另一种简化的配置语法</h5>
+<p>我们通常使用的常用配置语法：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;boost&gt;=1.78.0&quot;, {configs = {iostreams = true, system = true, thread = true}})
+</code></pre>
+<p>对于大部分 boolean 配置，我们可以通过下面的写法，去简化配置。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;boost[iostreams,system,thread] &gt;=1.78.0&quot;)
+</code></pre>
+<p>这对于 <code>xrepo install</code> 独立 cli 命令下带复杂配置的安装，会省事不少，用户可以根据自己的喜好需求，选择使用。</p>
+
+<pre class="language-console"><code class="language-console">xrepo install boost[iostreams,system,thread]
+</code></pre>
+<p>另外，除了 boolean 配置，还支持 string 和 array 配置值。boolean 值，也可以设置 <code>=n/y</code> 去禁用和启用。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;boost[iostreams,system,thread,key=value] &gt;=1.78.0&quot;)
+add_requires(&quot;boost[iostreams=y,thread=n] &gt;=1.78.0&quot;)
+add_requires(&quot;ffmpeg[shared,debug,codecs=[foo,bar,zoo]]&quot;)
+</code></pre>
+<h3 id="add_requireconfs">add_requireconfs</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%AE%9A%E4%BE%9D%E8%B5%96%E5%8C%85%E7%9A%84%E9%85%8D%E7%BD%AE">设置指定依赖包的配置</h4>
+<p>我们可以用这个接口来对 <code>add_requires()</code> 定义的包和它的依赖包的配置进行扩充和改写，它有下面几种用法。</p>
+<h5 id="%E6%89%A9%E5%85%85%E6%8C%87%E5%AE%9A%E5%8C%85%E7%9A%84%E9%85%8D%E7%BD%AE">扩充指定包的配置</h5>
+<p>这是基本用法，比如我们已经通过 <code>add_requires(&quot;zlib&quot;)</code> 声明了一个包，想要在后面对这个 zlib 的配置进行扩展，改成动态库编译，可以通过下面的方式配置。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;)
+add_requireconfs(&quot;zlib&quot;, {configs = {shared = true}})
+</code></pre>
+<p>它等价于</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {configs = {shared = true}})
+</code></pre>
+<h5 id="%E8%AE%BE%E7%BD%AE%E9%80%9A%E7%94%A8%E7%9A%84%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE">设置通用的默认配置</h5>
+<p>上面的用法，我们还看不出有什么实际用处，但如果依赖多了就能看出效果了，比如下面这样：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {configs = {shared = true}})
+add_requires(&quot;pcre&quot;, {configs = {shared = true}})
+add_requires(&quot;libpng&quot;, {configs = {shared = true}})
+add_requires(&quot;libwebp&quot;, {configs = {shared = true}})
+add_requires(&quot;libcurl&quot;, {configs = {shared = false}})
+</code></pre>
+<p>是不是非常繁琐，如果我们用上 <code>add_requireconfs</code> 来设置默认配置，就可以极大的简化成下面的配置：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requireconfs(&quot;*&quot;, {configs = {shared = true}})
+add_requires(&quot;zlib&quot;)
+add_requires(&quot;pcre&quot;)
+add_requires(&quot;libpng&quot;)
+add_requires(&quot;libwebp&quot;)
+add_requires(&quot;libcurl&quot;, {configs = {shared = false}})
+</code></pre>
+<p>上面的配置，我们通过 <code>add_requireconfs(&quot;*&quot;, {configs = {shared = true}})</code> 使用模式匹配的方式，设置所有的依赖包默认走动态库编译安装。</p>
+<p>但是，我们又通过 <code>add_requires(&quot;libcurl&quot;, {configs = {shared = false}})</code> 将 libcurl 进行了特殊配置，强制走静态库编译安装。</p>
+<p>最终的配置结果为：zlib/pcre/libpng/libwebp 是 shared 库，libcurl 是静态库。</p>
+<p>我们通过模式匹配的方式，可以将一些每个包的常用配置都放置到统一的 <code>add_requireconfs</code> 中去预先配置好，极大简化每个 <code>add_requires</code> 的定义。</p>
+<blockquote>
+<p>默认情况下，对于相同的配置，xmake 会优先使用 add_requires 中的配置，而不是 add_requireconfs。</p>
+</blockquote>
+<p>如果 <code>add_requires(&quot;zlib 1.2.11&quot;)</code> 中设置了版本，就会优先使用 add_requires 的配置，完全忽略 add_requireconfs 里面的版本配置，当然我们也可以通过 override 来完全重写 <code>add_requires</code> 中指定的版本。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib 1.2.11&quot;)
+add_requireconfs(&quot;zlib&quot;, {override = true, version = &quot;1.2.10&quot;})
+</code></pre>
+<h5 id="%E6%94%B9%E5%86%99%E5%8C%85%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE">改写包依赖配置</h5>
+<p>其实 <code>add_requireconfs</code> 最大的用处是可以让用户改写安装包的特定依赖包的配置。</p>
+<p>什么意思呢，比如我们项目中集成使用 libpng 这个包，并且使用了动态库版本，但是 libpng 内部依赖的 zlib 库其实还是静态库版本。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libpng&quot;, {configs = {shared = true}})
+</code></pre>
+<p>那如果我们想让 libpng 依赖的 zlib 包也改成动态库编译，应该怎么配置呢？这就需要 <code>add_requireconfs</code> 了。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libpng&quot;, {configs = {shared = true}})
+add_requireconfs(&quot;libpng.zlib&quot;, {configs = {shared = true}})
+</code></pre>
+<p>通过 <code>libpng.zlib</code> 依赖路径的写法，指定内部某个依赖，改写内部依赖配置。</p>
+<p>如果依赖路径很深，比如 <code>foo -&gt; bar -&gt; xyz</code> 的依赖链，我们可以写成：<code>foo.bar.xyz</code></p>
+<p>我们也可以改写 libpng 依赖的内部 zlib 库版本：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libpng&quot;)
+add_requireconfs(&quot;libpng.zlib&quot;, {override = true, version = &quot;1.2.10&quot;})
+</code></pre>
+<h5 id="%E7%BA%A7%E8%81%94%E4%BE%9D%E8%B5%96%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D">级联依赖的模式匹配</h5>
+<p>如果一个包的依赖非常多，且依赖层次也很深，怎么办呢，比如 libwebp 这个包，它的依赖有：</p>
+
+<pre class="language-none"><code class="language-none">libwebp
+  - libpng
+    - zlib
+    - cmake
+  - libjpeg
+  - libtiff
+    - zlib
+  - giflib
+  - cmake
+</code></pre>
+<p>如果我想改写 libwebp 里面的所有的依赖库都加上特定配置，那么挨个配置，就会非常繁琐，这个时候就需要 <code>add_requireconfs()</code> 的递归依赖模式匹配来支持了。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libwebp&quot;)
+add_requireconfs(&quot;libwebp.**|cmake&quot;, {configs = {cxflags = &quot;-DTEST&quot;}})
+</code></pre>
+<p>上面的配置，我们将 libwebp 中所以的库依赖就额外加上了 <code>-DTEST</code> 来编译，但是 cmake 依赖属于构建工具依赖，我们可以通过 <code>|xxx</code> 的方式排除它。</p>
+<p>这里的模式匹配写法，与 <code>add_files()</code> 非常类似。</p>
+<p>我们在给几个例子，比如这回我们只改写 libwebp 下单级的依赖配置，启用调试库：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libwebp&quot;)
+add_requireconfs(&quot;libwebp.*|cmake&quot;, {debug = true})
+</code></pre>
+<h3 id="add_repositories">add_repositories</h3>
+<h4 id="%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E5%8C%85%E4%BB%93%E5%BA%93">添加依赖包仓库</h4>
+<p>如果需要的包不在官方仓库 <a href="https://github.com/xmake-io/xmake-repo"  target="_blank">xmake-repo</a> 中，我们可以提交贡献代码到仓库进行支持。<br />
+但如果有些包仅用于个人或者私有项目，我们可以建立一个私有仓库 repo，仓库组织结构可参考：<a href="https://github.com/xmake-io/xmake-repo"  target="_blank">xmake-repo</a></p>
+<p>比如，现在我们有一个一个私有仓库 repo：<code>git@github.com:myrepo/xmake-repo.git</code></p>
+<p>我们可以通过此接口来添加：</p>
+
+<pre class="language-lua"><code class="language-lua">add_repositories(&quot;my-repo git@github.com:myrepo/xmake-repo.git&quot;)
+</code></pre>
+<p>如果我们只是想添加一两个私有包，这个时候特定去建立一个 git repo 太小题大做了，我们可以直接把包仓库放置项目里面，例如：</p>
+
+<pre class="language-none"><code class="language-none">projectdir
+  - myrepo
+    - packages
+      - t/tbox/xmake.lua
+      - z/zlib/xmake.lua
+  - src
+    - main.c
+  - xmake.lua
+</code></pre>
+<p>上面 myrepo 目录就是自己的私有包仓库，内置在自己的项目里面，然后在 xmake.lua 里面添加一下这个仓库位置：</p>
+
+<pre class="language-lua"><code class="language-lua">add_repositories(&quot;my-repo myrepo&quot;)
+</code></pre>
+<p>这个可以参考 <a href="https://github.com/tboox/benchbox"  target="_blank">benchbox</a> 项目，里面就内置了一个私有仓库。</p>
+<p>注：其中 myrepo 是 xmake 命令执行目录的相对路径，它不会自动根据配置文件所在目录自动转换，如果想要设置到相对于当前 xmake.lua 文件的路径，可以通过 rootdir 参数指定。</p>
+
+<pre class="language-lua"><code class="language-lua">add_repositories(&quot;my-repo myrepo&quot;, {rootdir = os.scriptdir()})
+</code></pre>
+<p>不过这个参数设置只有 v2.5.7 以上版本才支持。</p>
+<h3 id="set_defaultplat">set_defaultplat</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E7%BC%96%E8%AF%91%E5%B9%B3%E5%8F%B0">设置默认的编译平台</h4>
+<p>用于设置工程默认的编译平台，如果没有设置，默认平台跟随当前系统平台，也就是 os.host()。</p>
+<p>比如，在 macOS 上默认编译平台是 macosx，如果当前项目是 ios 项目，那么可以设置默认编译平台为 iphoneos。</p>
+
+<pre class="language-lua"><code class="language-lua">set_defaultplat(&quot;iphoneos&quot;)
+</code></pre>
+<p>它等价于，<code>xmake f -p iphoneos</code>。</p>
+<h3 id="set_defaultarchs">set_defaultarchs</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E7%BC%96%E8%AF%91%E6%9E%B6%E6%9E%84">设置默认的编译架构</h4>
+<p>用于设置工程默认的编译架构，如果没有设置，默认平台跟随当前系统架构，也就是 os.arch()。</p>
+
+<pre class="language-lua"><code class="language-lua">set_defaultplat(&quot;iphoneos&quot;)
+set_defaultarchs(&quot;arm64&quot;)
+</code></pre>
+<p>它等价于，<code>xmake f -p iphoneos -a arm64</code>。</p>
+<p>我们也可以设置多个平台下的默认架构。</p>
+
+<pre class="language-lua"><code class="language-lua">set_defaultarchs(&quot;iphoneos|arm64&quot;, &quot;windows|x64&quot;)
+</code></pre>
+<p>在 iphoneos 上默认编译 arm64 架构，在 windows 上默认编译 x64 架构。</p>
+<h3 id="set_defaultmode">set_defaultmode</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F">设置默认的编译模式</h4>
+<p>用于设置工程默认的编译模式，如果没有设置，默认是 release 模式编译。</p>
+
+<pre class="language-lua"><code class="language-lua">set_defaultmode(&quot;releasedbg&quot;)
+</code></pre>
+<p>它等价于，<code>xmake f -m releasedbg</code>。</p>
+<h3 id="set_allowedplats">set_allowedplats</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E7%BC%96%E8%AF%91%E7%9A%84%E5%B9%B3%E5%8F%B0%E5%88%97%E8%A1%A8">设置允许编译的平台列表</h4>
+<p>用于设置工程支持的编译平台列表，如果用户指定了其他平台，会提示错误，这通常用于限制用户指定错误的无效平台。</p>
+<p>如果没有设置，那么没有任何平台限制。</p>
+
+<pre class="language-lua"><code class="language-lua">set_allowedplats(&quot;windows&quot;, &quot;mingw&quot;)
+</code></pre>
+<p>设置当前项目仅仅支持 windows 和 mingw 平台。</p>
+<h3 id="set_allowedarchs">set_allowedarchs</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E7%BC%96%E8%AF%91%E7%9A%84%E5%B9%B3%E5%8F%B0%E6%9E%B6%E6%9E%84">设置允许编译的平台架构</h4>
+<p>用于设置工程支持的编译架构列表，如果用户指定了其他架构，会提示错误，这通常用于限制用户指定错误的无效架构。</p>
+<p>如果没有设置，那么没有任何架构限制。</p>
+
+<pre class="language-lua"><code class="language-lua">set_allowedarchs(&quot;x64&quot;, &quot;x86&quot;)
+</code></pre>
+<p>当前项目，仅仅支持 x64/x86 平台。</p>
+<p>我们也可以同时指定多个平台下允许的架构列表。</p>
+
+<pre class="language-lua"><code class="language-lua">set_allowedarchs(&quot;windows|x64&quot;, &quot;iphoneos|arm64&quot;)
+</code></pre>
+<p>设置当前项目在 windows 上仅仅支持 x64 架构，并且在 iphoneos 上仅仅支持 arm64 架构。</p>
+<h3 id="set_allowedmodes">set_allowedmodes</h3>
+<h4 id="%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E7%9A%84%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F%E5%88%97%E8%A1%A8">设置允许的编译模式列表</h4>
+<p>用于设置工程支持的编译模式列表，如果用户指定了其他模式，会提示错误，这通常用于限制用户指定错误的无效模式。</p>
+<p>如果没有设置，那么没有任何模式限制。</p>
+
+<pre class="language-lua"><code class="language-lua">set_allowedmodes(&quot;release&quot;, &quot;releasedbg&quot;)
+</code></pre>
+<p>设置当前项目仅仅支持 release/releasedbg 两个编译模式。</p>
+<h2 id="%E8%BE%85%E5%8A%A9%E6%8E%A5%E5%8F%A3">辅助接口</h2>
+<h3 id="%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E8%BE%85%E5%8A%A9%E6%8E%A5%E5%8F%A3">自动检测辅助接口</h3>
+<p>xmake 提供了一些内置的辅助函数，可以直接使用 includes 导入，具体有哪些内置函数可以看下：<a href="https://github.com/xmake-io/xmake/tree/master/xmake/includes"  target="_blank">Helper functions</a></p>
+<p>我们可以使用这些接口，检测 links, c/c++ type, includes 和 编译器特性，并且写入宏定义到 config.h</p>
+<p>其中，我们提供了两类接口，<code>check_xxx</code> 和 <code>configvar_check_xxx</code>，带有 <code>configvar_</code> 前缀的接口会在检测通过后，写入 <code>add_configfiles</code> 指定的 config.h.in 模板文件。</p>
+<p>而 <code>check_xxx</code> 仅仅只是定义相关 macros 参与编译，但不会持久化到 <code>config.h.in</code> 中去。</p>
+<p>相关 issues 见：</p>
+<ul>
+<li><a href="https://github.com/xmake-io/xmake/issues/342"  target="_blank">#342</a></li>
+<li><a href="https://github.com/xmake-io/xmake/issues/1715"  target="_blank">#1715</a></li>
+</ul>
+<p>我们可以一次性引入所有检测接口：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check&quot;)
+</code></pre>
+<p>当然我们也可以按需引入单个脚本：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check/check_links.lua&quot;)
+</code></pre>
+<p>而原有的引入路径，没有区分是否为用户路径，不方便管理维护，且容易被用户配置干扰，后面会逐步废弃。</p>
+<h4 id="%E6%A3%80%E6%B5%8B-links">检测 links</h4>
+<p>我们可以通过尝试链接来检测指定的 links 是否通过。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_links.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_links(&quot;HAS_PTHREAD&quot;, {&quot;pthread&quot;, &quot;m&quot;, &quot;dl&quot;})
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_PTHREAD}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">#define HAS_PTHREAD 1
+/* #undef HAS_PTHREAD */
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B-c/c%2B%2B-%E7%B1%BB%E5%9E%8B">检测 c/c++ 类型</h4>
+<p>我们也能够检测 c/c++ 类型是否存在。</p>
+<p><code>configvar_check_ctypes</code> 用于检测 c 代码类型，<code>configvar_check_cxxtypes</code> 用于检测 c++ 代码类型。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_ctypes.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_ctypes(&quot;HAS_WCHAR&quot;, &quot;wchar_t&quot;)
+    configvar_check_ctypes(&quot;HAS_WCHAR_AND_FLOAT&quot;, {&quot;wchar_t&quot;, &quot;float&quot;})
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_WCHAR}
+${define HAS_WCHAR_AND_FLOAT}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">/* #undef HAS_WCHAR */
+/* #undef HAS_WCHAR_AND_FLOAT */
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B-c/c%2B%2B-%E5%87%BD%E6%95%B0">检测 c/c++ 函数</h4>
+<p><code>configvar_check_cfuncs</code> 用于检测 c 代码函数，<code>configvar_check_cxxfuncs</code> 用于检测 c++ 代码函数。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_cfuncs.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_cfuncs(&quot;HAS_SETJMP&quot;, &quot;setjmp&quot;, {includes = {&quot;signal.h&quot;, &quot;setjmp.h&quot;}})
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_SETJMP}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">#define HAS_SETJMP 1
+/* #undef HAS_SETJMP */
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B-c/c%2B%2B-%E5%A4%B4%E6%96%87%E4%BB%B6">检测 c/c++ 头文件</h4>
+<p><code>configvar_check_cincludes</code> 用于检测 c 代码头文件，<code>configvar_check_cxxincludes</code> 用于检测 c++ 代码头文件。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_cincludes.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_cincludes(&quot;HAS_STRING_H&quot;, &quot;string.h&quot;)
+    configvar_check_cincludes(&quot;HAS_STRING_AND_STDIO_H&quot;, {&quot;string.h&quot;, &quot;stdio.h&quot;})
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_STRING_H}
+${define HAS_STRING_AND_STDIO_H}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">/* #undef HAS_STRING_H */
+#define HAS_STRING_AND_STDIO_H 1
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B-c/c%2B%2B-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5">检测 c/c++ 代码片段</h4>
+<p><code>configvar_check_csnippets</code> 用于检测 c 代码片段，<code>configvar_check_cxxsnippets</code> 用于检测 c++ 代码片段。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_csnippets.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_csnippets(&quot;HAS_STATIC_ASSERT&quot;, &quot;_Static_assert(1, \&quot;\&quot;);&quot;)
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_STATIC_ASSERT}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">#define HAS_STATIC_ASSERT 1
+</code></pre>
+<p>xmake 对 check_csnippets 做了改进，新增 <code>tryrun</code> 和 <code>output</code> 参数去尝试运行和捕获输出。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_csnippets.lua&quot;)
+
+target(&quot;test&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+
+    check_csnippets(&quot;HAS_INT_4&quot;, &quot;return (sizeof(int) == 4)? 0 : -1;&quot;, {tryrun = true})
+    check_csnippets(&quot;INT_SIZE&quot;, 'printf(&quot;%d&quot;, sizeof(int)); return 0;', {output = true, number = true})
+    configvar_check_csnippets(&quot;HAS_LONG_8&quot;, &quot;return (sizeof(long) == 8)? 0 : -1;&quot;, {tryrun = true})
+    configvar_check_csnippets(&quot;PTR_SIZE&quot;, 'printf(&quot;%d&quot;, sizeof(void*)); return 0;', {output = true, number = true})
+</code></pre>
+<p>如果启用捕获输出，<code>config.h.in</code> 的 <code>${define PTR_SIZE}</code> 会自动生成 <code>#define PTR_SIZE 4</code>。</p>
+<p>其中，<code>number = true</code> 设置，可以强制作为 number 而不是字符串值，否则默认会定义为 <code>#define PTR_SIZE &quot;4&quot;</code></p>
+<h4 id="%E6%A3%80%E6%B5%8B%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%B9%E6%80%A7">检测编译器特性</h4>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;check_features.lua&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.c&quot;)
+    add_configfiles(&quot;config.h.in&quot;)
+    configvar_check_features(&quot;HAS_CONSTEXPR&quot;, &quot;cxx_constexpr&quot;)
+    configvar_check_features(&quot;HAS_CONSEXPR_AND_STATIC_ASSERT&quot;, {&quot;cxx_constexpr&quot;, &quot;c_static_assert&quot;}, {languages = &quot;c++11&quot;})
+end)
+</code></pre>
+<p>config.h.in</p>
+
+<pre class="language-c"><code class="language-c">${define HAS_CONSTEXPR}
+${define HAS_CONSEXPR_AND_STATIC_ASSERT}
+</code></pre>
+<p>config.h</p>
+
+<pre class="language-c"><code class="language-c">/* #undef HAS_CONSTEXPR */
+#define HAS_CONSEXPR_AND_STATIC_ASSERT 1
+</code></pre>
+<p>所有 c 编译器特性列表：</p>
+<table>
+<thead>
+<tr>
+  <th>特性名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>c_static_assert</td>
+</tr>
+<tr>
+  <td>c_restrict</td>
+</tr>
+<tr>
+  <td>c_variadic_macros</td>
+</tr>
+<tr>
+  <td>c_function_prototypes</td>
+</tr>
+</tbody>
+</table>
+<p>所有 c++ 编译器特性列表：</p>
+<table>
+<thead>
+<tr>
+  <th>特性名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>cxx_variable_templates</td>
+</tr>
+<tr>
+  <td>cxx_relaxed_constexpr</td>
+</tr>
+<tr>
+  <td>cxx_aggregate_default_initializers</td>
+</tr>
+<tr>
+  <td>cxx_contextual_conversions</td>
+</tr>
+<tr>
+  <td>cxx_attribute_deprecated</td>
+</tr>
+<tr>
+  <td>cxx_decltype_auto</td>
+</tr>
+<tr>
+  <td>cxx_digit_separators</td>
+</tr>
+<tr>
+  <td>cxx_generic_lambdas</td>
+</tr>
+<tr>
+  <td>cxx_lambda_init_captures</td>
+</tr>
+<tr>
+  <td>cxx_binary_literals</td>
+</tr>
+<tr>
+  <td>cxx_return_type_deduction</td>
+</tr>
+<tr>
+  <td>cxx_decltype_incomplete_return_types</td>
+</tr>
+<tr>
+  <td>cxx_reference_qualified_functions</td>
+</tr>
+<tr>
+  <td>cxx_alignof</td>
+</tr>
+<tr>
+  <td>cxx_attributes</td>
+</tr>
+<tr>
+  <td>cxx_inheriting_constructors</td>
+</tr>
+<tr>
+  <td>cxx_thread_local</td>
+</tr>
+<tr>
+  <td>cxx_alias_templates</td>
+</tr>
+<tr>
+  <td>cxx_delegating_constructors</td>
+</tr>
+<tr>
+  <td>cxx_extended_friend_declarations</td>
+</tr>
+<tr>
+  <td>cxx_final</td>
+</tr>
+<tr>
+  <td>cxx_nonstatic_member_init</td>
+</tr>
+<tr>
+  <td>cxx_override</td>
+</tr>
+<tr>
+  <td>cxx_user_literals</td>
+</tr>
+<tr>
+  <td>cxx_constexpr</td>
+</tr>
+<tr>
+  <td>cxx_defaulted_move_initializers</td>
+</tr>
+<tr>
+  <td>cxx_enum_forward_declarations</td>
+</tr>
+<tr>
+  <td>cxx_noexcept</td>
+</tr>
+<tr>
+  <td>cxx_nullptr</td>
+</tr>
+<tr>
+  <td>cxx_range_for</td>
+</tr>
+<tr>
+  <td>cxx_unrestricted_unions</td>
+</tr>
+<tr>
+  <td>cxx_explicit_conversions</td>
+</tr>
+<tr>
+  <td>cxx_lambdas</td>
+</tr>
+<tr>
+  <td>cxx_local_type_template_args</td>
+</tr>
+<tr>
+  <td>cxx_raw_string_literals</td>
+</tr>
+<tr>
+  <td>cxx_auto_type</td>
+</tr>
+<tr>
+  <td>cxx_defaulted_functions</td>
+</tr>
+<tr>
+  <td>cxx_deleted_functions</td>
+</tr>
+<tr>
+  <td>cxx_generalized_initializers</td>
+</tr>
+<tr>
+  <td>cxx_inline_namespaces</td>
+</tr>
+<tr>
+  <td>cxx_sizeof_member</td>
+</tr>
+<tr>
+  <td>cxx_strong_enums</td>
+</tr>
+<tr>
+  <td>cxx_trailing_return_types</td>
+</tr>
+<tr>
+  <td>cxx_unicode_literals</td>
+</tr>
+<tr>
+  <td>cxx_uniform_initialization</td>
+</tr>
+<tr>
+  <td>cxx_variadic_templates</td>
+</tr>
+<tr>
+  <td>cxx_decltype</td>
+</tr>
+<tr>
+  <td>cxx_default_function_template_args</td>
+</tr>
+<tr>
+  <td>cxx_long_long_type</td>
+</tr>
+<tr>
+  <td>cxx_right_angle_brackets</td>
+</tr>
+<tr>
+  <td>cxx_rvalue_references</td>
+</tr>
+<tr>
+  <td>cxx_static_assert</td>
+</tr>
+<tr>
+  <td>cxx_extern_templates</td>
+</tr>
+<tr>
+  <td>cxx_func_identifier</td>
+</tr>
+<tr>
+  <td>cxx_variadic_macros</td>
+</tr>
+<tr>
+  <td>cxx_template_template_parameters</td>
+</tr>
+</tbody>
+</table>
+<p>c++17 特性检测：</p>
+<table>
+<thead>
+<tr>
+  <th>特性名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>cxx_aggregate_bases</td>
+</tr>
+<tr>
+  <td>cxx_aligned_new</td>
+</tr>
+<tr>
+  <td>cxx_capture_star_this</td>
+</tr>
+<tr>
+  <td>cxx_constexpr</td>
+</tr>
+<tr>
+  <td>cxx_deduction_guides</td>
+</tr>
+<tr>
+  <td>cxx_enumerator_attributes</td>
+</tr>
+<tr>
+  <td>cxx_fold_expressions</td>
+</tr>
+<tr>
+  <td>cxx_guaranteed_copy_elision</td>
+</tr>
+<tr>
+  <td>cxx_hex_float</td>
+</tr>
+<tr>
+  <td>cxx_if_constexpr</td>
+</tr>
+<tr>
+  <td>cxx_inheriting_constructors</td>
+</tr>
+<tr>
+  <td>cxx_inline_variables</td>
+</tr>
+<tr>
+  <td>cxx_namespace_attributes</td>
+</tr>
+<tr>
+  <td>cxx_noexcept_function_type</td>
+</tr>
+<tr>
+  <td>cxx_nontype_template_args</td>
+</tr>
+<tr>
+  <td>cxx_nontype_template_parameter_auto</td>
+</tr>
+<tr>
+  <td>cxx_range_based_for</td>
+</tr>
+<tr>
+  <td>cxx_static_assert</td>
+</tr>
+<tr>
+  <td>cxx_structured_bindings</td>
+</tr>
+<tr>
+  <td>cxx_template_template_args</td>
+</tr>
+<tr>
+  <td>cxx_variadic_using</td>
+</tr>
+</tbody>
+</table>
+<p>c++20 特性检测：</p>
+<table>
+<thead>
+<tr>
+  <th>特性名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>cxx_aggregate_paren_init</td>
+</tr>
+<tr>
+  <td>cxx_char8_t</td>
+</tr>
+<tr>
+  <td>cxx_concepts</td>
+</tr>
+<tr>
+  <td>cxx_conditional_explicit</td>
+</tr>
+<tr>
+  <td>cxx_consteval</td>
+</tr>
+<tr>
+  <td>cxx_constexpr</td>
+</tr>
+<tr>
+  <td>cxx_constexpr_dynamic_alloc</td>
+</tr>
+<tr>
+  <td>cxx_constexpr_in_decltype</td>
+</tr>
+<tr>
+  <td>cxx_constinit</td>
+</tr>
+<tr>
+  <td>cxx_deduction_guides</td>
+</tr>
+<tr>
+  <td>cxx_designated_initializers</td>
+</tr>
+<tr>
+  <td>cxx_generic_lambdas</td>
+</tr>
+<tr>
+  <td>cxx_impl_coroutine</td>
+</tr>
+<tr>
+  <td>cxx_impl_destroying_delete</td>
+</tr>
+<tr>
+  <td>cxx_impl_three_way_comparison</td>
+</tr>
+<tr>
+  <td>cxx_init_captures</td>
+</tr>
+<tr>
+  <td>cxx_modules</td>
+</tr>
+<tr>
+  <td>cxx_nontype_template_args</td>
+</tr>
+<tr>
+  <td>cxx_using_enum</td>
+</tr>
+</tbody>
+</table>
+<p>cstd 和 c++ std 版本支持，相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1715"  target="_blank">#1715</a></p>
+
+<pre class="language-lua"><code class="language-lua">configvar_check_features(&quot;HAS_CXX_STD_98&quot;, &quot;cxx_std_98&quot;)
+configvar_check_features(&quot;HAS_CXX_STD_11&quot;, &quot;cxx_std_11&quot;, {languages = &quot;c++11&quot;})
+configvar_check_features(&quot;HAS_CXX_STD_14&quot;, &quot;cxx_std_14&quot;, {languages = &quot;c++14&quot;})
+configvar_check_features(&quot;HAS_CXX_STD_17&quot;, &quot;cxx_std_17&quot;, {languages = &quot;c++17&quot;})
+configvar_check_features(&quot;HAS_CXX_STD_20&quot;, &quot;cxx_std_20&quot;, {languages = &quot;c++20&quot;})
+configvar_check_features(&quot;HAS_C_STD_89&quot;, &quot;c_std_89&quot;)
+configvar_check_features(&quot;HAS_C_STD_99&quot;, &quot;c_std_99&quot;)
+configvar_check_features(&quot;HAS_C_STD_11&quot;, &quot;c_std_11&quot;, {languages = &quot;c11&quot;})
+configvar_check_features(&quot;HAS_C_STD_17&quot;, &quot;c_std_17&quot;, {languages = &quot;c17&quot;})
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B%E5%86%85%E7%BD%AE%E5%AE%8F%E5%AE%9A%E4%B9%89">检测内置宏定义</h4>
+<p>编译器存在一些内置的宏定义，比如：<code>__GNUC__</code> 等，我们可以通过 <code>check_macros</code> 和 <code>configvar_check_macros</code> 辅助脚本来检测它们是否存在。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1715"  target="_blank">#1715</a></p>
+
+<pre class="language-lua"><code class="language-lua">-- 检测宏是否定义
+configvar_check_macros(&quot;HAS_GCC&quot;, &quot;__GNUC__&quot;)
+-- 检测宏没有被定义
+configvar_check_macros(&quot;NO_GCC&quot;, &quot;__GNUC__&quot;, {defined = false})
+-- 检测宏条件
+configvar_check_macros(&quot;HAS_CXX20&quot;, &quot;__cplusplus&gt;= 202002L&quot;, {languages = &quot;c++20&quot;})
+</code></pre>
+<h4 id="%E6%A3%80%E6%B5%8B%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%B0%8F">检测类型大小</h4>
+<p>在先前的版本中，我们可以通过 <code>check_csnippets</code> 和 <code>output = true</code> 的方式，来实现类型检测。</p>
+
+<pre class="language-lua"><code class="language-lua">check_csnippets(&quot;INT_SIZE&quot;, 'printf(&quot;%d&quot;, sizeof(int)); return 0;', {output = true, number = true})
+</code></pre>
+<p>但是这种方式，是通过尝试运行测试代码，然后获取运行输出结果，提取类型大小信息。</p>
+<p>这对于交叉编译，就不适用了。</p>
+<p>xmake 新增了 <code>check_sizeof</code> 辅助接口，可以通过直接解析测试程序的二进制文件，提取类型大小信息。</p>
+<p>由于不需要运行测试，这种方式不仅可以支持交叉编译，而且对检测效率也有极大的提升，使用也更加的简单。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;*.cpp&quot;)
+    check_sizeof(&quot;LONG_SIZE&quot;, &quot;long&quot;)
+    check_sizeof(&quot;STRING_SIZE&quot;, &quot;std::string&quot;, {includes = &quot;string&quot;})
+end)
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -c
+checking for LONG_SIZE ... 8
+checking for STRING_SIZE ... 24
+</code></pre>
+<p>另外，我也可以通过 <code>target:check_sizeof</code> 在脚本域进行检测。</p>
+<h4 id="%E6%A3%80%E6%B5%8B%E5%A4%A7%E5%B0%8F%E7%AB%AF">检测大小端</h4>
+<p>xmake 新增了 <code>check_bigendian</code> 接口，来判断当前编译目标是否为大端模式。</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;@builtin/check&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;*.cpp&quot;)
+    check_bigendian(&quot;IS_BIG_ENDIAN&quot;)
+end)
+</code></pre>
+<p>如果检测通过，当前是大端模式，那么会定义 <code>IS_BIG_ENDIAN=1</code>。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/tutorial/syntax-description.html">
+                            <span class="icon"></span>
+                            <span class="label">语法描述</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/tutorial/project-examples.html">
+                            <span class="label">工程例子</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

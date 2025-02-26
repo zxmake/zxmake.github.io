@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/environment-variables.html</loc>
+            <lastmod>2025-02-26</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/syntax-description.html</loc>
+            <lastmod>2025-02-26</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/quick-start.html</loc>
             <lastmod>2025-02-26</lastmod>
             <changefreq>weekly</changefreq>
@@ -13,13 +25,13 @@
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/project-examples.html</loc>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/description-scope.html</loc>
             <lastmod>2025-02-26</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/environment-variables.html</loc>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/configuration.html</loc>
             <lastmod>2025-02-26</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
@@ -31,19 +43,13 @@
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/syntax-description.html</loc>
-            <lastmod>2025-02-26</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/FAQ.html</loc>
             <lastmod>2025-02-26</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/configuration.html</loc>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/project-examples.html</loc>
             <lastmod>2025-02-26</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
