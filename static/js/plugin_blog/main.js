@@ -88,7 +88,7 @@ $(document).ready(function(){
         });
     }
     if(isBlog){
-        downloadJson("/xmake-teedoc/static/blog_index/index.json", onDownloadOk);
+        downloadJson("/static/blog_index/index.json", onDownloadOk);
     }
 });
 
