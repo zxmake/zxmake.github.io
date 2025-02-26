@@ -7,6 +7,9 @@ items:
 -   label: 语法描述
     file: tutorial/syntax-description.md
     collapsed: false
+    items:
+    -   label: 描述域
+        file: tutorial/description-scope.md
 -   label: 工程例子
     file: tutorial/project-examples.md
 -   label: 配置说明
@@ -20,4 +23,7 @@ items:
 -   label: target 编译目标
 -   label: option 选项
 -   label: package 包管理
+-   label: rule 规则
 -   label: toolchain 工具链
+-   label: plugin 插件
+-   label: 其他特性
