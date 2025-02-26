@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>工程例子 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/xmake-teedoc/">
+                
+                    <img class="site_logo" src="/xmake-teedoc/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/xmake-teedoc/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/xmake-teedoc/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/xmake-teedoc/get_started/en/tutorial/project-examples.html">English</a></li>
+<li class="active"><a  href="/xmake-teedoc/get_started/zh/tutorial/project-examples.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+<li class="not_active no_link sidebar_category"><span class="label">target 编译目标</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">option 选项</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">package 包管理</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">toolchain 工具链</span></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>工程例子</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-02-26">
+                                    2025-02-26
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/project-examples.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>以下是一些常用的工程例子，更多的 examples 可以到 <a href="https://github.com/TOMO-CAT/xmake/tree/master/tests/projects"  target="_blank">project examples</a> 中查看。</p>
+<p>我们也可以通过 <code>xmake create</code> 命令创建各种常用的空工程来快速开始，具体对于这个命令的介绍以及支持的工程模板可以敲下面的命令查看：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake create --help
+</code></pre>
+<h2 id="%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F">可执行程序</h2>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*c&quot;)
+end)
+</code></pre>
+<p>完整例子请执行下面的命令来创建：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake create -l c -t console test
+</code></pre>
+<h2 id="%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">静态库程序</h2>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;library&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/library/*.c&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*c&quot;)
+    add_deps(&quot;library&quot;)
+end)
+</code></pre>
+<p>通过 <code>add_deps</code> 将一个静态库自动链接到 test 可执行程序。</p>
+<p>完整例子请执行下面的命令来创建：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake create -l c -t static test
+</code></pre>
+<h2 id="%E5%8A%A8%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">动态库程序</h2>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;library&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_files(&quot;src/library/*.c&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*c&quot;)
+    add_deps(&quot;library&quot;)
+end)
+</code></pre>
+<p>通过 <code>add_deps</code> 将一个动态库自动链接到 test 可执行程序。</p>
+<p>完整例子请执行下面的命令来创建：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake create -l c -t shared test
+</code></pre>
+<h2 id="Wasm-%E7%A8%8B%E5%BA%8F">Wasm 程序</h2>
+<p>所有 c/c++ 程序，我们都可以编译成 Wasm，无需任何 xmake.lua 配置改动，只需要切换到 wasm 编译平台进行编译。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p wasm
+$ xmake
+</code></pre>
+<p>详细的 Wasm 编译配置见：<a href="/xmake-teedoc/zh-cn/guide/configuration?id=wasm"  >Wasm 配置</a></p>
+<p>另外，在编译带有 <code>--preload-file assets/xxx.md</code> 设置的文件时候，我们也可以通过配置，简化对它的设置。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test5&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_values(&quot;wasm.preloadfiles&quot;, &quot;src/xxx.md&quot;)
+    add_values(&quot;wasm.preloadfiles&quot;, &quot;src/xxx2.md&quot;)
+end)
+</code></pre>
+<h2 id="Qt-%E7%A8%8B%E5%BA%8F">Qt 程序</h2>
+<p>创建一个空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t qt.console test
+$ xmake create -t qt.static test
+$ xmake create -t qt.shared test
+$ xmake create -t qt.quickapp test
+$ xmake create -t qt.widgetapp test
+</code></pre>
+<p>更多工程模板见：<code>xmake create --help</code>。</p>
+<p>默认会自动探测 Qt 环境，当然也可以指定 Qt SDK 环境目录：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --qt=~/Qt/Qt5.9.1
+</code></pre>
+<p>上述指定的 MingW SDK 用的是 Qt 下 Tools 目录自带的环境，当然如果有其他第三方 MingW 编译环境，也可以手动指定, 具体可以参考：<a href="/xmake-teedoc/zh-cn/guide/configuration?id=mingw"  >MingW 编译配置</a>。</p>
+<p>更多详情可以参考：<a href="https://github.com/xmake-io/xmake/issues/160"  target="_blank">#160</a></p>
+<p>另外，当前 xmake 也支持 Qt/Wasm，详情见：<a href="/xmake-teedoc/zh-cn/guide/configuration?id=wasm"  >Wasm 配置</a></p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p wasm
+</code></pre>
+<h3 id="%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">静态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;qt_static_library&quot;, function()
+    add_rules(&quot;qt.static&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_frameworks(&quot;QtNetwork&quot;, &quot;QtGui&quot;)
+end)
+</code></pre>
+<h3 id="%E5%8A%A8%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">动态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;qt_shared_library&quot;, function()
+    add_rules(&quot;qt.shared&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_frameworks(&quot;QtNetwork&quot;, &quot;QtGui&quot;)
+end)
+</code></pre>
+<h3 id="%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F">控制台程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;qt_console&quot;, function()
+    add_rules(&quot;qt.console&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+end)
+</code></pre>
+<h3 id="Quick-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">Quick 应用程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;qt_quickapp&quot;, function()
+    add_rules(&quot;qt.quickapp&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/qml.qrc&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>如果使用的自己编译的 static 版本 QT SDK，那么需要切换到 <code>add_rules(&quot;qt.quickapp_static&quot;)</code> 静态规则才行，因为链接的库是不同的，需要做静态链接。</p>
+</blockquote>
+<h3 id="Quick-Plugin-%E7%A8%8B%E5%BA%8F">Quick Plugin 程序</h3>
+<p>完整例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/qt/quickplugin"  target="_blank">quickplugin example</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;demo&quot;, function()
+    add_rules(&quot;qt.qmlplugin&quot;)
+    add_headerfiles(&quot;src/*.h&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+
+    set_values(&quot;qt.qmlplugin.import_name&quot;, &quot;My.Plugin&quot;)
+end)
+</code></pre>
+<h3 id="Widgets-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">Widgets 应用程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;qt_widgetapp&quot;, function()
+    add_rules(&quot;qt.widgetapp&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/mainwindow.ui&quot;)
+    add_files(&quot;src/mainwindow.h&quot;)  -- 添加带有 Q_OBJECT 的meta头文件
+end)
+</code></pre>
+<h3 id="Android-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">Android 应用程序</h3>
+<p>可以直接切到 android 平台编译 Quick/Widgets 应用程序，生成 apk 包，并且可通过 <code>xmake install</code> 命令安装到设备：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t quickapp_qt -l c++ appdemo
+$ cd appdemo
+$ xmake f -p android --ndk=~/Downloads/android-ndk-r19c/ --android_sdk=~/Library/Android/sdk/ -c
+$ xmake
+[  0%]: compiling.qt.qrc src/qml.qrc
+[ 50%]: cache compiling.release src/main.cpp
+[100%]: linking.release libappdemo.so
+[100%]: generating.qt.app appdemo.apk
+</code></pre>
+<p>然后安装到设备：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake install
+installing appdemo ...
+installing build/android/release/appdemo.apk ..
+Success
+install ok!👌
+</code></pre>
+<h3 id="%E7%9B%AE%E5%89%8D%E6%94%AF%E6%8C%81%E7%9A%84-Qt-SDK">目前支持的 Qt SDK</h3>
+<h4 id="%E6%9D%A5%E8%87%AA-Qt-%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E7%9A%84-SDK-%E5%AE%89%E8%A3%85%E5%8C%85">来自 Qt 官方提供的 SDK 安装包</h4>
+<p>在 macos 上通常能自动探测到，但是也可以手动指定 Qt SDK 路径。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --qt=[qt sdk path]
+</code></pre>
+<h4 id="%E6%9D%A5%E8%87%AA-Ubuntu-Apt-%E5%AE%89%E8%A3%85%E5%8C%85">来自 Ubuntu Apt 安装包</h4>
+<p>使用 apt 安装完 Qt SDK，xmake 也能够自动检测到。</p>
+
+<pre class="language-bash"><code class="language-bash">$ sudo apt install -y qtcreator qtbase5-dev
+$ xmake
+</code></pre>
+<h4 id="%E6%9D%A5%E8%87%AA-msys2/pacman-%E7%9A%84-Qt-Mingw-%E5%AE%89%E8%A3%85%E5%8C%85">来自 msys2/pacman 的 Qt Mingw 安装包</h4>
+<p>xmake 也支持从 pacman 安装的 Qt Mingw SDK</p>
+
+<pre class="language-bash"><code class="language-bash">$ pacman -S mingw-w64-x86_64-qt5 mingw-w64-x86_64-qt-creator
+$ xmake
+</code></pre>
+<h4 id="%E6%9D%A5%E8%87%AA-aqtinstall-%E8%84%9A%E6%9C%AC%E7%9A%84-Qt-SDK-%E5%8C%85">来自 aqtinstall 脚本的 Qt SDK 包</h4>
+<p><a href="https://github.com/miurahr/aqtinstall"  target="_blank">aqtinstall</a> 安装的 Qt SDK 是完全基于官方 SDK 结构的，所以 xmake 也完全支持。</p>
+<p>但是，通常需要自己指定 SDK 路径。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --qt=[Qt SDK]
+</code></pre>
+<h4 id="%E8%B7%A8%E5%B9%B3%E5%8F%B0-Qt-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">跨平台 Qt 交叉编译</h4>
+<p>对于跨平台 Qt 开发，xmake 支持为主机工具和目标平台使用单独的 SDK。这在为不同于开发机器的平台构建 Qt 应用程序时特别有用。</p>
+<p><code>--qt_host</code> 选项允许您指定与构建机器兼容的 Qt 工具的位置，而 <code>--qt</code> 指向目标平台的 SDK：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --qt=[target Qt sdk] --qt_host=[host Qt sdk]
+</code></pre>
+<p><strong>重要注意事项</strong>：</p>
+<ul>
+<li>确保主机和目标 Qt 版本匹配，否则可能会导致构建问题。</li>
+<li>本机部署工具（如 <code>windeployqt</code> 和 <code>macdeployqt</code>）必须在各自的平台上运行，因此跨平台任务（如 <code>xmake install</code>）可能会失败。</li>
+</ul>
+<h4 id="%E6%9D%A5%E8%87%AA-xmake-repo-%E4%BB%93%E5%BA%93%E7%9A%84-Qt-%E5%8C%85">来自 xmake-repo 仓库的 Qt 包</h4>
+<p>xmake 现在官方提供了 Qt5 SDK 的各种模块包，可以自动集成使用，无需任何手动安装。</p>
+<p>只需要配置集成包就行了，xmake 会自动处理 Qt 的安装集成，并且自动编译项目。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;qt5widgets&quot;)
+
+target(&quot;test&quot;, function()
+    add_rules(&quot;qt.widgetapp&quot;)
+    add_packages(&quot;qt5widgets&quot;)
+
+    add_headerfiles(&quot;src/*.h&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/mainwindow.ui&quot;)
+    -- add files with Q_OBJECT meta (only for qt.moc)
+    add_files(&quot;src/mainwindow.h&quot;)
+end)
+</code></pre>
+<p>除了 <code>qt5widgets</code> 包，仓库还提供了 <code>qt5gui</code>, <code>qt5network</code> 等包，可以使用。</p>
+<p>配置完，只需要执行：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+</code></pre>
+<h4 id="%E6%9D%A5%E8%87%AA-vcpkg/conan-%E7%9A%84-Qt-%E5%8C%85">来自 vcpkg/conan 的 Qt 包</h4>
+<p>暂时还没时间支持，请尽量使用上面的方式集成 Qt SDK。</p>
+<h2 id="umdf-%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">umdf 驱动程序</h2>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;echo&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.umdf&quot;)
+    add_files(&quot;driver/*.c&quot;)
+    add_files(&quot;driver/*.inx&quot;)
+    add_includedirs(&quot;exe&quot;)
+end)
+
+target(&quot;app&quot;, function()
+    add_rules(&quot;wdk.binary&quot;, &quot;wdk.env.umdf&quot;)
+    add_files(&quot;exe/*.cpp&quot;)
+end)
+</code></pre>
+<h3 id="wdm-%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F">wdm 驱动程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;kcs&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    add_values(&quot;wdk.man.flags&quot;, &quot;-prefix Kcs&quot;)
+    add_values(&quot;wdk.man.resource&quot;, &quot;kcsCounters.rc&quot;)
+    add_values(&quot;wdk.man.header&quot;, &quot;kcsCounters.h&quot;)
+    add_values(&quot;wdk.man.counter_header&quot;, &quot;kcsCounters_counters.h&quot;)
+    add_files(&quot;*.c&quot;, &quot;*.rc&quot;, &quot;*.man&quot;)
+end)
+</code></pre>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;msdsm&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    add_values(&quot;wdk.tracewpp.flags&quot;, &quot;-func:TracePrint((LEVEL,FLAGS,MSG,...))&quot;)
+    add_files(&quot;*.c&quot;, {rule = &quot;wdk.tracewpp&quot;})
+    add_files(&quot;*.rc&quot;, &quot;*.inf&quot;)
+    add_files(&quot;*.mof|msdsm.mof&quot;)
+    add_files(&quot;msdsm.mof&quot;, {values = {wdk_mof_header = &quot;msdsmwmi.h&quot;}})
+end)
+</code></pre>
+<h3 id="%E7%94%9F%E6%88%90%E9%A9%B1%E5%8A%A8%E5%8C%85">生成驱动包</h3>
+<p>可以通过以下命令生成 .cab 驱动包：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake [p|package]
+$ xmake [p|package] -o outputdir
+</code></pre>
+<p>输出的目录结构如下：</p>
+
+<pre class="language-none"><code class="language-none">  - drivers
+    - sampledsm
+       - debug/x86/sampledsm.cab
+       - release/x64/sampledsm.cab
+       - debug/x86/sampledsm.cab
+       - release/x64/sampledsm.cab
+</code></pre>
+<h3 id="%E9%A9%B1%E5%8A%A8%E7%AD%BE%E5%90%8D">驱动签名</h3>
+<p>默认编译禁用签名，可以通过 <code>set_values(&quot;wdk.sign.mode&quot;, ...)</code> 设置签名模式来启用签名。</p>
+<h4 id="%E6%B5%8B%E8%AF%95%E7%AD%BE%E5%90%8D">测试签名</h4>
+<p>测试签名一般本机调试时候用，可以使用 xmake 自带的 test 证书来进行签名，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;msdsm&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    set_values(&quot;wdk.sign.mode&quot;, &quot;test&quot;)
+end)
+</code></pre>
+<p>不过这种情况下，需要用户手动在管理员模式下，执行一遍：<code>$xmake l utils.wdk.testcert install</code>，来生成和注册 test 证书到本机环境。<br />
+这个只需要执行一次就行了，后续就可以正常编译和签名了。</p>
+<p>当然也可以使用本机已有的有效证书去签名。</p>
+<p>从 sha1 来选择合适的证书进行签名：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;msdsm&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    set_values(&quot;wdk.sign.mode&quot;, &quot;test&quot;)
+    set_values(&quot;wdk.sign.thumbprint&quot;, &quot;032122545DCAA6167B1ADBE5F7FDF07AE2234AAA&quot;)
+end)
+</code></pre>
+<p>从 store/company 来选择合适的证书进行签名：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;msdsm&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    set_values(&quot;wdk.sign.mode&quot;, &quot;test&quot;)
+    set_values(&quot;wdk.sign.store&quot;, &quot;PrivateCertStore&quot;)
+    set_values(&quot;wdk.sign.company&quot;, &quot;tboox.org(test)&quot;)
+end)
+</code></pre>
+<h4 id="%E6%AD%A3%E5%BC%8F%E7%AD%BE%E5%90%8D">正式签名</h4>
+<p>通过指定对应的正式签名证书文件进行签名：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;msdsm&quot;, function()
+    add_rules(&quot;wdk.driver&quot;, &quot;wdk.env.wdm&quot;)
+    set_values(&quot;wdk.sign.mode&quot;, &quot;release&quot;)
+    set_values(&quot;wdk.sign.company&quot;, &quot;xxxx&quot;)
+    set_values(&quot;wdk.sign.certfile&quot;, path.join(os.projectdir(), &quot;xxxx.cer&quot;))
+end)
+</code></pre>
+<h3 id="%E7%94%9F%E6%88%90%E4%BD%8E%E7%89%88%E6%9C%AC%E9%A9%B1%E5%8A%A8">生成低版本驱动</h3>
+<p>如果想在 wdk10 环境编译生成 win7, win8 等低版本系统支持的驱动，可以通过设置 <code>wdk.env.winver</code> 来切换系统版本：</p>
+
+<pre class="language-lua"><code class="language-lua">set_values(&quot;wdk.env.winver&quot;, &quot;win10&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win10_rs3&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win81&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win8&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win7&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win7_sp1&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win7_sp2&quot;)
+set_values(&quot;wdk.env.winver&quot;, &quot;win7_sp3&quot;)
+</code></pre>
+<p>我们也可以手动指定编译的目标程序支持的 windows 版本：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --wdk_winver=[win10_rs3|win8|win7|win7_sp1]
+$ xmake
+</code></pre>
+<h2 id="iOS/MacOS-%E7%A8%8B%E5%BA%8F">iOS/MacOS 程序</h2>
+<h3 id="App-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">App 应用程序</h3>
+<p>用于生成 <code>*.app/*.ipa</code> 应用程序，同时支持 iOS/MacOS。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.application&quot;)
+    add_files(&quot;src/*.m&quot;, &quot;src/**.storyboard&quot;, &quot;src/*.xcassets&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>可以支持直接添加 <code>*.metal</code> 文件，xmake 会自动生成 default.metallib 提供给应用程序加载使用。</p>
+</blockquote>
+<h4 id="%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B">创建工程</h4>
+<p>我们也可以通过模板工程快速创建：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t xcode.macapp -l objc test
+$ xmake create -t xcode.iosapp -l objc test
+</code></pre>
+<h4 id="%E7%BC%96%E8%AF%91">编译</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p [iphoneos|macosx]
+$ xmake
+[ 18%]: compiling.xcode.release src/Assets.xcassets
+[ 27%]: processing.xcode.release src/Info.plist
+[ 72%]: compiling.xcode.release src/Base.lproj/Main.storyboard
+[ 81%]: compiling.xcode.release src/Base.lproj/LaunchScreen.storyboard
+[ 45%]: cache compiling.release src/ViewController.m
+[ 63%]: cache compiling.release src/AppDelegate.m
+[ 54%]: cache compiling.release src/SceneDelegate.m
+[ 36%]: cache compiling.release src/main.m
+[ 90%]: linking.release test
+[100%]: generating.xcode.release test.app
+[100%]: build ok!
+</code></pre>
+<h4 id="%E9%85%8D%E7%BD%AE%E7%AD%BE%E5%90%8D">配置签名</h4>
+<p>对于 iOS 程序，默认会检测系统先用可用签名来签名 app，当然我们也可以手动指定其他签名证书：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p iphoneos --xcode_codesign_identity='Apple Development: xxx@gmail.com (T3NA4MRVPU)' --xcode_mobile_provision='iOS Team Provisioning Profile: org.tboox.test --xcode_bundle_identifier=org.tboox.test'
+$ xmake
+</code></pre>
+<p>如果每次这么配置签名觉得繁琐的话，可以设置到 <code>xmake global</code> 全局配置中，也可以在 xmake.lua 中对每个 target 单独设置：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.application&quot;)
+    add_files(&quot;src/*.m&quot;, &quot;src/**.storyboard&quot;, &quot;src/*.xcassets&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+    add_values(&quot;xcode.bundle_identifier&quot;, &quot;org.tboox.test&quot;)
+    add_values(&quot;xcode.codesign_identity&quot;, &quot;Apple Development: xxx@gmail.com (T3NA4MRVPU)&quot;)
+    add_values(&quot;xcode.mobile_provision&quot;, &quot;iOS Team Provisioning Profile: org.tboox.test&quot;)
+end)
+</code></pre>
+<p>那如何知道我们需要的签名配置呢？一种就是在 xcode 里面查看，另外 xmake 也提供了一些辅助工具可以 dump 出当前可用的所有签名配置：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l private.tools.codesign.dump
+==================================== codesign identities ====================================
+{
+  &quot;Apple Development: waruqi@gmail.com (T3NA4MRVPU)&quot; = &quot;AF73C231A0C35335B72761BD3759694739D34EB1&quot;
+}
+
+===================================== mobile provisions =====================================
+{
+  &quot;iOS Team Provisioning Profile: org.xmake.test&quot; = &quot;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;AppIDName&lt;/key&gt;
+    &lt;string&gt;XC org xmake test5&lt;/string&gt;
+    &lt;key&gt;ApplicationIdentifierPrefix&lt;/key&gt;
+    &lt;array&gt;
+    &lt;string&gt;43AAQM58X3&lt;/string&gt;
+...
+</code></pre>
+<p>我们也提供了其他辅助工具来对已有的 ipa/app 程序进行重签名，例如：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l utils.ipa.resign test.ipa|test.app [codesign_identity] [mobile_provision] [bundle_identifier]
+</code></pre>
+<p>其中，后面的签名参数都是可选的，如果没设置，那么默认会探测使用一个有效的签名：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l utils.ipa.resign test.ipa
+$ xmake l utils.ipa.resign test.app &quot;Apple Development: cat@gmail.com (T3NA4MRVPU)&quot;
+$ xmake l utils.ipa.resign test.ipa &quot;Apple Development: cat@gmail.com (T3NA4MRVPU)&quot; iOS Team Provisioning Profile: org.xmake.test&quot; org.xmake.test
+</code></pre>
+<h4 id="%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F">运行应用程序</h4>
+<p>目前仅支持运行macos程序：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake run
+</code></pre>
+<p>效果如下：</p>
+<p><img src="/xmake-teedoc/assets/img/guide/macapp.png" alt="" /></p>
+<h4 id="%E7%94%9F%E6%88%90%E7%A8%8B%E5%BA%8F%E5%8C%85">生成程序包</h4>
+<p>如果是 iOS 程序会生成 ipa 安装包，如果是 macos 会生成 dmg （dmg 包生成暂时还在开发中）。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake package
+output: build/iphoneos/release/arm64/test.ipa
+package ok!
+</code></pre>
+<p>我们也提供了辅助工具，来对指定 app 程序进行打包：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l utils.ipa.package test.app output.ipa [iconfile.png]
+</code></pre>
+<h4 id="%E5%AE%89%E8%A3%85">安装</h4>
+<p>如果是 iOS 程序会安装 ipa 到设备，如果是 macos 会安装 app 到 /Applications 目录。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake install
+</code></pre>
+<p>我们也提供了辅助工具，来对指定ipa/app程序安装到设备：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l utils.ipa.install test.app
+$ xmake l utils.ipa.install test.ipa
+</code></pre>
+<h4 id="%E5%8D%B8%E8%BD%BD">卸载</h4>
+<blockquote>
+<p>目前仅支持 macos 程序卸载</p>
+</blockquote>
+
+<pre class="language-bash"><code class="language-bash">$ xmake uninstall
+</code></pre>
+<h3 id="Framework-%E5%BA%93%E7%A8%8B%E5%BA%8F">Framework 库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.framework&quot;)
+    add_files(&quot;src/*.m&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<p>我们也可以通过模板工程快速创建：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t xcode.framework -l objc test
+</code></pre>
+<p>另外，xmake 还提供了带有 framework 库使用的完整 iosapp/macapp 空工程模板，可以完整体验 framework 的编译，依赖使用以及集成到 app 应用程序中。</p>
+<p>同时，如果我们开启了模拟器，xmake 可以支持直接 <code>xmake install</code> 和 <code>xmake run</code> 将 app 安装到模拟器并加载运行。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t xcode.iosapp_with_framework -l objc testapp
+$ cd testapp
+$ xmake f -p iphoneos -a x86_64
+$ xmake
+$ xmake install
+$ xmake run
+</code></pre>
+<h3 id="Bundle%E7%A8%8B%E5%BA%8F">Bundle程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.bundle&quot;)
+    add_files(&quot;src/*.m&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<p>我们也可以通过模板工程快速创建：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -t xcode.bundle -l objc test
+</code></pre>
+<h2 id="Protobuf%E7%A8%8B%E5%BA%8F">Protobuf程序</h2>
+<h3 id="%E4%BD%BF%E7%94%A8c%E5%BA%93">使用c库</h3>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;protobuf-c&quot;)
+
+target(&quot;console_c&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_packages(&quot;protobuf-c&quot;)
+    add_rules(&quot;protobuf.c&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;src/*.proto&quot;)
+end)
+</code></pre>
+<p>我们还可以设置 <code>proto_public = true</code> 来导出 proto 的头文件搜索目录，开放给其他父 target 继承使用。</p>
+
+<pre class="language-lua"><code class="language-lua">    add_packages(&quot;protobuf-c&quot;, {public = true})
+    add_files(&quot;src/**.proto&quot;, {proto_public = true})
+</code></pre>
+<p>注：由于 protobuf 生成的头文件引用了 protobuf-c 包的头文件，因此，我们也需要将包的头文件标记为 <code>{public = true}</code> 对外导出它。</p>
+<h3 id="%E4%BD%BF%E7%94%A8c%2B%2B%E5%BA%93">使用c++库</h3>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;protobuf-cpp&quot;)
+
+target(&quot;console_c++&quot;, function()
+    set_kind(&quot;binary&quot;)
+    set_languages(&quot;c++11&quot;)
+    add_packages(&quot;protobuf-cpp&quot;)
+    add_rules(&quot;protobuf.cpp&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/*.proto&quot;)
+end)
+</code></pre>
+<p>我们还可以设置 <code>proto_public = true</code> 来导出 proto 的头文件搜索目录，开放给其他父 target 继承使用。</p>
+
+<pre class="language-lua"><code class="language-lua">    add_packages(&quot;protobuf-cpp&quot;, {public = true})
+    add_files(&quot;src/**.proto&quot;, {proto_public = true})
+</code></pre>
+<p>注：由于 protobuf 生成的头文件引用了 protobuf-cpp 包的头文件，因此，我们也需要将包的头文件标记为 <code>{public = true}</code> 对外导出它。</p>
+<h2 id="Cuda%E7%A8%8B%E5%BA%8F">Cuda程序</h2>
+<p>创建一个空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -P test -l cuda
+$ cd test
+$ xmake
+</code></pre>
+
+<pre class="language-lua"><code class="language-lua">-- define target
+target(&quot;cuda_console&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cu&quot;)
+    -- generate SASS code for SM architecture of current host
+    add_cugencodes(&quot;native&quot;)
+    -- generate PTX code for the virtual architecture to guarantee compatibility
+    add_cugencodes(&quot;compute_30&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>默认构建会启用 device-link。（参见 <a href="https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/"  target="_blank">Separate Compilation and Linking of CUDA C++ Device Code</a>）</p>
+</blockquote>
+<p>如果要显式禁用 device-link，可以通过 <code>set_policy(&quot;build.cuda.devlink&quot;, false)</code> 来设置。</p>
+<blockquote>
+<p>cuda 源文件中的 device 函数需要被 device-link 且只 device-link 一次。在 <code>shared</code> 或 <code>binary</code> 的 target 上 xmake 会自动进行 device-link ，这时它们依赖的 <code>static</code> target 也会同时被 device-link ，因此默认情况下 <code>static</code> target 不会被 device-link。然而，如果最终的 <code>shared</code> 或 <code>binary</code> 的 target 不包含任何 cuda 源文件，则不会发生 device-link 阶段，导致出现 undefined reference 错误。这种情况下，需要手动为 <code>static</code> target 指定 <code>add_values(&quot;cuda.build.devlink&quot;, true)</code>.</p>
+</blockquote>
+<p>默认会自动探测 cuda 环境，当然也可以指定 Cuda SDK 环境目录，或者指定 cuda 版本（此时将在默认安装目录进行查找）：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --cuda=/usr/local/cuda-9.1/
+$ xmake f --cuda=9.1
+$ xmake
+</code></pre>
+<p>更多详情可以参考：<a href="https://github.com/xmake-io/xmake/issues/158"  target="_blank">#158</a></p>
+<h2 id="Lex-%26amp%3B-Yacc%E7%A8%8B%E5%BA%8F">Lex &amp; Yacc程序</h2>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;calc&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;lex&quot;, &quot;yacc&quot;)
+    add_files(&quot;src/*.l&quot;, &quot;src/*.y&quot;)
+end)
+</code></pre>
+<h2 id="OpenMP-%E7%A8%8B%E5%BA%8F">OpenMP 程序</h2>
+<p>我们不需要额外配置 rules，仅仅通过一个通用的 openmp 包就可以实现相同的效果。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;openmp&quot;)
+target(&quot;loop&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;openmp&quot;)
+end)
+</code></pre>
+<h2 id="Fortran-%E7%A8%8B%E5%BA%8F">Fortran 程序</h2>
+<p>我们可以通过下面的命令，快速创建一个基于 fortran 的空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l fortran -t console test
+</code></pre>
+<p>它的xmake.lua内容如下：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.f90&quot;)
+end)
+</code></pre>
+<p>更多代码例子可以到这里查看：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/fortran"  target="_blank">Fortran Examples</a></p>
+<h2 id="Go-%E7%A8%8B%E5%BA%8F">Go 程序</h2>
+<p>xmake 也支持 go 程序的构建，也提供了空工程的创建命令支持:</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l go -t console test
+</code></pre>
+<p>xmake.lua 内容如下:</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.go&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/go"  target="_blank">Go Examples</a></p>
+<h2 id="Dlang-%E7%A8%8B%E5%BA%8F">Dlang 程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l dlang -t console test
+</code></pre>
+<p>xmake.lua 内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.d&quot;)
+end)
+</code></pre>
+<p>xmake 也提供对 dub 包管理的支持，可以快速集成 dlang 的第三方依赖包：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;dub::log 0.4.3&quot;, {alias = &quot;log&quot;})
+add_requires(&quot;dub::dateparser&quot;, {alias = &quot;dateparser&quot;})
+add_requires(&quot;dub::emsi_containers&quot;, {alias = &quot;emsi_containers&quot;})
+add_requires(&quot;dub::stdx-allocator&quot;, {alias = &quot;stdx-allocator&quot;})
+add_requires(&quot;dub::mir-core&quot;, {alias = &quot;mir-core&quot;})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.d&quot;)
+    add_packages(&quot;log&quot;, &quot;dateparser&quot;, &quot;emsi_containers&quot;, &quot;stdx-allocator&quot;, &quot;mir-core&quot;)
+end)
+</code></pre>
+<p>不过还有一些不完善的地方，比如目前必须手动配置所有级联依赖包，会稍微繁琐些，后续有待改进。</p>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/dlang"  target="_blank">Dlang Examples</a></p>
+<h2 id="Rust%E7%A8%8B%E5%BA%8F">Rust程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l rust -t console test
+</code></pre>
+<p>xmake.lua 内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.rs&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/rust"  target="_blank">Rust Examples</a></p>
+<h3 id="%E6%B7%BB%E5%8A%A0-Cargo-%E5%8C%85%E4%BE%9D%E8%B5%96">添加 Cargo 包依赖</h3>
+<p>例子: <a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cargo_deps"  target="_blank">https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cargo_deps</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;cargo::base64 0.13.0&quot;)
+add_requires(&quot;cargo::flate2 1.0.17&quot;, {configs = {features = &quot;zlib&quot;}})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.rs&quot;)
+    add_packages(&quot;cargo::base64&quot;, &quot;cargo::flate2&quot;)
+end)
+</code></pre>
+<h3 id="%E9%9B%86%E6%88%90-Cargo.toml-%E7%9A%84%E4%BE%9D%E8%B5%96%E5%8C%85">集成 Cargo.toml 的依赖包</h3>
+<p>上面直接使用 <code>add_requires(&quot;cargo::base64 0.13.0&quot;)</code> 的方式集成依赖，会有一个问题：</p>
+<p>如果依赖很多，并且有几个依赖都共同依赖了相同的子依赖，那么会出现重定义问题，因此如果我们使用完整的 Cargo.toml 去管理依赖就不会存在这个问题。</p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;cargo::test&quot;, {configs = {cargo_toml = path.join(os.projectdir(), &quot;Cargo.toml&quot;)}})
+
+target(&quot;test&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.rs&quot;)
+    add_packages(&quot;cargo::test&quot;)
+</code></pre>
+<p>完整例子见：<a href="https://github.com/xmake-io/xmake/blob/dev/tests/projects/rust/cargo_deps_with_toml/xmake.lua"  target="_blank">cargo_deps_with_toml</a></p>
+<h3 id="%E4%BD%BF%E7%94%A8-cxxbridge-%E5%9C%A8-c%2B%2B-%E4%B8%AD%E8%B0%83%E7%94%A8-rust">使用 cxxbridge 在 c++ 中调用 rust</h3>
+<p>例子: <a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cxx_call_rust_library"  target="_blank">https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cxx_call_rust_library</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;cargo::cxx 1.0&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/foo.rs&quot;)
+    set_values(&quot;rust.cratetype&quot;, &quot;staticlib&quot;)
+    add_packages(&quot;cargo::cxx&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;rust.cxxbridge&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.cc&quot;)
+    add_files(&quot;src/bridge.rsx&quot;)
+end)
+</code></pre>
+<p>foo.rs</p>
+
+<pre class="language-rust"><code class="language-rust">#[cxx::bridge]
+mod foo {
+    extern &quot;Rust&quot; {
+        fn add(a: i32, b: i32) -&gt; i32;
+    }
+}
+
+pub fn add(a: i32, b: i32) -&gt; i32 {
+    return a + b;
+}
+</code></pre>
+<p>我们还需要在 c++ 项目中添加桥接文件 bridge.rsx</p>
+
+<pre class="language-rust"><code class="language-rust">#[cxx::bridge]
+mod foo {
+    extern &quot;Rust&quot; {
+        fn add(a: i32, b: i32) -&gt; i32;
+    }
+}
+</code></pre>
+<p>main.cc</p>
+
+<pre class="language-c++"><code class="language-c++">#include &lt;stdio.h&gt;
+#include &quot;bridge.rs.h&quot;
+
+int main(int argc, char** argv) {
+    printf(&quot;add(1, 2) == %d\n&quot;, add(1, 2));
+    return 0;
+}
+</code></pre>
+<h3 id="%E5%9C%A8-Rust-%E4%B8%AD%E8%B0%83%E7%94%A8-C%2B%2B">在 Rust 中调用 C++</h3>
+<p>例子: <a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/rust_call_cxx_library"  target="_blank">https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/rust_call_cxx_library</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/foo.cc&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.rs&quot;)
+end)
+</code></pre>
+<p>main.rs</p>
+
+<pre class="language-rust"><code class="language-rust">extern &quot;C&quot; {
+    fn add(a: i32, b: i32) -&gt; i32;
+}
+
+fn main() {
+    unsafe {
+        println!(&quot;add(1, 2) = {}&quot;, add(1, 2));
+    }
+}
+</code></pre>
+<p>foo.cc</p>
+
+<pre class="language-c++"><code class="language-c++">extern &quot;C&quot; int add(int a, int b) {
+    return a + b;
+}
+</code></pre>
+<h2 id="Swift-%E7%A8%8B%E5%BA%8F">Swift 程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l swift -t console test
+</code></pre>
+<p>xmake.lua内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.swift&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/swift"  target="_blank">Swift Examples</a></p>
+<h2 id="Objc-%E7%A8%8B%E5%BA%8F">Objc 程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l objc -t console test
+</code></pre>
+<p>xmake.lua 内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.m&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/objc++"  target="_blank">Objc Examples</a></p>
+<h2 id="Objc-%E7%A8%8B%E5%BA%8F">Objc 程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l objc -t console test
+</code></pre>
+<p>xmake.lua 内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.m&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/objc++"  target="_blank">Objc Examples</a></p>
+<h2 id="Zig-%E7%A8%8B%E5%BA%8F">Zig 程序</h2>
+<p>创建空工程：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake create -l zig -t console test
+</code></pre>
+<p>xmake.lua 内容：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.zig&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/zig"  target="_blank">Zig Examples</a></p>
+<h2 id="Linux-Bpf-%E7%A8%8B%E5%BA%8F">Linux Bpf 程序</h2>
+<p>xmake 支持 bpf 程序构建，同时支持 linux 以及 android 平台，能够自动拉取 llvm 和 android ndk 工具链。</p>
+<p>更多详情见：<a href="https://github.com/xmake-io/xmake/issues/1274"  target="_blank">#1274</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_rules(&quot;platform.linux.bpf&quot;)
+
+add_requires(&quot;linux-tools&quot;, {configs = {bpftool = true}})
+add_requires(&quot;libbpf&quot;)
+if is_plat(&quot;android&quot;) then
+    add_requires(&quot;ndk &gt;=22.x&quot;)
+    set_toolchains(&quot;@ndk&quot;, {sdkver = &quot;23&quot;})
+else
+    add_requires(&quot;llvm &gt;=10.x&quot;)
+    set_toolchains(&quot;@llvm&quot;)
+    add_requires(&quot;linux-headers&quot;)
+end
+
+target(&quot;minimal&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;linux-tools&quot;, &quot;linux-headers&quot;, &quot;libbpf&quot;)
+    set_license(&quot;GPL-2.0&quot;)
+end)
+</code></pre>
+<h2 id="Vala-%E7%A8%8B%E5%BA%8F">Vala 程序</h2>
+<p>xmake 支持构建 Vala 程序，我们需要应用 <code>add_rules(&quot;vala&quot;)</code> 规则，并且 glib 包是必须的。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1618"  target="_blank">#1618</a></p>
+<p><code>add_values(&quot;vala.packages&quot;)</code> 用于告诉 valac，项目需要哪些包，它会引入相关包的 vala api，但是包的依赖集成，还是需要通过 <code>add_requires(&quot;lua&quot;)</code> 下载集成。</p>
+<h3 id="%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F">控制台程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+
+add_requires(&quot;lua&quot;, &quot;glib&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;vala&quot;)
+    add_files(&quot;src/*.vala&quot;)
+    add_packages(&quot;lua&quot;, &quot;glib&quot;)
+    add_values(&quot;vala.packages&quot;, &quot;lua&quot;)
+end)
+</code></pre>
+<h3 id="%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">静态库程序</h3>
+<p>我们能够通过 <code>add_values(&quot;vala.header&quot;, &quot;mymath.h&quot;)</code> 设置导出的接口头文件名，通过 <code>add_values(&quot;vala.vapi&quot;, &quot;mymath-1.0.vapi&quot;)</code> 设置导出的 vapi 文件名。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+
+add_requires(&quot;glib&quot;)
+
+target(&quot;mymath&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_rules(&quot;vala&quot;)
+    add_files(&quot;src/mymath.vala&quot;)
+    add_values(&quot;vala.header&quot;, &quot;mymath.h&quot;)
+    add_values(&quot;vala.vapi&quot;, &quot;mymath-1.0.vapi&quot;)
+    add_packages(&quot;glib&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;mymath&quot;)
+    add_rules(&quot;vala&quot;)
+    add_files(&quot;src/main.vala&quot;)
+    add_packages(&quot;glib&quot;)
+end)
+</code></pre>
+<h3 id="%E5%8A%A8%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">动态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+
+add_requires(&quot;glib&quot;)
+
+target(&quot;mymath&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_rules(&quot;vala&quot;)
+    add_files(&quot;src/mymath.vala&quot;)
+    add_values(&quot;vala.header&quot;, &quot;mymath.h&quot;)
+    add_values(&quot;vala.vapi&quot;, &quot;mymath-1.0.vapi&quot;)
+    add_packages(&quot;glib&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;mymath&quot;)
+    add_rules(&quot;vala&quot;)
+    add_files(&quot;src/main.vala&quot;)
+    add_packages(&quot;glib&quot;)
+end)
+</code></pre>
+<p>更多例子：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/vala"  target="_blank">Vala examples</a></p>
+<h2 id="Pascal-%E7%A8%8B%E5%BA%8F">Pascal 程序</h2>
+<p>我们能够支持构建 Pascal 程序，相关 issues 见：<a href="https://github.com/xmake-io/xmake/issues/388"  target="_blank">#388</a></p>
+<h3 id="%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F">控制台程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.pas&quot;)
+end)
+</code></pre>
+<h3 id="%E5%8A%A8%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">动态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+target(&quot;foo&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_files(&quot;src/foo.pas&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.pas&quot;)
+end)
+</code></pre>
+<p>更多例子：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/pascal"  target="_blank">Pascal examples</a></p>
+<h2 id="Swig-%E6%A8%A1%E5%9D%97">Swig 模块</h2>
+<p>xmake 支持构建 Swig 模块，我们提供了 <code>swig.c</code> 和 <code>swig.cpp</code> 规则，分别对应支持生成 c/c++ 模块接口代码，配合 xmake 的包管理系统实现完全自动化的模块和依赖包整合。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1622"  target="_blank">#1622</a></p>
+<h3 id="Lua/C-%E6%A8%A1%E5%9D%97">Lua/C 模块</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;lua&quot;)
+
+target(&quot;example&quot;, function()
+    add_rules(&quot;swig.c&quot;, {moduletype = &quot;lua&quot;})
+    add_files(&quot;src/example.i&quot;, {swigflags = &quot;-no-old-metatable-bindings&quot;})
+    add_files(&quot;src/example.c&quot;)
+    add_packages(&quot;lua&quot;)
+end)
+</code></pre>
+<h3 id="Python/C-%E6%A8%A1%E5%9D%97">Python/C 模块</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;python 3.x&quot;)
+
+target(&quot;example&quot;, function()
+    add_rules(&quot;swig.c&quot;, {moduletype = &quot;python&quot;})
+    add_files(&quot;src/example.i&quot;, {scriptdir = &quot;share&quot;})
+    add_files(&quot;src/example.c&quot;)
+    add_packages(&quot;python&quot;)
+end)
+</code></pre>
+<h3 id="Python/C%2B%2B-%E6%A8%A1%E5%9D%97">Python/C++ 模块</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;python 3.x&quot;)
+
+target(&quot;example&quot;, function()
+    add_rules(&quot;swig.cpp&quot;, {moduletype = &quot;python&quot;})
+    add_files(&quot;src/example.i&quot;, {scriptdir = &quot;share&quot;})
+    add_files(&quot;src/example.cpp&quot;)
+    add_packages(&quot;python&quot;)
+end)
+</code></pre>
+<h3 id="Java/C-%E6%A8%A1%E5%9D%97">Java/C 模块</h3>
+<p><a href="https://github.com/xmake-io/xmake/blob/dev/tests/projects/swig/java_c"  target="_blank">完整例子</a></p>
+
+<pre class="language-lua"><code class="language-lua">-- make sure you config to an enviroment with jni.h
+-- for example: xmake f -c -p android
+
+target(&quot;example&quot;, function()
+    set_kind('shared')
+    -- set moduletype to java
+    add_rules(&quot;swig.c&quot;, {moduletype = &quot;java&quot;})
+    -- test jar build
+    -- add_rules(&quot;swig.c&quot;, {moduletype = &quot;java&quot; , buildjar = true})
+    -- use swigflags to provider package name and output path of java files
+    add_files(&quot;src/example.i&quot;, {swigflags = {
+        &quot;-package&quot;,
+        &quot;com.example&quot;,
+        &quot;-outdir&quot;,
+        &quot;build/java/com/example/&quot;
+    }})
+    add_files(&quot;src/example.c&quot;)
+    add_includedirs(&quot;src&quot;)
+    before_build(function()
+        -- ensure output path exists before running swig
+        os.mkdir(&quot;build/java/com/example/&quot;)
+    end)
+end)
+</code></pre>
+<p>我们也可以配置</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;swig.c&quot;, {moduletype = &quot;java&quot;, buildjar = true})
+</code></pre>
+<p>去同时构建 jar 包，方便直接使用。</p>
+<h2 id="C%2B%2B20-%E6%A8%A1%E5%9D%97">C++20 模块</h2>
+<h3 id="%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B">快速开始</h3>
+<p>xmake 采用 <code>.mpp</code> 作为默认的模块扩展名，但是也同时支持 <code>.ixx</code>, <code>.cppm</code>, <code>.mxx</code> 等扩展名。</p>
+<p>目前 xmake 已经完整支持 gcc11/clang/msvc 的 C++20 Modules 构建支持，并且能够自动分析模块间的依赖关系，实现最大化并行编译。</p>
+
+<pre class="language-lua"><code class="language-lua">set_languages(&quot;c++20&quot;)
+target(&quot;class&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;, &quot;src/*.mpp&quot;)
+end)
+</code></pre>
+<p>更多例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/c%2B%2B/modules"  target="_blank">C++ Modules</a></p>
+<h3 id="Cpp-Only-%E5%B7%A5%E7%A8%8B">Cpp-Only 工程</h3>
+<p>xmake 对 C++20 模块的实现进行了重构和升级，新增了对 Headerunits 的支持，我们可以在模块中引入 Stl 和 用户头文件模块。</p>
+<p>相关的补丁见：<a href="https://github.com/xmake-io/xmake/pull/2641"  target="_blank">#2641</a>。</p>
+<p>注：通常我们至少需要添加一个 <code>.mpp</code> 文件，才能开启 C++20 modules 编译，如果只有 cpp 文件，默认是不会开启模块编译的。</p>
+<p>但是，如果我们仅仅只是想在 cpp 文件中使用模块的 Headerunits 特性，比如引入一些 stl Headerunits 在 cpp 中使用，<br />
+那么我们也可以通过设置 <code>set_policy(&quot;build.c++.modules&quot;, true)</code> 来强行开启 C++ Modules 编译，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    set_languages(&quot;c++20&quot;)
+    set_policy(&quot;build.c++.modules&quot;, true)
+end)
+</code></pre>
+<h3 id="%E6%A8%A1%E5%9D%97%E7%9A%84%E5%88%86%E5%8F%91%E5%92%8C%E9%9B%86%E6%88%90">模块的分发和集成</h3>
+<h4 id="%E5%88%86%E5%8F%91-C%2B%2B-Modules-%E5%8C%85">分发 C++ Modules 包</h4>
+<p>我们先使用 xmake.lua 维护模块的构建，并通过指定 <code>{install = true}</code>，来告诉 xmake 哪些模块文件需要安装对外分发。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+set_languages(&quot;c++20&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;*.cpp&quot;)
+    add_files(&quot;*.mpp&quot;, { install = true })
+end)
+</code></pre>
+<p>然后，我们把它做成包，可以提交到 <a href="https://github.com/xmake-io/xmake-repo"  target="_blank">xmake-repo</a> 仓库，当然也可以直接做成本地包，或者私有仓库包。</p>
+<p>这里，为了方便测试验证，我们仅仅通过 <code>set_sourcedir</code> 将它做成本地包。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;foo&quot;, function()
+    set_sourcedir(path.join(os.scriptdir(), &quot;src&quot;))
+    on_install(function(package)
+        import(&quot;package.tools.xmake&quot;).install(package, {})
+    end)
+end)
+</code></pre>
+<h4 id="%E9%9B%86%E6%88%90-C%2B%2B-Modules-%E5%8C%85">集成 C++ Modules 包</h4>
+<p>然后，我们通过 <code>add_requires(&quot;foo&quot;)</code> 的包集成接口，对 C++ Modules 包进行快速集成使用。</p>
+<p>由于 foo 的模块包，我们放在私有仓库中定义，所以我们通过 <code>add_repositories(&quot;my-repo my-repo&quot;)</code> 引入自己的包仓库。</p>
+<p>如果，包已经提交到 xmake-repo 官方仓库，就不需要额外配置它。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+set_languages(&quot;c++20&quot;)
+
+add_repositories(&quot;my-repo my-repo&quot;)
+add_requires(&quot;foo&quot;, &quot;bar&quot;)
+
+target(&quot;packages&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;foo&quot;, &quot;bar&quot;)
+    set_policy(&quot;build.c++.modules&quot;, true)
+end)
+</code></pre>
+<p>集成好包后，我们就可以执行 <code>xmake</code> 命令，一键下载、编译、集成 C++ Modules 包来使用。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+checking for platform ... linux
+checking for architecture ... x86_64
+note: install or modify (m) these packages (pass -y to skip confirm)?
+in my-repo:
+  -&gt; foo latest
+  -&gt; bar latest
+please input: y (y/n/m)
+
+  =&gt; install bar latest .. ok
+  =&gt; install foo latest .. ok
+[  0%]: generating.module.deps src/main.cpp
+[  0%]: generating.module.deps /mnt/xmake/tests/projects/c++/modules/packages/build/.packages/b/bar/latest/4e0143c97b65425b855ad5fd03038b6a/modules/bar/bar.mpp
+[  0%]: generating.module.deps /mnt/xmake/tests/projects/c++/modules/packages/build/.packages/f/foo/latest/4e0143c97b65425b855ad5fd03038b6a/modules/foo/foo.mpp
+[ 14%]: compiling.module.release bar
+[ 14%]: compiling.module.release foo
+[ 57%]: compiling.release src/main.cpp
+[ 71%]: linking.release packages
+[100%]: build ok!
+</code></pre>
+<p>注：每个包安装后，会在包路径下，存储维护模块的 meta-info 文件，这是 <code>p2473r1.pdf</code> 中约定的一种格式规范，也许它不是最终的标准，但这并不影响我们现在去使用模块的分发。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ./build/.packages/f/foo/latest/4e0143c97b65425b855ad5fd03038b6a/modules/foo/foo.mpp.meta-info
+{&quot;_VENDOR_extension&quot;:{&quot;xmake&quot;:{&quot;name&quot;:&quot;foo&quot;,&quot;file&quot;:&quot;foo.mpp&quot;}},&quot;definitions&quot;:{},&quot;include_paths&quot;:{}}
+</code></pre>
+<p>完整的例子工程见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/c%2B%2B/modules/packages"  target="_blank">C++ Modules 包分发例子工程</a></p>
+<h3 id="%E6%94%AF%E6%8C%81-C%2B%2B23-Std-Modules">支持 C++23 Std Modules</h3>
+<p><a href="https://github.com/Arthapz"  target="_blank">Arthapz</a> 也帮忙改进了对 C++23 Std Modules 的支持。</p>
+<p>目前三个编译器对它的支持进展：</p>
+<h4 id="Clang">Clang</h4>
+<p>目前最新的 clang 似乎也还没完全支持 C++23 std modules，当前还是 draft patch 状态，<a href="https://reviews.llvm.org/D135507"  target="_blank">#D135507</a>。</p>
+<p>但是，Xmake 也对它进行了支持，如果大家想要尝鲜，可以自行合入这个 patch，然后使用 xmake 来测试。</p>
+<p>另外，低版本的 clang 也有对非标准的 std modules 做了实验性支持。</p>
+<p>我们还是可以在低版本 clang 中尝试性使用 xmake 来构建 std modules，尽管它可能还只是个玩具（会遇到很多问题）。</p>
+<p>相关讨论见：<a href="https://github.com/xmake-io/xmake/pull/3255"  target="_blank">#3255</a></p>
+<h4 id="Gcc">Gcc</h4>
+<p>目前还不支持。</p>
+<h2 id="%E5%90%88%E5%B9%B6%E9%9D%99%E6%80%81%E5%BA%93">合并静态库</h2>
+<h3 id="%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6-target-%E5%BA%93">自动合并 target 库</h3>
+<p>我们可以通过设置 <code>build.merge_archive</code> 策略，启用自动合并依赖的所有静态库，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;add&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/add.c&quot;)
+    add_files(&quot;src/subdir/add.c&quot;)
+end)
+
+target(&quot;sub&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/sub.c&quot;)
+    add_files(&quot;src/subdir/sub.c&quot;)
+end)
+
+target(&quot;mul&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_deps(&quot;add&quot;, &quot;sub&quot;)
+    add_files(&quot;src/mul.c&quot;)
+    set_policy(&quot;build.merge_archive&quot;, true)
+end)
+</code></pre>
+<p>mul 静态库自动合并了 add 和 sub 静态库，生成一个包含 add/sub 代码的完整 libmul.a 库。</p>
+<p>这个合并相对比较稳定完善，支持 ar 和 msvc/lib.exe，也支持交叉编译工具链生成的静态库合并，也支持带有重名 obj 文件的静态库。</p>
+<h3 id="%E5%90%88%E5%B9%B6%E6%8C%87%E5%AE%9A%E7%9A%84%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6">合并指定的静态库文件</h3>
+<p>如果自动合并不满足需求，我们也可以主动调用 <code>utils.archive.merge_archive</code> 模块在 <code>after_link</code> 阶段合并指定的静态库列表。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    after_link(function (target)
+        import(&quot;utils.archive.merge_staticlib&quot;)
+        merge_staticlib(target, &quot;libout.a&quot;, {&quot;libfoo.a&quot;, &quot;libbar.a&quot;})
+    end)
+end)
+</code></pre>
+<h3 id="%E4%BD%BF%E7%94%A8-add_files-%E5%90%88%E5%B9%B6%E9%9D%99%E6%80%81%E5%BA%93">使用 add_files 合并静态库</h3>
+<p>其实，我们之前的版本已经支持通过 <code>add_files(&quot;*.a&quot;)</code> 来合并静态库。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;*.a&quot;)
+    add_files(&quot;*.c&quot;)
+end)
+</code></pre>
+<p>但是它有一些缺陷：如果使用 ar，可能会存在 .obj 对象文件同名冲突导致合并失败，因此推荐使用上文介绍的合并方式，更加的稳定可靠，也更加的简单。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1638"  target="_blank">#1638</a></p>
+<h2 id="Nim-%E7%A8%8B%E5%BA%8F">Nim 程序</h2>
+<p>xmake 支持 Nimlang 项目，相关 issues 见：<a href="https://github.com/xmake-io/xmake/issues/1756"  target="_blank">#1756</a></p>
+<h3 id="%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%B7%A5%E7%A8%8B">创建空工程</h3>
+<p>我们可以使用 <code>xmake create</code> 命令创建空工程。</p>
+
+<pre class="language-bash"><code class="language-bash">xmake create -l nim -t console test
+xmake create -l nim -t static test
+xmake create -l nim -t shared test
+</code></pre>
+<h3 id="%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%A8%8B%E5%BA%8F">控制台程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.nim&quot;)
+end)
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash">$ xmake -v
+[ 33%]: linking.release test
+/usr/local/bin/nim c --opt:speed --nimcache:build/.gens/test/macosx/x86_64/release/nimcache -o:b
+uild/macosx/x86_64/release/test src/main.nim
+[100%]: build ok!
+</code></pre>
+<h3 id="%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">静态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/foo.nim&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.nim&quot;)
+end)
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash">$ xmake -v
+[ 33%]: linking.release libfoo.a
+/usr/local/bin/nim c --opt:speed --nimcache:build/.gens/foo/macosx/x86_64/release/nimcache --app
+:staticlib --noMain --passC:-DNimMain=NimMain_B6D5BD02 --passC:-DNimMainInner=NimMainInner_B6D5B
+D02 --passC:-DNimMainModule=NimMainModule_B6D5BD02 --passC:-DPreMain=PreMain_B6D5BD02 --passC:-D
+PreMainInner=PreMainInner_B6D5BD02 -o:build/macosx/x86_64/release/libfoo.a src/foo.nim
+[ 66%]: linking.release test
+/usr/local/bin/nim c --opt:speed --nimcache:build/.gens/test/macosx/x86_64/release/nimcache --pa
+ssL:-Lbuild/macosx/x86_64/release --passL:-lfoo -o:build/macosx/x86_64/release/test src/main.nim
+[100%]: build ok!
+</code></pre>
+<h3 id="%E5%8A%A8%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">动态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_files(&quot;src/foo.nim&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.nim&quot;)
+end)
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash">$ xmake -rv
+[ 33%]: linking.release libfoo.dylib
+/usr/local/bin/nim c --opt:speed --nimcache:build/.gens/foo/macosx/x86_64/release/nimcache --app
+:lib --noMain -o:build/macosx/x86_64/release/libfoo.dylib src/foo.nim
+[ 66%]: linking.release test
+/usr/local/bin/nim c --opt:speed --nimcache:build/.gens/test/macosx/x86_64/release/nimcache --pa
+ssL:-Lbuild/macosx/x86_64/release --passL:-lfoo -o:build/macosx/x86_64/release/test src/main.nim
+[100%]: build ok!
+</code></pre>
+<h3 id="C-%E4%BB%A3%E7%A0%81%E6%B7%B7%E5%90%88%E7%BC%96%E8%AF%91">C 代码混合编译</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/*.c&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;foo&quot;)
+    add_files(&quot;src/main.nim&quot;)
+end)
+</code></pre>
+<h3 id="Nimble-%E4%BE%9D%E8%B5%96%E5%8C%85%E9%9B%86%E6%88%90">Nimble 依赖包集成</h3>
+<p>完整例子见：<a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/nim/nimble_package"  target="_blank">Nimble Package Example</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;nimble::zip &gt;0.3&quot;)
+
+target(&quot;test, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.nim&quot;)
+    add_packages(&quot;nimble::zip&quot;)
+end)
+</code></pre>
+<p>main.nim</p>
+
+<pre class="language-nim"><code class="language-nim">import zip/zlib
+
+echo zlibVersion()
+</code></pre>
+<h3 id="Native-%E4%BE%9D%E8%B5%96%E5%8C%85%E9%9B%86%E6%88%90">Native 依赖包集成</h3>
+<p>完整例子见：<a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/nim/native_package"  target="_blank">Native Package Example</a></p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;zlib&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.nim&quot;)
+    add_packages(&quot;zlib&quot;)
+end)
+</code></pre>
+<p>main.nim</p>
+
+<pre class="language-nim"><code class="language-nim">proc zlibVersion(): cstring {.cdecl, importc}
+
+echo zlibVersion()
+</code></pre>
+<h2 id="Keil/MDK-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A8%8B%E5%BA%8F">Keil/MDK 嵌入式程序</h2>
+<p>相关例子工程：<a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/embed/mdk/hello"  target="_blank">Example</a></p>
+<p>xmake 会自动探测 Keil/MDK 安装的编译器，相关 issues <a href="https://github.com/xmake-io/xmake/issues/1753"  target="_blank">#1753</a>。</p>
+<p>使用 armcc 编译</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p cross -a cortex-m3 --toolchain=armcc -c
+$ xmake
+</code></pre>
+<p>使用 armclang 编译</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p cross -a cortex-m3 --toolchain=armclang -c
+$ xmake
+</code></pre>
+<h3 id="%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F">可执行程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;hello&quot;, function()
+    add_deps(&quot;foo&quot;)
+    add_rules(&quot;mdk.binary&quot;)
+    add_files(&quot;src/*.c&quot;, &quot;src/*.s&quot;)
+    add_includedirs(&quot;src/lib/cmsis&quot;)
+    set_runtimes(&quot;microlib&quot;)
+end)
+</code></pre>
+<p>需要注意的是，目前一些 mdk 程序都使用了 microlib 库运行时，它需要编译器加上 <code>__MICROLIB</code> 宏定义，链接器加上 <code>--library_type=microlib</code> 等各种配置。</p>
+<p>我们可以通过 <code>set_runtimes(&quot;microlib&quot;)</code> 直接设置到 microlib 运行时库，可以自动设置上所有相关选项。</p>
+<h3 id="%E9%9D%99%E6%80%81%E5%BA%93%E7%A8%8B%E5%BA%8F">静态库程序</h3>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;, function()
+    add_rules(&quot;mdk.static&quot;)
+    add_files(&quot;src/foo/*.c&quot;)
+    set_runtimes(&quot;microlib&quot;)
+end)
+</code></pre>
+<h2 id="Keil/C51-%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A8%8B%E5%BA%8F">Keil/C51 嵌入式程序</h2>
+<h3 id="%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F">可执行程序</h3>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;hello&quot;, function()
+    add_rules(&quot;c51.binary&quot;)
+    set_toolchains(&quot;c51&quot;)
+    add_files(&quot;src/main.c&quot;)
+end)
+</code></pre>
+<h2 id="Lua-%E6%A8%A1%E5%9D%97">Lua 模块</h2>
+<p>参考 <a href="https://github.com/xmake-io/luarocks-build-xmake"  target="_blank">https://github.com/xmake-io/luarocks-build-xmake</a><br />
+如果你的 lua 模块含有 C 代码，你可以使用 <a href="https://github.com/Neopallium/LuaNativeObjects"  target="_blank">LuaNativeObjects</a> 去从 lua 代码生成 C 代码。<br />
+参考<a href="https://github.com/Freed-Wu/rime.nvim/blob/main/xmake.lua"  target="_blank">例子</a>。</p>
+<h2 id="Nodejs-%E6%A8%A1%E5%9D%97">Nodejs 模块</h2>
+<p>参考<a href="https://github.com/tonyfettes/coc-rime/blob/master/xmake.lua"  target="_blank">例子</a>。</p>
+<h2 id="Linux-%E5%86%85%E6%A0%B8%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97">Linux 内核驱动模块</h2>
+<p>xmake 完整支持了 Linux 内核驱动模块的构建，这也许首个也是唯一一个支持编译 Linux 内核驱动的第三方构建工具了。</p>
+<h3 id="Hello-world-%E6%A8%A1%E5%9D%97">Hello world 模块</h3>
+<p>完整例子：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/linux/driver/hello"  target="_blank">Linux Kernel Driver Modules</a></p>
+<p>它的配置非常简单，只需要配置上支持模块的 linux-headers 包，然后应用 <code>platform.linux.module</code> 构建规则就行了。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;linux-headers&quot;, {configs = {driver_modules = true}})
+
+target(&quot;hello&quot;, function()
+    add_rules(&quot;platform.linux.module&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;linux-headers&quot;)
+    set_license(&quot;GPL-2.0&quot;)
+end)
+</code></pre>
+<p>然后直接执行 xmake 命令，一键编译，生成内核驱动模块 hello.ko。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+[ 20%]: cache compiling.release src/add.c
+[ 20%]: cache compiling.release src/hello.c
+[ 60%]: linking.release build/linux/x86_64/release/hello.ko
+[100%]: build ok!
+</code></pre>
+<p>我们也可以看完整构建命令参数。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake -v
+[ 20%]: cache compiling.release src/add.c
+/usr/bin/ccache /usr/bin/gcc -c -m64 -O2 -std=gnu89 -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated -I/usr/src/linux-headers-5.11.0-41-generic/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -DCONFIG_X86_X32_ABI -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/kconfig.h -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/compiler_types.h -nostdinc -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -mindirect-branch=thunk-extern -mindirect-branch-register -mrecord-mcount -fmacro-prefix-map=./= -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -fcf-protection=none -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-allow-store-data-races -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -DKBUILD_BASENAME=\&quot;add\&quot; -o build/.objs/hello/linux/x86_64/release/src/add.c.o src/add.c
+[ 20%]: cache compiling.release src/hello.c
+/usr/bin/ccache /usr/bin/gcc -c -m64 -O2 -std=gnu89 -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated -I/usr/src/linux-headers-5.11.0-41-generic/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -DCONFIG_X86_X32_ABI -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/kconfig.h -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/compiler_types.h -nostdinc -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -mindirect-branch=thunk-extern -mindirect-branch-register -mrecord-mcount -fmacro-prefix-map=./= -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -fcf-protection=none -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-allow-store-data-races -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -DKBUILD_BASENAME=\&quot;hello\&quot; -o build/.objs/hello/linux/x86_64/release/src/hello.c.o src/hello.c
+[ 60%]: linking.release build/linux/x86_64/release/hello.ko
+/usr/bin/ld -m elf_x86_64 -r -o build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/hello.ko.o build/.objs/hello/linux/x86_64/release/src/add.c.o build/.objs/hello/linux/x86_64/release/src/hello.c.o
+/usr/src/linux-headers-5.11.0-41-generic/scripts/mod/modpost -m -a -o build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/Module.symvers -e -N -T -
+WARNING: modpost: Symbol info of vmlinux is missing. Unresolved symbol check will be entirely skipped.
+/usr/bin/ccache /usr/bin/gcc -c -m64 -O2 -std=gnu89 -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated -I/usr/src/linux-headers-5.11.0-41-generic/include -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/arch/x86/include/generated/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/uapi -I/usr/src/linux-headers-5.11.0-41-generic/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -DCONFIG_X86_X32_ABI -isystem /usr/lib/gcc/x86_64-linux-gnu/10/include -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/kconfig.h -include /usr/src/linux-headers-5.11.0-41-generic/include/linux/compiler_types.h -nostdinc -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -mindirect-branch=thunk-extern -mindirect-branch-register -mrecord-mcount -fmacro-prefix-map=./= -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -fcf-protection=none -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-allow-store-data-races -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -o build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/hello.ko.mod.o build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/hello.ko.mod.c
+/usr/bin/ld -m elf_x86_64 -r --build-id=sha1 -T /usr/src/linux-headers-5.11.0-41-generic/scripts/module.lds -o build/linux/x86_64/release/hello.ko build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/hello.ko.o build/.objs/hello/linux/x86_64/release/build/linux/x86_64/release/hello.ko.mod.o
+
+</code></pre>
+<p>通过 <code>add_requires(&quot;linux-headers&quot;, {configs = {driver_modules = true}})</code> 配置包，xmake 会自动优先从系统中查找对应的 linux-headers 包。</p>
+<p>如果没找到，xmake 也会自动下载它，然后自动配置构建带有 driver modules 的内核源码后，使用它继续构建内核模块。</p>
+<h3 id="%E8%87%AA%E5%AE%9A%E4%B9%89-linux-headers-%E8%B7%AF%E5%BE%84">自定义 linux-headers 路径</h3>
+<p>有很多用户反馈，大多数情况下，linux 内核驱动构建都是基于定制版的 linux kernel，因此需要能够自定义配置 linux-headers 路径，而不是走远程依赖包模式。</p>
+<p>其实，我们通过自己重写 linux-headers 包，也是可以做到这一点的。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;linux-headers&quot;)
+    on_fetch(function (package, opt)
+        return {includedirs = &quot;/usr/src/linux-headers-5.0/include&quot;}
+    end)
+package_end()
+
+add_requires(&quot;linux-headers&quot;)
+
+target(&quot;test&quot;, function()
+    add_rules(&quot;platform.linux.module&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;linux-headers&quot;)
+end)
+</code></pre>
+<p>不过这样，也许还有点繁琐，因此我们支持更加方便的设置 linux-headers 路径。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;hello&quot;, function()
+    add_rules(&quot;platform.linux.module&quot;)
+    add_files(&quot;src/*.c&quot;)
+    set_values(&quot;linux.driver.linux-headers&quot;, &quot;/usr/src/linux-headers-5.11.0-41-generic&quot;)
+end)
+</code></pre>
+<p>我们也可以通过定义 option 选项，将 linux-headers 路径作为 <code>xmake f --linux-headers=/usr/src/linux-headers</code> 的方式传入。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;linux-headers&quot;, {showmenu = true, description = &quot;Set linux-headers path.&quot;})
+target(&quot;hello&quot;, function()
+    add_rules(&quot;platform.linux.module&quot;)
+    add_files(&quot;src/*.c&quot;)
+    set_values(&quot;linux.driver.linux-headers&quot;, &quot;$(linux-headers)&quot;)
+end)
+</code></pre>
+<p>更多详情见：<a href="https://github.com/xmake-io/xmake/issues/1923"  target="_blank">#1923</a></p>
+<h3 id="%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">交叉编译</h3>
+<p>我们也支持内核驱动模块的交叉编译，比如在 Linux x86_64 上使用交叉编译工具链来构建 Linux Arm/Arm64 的驱动模块。</p>
+<p>我们只需要准备好自己的交叉编译工具链，通过 <code>--sdk=</code> 指定它的根目录，然后配置切换到 <code>-p cross</code> 平台， 最后指定需要构建的架构 arm/arm64 即可。</p>
+<p>这里用到的交叉工具链，可以从这里下载: <a href="https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/"  target="_blank">Download toolchains</a></p>
+<p>更多，交叉编译配置文档，见：<a href="/xmake-teedoc/zh-cn/guide/configuration?id=common-cross-compilation-configuration"  >配置交叉编译</a></p>
+<blockquote>
+<p>目前仅仅支持 arm/arm64 交叉编译架构，后续会支持更多的平台架构。</p>
+</blockquote>
+<h4 id="%E6%9E%84%E5%BB%BA-Arm-%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97">构建 Arm 驱动模块</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p cross -a arm --sdk=/mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf -c
+$ xmake -v
+checking for arm-linux-gnueabihf-g++ ... /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++
+checking for the linker (ld) ... arm-linux-gnueabihf-g++
+checking for /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-g++ ... ok
+checking for flags (-fPIC) ... ok
+checking for /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc ... ok
+checking for flags (-fPIC) ... ok
+checking for flags (-O2) ... ok
+checking for ccache ... /usr/bin/ccache
+[ 20%]: cache compiling.release src/add.c
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -D__LINUX_ARM_ARCH__=6 -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -mbig-endian -mabi=aapcs-linux -mfpu=vfp -marm -march=armv6k -mtune=arm1136j-s -msoft-float -Uarm -DKBUILD_BASENAME=\&quot;add\&quot; -o build/.objs/hello/cross/arm/release/src/add.c.o src/add.c
+[ 20%]: cache compiling.release src/hello.c
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -D__LINUX_ARM_ARCH__=6 -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -mbig-endian -mabi=aapcs-linux -mfpu=vfp -marm -march=armv6k -mtune=arm1136j-s -msoft-float -Uarm -DKBUILD_BASENAME=\&quot;hello\&quot; -o build/.objs/hello/cross/arm/release/src/hello.c.o src/hello.c
+checking for flags (-MMD -MF) ... ok
+checking for flags (-fdiagnostics-color=always) ... ok
+[ 60%]: linking.release build/cross/arm/release/hello.ko
+/mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ld -EB -r -o build/.objs/hello/cross/arm/release/build/cross/arm/release/hello.ko.o build/.objs/hello/cross/arm/release/src/add.c.o build/.objs/hello/cross/arm/release/src/hello.c.o
+/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/scripts/mod/modpost -m -a -o build/.objs/hello/cross/arm/release/build/cross/arm/release/Module.symvers -e -N -T -
+WARNING: modpost: Symbol info of vmlinux is missing. Unresolved symbol check will be entirely skipped.
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/arch/arm/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -D__LINUX_ARM_ARCH__=6 -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/../lib/gcc/arm-linux-gnueabihf/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -mbig-endian -mabi=aapcs-linux -mfpu=vfp -marm -march=armv6k -mtune=arm1136j-s -msoft-float -Uarm -o build/.objs/hello/cross/arm/release/build/cross/arm/release/hello.ko.mod.o build/.objs/hello/cross/arm/release/build/cross/arm/release/hello.ko.mod.c
+/mnt/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ld -EB --be8 -r --build-id=sha1 -T /home/ruki/.xmake/packages/l/linux-headers/5.10.46/7695a30b7add4d3aa4685cbac6815805/scripts/module.lds -o build/cross/arm/release/hello.ko build/.objs/hello/cross/arm/release/build/cross/arm/release/hello.ko.o build/.objs/hello/cross/arm/release/build/cross/arm/release/hello.ko.mod.o
+[100%]: build ok!
+
+</code></pre>
+<h4 id="%E6%9E%84%E5%BB%BA-Arm64-%E9%A9%B1%E5%8A%A8%E6%A8%A1%E5%9D%97">构建 Arm64 驱动模块</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p cross -a arm64 --sdk=/mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu -c
+checking for aarch64-linux-gnu-g++ ... /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++
+checking for the linker (ld) ... aarch64-linux-gnu-g++
+checking for /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++ ... ok
+checking for flags (-fPIC) ... ok
+checking for /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc ... ok
+checking for flags (-fPIC) ... ok
+checking for flags (-O2) ... ok
+checking for ccache ... /usr/bin/ccache
+[ 20%]: cache compiling.release src/add.c
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -DKBUILD_BASENAME=\&quot;add\&quot; -o build/.objs/hello/cross/arm64/release/src/add.c.o src/add.c
+[ 20%]: cache compiling.release src/hello.c
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -DKBUILD_BASENAME=\&quot;hello\&quot; -o build/.objs/hello/cross/arm64/release/src/hello.c.o src/hello.c
+checking for flags (-MMD -MF) ... ok
+checking for flags (-fdiagnostics-color=always) ... ok
+[ 60%]: linking.release build/cross/arm64/release/hello.ko
+/mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ld -EL -maarch64elf -r -o build/.objs/hello/cross/arm64/release/build/cross/arm64/release/hello.ko.o build/.objs/hello/cross/arm64/release/src/add.c.o build/.objs/hello/cross/arm64/release/src/hello.c.o
+/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/scripts/mod/modpost -m -a -o build/.objs/hello/cross/arm64/release/build/cross/arm64/release/Module.symvers -e -N -T -
+WARNING: modpost: Symbol info of vmlinux is missing. Unresolved symbol check will be entirely skipped.
+/usr/bin/ccache /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc -c -O2 -std=gnu89 -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/arch/arm64/include/generated/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/uapi -I/home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/generated/uapi -D__KERNEL__ -DMODULE -DKBUILD_MODNAME=\&quot;hello\&quot; -isystem /mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/../lib/gcc/aarch64-linux-gnu/7.5.0/include -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/kconfig.h -include /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/include/linux/compiler_types.h -nostdinc -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -falign-jumps=1 -falign-loops=1 -fno-asynchronous-unwind-tables -fno-jump-tables -fno-delete-null-pointer-checks -fno-reorder-blocks -fno-ipa-cp-clone -fno-partial-inlining -fstack-protector-strong -fno-inline-functions-called-once -falign-functions=32 -fno-strict-overflow -fno-stack-check -fconserve-stack -o build/.objs/hello/cross/arm64/release/build/cross/arm64/release/hello.ko.mod.o build/.objs/hello/cross/arm64/release/build/cross/arm64/release/hello.ko.mod.c
+/mnt/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-ld -EL -maarch64elf -r --build-id=sha1 -T /home/ruki/.xmake/packages/l/linux-headers/5.10.46/8f80101835834bc2866f3a827836b5de/scripts/module.lds -o build/cross/arm64/release/hello.ko build/.objs/hello/cross/arm64/release/build/cross/arm64/release/hello.ko.o build/.objs/hello/cross/arm64/release/build/cross/arm64/release/hello.ko.mod.o
+[100%]: build ok!
+</code></pre>
+<h2 id="ASN.1-%E7%A8%8B%E5%BA%8F">ASN.1 程序</h2>
+<p>ASN.1 程序，需要借助 <a href="https://github.com/vlm/asn1c"  target="_blank">ASN.1 Compiler</a> 去生成相关的 .c 文件参与项目编译。</p>
+<p>而 Xmake 内置提供了 <code>add_rules(&quot;asn1c&quot;)</code> 规则去处理 <code>.c</code> 文件生成，<code>add_requires(&quot;asn1c&quot;)</code> 自动拉取集成 ASN.1 编译器工具。</p>
+<p>下面是一个基础的配置例子：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+add_requires(&quot;asn1c&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;src/*.asn1&quot;)
+    add_rules(&quot;asn1c&quot;)
+    add_packages(&quot;asn1c&quot;)
+end)
+</code></pre>
+<p>具体见 <a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/c/asn1c"  target="_blank">完整例子工程</a>。</p>
+<h2 id="Verilog-%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F">Verilog 仿真程序</h2>
+<h3 id="iVerilog-%E4%BB%BF%E7%9C%9F%E5%99%A8">iVerilog 仿真器</h3>
+<p>通过 <code>add_requires(&quot;iverilog&quot;)</code> 配置，我们能够自动拉取 iverilog 工具链包，然后使用 <code>set_toolchains(&quot;@iverilog&quot;)</code> 自动绑定工具链来编译工程。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;iverilog&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;iverilog.binary&quot;)
+    set_toolchains(&quot;@iverilog&quot;)
+    add_files(&quot;src/*.v&quot;)
+end)
+</code></pre>
+<h4 id="%E8%AE%BE%E7%BD%AE%E6%8A%BD%E8%B1%A1%E9%85%8D%E7%BD%AE">设置抽象配置</h4>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;iverilog&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;iverilog.binary&quot;)
+    set_toolchains(&quot;@iverilog&quot;)
+    add_files(&quot;src/*.v&quot;)
+    add_defines(&quot;TEST&quot;)
+    add_includedirs(&quot;inc&quot;)
+    set_languages(&quot;v1800-2009&quot;)
+end)
+</code></pre>
+<p>我们可以通过 <code>set_languages(&quot;v1800-2009&quot;)</code> 来设置切换 Verilog 的语言标准。</p>
+<p>目前支持的一些取值和映射关系如下：</p>
+
+<pre class="language-lua"><code class="language-lua">[&quot;v1364-1995&quot;] = &quot;-g1995&quot;
+[&quot;v1364-2001&quot;] = &quot;-g2001&quot;
+[&quot;v1364-2005&quot;] = &quot;-g2005&quot;
+[&quot;v1800-2005&quot;] = &quot;-g2005-sv&quot;
+[&quot;v1800-2009&quot;] = &quot;-g2009&quot;
+[&quot;v1800-2012&quot;] = &quot;-g2012&quot;
+</code></pre>
+<h4 id="%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-flags">设置自定义 flags</h4>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;iverilog&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;iverilog.binary&quot;)
+    set_toolchains(&quot;@iverilog&quot;)
+    add_files(&quot;src/*.v&quot;)
+    add_values(&quot;iverilogs.flags&quot;, &quot;-DTEST&quot;)
+end)
+</code></pre>
+<h4 id="%E6%9E%84%E5%BB%BA%E5%B7%A5%E7%A8%8B">构建工程</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+checking for iverilog ... iverilog
+checking for vvp ... vvp
+[ 50%]: linking.iverilog hello.vvp
+[100%]: build ok!
+</code></pre>
+<h4 id="%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F">运行程序</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake run
+hello world!
+LXT2 info: dumpfile hello.vcd opened for output.
+src/main.v:6: $finish called at 0 (1s)
+</code></pre>
+<p>更多完整例子：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/embed/iverilog"  target="_blank">iVerilog Examples</a></p>
+<h3 id="Verilator-%E4%BB%BF%E7%9C%9F%E5%99%A8">Verilator 仿真器</h3>
+<p>通过 <code>add_requires(&quot;verilator&quot;)</code> 配置，我们能够自动拉取 verilator 工具链包，然后使用 <code>set_toolchains(&quot;@verilator&quot;)</code> 自动绑定到工具链来编译工程。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;verilator&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;verilator.binary&quot;)
+    set_toolchains(&quot;@verilator&quot;)
+    add_files(&quot;src/*.v&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+end)
+</code></pre>
+<p>verilator 工程，我们需要一个额外的 <code>sim_main.cpp</code> 文件参与编译，作为程序的入口代码。</p>
+
+<pre class="language-none"><code class="language-none">#include &quot;hello.h&quot;
+#include &quot;verilated.h&quot;
+
+int main(int argc, char** argv) {
+    VerilatedContext* contextp = new VerilatedContext;
+    contextp-&gt;commandArgs(argc, argv);
+    hello* top = new hello{contextp};
+    while (!contextp-&gt;gotFinish()) { top-&gt;eval(); }
+    delete top;
+    delete contextp;
+    return 0;
+}
+</code></pre>
+<h4 id="%E8%AE%BE%E7%BD%AE%E6%8A%BD%E8%B1%A1%E9%85%8D%E7%BD%AE">设置抽象配置</h4>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;verilator&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;verilator.binary&quot;)
+    set_toolchains(&quot;@verilator&quot;)
+    add_files(&quot;src/*.v&quot;)
+    add_defines(&quot;TEST&quot;)
+    add_includedirs(&quot;inc&quot;)
+    set_languages(&quot;v1800-2009&quot;)
+end)
+</code></pre>
+<p>我们可以通过 <code>set_languages(&quot;v1800-2009&quot;)</code> 来设置切换 Verilog 的语言标准。</p>
+<p>目前支持的一些取值和映射关系如下：</p>
+
+<pre class="language-lua"><code class="language-lua">-- Verilog
+[&quot;v1364-1995&quot;] = &quot;+1364-1995ext+v&quot;,
+[&quot;v1364-2001&quot;] = &quot;+1364-2001ext+v&quot;,
+[&quot;v1364-2005&quot;] = &quot;+1364-2005ext+v&quot;,
+-- SystemVerilog
+[&quot;v1800-2005&quot;] = &quot;+1800-2005ext+v&quot;,
+[&quot;v1800-2009&quot;] = &quot;+1800-2009ext+v&quot;,
+[&quot;v1800-2012&quot;] = &quot;+1800-2012ext+v&quot;,
+[&quot;v1800-2017&quot;] = &quot;+1800-2017ext+v&quot;,
+</code></pre>
+<h4 id="%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89-flags">设置自定义 flags</h4>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;verilator&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;verilator.binary&quot;)
+    set_toolchains(&quot;@verilator&quot;)
+    add_files(&quot;src/*.v&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_values(&quot;verilator.flags&quot;, &quot;--trace&quot;, &quot;--timing&quot;)
+end)
+</code></pre>
+<h4 id="%E6%9E%84%E5%BB%BA%E5%B7%A5%E7%A8%8B">构建工程</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+[  0%]: compiling.verilog src/main.v
+[ 15%]: cache compiling.release /Users/ruki/.xmake/packages/v/verilator/2023.1.10/cd2268409c1d44799288c7759b3cbd56/share/verilator/include/verilated.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello___024root__Slow.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello___024root__DepSet_h9053a130__0__Slow.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello.cpp
+[ 15%]: cache compiling.release /Users/ruki/.xmake/packages/v/verilator/2023.1.10/cd2268409c1d44799288c7759b3cbd56/share/verilator/include/verilated_threads.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello__Syms.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello___024root__DepSet_h07139e86__0.cpp
+[ 15%]: cache compiling.release src/sim_main.cpp
+[ 15%]: cache compiling.release build/.gens/hello/macosx/x86_64/release/rules/verilator/hello___024root__DepSet_h9053a130__0.cpp
+[ 84%]: linking.release hello
+[100%]: build ok!
+</code></pre>
+<h4 id="%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F">运行程序</h4>
+
+<pre class="language-bash"><code class="language-bash">$ xmake run
+ruki-2:hello ruki$ xmake run
+hello world!
+- src/main.v:4: Verilog $finish
+</code></pre>
+<p>更多完整例子：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/embed/verilator"  target="_blank">Verilator</a></p>
+<h4 id="%E7%BC%96%E8%AF%91%E9%9D%99%E6%80%81%E5%BA%93">编译静态库</h4>
+<p>我们也提供了 <code>verilator.static</code> 规则来编译生成 verilator 静态库。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;verilator&quot;)
+target(&quot;hello&quot;, function()
+    add_rules(&quot;verilator.static&quot;)
+    set_toolchains(&quot;@verilator&quot;)
+    add_files(&quot;src/*.v&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    add_deps(&quot;hello&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+end)
+</code></pre>
+<h2 id="Cppfront-%E7%A8%8B%E5%BA%8F">Cppfront 程序</h2>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;cppfront&quot;)
+
+target(&quot;test&quot;, function()
+    add_rules(&quot;cppfront&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp2&quot;)
+    add_packages(&quot;cppfront&quot;)
+end)
+</code></pre>
+<h2 id="Cosmocc-%E7%A8%8B%E5%BA%8F">Cosmocc 程序</h2>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;cosmocc&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    set_toolchains(&quot;@cosmocc&quot;)
+end)
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/xmake-teedoc/get_started/zh/tutorial/syntax-description.html">
+                            <span class="icon"></span>
+                            <span class="label">语法描述</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/xmake-teedoc/get_started/zh/tutorial/configuration.html">
+                            <span class="label">配置说明</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/xmake-teedoc/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/xmake-teedoc/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/search/search_main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/custom.js"></script>
+    
+</body>
+
+</html>

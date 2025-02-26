@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>安装 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/xmake-teedoc/">
+                
+                    <img class="site_logo" src="/xmake-teedoc/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/xmake-teedoc/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/xmake-teedoc/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/xmake-teedoc/get_started/en/tutorial/install.html">English</a></li>
+<li class="active"><a  href="/xmake-teedoc/get_started/zh/tutorial/install.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+<li class="not_active no_link sidebar_category"><span class="label">target 编译目标</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">option 选项</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">package 包管理</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">toolchain 工具链</span></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>安装</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-02-26">
+                                    2025-02-26
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/install.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85">源码编译安装</h2>
+<h3 id="%E5%AE%89%E8%A3%85">安装</h3>
+<blockquote>
+<p>切记，xmake 不建议在 root 下安装和使用，所以尽量不要在 root 下拉取源码编译安装。</p>
+</blockquote>
+
+<pre class="language-bash"><code class="language-bash">git clone https://github.com/TOMO-CAT/xmake.git
+cd ./xmake
+bash scripts/install.sh
+</code></pre>
+<p>如果没有外网环境，可以通过 gitee 镜像拉取（xmake repo 也会自动切到 gitee 源）：</p>
+
+<pre class="language-bash"><code class="language-bash">git clone https://gitee.com/tomocat/xmake.git
+</code></pre>
+<p>安装完后检查是否安装完成：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake --version
+</code></pre>
+<h3 id="%E5%90%AF%E7%94%A8-Luajit">启用 Luajit</h3>
+<p>对于一些大型项目（比如包含 300+ targets），我们可以启用 Luajit 加速构建，提升构建速度。</p>
+
+<pre class="language-bash"><code class="language-bash">bash scripts/install.sh --runtime=luajit
+</code></pre>
+<h3 id="%E4%BB%85%E6%9B%B4%E6%96%B0-lua-%E8%84%9A%E6%9C%AC">仅更新 lua 脚本</h3>
+<p>这个开发者本地调试 xmake 源码才需要：</p>
+
+<pre class="language-bash"><code class="language-bash">./scripts/get.sh __local__ __install_only__
+</code></pre>
+<h3 id="%E7%BC%96%E8%AF%91-xmake-bundle-%E5%8C%85">编译 xmake bundle 包</h3>
+<p>默认编译方式会安装 xmake 二进制和 Lua 脚本，这样做的好处是方便源码调试 Lua 脚本，但是不方便发布和迁移，可以只编译 xmake 二进制：</p>
+
+<pre class="language-bash"><code class="language-bash"># TODO:
+</code></pre>
+<h3 id="root-%E4%B8%8B%E5%AE%89%E8%A3%85">root 下安装</h3>
+<p>xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root 用户运行 xmake 会打印一条 warning 日志，用户可以设置环境变量 <code>XMAKE_ROOT=y</code> 屏蔽相关的报警，用户需要随时注意root下误操作系统文件文件的风险。</p>
+<h3 id="%E5%90%AF%E7%94%A8-ccache">启用 ccache</h3>
+<p>默认情况下 xmake 用的是内部的 xcache，但可能会出现一些非预期的 bug。如果需要启用 ccache，可以手动安装 ccache，xmake会自动检测并使用。</p>
+<h2 id="%E6%9B%B4%E6%96%B0%E5%8D%87%E7%BA%A7">更新升级</h2>
+<p>我们可以通过 <code>xmake update</code> 命令来快速进行自我更新和升级，默认是升级到最新版本，当然也可以指定升级或者回退到某个 tag 版本：</p>
+
+<pre class="language-bash"><code class="language-bash"># 如果不是 force 的话, xmake 版本一样就会跳过安装, 不会精确到 git tag / branch
+# 例如 xmake v3.0.4+dev.39db22335 版本也会跳过
+xmake update --force --diagnosis --verbose v3.0.4
+</code></pre>
+<p>我们也可以指定更新到 master/dev 分支版本：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake update master
+xmake update dev
+</code></pre>
+<p>从指定 git 源更新：</p>
+
+<pre class="language-bash"><code class="language-bash"># 指定 github 源
+xmake update github:TOMO-CAT/xmake#master
+
+# 指定 gitee 源
+xmake update gitee:tomocat/xmake#dev
+</code></pre>
+<p>如果 xmake/core 没动过，仅仅更新 xmake 的 lua 脚本改动，可以加 <code>-s/--scriptonly</code> 快速更新 lua 脚本：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake update --scriptonly --force dev
+</code></pre>
+<h2 id="%E5%8D%B8%E8%BD%BD">卸载</h2>
+<p>最后，我们如果要卸载 xmake，也是支持的：</p>
+
+<pre class="language-bash"><code class="language-bash">rm -rf /usr/local/share/xmake
+rm /usr/local/bin/xrepo
+rm /usr/local/bin/xmake
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/xmake-teedoc/get_started/zh/tutorial/quick-start.html">
+                            <span class="label">快速入门</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/xmake-teedoc/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/xmake-teedoc/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/search/search_main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/custom.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/xmake-teedoc/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/xmake-teedoc/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>构建策略 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/xmake-teedoc/">
+                
+                    <img class="site_logo" src="/xmake-teedoc/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/xmake-teedoc/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/xmake-teedoc/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/xmake-teedoc/get_started/en/tutorial/build-policies.html">English</a></li>
+<li class="active"><a  href="/xmake-teedoc/get_started/zh/tutorial/build-policies.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/xmake-teedoc/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+<li class="not_active no_link sidebar_category"><span class="label">target 编译目标</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">option 选项</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">package 包管理</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">toolchain 工具链</span></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>构建策略</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-02-26">
+                                    2025-02-26
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/build-policies.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>xmake 有很多的默认行为，比如：自动检测和映射 flags、跨 target 并行构建等，虽然提供了一定的智能化处理，但众口难调，不一定满足所有的用户的使用习惯和需求。</p>
+<p>因此 xmake 提供默认构建策略的修改设置，开放给用户一定程度上的可配置性。</p>
+<p>它主要通过 <a href="https://xmake.io/#/zh-cn/manual/project_target?id=targetset_policy"  target="_blank">set_policy</a> 接口来配置。</p>
+<p>我们通常可以用它来配置修改 target，package 以及工程整体的一些行为策略。</p>
+<p>使用方式如下：</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;check.auto_ignore_flags&quot;, false)
+</code></pre>
+<p>只需要在项目根域设置这个配置，就可以禁用 flags 的自动检测和忽略机制，另外 <code>set_policy</code> 也可以针对某个特定的 target 局部生效。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_policy(&quot;check.auto_ignore_flags&quot;, false)
+end)
+</code></pre>
+<blockquote>
+<p>另外，如果设置的策略名是无效的，xmake 也会有警告提示。</p>
+</blockquote>
+<p>如果要获取当前 xmake 支持的所有策略配置列表和描述，可以执行下面的命令：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake l core.project.policy.policies
+{
+  &quot;check.auto_map_flags&quot; = {
+    type = &quot;boolean&quot;,
+    description = &quot;Enable map gcc flags to the current compiler and linker automatically.&quot;,
+    default = true
+  },
+  &quot;build.across_targets_in_parallel&quot; = {
+    type = &quot;boolean&quot;,
+    description = &quot;Enable compile the source files for each target in parallel.&quot;,
+    default = true
+  },
+  &quot;check.auto_ignore_flags&quot; = {
+    type = &quot;boolean&quot;,
+    description = &quot;Enable check and ignore unsupported flags automatically.&quot;,
+    default = true
+  }
+}
+</code></pre>
+<p>我们也可以通过命令行的方式去设置修改内部的策略:</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=package.fetch_only
+</code></pre>
+<p>默认设置策略名，就是启用状态，当然我们也可以指定设置其他值，禁用它。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=package.precompiled:n
+</code></pre>
+<p>或者同时配置多个策略值，用逗号分割。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=package.precompiled:n,package.install_only
+</code></pre>
+<h3 id="check.auto_ignore_flags">check.auto_ignore_flags</h3>
+<p>xmake 默认会对所有 <code>add_cxflags</code>, <code>add_ldflags</code> 接口设置的原始 flags 进行自动检测，如果检测当前编译器和链接器不支持它们，就会自动忽略。</p>
+<p>这通常是很有用的，像一些可选的编译 flags，即使不支持也能正常编译，但是强行设置上去，其他用户在编译的时候，有可能会因为编译器的支持力度不同，出现一定程度的编译失败。</p>
+<p>但由于自动检测并不保证100%可靠，有时候会有一定程度的误判，所以某些用户并不喜欢这个设定（尤其是针对交叉编译工具链，更容易出现失败）。</p>
+<p>目前如果检测失败，会有警告提示避免用户莫名躺坑，例如：</p>
+
+<pre class="language-bash"><code class="language-bash">warning: add_ldflags(&quot;-static&quot;) is ignored, please pass `{force = true}` or call `set_policy(&quot;check.auto_ignore_flags&quot;, false)` if you want to set it.
+</code></pre>
+<p>根据提示，我们可以自己分析判断，是否需要强制设置这个 flags，一种就是通过：</p>
+
+<pre class="language-lua"><code class="language-lua">add_ldflags(&quot;-static&quot;, {force = true})
+</code></pre>
+<p>来显示的强制设置上它，跳过自动检测，这对于偶尔的 flags 失败，是很有效快捷的处理方式，但是对于交叉编译时候，一堆的 flags 设置检测不过的情况下，每个都设置 force 太过于繁琐。</p>
+<p>这个时候，我们就可以通过 <code>set_policy</code> 来对某个 target 或者整个 project 直接禁用默认的自动检测行为：</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;check.auto_ignore_flags&quot;, false)
+target(&quot;test&quot;, function()
+    add_ldflags(&quot;-static&quot;)
+end)
+</code></pre>
+<p>然后我们就可以随意设置各种原始 flags，xmake 不会去自动检测和忽略他们了。</p>
+<h3 id="check.auto_map_flags">check.auto_map_flags</h3>
+<p>这是 xmake 的另外一个对 flags 的智能分析处理，通常像 <code>add_links</code>, <code>add_defines</code> 这种 xmake 内置的 api 去设置的配置，是具有跨平台特性的，不同编译器平台会自动处理成对应的原始 flags。</p>
+<p>但是，有些情况，用户还是需要自己通过 <code>add_cxflags</code>, <code>add_ldflags</code> 设置原始的编译链接 flags，这些 flags 并不能很好的跨编译器。</p>
+<p>就拿 <code>-O0</code> 的编译优化 flags 来说，虽然有 <code>set_optimize</code> 来实现跨编译器配置，但如果用户直接设置 <code>add_cxflags(&quot;-O0&quot;)</code> 呢？gcc/clang 下可以正常处理，但是 msvc 下就不支持了。</p>
+<p>也许我们能通过 <code>if is_plat() then</code> 来分平台处理，但很繁琐，因此 xmake 内置了 flags 的自动映射功能。</p>
+<p>基于 gcc flags 的普及性，xmake 采用 gcc 的 flags 命名规范，对其根据不同的编译实现自动映射，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_cxflags(&quot;-O0&quot;)
+</code></pre>
+<p>这一行设置，在 gcc/clang 下还是 <code>-O0</code>，但如果当前是 msvc 编译器，那边会自动映射为 msvc 对应 <code>-Od</code> 编译选项来禁用优化。</p>
+<p>整个过程，用户是完全无感知的，直接执行 xmake 就可以跨编译器完成编译。</p>
+<blockquote>
+<p>当然，目前的自动映射实现还不是很成熟，没有 100% 覆盖所有 gcc 的 flags，所以还是有不少 flags 是没去映射的。</p>
+</blockquote>
+<p>也有部分用户并不喜欢这种自动映射行为，那么我们可以通过下面的设置完全禁用这个默认的行为：</p>
+
+<pre class="language-bash"><code class="language-bash">set_policy(&quot;check.auto_map_flags&quot;, false)
+</code></pre>
+<h3 id="build.across_targets_in_parallel">build.across_targets_in_parallel</h3>
+<p>这个策略也是默认开启的，主要用于跨 target 间执行并行构建，v2.3.3 之前的版本，并行构建只能针对单个 target 内部的所有源文件，<br />
+跨 target 的编译，必须要要等先前的 target 完全 link 成功，才能执行下一个 target 的编译，这在一定程度上会影响编译速度。</p>
+<p>然而每个 target 的源文件是可以完全并行化处理的，最终在一起执行 link 过程，v2.3.3 之后的版本通过这个优化，构建速度提升了30%。</p>
+<p>当然，如果有些特殊的 target 里面的构建源文件要依赖先前的 target（尤其是一些自定义 rules 的情况，虽然很少遇到），我们也可以通过下面的设置禁用这个优化行为：</p>
+
+<pre class="language-bash"><code class="language-bash">set_policy(&quot;build.across_targets_in_parallel&quot;, false)
+</code></pre>
+<h3 id="build.fence">build.fence</h3>
+<p>由于配置 <code>set_policy(&quot;build.across_targets_in_parallel&quot;, false)</code> 存在局限性，它会限制父 target 和它的所有依赖的子 target 之间的并行度，影响的范围有点大。</p>
+<p>而我们做 codegen 时候，有时候仅仅只是想对其中某个依赖的 target 限制并行度，作为 codegen 程序，提前让它完成编译。</p>
+<p>这个时候，<code>build.across_targets_in_parallel</code> 就无法精细控制了，编译速度也无法达到最优。</p>
+<p>因此，我们新增了 <code>build.fence</code> 策略，它可以仅仅只针对特定的子 target 限制并行编译链接。</p>
+<p>相关的背景细节，可以看下：<a href="https://github.com/xmake-io/xmake/issues/5003"  target="_blank">#5003</a></p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;autogen&quot;, function()
+    set_default(false)
+    set_kind(&quot;binary&quot;)
+    set_plat(os.host())
+    set_arch(os.arch())
+    add_files(&quot;src/autogen.cpp&quot;)
+    set_languages(&quot;c++11&quot;)
+    set_policy(&quot;build.fence&quot;, true)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_deps(&quot;autogen&quot;)
+    add_rules(&quot;autogen&quot;)
+    add_files(&quot;src/main.cpp&quot;)
+    add_files(&quot;src/*.in&quot;)
+end)
+</code></pre>
+<p>其中 autogen 目标程序需要在 test 程序的源码被编译前，就要完成编译链接，因为 test 目标需要运行 autogen 程序，去动态生成一些源码参与编译。</p>
+<p>而针对 autogen 配置 <code>set_policy(&quot;build.fence&quot;, true)</code> 就可以实现这个目的。</p>
+<h3 id="build.merge_archive">build.merge_archive</h3>
+<p>如果设置了这个策略，那么使用 <code>add_deps()</code> 依赖的目标库不再作为链接存在，而是直接把它们合并到父目标库中去。</p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;add&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/add.c&quot;)
+    add_files(&quot;src/subdir/add.c&quot;)
+end)
+
+target(&quot;sub&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_files(&quot;src/sub.c&quot;)
+    add_files(&quot;src/subdir/sub.c&quot;)
+end)
+
+target(&quot;mul&quot;, function()
+    set_kind(&quot;static&quot;)
+    add_deps(&quot;add&quot;, &quot;sub&quot;)
+    add_files(&quot;src/mul.c&quot;)
+    set_policy(&quot;build.merge_archive&quot;, true)
+end)
+
+target(&quot;test&quot;, function()
+    add_deps(&quot;mul&quot;)
+    add_files(&quot;src/main.c&quot;)
+end)
+</code></pre>
+<p>libmul.a 静态库会自动合并 libadd.a 和 libsub.a 两个子依赖的静态库。</p>
+<h3 id="build.ccache">build.ccache</h3>
+<p>Xmake 默认是开启内置的编译缓存的，通过设置这个策略，可以显式禁用缓存。</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.ccache&quot;, false)
+</code></pre>
+<p>当然，我们也可以命令行去禁用它。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --ccache=n
+</code></pre>
+<p>或者</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=build.ccache:n
+</code></pre>
+<h3 id="build.warning">build.warning</h3>
+<p>默认编译通常不会实时回显警告输出，我们通常需要使用 <code>xmake -w</code> 开启，或者通过 <code>xmake g --build_warning=y</code> 来全局开启它。</p>
+<p>现在，我们也可以在 xmake.lua 配置中去默认启用警告回显输出。</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.warning&quot;, true)
+set_warnings(&quot;all&quot;, &quot;extra&quot;)
+</code></pre>
+<p>这个时候，即使我们执行 <code>xmake</code> 命令，也能直接回显警告输出。</p>
+<h3 id="build.optimization.lto">build.optimization.lto</h3>
+<p>xmake 改进了对 LTO 链接时优化的支持，对 gcc/clang/msvc 等不同平台下都进行了适配，只需要启用这个策略，就能对特定 target 开启 LTO。</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.optimization.lto&quot;, true)
+</code></pre>
+<p>我们也可以通过命令行选项快速开启。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=build.optimization.lto
+</code></pre>
+<h3 id="build.cuda.devlink">build.cuda.devlink</h3>
+<p>可以通过这个配置，显示开启对特定目标的设备链接。</p>
+<p>这通常用于 Cuda 项目的构建，以及非 Cuda binary/shared 依赖 Cuda static 目标的情况，这个时候，Cuda static 目标就需要显示配置这个，开启设备链接。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;static&quot;)
+    set_policy(&quot;build.cuda.devlink&quot;, true)
+end)
+</code></pre>
+<p>而默认 Cuda binary/shared 是开启 devlink 的，我们也可以通过策略显示禁用它。</p>
+<p>关于这个的详细背景说明，见：<a href="https://github.com/xmake-io/xmake/issues/1976"  target="_blank">#1976</a></p>
+<h3 id="build.sanitizer.address">build.sanitizer.address</h3>
+<p>Address Sanitizer（ASan）是一个快速的内存错误检测工具，由编译器内置支持，通常我们需要在编译和链接的 flags 中同时配置 <code>-fsanitize-address</code> 才能正确开启。</p>
+<p>而我们可以通过开启这个策略，就可以快速全局启用它，这会使得编译出来的程序，直接支持 ASan 检测。</p>
+<p>例如，我们可以通过命令行的方式去启用：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=build.sanitizer.address
+</code></pre>
+<p>也可以通过接口配置去全局启用：</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.sanitizer.address&quot;, true)
+</code></pre>
+<p>当然，我们也可以单独对某个特定的 target 去配置开启。</p>
+<p>另外，如果全局配置它，我们就可以同时对所有依赖包也生效。</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.sanitizer.address&quot;, true)
+
+add_requires(&quot;zlib&quot;)
+add_requires(&quot;libpng&quot;)
+</code></pre>
+<p>它等价于，对每个包依次设置 asan 配置。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {configs = {asan = true}})
+add_requires(&quot;libpng&quot;, {configs = {asan = true}})
+</code></pre>
+<blockquote>
+<p><code>add_rules(&quot;mode.asan&quot;, &quot;mode.tsan&quot;, &quot;mode.ubsan&quot;, &quot;mode.msan&quot;)</code> 将被废弃，尽可能使用这些新的策略，因为这些构建模式无法同步对依赖包生效。</p>
+</blockquote>
+<p>另外，我们也可以同时生效多个 sanitizer 检测，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">set_policy(&quot;build.sanitizer.address&quot;, true)
+set_policy(&quot;build.sanitizer.undefined&quot;, true)
+</code></pre>
+<p>或者</p>
+
+<pre class="language-none"><code class="language-none">$ xmake f --policies=build.sanitizer.address,build.sanitizer.undefined
+</code></pre>
+<h3 id="build.sanitizer.thread">build.sanitizer.thread</h3>
+<p>与 <a href="https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress"  target="_blank">build.sanitizer.address</a> 类似，用于检测线程安全问题。</p>
+<h3 id="build.sanitizer.memory">build.sanitizer.memory</h3>
+<p>与 <a href="https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress"  target="_blank">build.sanitizer.address</a> 类似，用于检测内存问题。</p>
+<h3 id="build.sanitizer.leak">build.sanitizer.leak</h3>
+<p>与 <a href="https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress"  target="_blank">build.sanitizer.address</a> 类似，用于检测内存泄漏问题。</p>
+<h3 id="build.sanitizer.undefined">build.sanitizer.undefined</h3>
+<p>与 <a href="https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress"  target="_blank">build.sanitizer.address</a> 类似，用于检测 undefined 问题。</p>
+<h3 id="build.always_update_configfiles">build.always_update_configfiles</h3>
+<p>这个策略用于对 <code>add_configfiles</code> 配置文件的自动生成行为。默认情况下，xmake 仅仅只会在首次 <code>xmake config</code> 时候，或者 xmake.lua 配置有改动的是否，才会触发 configfiles 的重新生成。</p>
+<p>之后的每次构建，只要配置没有变化，就不会重新生成 configfiles。</p>
+<p>但是，如果我们的 configfiles 中有使用 GIT_COMMIT 等变量，想要每次构建时候，总是重新生成最新的配置，那么可以配置它。</p>
+<p>具体使用背景，可以看下：<a href="https://github.com/xmake-io/xmake/issues/4747"  target="_blank">#4747</a></p>
+<h3 id="build.intermediate_directory">build.intermediate_directory</h3>
+<p>配置启用或禁用构建的内部子目录。</p>
+<p>默认情况下，执行 <code>xmake</code> 编译项目会自动在 build 目录下根据平台。架构，编译模式生成子目录，分别存储对象文件，目标文件。例如：</p>
+
+<pre class="language-bash"><code class="language-bash">build/
+└── macosx
+    └── x86_64
+        └── release
+            └─test
+</code></pre>
+<p>如果配置禁用此策略，那么生成的产物将会直接生成到 build 根目录下。变成：</p>
+
+<pre class="language-bash"><code class="language-bash">build/
+└─ test
+</code></pre>
+<h3 id="build.rpath">build.rpath</h3>
+<p>配置启用或者禁用构建时的 target rpath 设置。</p>
+<p>默认情况下，如果 <code>target(foo)</code> 依赖动态库 bar，那么生成的 foo 可执行文件会自动加上 bar 的 rpath，这能保证用户直接执行 foo 程序，也能正确找到 bar。</p>
+<p>如果你想禁用这个行为，可以显式配置禁用它。</p>
+<h3 id="install.rpath">install.rpath</h3>
+<p>尽管构建后的程序，会被设置 rpath，但是当 <code>xmake install</code> 安装后，它构建时候的 rpath 就不一定完全适用了，因此 xmake 会自动修改调整 rpath，使得安装后的程序，同样可以找到它的依赖库。</p>
+<p>不过前提是，用户自己先得通过 <code>add_rpathdirs(&quot;/xxx&quot;, {installonly = true})</code> 去配置独立的安装 rpath。</p>
+<p>而我们也可以通过这个 policy 去禁用默认的安装阶段 rpath 设置行为。</p>
+<h3 id="run.autobuild">run.autobuild</h3>
+<p>这个策略用于调整 <code>xmake run</code> 的行为，默认情况下，执行 <code>xmake run</code> 并不会自动构建目标程序，如果程序还没被编译，就是提示用户手动构建一下。</p>
+<p>而开启这个策略，我们就可以在运行程序前，先自动构建对应的目标程序。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --policies=run.autobuild
+$ xmake run
+</code></pre>
+<p>如果想要全局生效这个策略，可以全局开启它。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake g --policies=run.autobuild
+</code></pre>
+<h3 id="preprocessor.linemarkers">preprocessor.linemarkers</h3>
+<p>通常用户编译缓存中，预处理器的生成策略，默认开启，如果配置关闭这个策略，那么缓存生成的预处理文件内容将不包含 linemarkers 信息，这会极大减少预处理文件大小。<br />
+也会提升缓存的处理效率，但是缺点就是会丢失源码行信息，如果遇到编译错误，将无法看到准确的出错代码行。</p>
+<h3 id="preprocessor.gcc.directives_only">preprocessor.gcc.directives_only</h3>
+<p>这也是用于预处理器的策略，默认开启，这会提升 gcc 下编译缓存预处理的效率，但是如果源文件中包含 <code>__DATE__</code>, <code>__TIME__</code> 等宏，就会导致缓存出现不一致。</p>
+<p>因此，可以根据自身工程代码，按需关闭此策略，确保生成的结果一致。</p>
+<h3 id="package.requires_lock">package.requires_lock</h3>
+<p>可用于开启 <code>add_requires()</code> 引入的依赖包的版本锁定。</p>
+<p>具体看下：<a href="https://xmake.io/#/zh-cn/package/remote_package?id=%e4%be%9d%e8%b5%96%e5%8c%85%e7%9a%84%e9%94%81%e5%ae%9a%e5%92%8c%e5%8d%87%e7%ba%a7"  target="_blank">依赖包的锁定和升级</a></p>
+<h3 id="package.fetch_only">package.fetch_only</h3>
+<p>如果开启这个策略，那么所有的依赖包仅仅只会从系统获取，不会从远程下载安装。</p>
+<h3 id="package.install_only">package.install_only</h3>
+<p>如果开启这个策略，那么所有的依赖包仅仅只会走远程下载安装，不会从系统查找获取。</p>
+<h3 id="package.librarydeps.strict_compatibility">package.librarydeps.strict_compatibility</h3>
+<p>默认禁用，如果启用它，那么当前包和它的所有库依赖包之间会保持严格的兼容性，任何依赖包的版本更新，都会强制触发当前包的重新编译安装。</p>
+<p>以确保所有的包都是二进制兼容的，不会因为某个依赖包接口改动，导致和其他已被安装的其他包一起链接时候，发生链接和运行错误。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;foo&quot;)
+    add_deps(&quot;bar&quot;, &quot;zoo&quot;)
+    set_policy(&quot;package.librarydeps.strict_compatibility&quot;, true)
+</code></pre>
+<p>例如，如果 bar 或者 zoo 的版本有更新，那么 foo 也会重新编译安装。</p>
+<h3 id="package.strict_compatibility">package.strict_compatibility</h3>
+<p>默认禁用，如果启用它，那么当前包和其他所有依赖它的包之间会保持严格的兼容性，这个包的版本更新，都会强制触发其他父包的重新编译安装。</p>
+<p>以确保所有的包都是二进制兼容的，不会因为某个依赖包接口改动，导致和其他已被安装的其他包一起链接时候，发生链接和运行错误。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;foo&quot;, function()
+    set_policy(&quot;package.strict_compatibility&quot;, true)
+end)
+
+package(&quot;bar&quot;, function()
+    add_deps(&quot;foo&quot;)
+end)
+
+package(&quot;zoo&quot;, function()
+    add_deps(&quot;foo&quot;)
+end)
+</code></pre>
+<p>例如，如果 foo 的版本有更新，那么 bar 和 zoo 都会被强制重新编译安装。</p>
+<h3 id="package.install_always">package.install_always</h3>
+<p>每次运行 <code>xmake f -c</code> 重新配置的时候，总是会重新安装包，这对于本地第三方源码包集成时候比较有用。</p>
+<p>因为，用户可能随时需要修改第三方源码，然后重新编译集成它们。</p>
+<p>之前只能通过每次修改包版本号，来触发重新编译，但是有了这个策略，就能每次都会触发重编。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+package(&quot;foo&quot;, function()
+    add_deps(&quot;cmake&quot;)
+    set_sourcedir(path.join(os.scriptdir(), &quot;foo&quot;))
+    set_policy(&quot;package.install_always&quot;, true)
+    on_install(function (package)
+        local configs = {}
+        table.insert(configs, &quot;-DCMAKE_BUILD_TYPE=&quot; .. (package:debug() and &quot;Debug&quot; or &quot;Release&quot;))
+        table.insert(configs, &quot;-DBUILD_SHARED_LIBS=&quot; .. (package:config(&quot;shared&quot;) and &quot;ON&quot; or &quot;OFF&quot;))
+        import(&quot;package.tools.cmake&quot;).install(package, configs)
+    end)
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;add&quot;, {includes = &quot;foo.h&quot;}))
+    end)
+end)
+
+add_requires(&quot;foo&quot;)
+
+target(&quot;demo&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.c&quot;)
+    add_packages(&quot;foo&quot;)
+end)
+</code></pre>
+<h3 id="package.download.http_headers">package.download.http_headers</h3>
+<p>设置包下载的 http headers</p>
+<p>如果有些包的 url 下载，需要设置特定 http headers，才能通过下载，可以通过这个策略来指定。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;xxx&quot;)
+    set_policy(&quot;package.download.http_headers&quot;, &quot;TEST1: foo&quot;, &quot;TEST2: bar&quot;)
+</code></pre>
+<p>我们也可以设置指定的 urls 的 http headers：</p>
+
+<pre class="language-lua"><code class="language-lua">add_urls(&quot;https://github.com/madler/zlib/archive/$(version).tar.gz&quot;, {
+    http_headers = {&quot;TEST1: foo&quot;, &quot;TEST2: bar&quot;}
+})
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/xmake-teedoc/get_started/zh/tutorial/environment-variables.html">
+                            <span class="icon"></span>
+                            <span class="label">环境变量</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/xmake-teedoc/get_started/zh/tutorial/FAQ.html">
+                            <span class="label">FAQ</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/xmake-teedoc/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/xmake-teedoc/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/search/search_main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/xmake-teedoc/static/js/custom.js"></script>
+    
+</body>
+
+</html>
