@@ -6,6 +6,7 @@ items:
     file: tutorial/quick-start.md
 -   label: 语法描述
     file: tutorial/syntax-description.md
+    collapsed: false
 -   label: 工程例子
     file: tutorial/project-examples.md
 -   label: 配置说明
