@@ -3428,7 +3428,7 @@ end)
 
 add_requires(&quot;doctest&quot;)
 
-target(&quot;doctest&quot;)
+target(&quot;doctest&quot;, function()
     set_kind(&quot;binary&quot;)
     add_files(&quot;src/*.cpp&quot;)
     for _, testfile in ipairs(os.files(&quot;tests/*.cpp&quot;)) do
@@ -3439,11 +3439,12 @@ target(&quot;doctest&quot;)
             packages = &quot;doctest&quot;,
             defines = &quot;DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN&quot;})
     end
+end)
 </code></pre>
-<p>定义 DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN 会引入额外的 main 入口函数，因此我们需要配置 remove_files 去移除已有的 main.cpp 文件。</p>
+<p>定义 <code>DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</code> 会引入额外的 main 入口函数，因此我们需要配置 remove_files 去移除已有的 main.cpp 文件。</p>
 <p>运行效果如下：</p>
 
-<pre class="language-bash"><code class="language-bash">ruki-2:doctest ruki$ xmake test
+<pre class="language-bash"><code class="language-bash">$ xmake test
 running tests ...
 [50%]: doctest/test_1 .................................... failed 0.009s
 [100%]: doctest/test_2 .................................... passed 0.009s
@@ -3475,7 +3476,7 @@ run failed, exit code: 1
 <p>通常，<code>add_tests</code> 仅用于对可执行程序进行运行测试，运行动态库需要有一个额外的 main 主入口，因此我们需要额外配置一个可执行程序去加载它，例如：</p>
 
 <pre class="language-lua"><code class="language-lua">
-target(&quot;doctest_shared&quot;)
+target(&quot;doctest_shared&quot;, function()
     set_kind(&quot;shared&quot;)
     add_files(&quot;src/foo.cpp&quot;)
     for _, testfile in ipairs(os.files(&quot;tests/*.cpp&quot;)) do
@@ -3486,17 +3487,19 @@ target(&quot;doctest_shared&quot;)
             packages = &quot;doctest&quot;,
             defines = &quot;DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN&quot;})
     end
+end)
 </code></pre>
-<p>通过 <code>kind = &quot;binary&quot;</code> 可以将每个单元测试改为 binary 可执行程序，并通过 DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN 引入 main 入口函数。</p>
+<p>通过 <code>kind = &quot;binary&quot;</code> 可以将每个单元测试改为 binary 可执行程序，并通过 <code>DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</code> 引入 main 入口函数。</p>
 <p>这样就能实现动态库目标中外置可运行的单元测试。</p>
 <h4 id="%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C%E8%B6%85%E6%97%B6">配置运行超时</h4>
 <p>如果一些测试程序长时间运行不退出，就会卡住，我们可以通过配置超时时间，强制退出，并返回失败。</p>
 
-<pre class="language-lua"><code class="language-lua">target(&quot;test_timeout&quot;)
+<pre class="language-lua"><code class="language-lua">target(&quot;test_timeout&quot;, function()
     set_kind(&quot;binary&quot;)
     set_default(false)
     add_files(&quot;src/run_timeout.cpp&quot;)
     add_tests(&quot;run_timeout&quot;, {run_timeout = 1000})
+end)
 </code></pre>
 
 <pre class="language-bash"><code class="language-bash">$ xmake test
