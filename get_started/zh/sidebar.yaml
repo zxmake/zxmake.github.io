@@ -21,6 +21,10 @@ items:
 -   label: FAQ
     file: tutorial/FAQ.md
 -   label: target 编译目标
+    collapsed: false
+    items:
+    -   label: 描述域
+        file: target/description-scope.md
 -   label: option 选项
 -   label: package 包管理
 -   label: rule 规则
