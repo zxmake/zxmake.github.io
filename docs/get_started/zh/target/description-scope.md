@@ -3701,7 +3701,7 @@ add_rules("mode.debug", "mode.release")
 
 add_requires("doctest")
 
-target("doctest")
+target("doctest", function()
     set_kind("binary")
     add_files("src/*.cpp")
     for _, testfile in ipairs(os.files("tests/*.cpp")) do
@@ -3712,14 +3712,15 @@ target("doctest")
             packages = "doctest",
             defines = "DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN"})
     end
+end)
 ```
 
-定义 DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN 会引入额外的 main 入口函数，因此我们需要配置 remove_files 去移除已有的 main.cpp 文件。
+定义 `DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN` 会引入额外的 main 入口函数，因此我们需要配置 remove_files 去移除已有的 main.cpp 文件。
 
 运行效果如下：
 
 ```bash
-ruki-2:doctest ruki$ xmake test
+$ xmake test
 running tests ...
 [50%]: doctest/test_1 .................................... failed 0.009s
 [100%]: doctest/test_2 .................................... passed 0.009s
@@ -3754,7 +3755,7 @@ run failed, exit code: 1
 
 ```lua
 
-target("doctest_shared")
+target("doctest_shared", function()
     set_kind("shared")
     add_files("src/foo.cpp")
     for _, testfile in ipairs(os.files("tests/*.cpp")) do
@@ -3765,9 +3766,10 @@ target("doctest_shared")
             packages = "doctest",
             defines = "DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN"})
     end
+end)
 ```
 
-通过 `kind = "binary"` 可以将每个单元测试改为 binary 可执行程序，并通过 DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN 引入 main 入口函数。
+通过 `kind = "binary"` 可以将每个单元测试改为 binary 可执行程序，并通过 `DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN` 引入 main 入口函数。
 
 这样就能实现动态库目标中外置可运行的单元测试。
 
@@ -3776,11 +3778,12 @@ target("doctest_shared")
 如果一些测试程序长时间运行不退出，就会卡住，我们可以通过配置超时时间，强制退出，并返回失败。
 
 ```lua
-target("test_timeout")
+target("test_timeout", function()
     set_kind("binary")
     set_default(false)
     add_files("src/run_timeout.cpp")
     add_tests("run_timeout", {run_timeout = 1000})
+end)
 ```
 
 ```bash
