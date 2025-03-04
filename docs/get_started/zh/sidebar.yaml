@@ -4,22 +4,24 @@ items:
     file: tutorial/install.md
 -   label: 快速入门
     file: tutorial/quick-start.md
--   label: 语法描述
-    file: tutorial/syntax-description.md
     collapsed: false
     items:
-    -   label: 描述域
-        file: tutorial/description-scope.md
--   label: 工程例子
-    file: tutorial/project-examples.md
--   label: 配置说明
-    file: tutorial/configuration.md
--   label: 环境变量
-    file: tutorial/environment-variables.md
--   label: 构建策略
-    file: tutorial/build-policies.md
--   label: FAQ
-    file: tutorial/FAQ.md
+        -   label: 语法描述
+            file: tutorial/syntax-description.md
+            collapsed: true
+            items:
+            -   label: 描述域
+                file: tutorial/description-scope.md
+        -   label: 工程例子
+            file: tutorial/project-examples.md
+        -   label: 配置说明
+            file: tutorial/configuration.md
+        -   label: 环境变量
+            file: tutorial/environment-variables.md
+        -   label: 构建策略
+            file: tutorial/build-policies.md
+        -   label: FAQ
+            file: tutorial/FAQ.md
 -   label: target 编译目标
     collapsed: false
     items:
