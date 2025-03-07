@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>描述域 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/option/description-scope.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/option/description-scope.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link sidebar_category"><span class="label">package 包管理</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">rule 规则</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">toolchain 工具链</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">plugin 插件</span></li>
+<li class="not_active no_link sidebar_category"><span class="label">其他特性</span></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>描述域</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-03-07">
+                                    2025-03-07
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/option/description-scope.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>定义和设置选项开关，每个 <code>option</code> 对应一个选项，可用于自定义编译配置选项、开关设置。</p>
+<blockquote>
+<p>除了 <code>target</code> 以外的所有域接口，例如 <code>option</code>，<code>task</code> 等的接口，默认不能放置在外面的全局作用域中的（除非部分跟 target 共用的接口除外）。<br />
+如果要设置值影响所有 <code>option</code>，<code>task</code> 等选项，可以通过匿名全局域来设置。<br />
+不过我们不推荐这么使用，后续是会废弃掉 <code>option_end</code> 接口以保持 xmake.lua 脚本的易读性。</p>
+</blockquote>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 进入 option 的匿名全局域，里面的设置会同时影响 test 和 test2 选项
+option()
+    add_defines(&quot;DEBUG&quot;)
+
+option(&quot;test&quot;)
+    -- ...
+    -- 尽量保持缩进，因为这个之后的所有设置，都是针对 test 选项的
+
+option(&quot;test2&quot;)
+    -- ...
+</code></pre>
+<blockquote>
+<p><code>option</code> 域是可以重复进入来实现分离设置的，如果要显示离开当前选项的作用域设置，可以手动调用 <a href="#option_end"  >option_end</a> 接口。</p>
+</blockquote>
+<h2 id="option">option</h2>
+<p>定义和设置选项开关，可用于自定义编译配置选项、开关设置。</p>
+<p>例如，定义一个是否启用 test 的选项：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    set_default(false)
+    set_showmenu(true)
+    add_defines(&quot;TEST&quot;)
+end)
+</code></pre>
+<p>然后关联到指定的 target 中去：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;demo&quot;, function()
+    add_options(&quot;test&quot;)
+end)
+</code></pre>
+<p>这样，一个选项就算定义好了，如果这个选项被启用，那么编译这个 target 的时候，就会自动加上 <code>-DTEST</code> 的宏定义。</p>
+
+<pre class="language-lua"><code class="language-lua"># 手动启用这个选项
+$ xmake f --test=y
+$ xmake
+</code></pre>
+<h2 id="option_end">option_end</h2>
+<p>这是一个可选 api，显示离开选项作用域，用法和 <a href="/zh-cn/manual/project_target?id=target_end"  >target_end</a> 类似。</p>
+<h2 id="option%3Aadd_deps">option:add_deps</h2>
+<p>通过设置依赖，可以调整选项的检测顺序，一般用于 <a href="#optionon_check"  >on_check</a> 等检测脚本的调用时机。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;small&quot;, function()
+    set_default(true)
+    on_check(function (option)
+        -- ...
+    end)
+end)
+
+option(&quot;test&quot;, function()
+    add_deps(&quot;small&quot;)
+    set_default(true)
+    after_check(function (option)
+        if option:dep(&quot;small&quot;):enabled() then
+            option:enable(false)
+        end
+    end)
+end)
+</code></pre>
+<p>当依赖的 small 选项检测完成后，通过判断 small 选项的状态，来控制 test 的选项状态。</p>
+<blockquote>
+<p>由于 on_check 只有在没有设置 default 值的情况下才会被执行，因此如果设置了 default 值，那么可以在 after_check 阶段处理自定义逻辑。</p>
+</blockquote>
+<h2 id="option%3Abefore_check">option:before_check</h2>
+<p>选项检测之前执行此脚本：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;zlib&quot;, function()
+    before_check(function (option)
+    end)
+end)
+</code></pre>
+<h2 id="option%3Aon_check">option:on_check</h2>
+<p>自定义选项检测脚本，此脚本会覆盖内置的选项检测逻辑。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    add_deps(&quot;small&quot;)
+    on_check(function (option)
+        option:enable(true)
+    end)
+end)
+</code></pre>
+<blockquote>
+<p>仅仅在 <code>set_default</code> 没有被设置的情况下，才会执行 <code>on_check</code> 进行自定义的选项检测脚本。</p>
+</blockquote>
+<h2 id="option%3Aafter_check">option:after_check</h2>
+<p>在选项检测完成后，执行此脚本做一些后期处理，也可以在此时重新禁用选项：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    add_deps(&quot;small&quot;)
+    add_links(&quot;pthread&quot;)
+    after_check(function (option)
+        option:enable(false)
+    end)
+end)
+</code></pre>
+<h2 id="option%3Aset_values">option:set_values</h2>
+<p>设置选项值列表，仅用于 <code>xmake f --menu</code> 的图形菜单配置时，提供选项值列表供用户快速选择使用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    set_default(&quot;b&quot;)
+    set_showmenu(true)
+    set_values(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+end)
+</code></pre>
+<p>效果图如下：</p>
+<p><img src="image/option_set_values.png" alt="option set values" /></p>
+<h2 id="option%3Aset_default">option:set_default</h2>
+<p>在没有通过 <code>xmake f --option=[y|n}</code> 等命令修改选项值的时候，这个选项本身也是有个默认值的，可以通过这个接口来设置：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    -- 默认禁用这个选项
+    set_default(false)
+end)
+</code></pre>
+<p>选项的值不仅支持 boolean 类型，也可以是字符串类型，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    set_default(&quot;value&quot;)
+end)
+</code></pre>
+<table>
+<thead>
+<tr>
+  <th>值类型</th>
+  <th>描述</th>
+  <th>配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>boolean</td>
+  <td>一般用作参数开关，值范围：<code>true/false</code></td>
+  <td><code>xmake f --optionname=[y/n/yes/no/true/false]</code></td>
+</tr>
+<tr>
+  <td>string</td>
+  <td>可以是任意字符串，一般用于模式判断</td>
+  <td><code>xmake f --optionname=value</code></td>
+</tr>
+</tbody>
+</table>
+<p>如果是 <code>boolean</code> 值的选项，可以通过 <a href="/zh-cn/manual/conditions?id=has_config"  >has_config</a> 来进行判断，选项是否被启用。</p>
+<p>如果是 <code>string</code> 类型的选项，可以在内建变量中直接使用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 定义一个路径配置选项，默认使用临时目录
+option(&quot;rootdir&quot;, function()
+    set_default(&quot;$(tmpdir)&quot;)
+    set_showmenu(true)
+end)
+
+target(&quot;test&quot;, function()
+    -- 添加指定选项目录中的源文件
+    add_files(&quot;$(rootdir)/*.c&quot;)
+end)
+</code></pre>
+<p>其中，<code>$(rootdir)</code> 就是自定义的选项内建变量，通过手动配置，可以动态修改它的值：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --rootdir=~/projectdir/src
+$ xmake
+</code></pre>
+<p>给这个 <code>rootdir</code> 选项指定一个其他的源码目录路径，然后编译。</p>
+<p>选项的检测行为：</p>
+<table>
+<thead>
+<tr>
+  <th>default 值</th>
+  <th>检测行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>没有设置</td>
+  <td>优先手动配置修改，默认禁用，否则会启用自动检测，也会执行 on_check，可根据手动传入的值类型，自动切换 boolean 和 string 类型</td>
+</tr>
+<tr>
+  <td>false</td>
+  <td>开关选项，不自动检测，默认禁用，可手动配置修改</td>
+</tr>
+<tr>
+  <td>true</td>
+  <td>开关选项，不自动检测，默认启用，可手动配置修改</td>
+</tr>
+<tr>
+  <td>string 类型</td>
+  <td>无开关状态，不自动检测，可手动配置修改，一般用于配置变量传递</td>
+</tr>
+</tbody>
+</table>
+<h2 id="option%3Aset_showmenu">option:set_showmenu</h2>
+<p>用于设置是否启用菜单显示。</p>
+<p>如果设置为 <code>true</code>，那么在 <code>xmake f --help</code> 里面就会出现这个选项，也就能通过 <code>xmake f --optionname=xxx</code> 进行配置，否则只能在 <code>xmake.lua</code> 内部使用，无法手动配置修改。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    set_showmenu(true)
+end)
+</code></pre>
+<p>设置为启用菜单后，执行 <code>xmake f --help</code> 可以看到，帮助菜单里面多了一项：</p>
+
+<pre class="language-none"><code class="language-none">Options:
+    ...
+
+    --test=TEST
+</code></pre>
+<blockquote>
+<p>此选项默认改为启用，通常都不需要额外配置它。考虑后面删除这个 api。</p>
+</blockquote>
+<h2 id="option%3Aset_category">option:set_category</h2>
+<p>这个是个可选配置，仅用于在帮助菜单中，进行分类显示选项，同一类别的选项，会在同一个分组里面显示，这样菜单看起来更加的美观。</p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test1&quot;, function()
+    set_showmenu(true)
+    set_category(&quot;test&quot;)
+end)
+
+option(&quot;test2&quot;, function()
+    set_showmenu(true)
+    set_category(&quot;test&quot;)
+end)
+
+option(&quot;demo1&quot;, function()
+    set_showmenu(true)
+    set_category(&quot;demo&quot;)
+end)
+
+option(&quot;demo2&quot;, function()
+    set_showmenu(true)
+    set_category(&quot;demo&quot;)
+end)
+</code></pre>
+<p>这里四个选项分别归类于两个分组：<code>test</code> 和 <code>demo</code>，那么显示的布局类似这样：</p>
+
+<pre class="language-bash"><code class="language-bash">Options:
+    ...
+
+    --test1=TEST1
+    --test2=TEST2
+
+    --demo1=DEMO1
+    --demo2=DEMO2
+</code></pre>
+<p>这个接口，仅仅是为了调整显示布局，更加美观而已，没其他用途。</p>
+<p>还可以通过 category 设置分级路径名 <code>set_category(&quot;root/submenu/submenu2&quot;)</code>，来配置 <code>xmake f --menu</code> 的图形菜单界面，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 'boolean' option
+option(&quot;test1&quot;, function()
+    set_default(true)
+    set_showmenu(true)
+    set_category(&quot;root menu/test1&quot;)
+end)
+
+-- 'choice' option with values: &quot;a&quot;, &quot;b&quot;, &quot;c&quot;
+option(&quot;test2&quot;, function()
+    set_default(&quot;a&quot;)
+    set_values(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
+    set_showmenu(true)
+    set_category(&quot;root menu/test2&quot;)
+end)
+
+-- 'string' option
+option(&quot;test3&quot;, function()
+    set_default(&quot;xx&quot;)
+    set_showmenu(true)
+    set_category(&quot;root menu/test3/test3&quot;)
+end)
+
+-- 'number' option
+option(&quot;test4&quot;, function()
+    set_default(6)
+    set_showmenu(true)
+    set_category(&quot;root menu/test4&quot;)
+end)
+</code></pre>
+<p>上述配置最后显示的菜单界面路径结构：</p>
+<ul>
+<li>root menu<ul>
+<li>test1</li>
+<li>test2</li>
+<li>test3<ul>
+<li>test3</li>
+</ul>
+</li>
+<li>test4</li>
+</ul>
+</li>
+</ul>
+<p>效果图如下：</p>
+<p><img src="image/option_set_category.gif" alt="opiton set category" /></p>
+<h2 id="option%3Aset_description">option:set_description</h2>
+<p>设置选项菜单显示时，右边的描述信息，用于帮助用户更加清楚的知道这个选项的用途，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    set_default(false)
+    set_showmenu(true)
+    set_description(&quot;Enable or disable test&quot;)
+end)
+</code></pre>
+<p>生成的菜单内容如下：</p>
+
+<pre class="language-none"><code class="language-none">Options:
+    ...
+
+    --test=TEST                       Enable or disable test (default: false)
+</code></pre>
+<p>这个接口也支持多行显示，输出更加详细的描述信息，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;mode&quot;, function()
+    set_default(&quot;debug&quot;)
+    set_showmenu(true)
+    set_description(&quot;Set build mode&quot;,
+                    &quot;- debug&quot;,
+                    &quot;- release&quot;,
+                    &quot;- profile&quot;)
+end)
+</code></pre>
+<p>生成的菜单内容如下：</p>
+
+<pre class="language-none"><code class="language-none">Options:
+    ...
+
+    --mode=MODE                       Set build mode (default: debug)
+                                          - debug
+                                          - release
+                                          - profile
+</code></pre>
+<p>看到这个菜单，用户就能清楚地知道，定义的这个 <code>mode</code> 选项的具体用处，以及如何使用了：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --mode=release
+</code></pre>
+<h2 id="option%3Aadd_links">option:add_links</h2>
+<p>添加链接库检测。</p>
+<p>如果指定的链接库检测通过，此选项将被启用，并且对应关联的 target 会自动加上此链接，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;pthread&quot;, function()
+    add_links(&quot;pthread&quot;)
+    add_linkdirs(&quot;/usr/local/lib&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    add_options(&quot;pthread&quot;)
+end)
+</code></pre>
+<p>如果检测通过，<code>test</code> 目标编译的时候就会自动加上：<code>-L/usr/local/lib -lpthread</code> 编译选项</p>
+<h2 id="option%3Aadd_linkdirs">option:add_linkdirs</h2>
+<p>添加链接库检测时候需要的搜索目录。</p>
+<p>这个是可选的，一般系统库不需要加这个，也能检测通过，如果确实没找到，可以自己追加搜索目录，提高检测通过率。具体使用见：<a href="#optionadd_links"  >add_links</a></p>
+<h2 id="option%3Aadd_rpathdirs">option:add_rpathdirs</h2>
+<p>添加程序运行时动态库的加载搜索目录。</p>
+<p>在选项通过检测后，会自动添加到对应的 target 上去，具体使用见：<a href="/zh-cn/manual/project_target?id=targetadd_rpathdirs"  >target.add_rpathdirs</a>。</p>
+<h2 id="option%3Aadd_cincludes">option:add_cincludes</h2>
+<p>添加 c 头文件检测。</p>
+<p>如果 c 头文件检测通过，此选项将被启用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;pthread&quot;, function()
+    add_cincludes(&quot;pthread.h&quot;)
+    add_defines(&quot;ENABLE_PTHREAD&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    add_options(&quot;pthread&quot;)
+end)
+</code></pre>
+<p>此选项检测是否存在 <code>pthread.h</code> 的头文件，如果检测通过那么 <code>test</code> 目标程序将会加上 <code>ENABLE_PTHREAD</code> 的宏定义。</p>
+<p>如果想要更加灵活的检测，可以通过 <a href="#detect-has_cincludes"  >lib.detect.has_cincludes</a> 在<a href="#optionon_check"  >option.on_check</a>中去实现。</p>
+<h2 id="option%3Aadd_cxxincludes">option:add_cxxincludes</h2>
+<p>添加 c++ 头文件检测。</p>
+<p>与 <a href="#optionadd_cincludes"  >add_cincludes</a> 类似，只是检测的头文件类型是 c++ 头文件。</p>
+<h2 id="option%3Aadd_ctypes">option:add_ctypes</h2>
+<p>添加 c 类型检测。</p>
+<p>如果 c 类型检测通过，此选项将被启用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;wchar&quot;, function()
+    add_ctypes(&quot;wchar_t&quot;)
+    add_defines(&quot;HAVE_WCHAR&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    add_options(&quot;wchar&quot;)
+end)
+</code></pre>
+<p>此选项检测是否存在 <code>wchar_t</code> 的类型，如果检测通过那么 <code>test</code> 目标程序将会加上 <code>HAVE_WCHAR</code> 的宏定义。</p>
+<p>如果想要更加灵活的检测，可以通过 <a href="#detect-has_ctypes"  >lib.detect.has_ctypes</a> 在<a href="#optionon_check"  >option.on_check</a>中去实现。</p>
+<h2 id="option%3Aadd_cxxtypes">option:add_cxxtypes</h2>
+<p>添加 c++ 类型检测。</p>
+<p>与 <a href="#optionadd_ctypes"  >add_ctypes</a> 类似，只是检测的类型是 c++ 类型。</p>
+<h2 id="option%3Aadd_csnippets">option:add_csnippets</h2>
+<p>添加 c 代码片段检测。</p>
+<p>如果现有的 <a href="#optionadd_ctypes"  >add_ctypes</a>, <a href="#optionadd_cfuncs"  >add_cfuncs</a> 等不能满足当前的检测需求，<br />
+可以用这个接口实现更加定制化检测一些编译器特性检测，具体见: <a href="#optionadd_cxxsnippets"  >add_cxxsnippets</a>。</p>
+<h2 id="option%3Aadd_cxxsnippets">option:add_cxxsnippets</h2>
+<p>添加 c++ 代码片段检测。</p>
+<p>可以用这个接口实现更加定制化检测一些编译器特性检测，尤其是 c++ 的各种特性的检测支持，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;constexpr&quot;, function()
+    add_cxxsnippets(&quot;constexpr&quot;, &quot;constexpr int f(int x) { int sum=0; for (int i=0; i&lt;=x; ++i) sum += i; return sum; } constexpr int x = f(5);  static_assert(x == 15);&quot;)
+end)
+</code></pre>
+<p>第一个参数设置代码片段的名字作为标示，检测输出信息时候会有显示。</p>
+<p>上述代码，实现对 c++ 的 constexpr 特性的检测，如果检测通过，则启用 constexpr 选项，当然这里只是个例子。</p>
+<p>对于编译器特性的检测，有更加方便高效的检测模块，提供更强大的检测支持，具体见：<a href="#compiler-has_features"  >compiler.has_features</a> 和 <a href="#detect-check_cxsnippets"  >detect.check_cxsnippets</a></p>
+<p>如果想要更加灵活的检测，可以通过 <a href="#detect-check_cxsnippets"  >lib.detect.check_cxsnippets</a> 在<a href="#optionon_check"  >option.on_check</a>中去实现。</p>
+<p>另外我们还可以通过 <code>{tryrun = true}</code> 和 <code>{output = true}</code> 两个选项用于尝试运行检测和捕获输出。</p>
+<p>设置 tryrun 可以尝试运行来检测：</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    add_cxxsnippets(&quot;HAS_INT_4&quot;, &quot;return (sizeof(int) == 4)? 0 : -1;&quot;, {tryrun = true})
+end)
+</code></pre>
+<p>设置 output 也会尝试去检测，并且额外捕获运行的输出内容。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;test&quot;, function()
+    add_cxxsnippets(&quot;INT_SIZE&quot;, 'printf(&quot;%d&quot;, sizeof(int)); return 0;', {output = true, number = true})
+end)
+</code></pre>
+<blockquote>
+<p>设置为捕获输出，当前 option 不能再设置其他 snippets。</p>
+</blockquote>
+<p>我们也可以通过 <code>is_config</code> 获取绑定到 option 的输出。</p>
+
+<pre class="language-lua"><code class="language-lua">if is_config(&quot;test&quot;, &quot;8&quot;) tben
+    -- xxx
+end
+</code></pre>
+<h2 id="option%3Aadd_cfuncs">option:add_cfuncs</h2>
+<p>添加 c 库函数检测。</p>
+
+<pre class="language-lua"><code class="language-lua">option(&quot;setjmp&quot;, function()
+    add_cincludes(&quot;setjmp.h&quot;)
+    add_cfuncs(&quot;sigsetjmp&quot;, &quot;setjmp&quot;)
+    add_defines(&quot;HAVE_SETJMP&quot;)
+end)
+
+target(&quot;test&quot;, function()
+    add_options(&quot;setjmp&quot;)
+end)
+</code></pre>
+<p>此选项检测是否存在 <code>setjmp</code> 的一些接口，如果检测通过那么 <code>test</code> 目标程序将会加上 <code>HAVE_SETJMP</code> 的宏定义。</p>
+<p>里面的函数片段支持下面几种语法格式：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 单纯检测函数地址是否存在，内部会尝试去它的地址来判断
+sigsetjmp
+
+-- 如果有些函数是宏定义 wrap 的，可以通过这种方式绕通过检测
+sigsetjmp((void*)0, 0)
+
+-- 也可以指定一个完整函数语句，例如：funcname{codebody}
+sigsetjmp{sigsetjmp((void*)0, 0);}
+sigsetjmp{int a = 0; sigsetjmp((void*)a, a);}
+</code></pre>
+<p>注意，检测的函数通常需要附带 <code>add_cincludes</code> 确保函数能够被正常 include 进来，否则检测会失败。</p>
+<h2 id="option%3Aadd_cxxfuncs">option:add_cxxfuncs</h2>
+<p>添加 c++ 库函数检测。</p>
+<p>用法跟 <a href="#optionadd_cxxfuncs"  >option:add_cfuncs</a> 一致。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/target/description-scope.html">
+                            <span class="icon"></span>
+                            <span class="label">描述域</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
