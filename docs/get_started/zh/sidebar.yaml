@@ -33,7 +33,16 @@ items:
     -   label: 描述域
         file: option/description-scope.md
 -   label: package 包管理
+    file: package/README.md
 -   label: rule 规则
+    file: rule/README.md
+    items:
+        -   label: 内建规则
+            file: rule/builtin-rules.md
+        -   label: 描述域
+            file: rule/description-scope.md
 -   label: toolchain 工具链
+    file: toolchain/README.md
 -   label: plugin 插件
--   label: 其他特性
+    file: plugin/README.md
+# -   label: 其他特性
