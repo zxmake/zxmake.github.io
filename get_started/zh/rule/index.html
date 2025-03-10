@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN"  class=" language_zh ">
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
 
 
 <head>
@@ -46,10 +46,10 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
         
     
     
-    <title>rule - mysite</title>
+    <title>mysite</title>
     
     <script type="text/javascript">js_vars = {}</script>
-    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
 </head>
 
 
@@ -146,7 +146,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     <div id="article_head">
                         <div id="article_title">
                             
-                            <h1>rule</h1>
+                            <h1></h1>
                             
                         </div>
                         <div id="article_tags">
@@ -159,10 +159,6 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                             <span class="article_author">
                                 
                             </span>
-                            
-                                <span class="article_date" title="最后修改日期： 2025-03-10">
-                                    2025-03-10
-                                </span>
                             
                         </div>
                         <div id="article_info_right">
@@ -185,7 +181,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <p>xmake 不仅原生支持多语言文件的构建，还允许用户通过自定义构建规则实现复杂的未知文件构建。</p>
+                            <h1 id="rule">rule</h1>
+<p>xmake 不仅原生支持多语言文件的构建，还允许用户通过自定义构建规则实现复杂的未知文件构建。</p>
 <p>自定义构建规则可以使用 <code>set_extensions</code> 将一组文件扩展名关联到它们。</p>
 <p>一旦这些扩展与规则相关联，稍后对 <code>add_files</code> 的调用将自动使用此自定义规则。</p>
 <p>这是一个示例规则，它将使用 Pandoc 将添加到构建目标的 Markdown 文件转换为 HTML 文件：</p>

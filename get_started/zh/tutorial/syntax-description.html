@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="zh-CN"  class=" language_zh ">
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
 
 
 <head>
@@ -46,10 +46,10 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
         
     
     
-    <title>语法描述 - mysite</title>
+    <title>mysite</title>
     
     <script type="text/javascript">js_vars = {}</script>
-    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
 </head>
 
 
@@ -146,7 +146,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     <div id="article_head">
                         <div id="article_title">
                             
-                            <h1>语法描述</h1>
+                            <h1></h1>
                             
                         </div>
                         <div id="article_tags">
@@ -159,10 +159,6 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                             <span class="article_author">
                                 
                             </span>
-                            
-                                <span class="article_date" title="最后修改日期： 2025-03-10">
-                                    2025-03-10
-                                </span>
                             
                         </div>
                         <div id="article_info_right">
@@ -185,7 +181,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <p>xmake 的工程描述文件 xmake.lua 虽然基于 lua 语法，但是为了使得更加方便简洁得编写项目构建逻辑，xmake 对其进行了一层封装，使得编写 xmake.lua 不会像写 makefile 那样繁琐</p>
+                            <h1 id="%E8%AF%AD%E6%B3%95%E6%8F%8F%E8%BF%B0">语法描述</h1>
+<p>xmake 的工程描述文件 xmake.lua 虽然基于 lua 语法，但是为了使得更加方便简洁得编写项目构建逻辑，xmake 对其进行了一层封装，使得编写 xmake.lua 不会像写 makefile 那样繁琐</p>
 <p>基本上写个简单的工程构建描述，只需四行就能搞定，例如：</p>
 
 <pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
