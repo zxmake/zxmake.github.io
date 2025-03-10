@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # rule
 
 xmake 不仅原生支持多语言文件的构建，还允许用户通过自定义构建规则实现复杂的未知文件构建。

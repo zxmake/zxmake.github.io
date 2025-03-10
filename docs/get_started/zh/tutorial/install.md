@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 安装
 
 ## 源码编译安装

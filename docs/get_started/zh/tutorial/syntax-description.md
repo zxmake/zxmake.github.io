@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 语法描述
 
 xmake 的工程描述文件 xmake.lua 虽然基于 lua 语法，但是为了使得更加方便简洁得编写项目构建逻辑，xmake 对其进行了一层封装，使得编写 xmake.lua 不会像写 makefile 那样繁琐

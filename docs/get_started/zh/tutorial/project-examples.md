@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 工程例子
 
 以下是一些常用的工程例子，更多的 examples 可以到 [project examples](https://github.com/TOMO-CAT/xmake/tree/master/tests/projects) 中查看。

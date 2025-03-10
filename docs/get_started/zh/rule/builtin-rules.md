@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 内建规则
 
 xmake 提供了一些内置规则去简化日常 xmake.lua 描述，以及一些常用构建环境的支持。

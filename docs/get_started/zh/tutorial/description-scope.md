@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 描述域
 
 ## 命名规范

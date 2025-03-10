@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # FAQ
 
 ## 怎样获取更多参数选项信息？

@@ -1,3 +1,7 @@
+---
+class: heading_no_counter
+---
+
 # 快速开始
 
 ## 创建工程
