@@ -46,7 +46,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
         
     
     
-    <title>安装 - mysite</title>
+    <title>rule - mysite</title>
     
     <script type="text/javascript">js_vars = {}</script>
     <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
@@ -78,8 +78,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
             <div>
                 <ul id="nav_right">
 <li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
-<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/tutorial/install.html">English</a></li>
-<li class="active"><a  href="/get_started/zh/tutorial/install.html">中文 简体</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/rule/index.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/rule/index.html">中文 简体</a></li>
 </ul></li>
 </ul>
 
@@ -103,7 +103,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                 </div>
                 <ul class="show">
 <li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
-<li class="active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
@@ -125,7 +125,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 </ul>
 </li>
 <li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=package/index.html&from=/get_started/zh/package/index.html"><span class="label">package 包管理</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
@@ -146,7 +146,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     <div id="article_head">
                         <div id="article_title">
                             
-                            <h1>安装</h1>
+                            <h1>rule</h1>
                             
                         </div>
                         <div id="article_tags">
@@ -168,7 +168,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/install.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/rule/README.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -185,74 +185,93 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h2 id="%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85">源码编译安装</h2>
-<h3 id="%E5%AE%89%E8%A3%85">安装</h3>
+                            <p>xmake 不仅原生支持多语言文件的构建，还允许用户通过自定义构建规则实现复杂的未知文件构建。</p>
+<p>自定义构建规则可以使用 <code>set_extensions</code> 将一组文件扩展名关联到它们。</p>
+<p>一旦这些扩展与规则相关联，稍后对 <code>add_files</code> 的调用将自动使用此自定义规则。</p>
+<p>这是一个示例规则，它将使用 Pandoc 将添加到构建目标的 Markdown 文件转换为 HTML 文件：</p>
+
+<pre class="language-lua"><code class="language-lua">-- define a build rule for a markdown file
+rule(&quot;markdown&quot;, function()
+    set_extensions(&quot;.md&quot;, &quot;.markdown&quot;)
+    on_build_file(function (target, sourcefile, opt)
+        import(&quot;core.project.depend&quot;)
+        import(&quot;utils.progress&quot;) -- it only for v2.5.9, we need use print to show progress below v2.5.8
+
+        -- make sure build directory exists
+        os.mkdir(target:targetdir())
+
+        -- replace .md with .html
+        local targetfile = path.join(target:targetdir(), path.basename(sourcefile) .. &quot;.html&quot;)
+
+        -- only rebuild the file if its changed since last run
+        depend.on_changed(function ()
+            -- call pandoc to make a standalone html file from a markdown file
+            os.vrunv('pandoc', {&quot;-s&quot;, &quot;-f&quot;, &quot;markdown&quot;, &quot;-t&quot;, &quot;html&quot;, &quot;-o&quot;, targetfile, sourcefile})
+            progress.show(opt.progress, &quot;${color.build.object}markdown %s&quot;, sourcefile)
+        end, {files = sourcefile})
+    end)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;object&quot;)
+
+    -- make the test target support the construction rules of the markdown file
+    add_rules(&quot;markdown&quot;)
+
+    -- adding a markdown file to build
+    add_files(&quot;src/*.md&quot;)
+    add_files(&quot;src/*.markdown&quot;)
+end)
+</code></pre>
+<p>还有一种以 <code>on_build_files</code> 形式代替 <code>on_build_file</code> 的方法，它允许您在一个函数调用中处理整个文件集。</p>
+<p>第二种称为 <code>on_buildcmd_file</code> 和 <code>on_buildcmd_files</code> 的形式是声明性的；它不是运行任意 Lua 来构建目标，而是运行 Lua 来了解这些目标是如何构建的。</p>
 <blockquote>
-<p>切记，xmake 不建议在 root 下安装和使用，所以尽量不要在 root 下拉取源码编译安装。</p>
+<p><code>buildcmd</code> 的优点是可以将这些规则导出到根本不需要 xmake 即可运行的 makefile。</p>
 </blockquote>
+<p>我们可以使用 buildcmd 进一步简化它，如下所示：</p>
 
-<pre class="language-bash"><code class="language-bash">git clone https://github.com/TOMO-CAT/xmake.git
-cd ./xmake
-bash scripts/install.sh
+<pre class="language-lua"><code class="language-lua">-- define a build rule for a markdown file
+rule(&quot;markdown&quot;, function()
+    set_extensions(&quot;.md&quot;, &quot;.markdown&quot;)
+    on_buildcmd_file(function (target, batchcmds, sourcefile, opt)
+
+        -- make sure build directory exists
+        batchcmds:mkdir(target:targetdir())
+
+        -- replace .md with .html
+        local targetfile = path.join(target:targetdir(), path.basename(sourcefile) .. &quot;.html&quot;)
+
+        -- call pandoc to make a standalone html file from a markdown file
+        batchcmds:vrunv('pandoc', {&quot;-s&quot;, &quot;-f&quot;, &quot;markdown&quot;, &quot;-t&quot;, &quot;html&quot;, &quot;-o&quot;, targetfile, sourcefile})
+        batchcmds:show_progress(opt.progress, &quot;${color.build.object}markdown %s&quot;, sourcefile)
+
+        -- only rebuild the file if its changed since last run
+        batchcmds:add_depfiles(sourcefile)
+    end)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;object&quot;)
+
+    -- make the test target support the construction rules of the markdown file
+    add_rules(&quot;markdown&quot;)
+
+    -- adding a markdown file to build
+    add_files(&quot;src/*.md&quot;)
+    add_files(&quot;src/*.markdown&quot;)
+end)
 </code></pre>
-<p>如果没有外网环境，可以通过 gitee 镜像拉取（xmake repo 也会自动切到 gitee 源）：</p>
+<p>无论文件扩展名如何，文件都可以分配给特定规则。您可以通过在添加文件时设置 <code>rule</code> 自定义属性来完成此操作，如下例所示：</p>
 
-<pre class="language-bash"><code class="language-bash">git clone https://gitee.com/tomocat/xmake.git
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    -- ...
+    add_files(&quot;src/test/*.md.in&quot;, {rule = &quot;markdown&quot;})
+end)
 </code></pre>
-<p>安装完后检查是否安装完成：</p>
-
-<pre class="language-bash"><code class="language-bash">xmake --version
-</code></pre>
-<h3 id="%E5%90%AF%E7%94%A8-Luajit">启用 Luajit</h3>
-<p>对于一些大型项目（比如包含 300+ targets），我们可以启用 Luajit 加速构建，提升构建速度。</p>
-
-<pre class="language-bash"><code class="language-bash">bash scripts/install.sh --runtime=luajit
-</code></pre>
-<h3 id="%E4%BB%85%E6%9B%B4%E6%96%B0-lua-%E8%84%9A%E6%9C%AC">仅更新 lua 脚本</h3>
-<p>这个开发者本地调试 xmake 源码才需要：</p>
-
-<pre class="language-bash"><code class="language-bash">./scripts/get.sh __local__ __install_only__
-</code></pre>
-<h3 id="%E7%BC%96%E8%AF%91-xmake-bundle-%E5%8C%85">编译 xmake bundle 包</h3>
-<p>默认编译方式会安装 xmake 二进制和 Lua 脚本，这样做的好处是方便源码调试 Lua 脚本，但是不方便发布和迁移，可以只编译 xmake 二进制：</p>
-
-<pre class="language-bash"><code class="language-bash"># TODO:
-</code></pre>
-<h3 id="root-%E4%B8%8B%E5%AE%89%E8%A3%85">root 下安装</h3>
-<p>xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root 用户运行 xmake 会打印一条 warning 日志，用户可以设置环境变量 <code>XMAKE_ROOT=y</code> 屏蔽相关的报警，用户需要随时注意root下误操作系统文件文件的风险。</p>
-<h3 id="%E5%90%AF%E7%94%A8-ccache">启用 ccache</h3>
-<p>默认情况下 xmake 用的是内部的 xcache，但可能会出现一些非预期的 bug。如果需要启用 ccache，可以手动安装 ccache，xmake会自动检测并使用。</p>
-<h2 id="%E6%9B%B4%E6%96%B0%E5%8D%87%E7%BA%A7">更新升级</h2>
-<p>我们可以通过 <code>xmake update</code> 命令来快速进行自我更新和升级，默认是升级到最新版本，当然也可以指定升级或者回退到某个 tag 版本：</p>
-
-<pre class="language-bash"><code class="language-bash"># 如果不是 force 的话, xmake 版本一样就会跳过安装, 不会精确到 git tag / branch
-# 例如 xmake v3.0.4+dev.39db22335 版本也会跳过
-xmake update --force --diagnosis --verbose v3.0.4
-</code></pre>
-<p>我们也可以指定更新到 master/dev 分支版本：</p>
-
-<pre class="language-bash"><code class="language-bash">xmake update master
-xmake update dev
-</code></pre>
-<p>从指定 git 源更新：</p>
-
-<pre class="language-bash"><code class="language-bash"># 指定 github 源
-xmake update github:TOMO-CAT/xmake#master
-
-# 指定 gitee 源
-xmake update gitee:tomocat/xmake#dev
-</code></pre>
-<p>如果 xmake/core 没动过，仅仅更新 xmake 的 lua 脚本改动，可以加 <code>-s/--scriptonly</code> 快速更新 lua 脚本：</p>
-
-<pre class="language-bash"><code class="language-bash">xmake update --scriptonly --force dev
-</code></pre>
-<h2 id="%E5%8D%B8%E8%BD%BD">卸载</h2>
-<p>最后，我们如果要卸载 xmake，也是支持的：</p>
-
-<pre class="language-bash"><code class="language-bash">rm -rf /usr/local/share/xmake
-rm /usr/local/bin/xrepo
-rm /usr/local/bin/xmake
-</code></pre>
+<p>一个 target 可以叠加应用多个 rules 去更加定制化实现自己的构建行为，甚至支持不同的构建环境。</p>
+<blockquote>
+<p>通过 <code>add_files(&quot;*.md&quot;, {rule = &quot;markdown&quot;})</code> 方式指定的规则，优先级高于 <code>add_rules(&quot;markdown&quot;)</code> 设置的规则。</p>
+</blockquote>
 
                         
                     </div>
@@ -260,11 +279,16 @@ rm /usr/local/bin/xmake
                 <div id="previous_next">
                     <div id="previous">
                         
+                        <a href="/get_started/zh/no_translate.html?ref=package/index.html&from=/get_started/zh/package/index.html">
+                            <span class="icon"></span>
+                            <span class="label">package 包管理</span>
+                        </a>
+                        
                     </div>
                     <div id="next">
                         
-                        <a href="/get_started/zh/tutorial/quick-start.html">
-                            <span class="label">快速入门</span>
+                        <a href="/get_started/zh/rule/builtin-rules.html">
+                            <span class="label">内建规则</span>
                             <span class="icon"></span>
                         </a>
                         

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>描述域 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/rule/description-scope.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/rule/description-scope.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=package/index.html&from=/get_started/zh/package/index.html"><span class="label">package 包管理</span><span class=""></span></a></li>
+<li class="active_parent with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=toolchain/index.html&from=/get_started/zh/toolchain/index.html"><span class="label">toolchain 工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html"><span class="label">plugin 插件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>描述域</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-03-10">
+                                    2025-03-10
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/rule/description-scope.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h2 id="rule">rule</h2>
+<p>定义规则：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    set_extensions(&quot;.md&quot;, &quot;.markdown&quot;)
+    on_build_file(function (target, sourcefile, opt)
+        os.cp(sourcefile, path.join(target:targetdir(), path.basename(sourcefile) .. &quot;.html&quot;))
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aadd_deps">rule:add_deps</h2>
+<p>关联依赖可以绑定一批规则，也就是不必对 target 挨个去使用 <code>add_rules()</code> 添加规则，只需要应用一个规则，就能生效它和它的所有依赖规则。</p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;foo&quot;, function()
+    add_deps(&quot;bar&quot;)
+end)
+
+rule(&quot;bar&quot;, function()
+   ...
+end)
+</code></pre>
+<p>我们只需要 <code>add_rules(&quot;foo&quot;)</code>，就能同时应用 foo 和 bar 两个规则。</p>
+<p>但是，默认情况下，依赖之间是不存在执行的先后顺序的，foo 和 bar 的 <code>on_build_file</code> 等脚本是并行执行的，顺序未定义。</p>
+<p>如果要严格控制执行顺序，可以配置 <code>add_deps(&quot;bar&quot;, {order = true})</code>，告诉 xmake，我们需要根据依赖顺序来执行同级别的脚本。</p>
+<p>例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;foo&quot;, function()
+    add_deps(&quot;bar&quot;, {order = true})
+    on_build_file(function (target, sourcefile)
+    end)
+end)
+
+rule(&quot;bar&quot;, function()
+    on_build_file(function (target, sourcefile)
+    end)
+end)
+</code></pre>
+<p>bar 的 <code>on_build_file</code> 将会被先执行。</p>
+<p>不过，这种控制依赖的方式，只适合 foo 和 bar 两个规则都是自定义规则，如果想要将自己的规则插入到 xmake 的内置规则之前执行，这就不适用了。</p>
+<p>这个时候，我们需要使用更加灵活的动态规则创建和注入的方式，去修改内置规则。</p>
+<p>例如，我们想在内置的 <code>c++.build</code> 规则之前，执行自定义 cppfront 规则的 <code>on_build_file</code> 脚本，我们可以通过下面的方式来实现。</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;cppfront&quot;, function()
+    set_extensions(&quot;.cpp2&quot;)
+    on_load(function (target)
+        local rule = target:rule(&quot;c++.build&quot;):clone()
+        rule:add(&quot;deps&quot;, &quot;cppfront&quot;, {order = true})
+        target:rule_add(rule)
+    end)
+    on_build_file(function (target, sourcefile, opt)
+        print(&quot;build cppfront file&quot;)
+    end)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;cppfront&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/*.cpp2&quot;)
+end)
+</code></pre>
+<h2 id="rule%3Aadd_imports">rule:add_imports</h2>
+<p>为所有自定义脚本预先导入扩展模块。</p>
+<p>使用方式和说明请见：<a href="#targetadd_imports"  >target:add_imports</a>，用法相同。</p>
+<h2 id="rule%3Aset_extensions">rule:set_extensions</h2>
+<p>设置规则支持的文件扩展类型。</p>
+<p>通过设置支持的扩展文件类型，将规则应用于带这些后缀的文件上，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 定义一个 markdown 文件的构建规则
+rule(&quot;markdown&quot;, function()
+    set_extensions(&quot;.md&quot;, &quot;.markdown&quot;)
+    on_build_file(function (target, sourcefile, opt)
+        os.cp(sourcefile, path.join(target:targetdir(), path.basename(sourcefile) .. &quot;.html&quot;))
+    end)
+end)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+
+    -- 使 test 目标支持 markdown 文件的构建规则
+    add_rules(&quot;markdown&quot;)
+
+    -- 添加 markdown 文件的构建
+    add_files(&quot;src/*.md&quot;)
+    add_files(&quot;src/*.markdown&quot;)
+end)
+</code></pre>
+<h2 id="rule%3Aon_load">rule:on_load</h2>
+<p>自定义加载脚本。</p>
+<p>用于实现自定规则的加载脚本，当加载 target 的时候，会被执行，可在里面自定义设置一些 target 配置，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;test&quot;, function()
+    on_load(function (target)
+        target:add(&quot;defines&quot;, &quot;TEST&quot;)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_link">rule:on_link</h2>
+<p>自定义链接脚本。</p>
+<p>用于实现自定规则的链接脚本，会覆盖被应用的 target 的默认链接行为，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;test&quot;, function()
+    on_link(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_config">rule:on_config</h2>
+<p>自定义配置脚本。</p>
+<p>在 <code>xmake config</code> 执行完成后，Build 之前会执行此脚本，通常用于编译前的配置工作。它与 on_load 不同的是，on_load 只要 target 被加载就会执行，执行时机更早。</p>
+<p>如果一些配置，无法在 on_load 中过早配置，那么都可以在 on_config 中去配置它。</p>
+<p>另外，它的执行时机比 before_build 还要早，大概的执行流程如下：</p>
+
+<pre class="language-none"><code class="language-none">on_load -&gt; after_load -&gt; on_config -&gt; before_build -&gt; on_build -&gt; after_build
+</code></pre>
+<h2 id="rule%3Aon_build">rule:on_build</h2>
+<p>自定义编译脚本。</p>
+<p>用于实现自定规则的构建脚本，会覆盖被应用的 target 的默认构建行为，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_build(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_clean">rule:on_clean</h2>
+<p>自定义清理脚本。</p>
+<p>用于实现自定规则的清理脚本会，覆盖被应用的 target 的默认清理行为，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_clean(function (target)
+        -- remove sourcefile.html
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_package">rule:on_package</h2>
+<p>自定义打包脚本。</p>
+<p>用于实现自定规则的打包脚本，覆盖被应用的 target 的默认打包行为, 例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_package(function (target)
+        -- package sourcefile.html
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_install">rule:on_install</h2>
+<p>自定义安装脚本。</p>
+<p>用于实现自定规则的安装脚本，覆盖被应用的 target 的默认安装行为, 例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_install(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_uninstall">rule:on_uninstall</h2>
+<p>自定义卸载脚本。</p>
+<p>用于实现自定规则的卸载脚本，覆盖被应用的 target 的默认卸载行为, 例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_uninstall(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_build_file">rule:on_build_file</h2>
+<p>自定义编译脚本，一次处理一个源文件。</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_build_file(function (target, sourcefile, opt)
+        print(&quot;%%%d: %s&quot;, opt.progress, sourcefile)
+    end)
+end)
+</code></pre>
+<p>其中第三个参数 opt 是可选参数，用于获取一些编译过程中的信息状态，例如：opt.progress 为当期的编译进度。</p>
+<h2 id="rule%3Aon_buildcmd_file">rule:on_buildcmd_file</h2>
+<p>自定义批处理编译脚本，一次处理一个源文件。</p>
+<p>这个接口里面的脚本不会直接构建源文件，但是会通过 batchcmds 对象，构造一个批处理命令行任务，</p>
+<p>xmake 在实际执行构建的时候，一次性执行这些命令。</p>
+<p>这对于 <code>xmake project</code> 此类工程生成器插件非常有用，因为生成器生成的第三方工程文件并不支持 <code>on_build_files</code> 此类内置脚本的执行支持。</p>
+<p>但是 <code>on_buildcmd_files</code> 构造的最终结果，就是一批原始的 cmd 命令行，可以直接给其他工程文件作为 custom commands 来执行。</p>
+<p>另外，相比 <code>on_build_files</code>，它也简化对扩展文件的编译实现，更加的可读易配置，对用户也更加友好。</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;foo&quot;, function()
+    set_extensions(&quot;.xxx&quot;)
+    on_buildcmd_file(function (target, batchcmds, sourcefile, opt)
+        batchcmds:vrunv(&quot;gcc&quot;, {&quot;-o&quot;, objectfile, &quot;-c&quot;, sourcefile})
+        batchcmds:add_depfiles(&quot;/xxxxx/dependfile.h&quot;,  ...)
+        -- batchcmds:add_depvalues(...)
+        -- batchcmds:set_depmtime(os.mtime(...))
+        -- batchcmds:set_depcache(&quot;xxxx.d&quot;)
+    end)
+end)
+</code></pre>
+<p>除了 <code>batchcmds:vrunv</code>，我们还支持一些其他的批处理命令，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">batchcmds:show(&quot;hello %s&quot;, &quot;xmake&quot;)
+batchcmds:vrunv(&quot;gcc&quot;, {&quot;-o&quot;, objectfile, &quot;-c&quot;, sourcefile}, {envs = {LD_LIBRARY_PATH=&quot;/xxx&quot;}})
+batchcmds:mkdir(&quot;/xxx&quot;) -- and cp, mv, rm, ln ..
+batchcmds:compile(sourcefile_cx, objectfile, {configs = {includedirs = sourcefile_dir, languages = (sourcekind == &quot;cxx&quot; and &quot;c++11&quot;)}})
+batchcmds:link(objectfiles, targetfile, {configs = {linkdirs = &quot;&quot;}})
+</code></pre>
+<p>同时，我们在里面也简化对依赖执行的配置，下面是一个完整例子：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;lex&quot;, function()
+    set_extensions(&quot;.l&quot;, &quot;.ll&quot;)
+    on_buildcmd_file(function (target, batchcmds, sourcefile_lex, opt)
+
+        -- imports
+        import(&quot;lib.detect.find_tool&quot;)
+
+        -- get lex
+        local lex = assert(find_tool(&quot;flex&quot;) or find_tool(&quot;lex&quot;), &quot;lex not found!&quot;)
+
+        -- get c/c++ source file for lex
+        local extension = path.extension(sourcefile_lex)
+        local sourcefile_cx = path.join(target:autogendir(), &quot;rules&quot;, &quot;lex_yacc&quot;, path.basename(sourcefile_lex) .. (extension == &quot;.ll&quot; and &quot;.cpp&quot; or &quot;.c&quot;))
+
+        -- add objectfile
+        local objectfile = target:objectfile(sourcefile_cx)
+        table.insert(target:objectfiles(), objectfile)
+
+        -- add commands
+        batchcmds:show_progress(opt.progress, &quot;${color.build.object}compiling.lex %s&quot;, sourcefile_lex)
+        batchcmds:mkdir(path.directory(sourcefile_cx))
+        batchcmds:vrunv(lex.program, {&quot;-o&quot;, sourcefile_cx, sourcefile_lex})
+        batchcmds:compile(sourcefile_cx, objectfile)
+
+        -- add deps
+        batchcmds:add_depfiles(sourcefile_lex)
+        local dependfile = target:dependfile(objectfile)
+        batchcmds:set_depmtime(os.mtime(dependfile))
+        batchcmds:set_depcache(dependfile)
+    end)
+end)
+</code></pre>
+<p><code>add_depfiles</code> 设置这个目标文件依赖的源文件。<code>set_depmtime</code> 设置目标文件的修改时间，如果有任意源文件的修改时间大于它，则认为需要重新生成这个目标文件。这里使用 dependfile 而不是 objectfile 的原因见 <a href="https://github.com/xmake-io/xmake/issues/748"  target="_blank">issues 748</a>。<code>set_depcache</code> 设置存储依赖信息的文件。</p>
+<p>关于这个的详细说明和背景，见：<a href="https://github.com/xmake-io/xmake/issues/1246"  target="_blank">issue 1246</a></p>
+<h2 id="rule%3Aon_build_files">rule:on_build_files</h2>
+<p>自定义编译脚本，一次处理多个源文件。</p>
+<p>大部分的自定义构建规则，每次都是处理单独一个文件，输出一个目标文件，例如：a.c =&gt; a.o</p>
+<p>但是，有些情况下，我们需要同时输入多个源文件一起构建生成一个目标文件，例如：a.c b.c d.c =&gt; x.o</p>
+<p>对于这种情况，我们可以通过自定义这个脚本来实现：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    on_build_files(function (target, sourcebatch, opt)
+        -- build some source files
+        for _, sourcefile in ipairs(sourcebatch.sourcefiles) do
+            -- ...
+        end
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Aon_buildcmd_files">rule:on_buildcmd_files</h2>
+<p>自定义批处理编译脚本，一次处理多个源文件。</p>
+<p>关于这个的详细说明，见：<a href="#ruleon_buildcmd_file"  >rule:on_buildcmd_file</a></p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;foo&quot;, function()
+    set_extensions(&quot;.xxx&quot;)
+    on_buildcmd_files(function (target, batchcmds, sourcebatch, opt)
+        for _, sourcefile in ipairs(sourcebatch.sourcefiles) do
+            batchcmds:vrunv(&quot;gcc&quot;, {&quot;-o&quot;, objectfile, &quot;-c&quot;, sourcefile})
+        end
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_config">rule:before_config</h2>
+<p>自定义配置前脚本。</p>
+<p>用于实现自定义 target 配置前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;test&quot;, function()
+    before_config(function (target)
+    end)
+end)
+</code></pre>
+<p>它会在 on_config 之前被执行。</p>
+<h2 id="rule%3Abefore_link">rule:before_link</h2>
+<p>自定义链接前脚本。</p>
+<p>用于实现自定义 target 链接前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;test&quot;, function()
+    before_link(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_build">rule:before_build</h2>
+<p>自定义编译前脚本。</p>
+<p>用于实现自定义 target 构建前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    before_build(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_clean">rule:before_clean</h2>
+<p>自定义清理前脚本。</p>
+<p>用于实现自定义 target 清理前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    before_clean(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_package">rule:before_package</h2>
+<p>自定义打包前脚本。</p>
+<p>用于实现自定义 target 打包前的执行脚本, 例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    before_package(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_install">rule:before_install</h2>
+<p>自定义安装前脚本。</p>
+<p>用于实现自定义 target 安装前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    before_install(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_uninstall">rule:before_uninstall</h2>
+<p>自定义卸载前脚本。</p>
+<p>用于实现自定义 target 卸载前的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;markdown&quot;, function()
+    before_uninstall(function (target)
+    end)
+end)
+</code></pre>
+<h2 id="rule%3Abefore_build_file">rule:before_build_file</h2>
+<p>自定义编译前脚本，一次处理一个源文件。</p>
+<p>跟 <a href="#ruleon_build_file"  >rule:on_build_file</a> 用法类似，不过这个接口被调用的时机是在编译某个源文件之前，<br />
+一般用于对某些源文件进行编译前的预处理。</p>
+<h2 id="rule%3Abefore_buildcmd_file">rule:before_buildcmd_file</h2>
+<p>自定义编译前批处理脚本，一次处理一个源文件。</p>
+<p>跟 <a href="#ruleon_buildcmd_file"  >rule:on_buildcmd_file</a> 用法类似，不过这个接口被调用的时机是在编译某个源文件之前，<br />
+一般用于对某些源文件进行编译前的预处理。</p>
+<h2 id="rule%3Abefore_build_files">rule:before_build_files</h2>
+<p>自定义编译前脚本，一次处理多个源文件。</p>
+<p>跟 <a href="#ruleon_build_files"  >rule:on_build_files</a> 用法类似，不过这个接口被调用的时机是在编译某些源文件之前，<br />
+一般用于对某些源文件进行编译前的预处理。</p>
+<h2 id="rule%3Abefore_buildcmd_files">rule:before_buildcmd_files</h2>
+<p>自定义编译前批处理脚本，一次处理多个源文件。</p>
+<p>跟 <a href="#ruleon_buildcmd_files"  >rule:on_buildcmd_files</a> 用法类似，不过这个接口被调用的时机是在编译某些源文件之前，<br />
+一般用于对某些源文件进行编译前的预处理。</p>
+<h2 id="rule%3Aafter_config">rule:after_config</h2>
+<p>自定义配置后脚本。</p>
+<p>用于实现自定义 target 配置后的执行脚本，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">rule(&quot;test&quot;, function()
+    after_config(function (target)
+    end)
+end)
+</code></pre>
+<p>它会在 on_config 之后被执行。</p>
+<h2 id="rule%3Aafter_link">rule:after_link</h2>
+<p>自定义链接后脚本。</p>
+<p>用于实现自定义 target 链接后的执行脚本，用法跟 <a href="#rulebefore_link"  >rule:before_link</a> 类似。</p>
+<h2 id="rule%3Aafter_build">rule:after_build</h2>
+<p>自定义编译后脚本。</p>
+<p>用于实现自定义 target 构建后的执行脚本，用法跟 <a href="#rulebefore_build"  >rule:before_build</a> 类似。</p>
+<h2 id="rule%3Aafter_clean">rule:after_clean</h2>
+<p>自定义清理后脚本。</p>
+<p>用于实现自定义 target 清理后的执行脚本，用法跟 <a href="#rulebefore_clean"  >rule:before_clean</a> 类似。</p>
+<h2 id="rule%3Aafter_package">rule:after_package</h2>
+<p>自定义打包后脚本。</p>
+<p>用于实现自定义 target 打包后的执行脚本, 用法跟 <a href="#rulebefore_package"  >rule:before_package</a> 类似。</p>
+<h2 id="rule%3Aafter_install">rule:after_install</h2>
+<p>自定义安装后脚本。</p>
+<p>用于实现自定义 target 安装后的执行脚本，用法跟 <a href="#rulebefore_install"  >rule:before_install</a> 类似。</p>
+<h2 id="rule%3Aafter_uninstall">rule:after_uninstall</h2>
+<p>自定义卸载后脚本。</p>
+<p>用于实现自定义 target 卸载后的执行脚本，用法跟 <a href="#rulebefore_uninstall"  >rule:before_uninstall</a> 类似。</p>
+<h2 id="rule%3Aafter_build_file">rule:after_build_file</h2>
+<p>自定义编译后脚本，一次处理一个源文件。</p>
+<p>跟 <a href="#ruleon_build_file"  >rule:on_build_file</a> 用法类似，不过这个接口被调用的时机是在编译某个源文件之后，<br />
+一般用于对某些编译后对象文件进行后期处理。</p>
+<h2 id="rule%3Aafter_buildcmd_file">rule:after_buildcmd_file</h2>
+<p>自定义编译后批处理脚本，一次处理一个源文件。</p>
+<p>跟 <a href="#ruleon_buildcmd_file"  >rule:on_buildcmd_file</a> 用法类似，不过这个接口被调用的时机是在编译某个源文件之后，<br />
+一般用于对某些编译后对象文件进行后期处理。</p>
+<h2 id="rule%3Aafter_build_files">rule:after_build_files</h2>
+<p>自定义编译后脚本，一次处理多个源文件。</p>
+<p>跟 <a href="#ruleon_build_files"  >rule:on_build_files</a> 用法类似，不过这个接口被调用的时机是在编译某些源文件之后，<br />
+一般用于对某些编译后对象文件进行后期处理。</p>
+<h2 id="rule%3Aafter_buildcmd_files">rule:after_buildcmd_files</h2>
+<p>自定义编译后批处理脚本，一次处理多个源文件。</p>
+<p>跟 <a href="#ruleon_buildcmd_files"  >rule:on_buildcmd_files</a> 用法类似，不过这个接口被调用的时机是在编译某些源文件之后，<br />
+一般用于对某些编译后对象文件进行后期处理。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/rule/builtin-rules.html">
+                            <span class="icon"></span>
+                            <span class="label">内建规则</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/no_translate.html?ref=toolchain/index.html&from=/get_started/zh/toolchain/index.html">
+                            <span class="label">toolchain 工具链</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

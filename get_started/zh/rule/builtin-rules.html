@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>内建规则 - mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": null, "update": [], "ts": 0, "author": "", "brief": "", "cover": ""}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/rule/builtin-rules.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/rule/builtin-rules.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=package/index.html&from=/get_started/zh/package/index.html"><span class="label">package 包管理</span><span class=""></span></a></li>
+<li class="active_parent with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=toolchain/index.html&from=/get_started/zh/toolchain/index.html"><span class="label">toolchain 工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html"><span class="label">plugin 插件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1>内建规则</h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                                <span class="article_date" title="最后修改日期： 2025-03-10">
+                                    2025-03-10
+                                </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/rule/builtin-rules.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <p>xmake 提供了一些内置规则去简化日常 xmake.lua 描述，以及一些常用构建环境的支持。</p>
+<p>我们可以通过运行以下命令，查看完整的内置规则列表：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake show -l rules
+</code></pre>
+<h2 id="mode.debug">mode.debug</h2>
+<p>为当前工程 xmake.lua 添加 debug 编译模式的配置规则，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;)
+</code></pre>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;debug&quot;) then
+    set_symbols(&quot;debug&quot;)
+    set_optimize(&quot;none&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m debug</code> 来切换到此编译模式。</p>
+<h2 id="mode.release">mode.release</h2>
+<p>为当前工程 xmake.lua 添加 release 编译模式的配置规则，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;)
+</code></pre>
+<blockquote>
+<p>此模式默认不会带调试符号。</p>
+</blockquote>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;release&quot;) then
+    set_symbols(&quot;hidden&quot;)
+    set_optimize(&quot;fastest&quot;)
+    set_strip(&quot;all&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m release</code> 来切换到此编译模式。</p>
+<h2 id="mode.releasedbg">mode.releasedbg</h2>
+<p>为当前工程 xmake.lua 添加 releasedbg 编译模式的配置规则，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.releasedbg&quot;)
+</code></pre>
+<blockquote>
+<p>与 release 模式相比，此模式还会额外开启调试符号，这通常是非常有用的。</p>
+</blockquote>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;releasedbg&quot;) then
+    set_symbols(&quot;debug&quot;)
+    set_optimize(&quot;fastest&quot;)
+    set_strip(&quot;all&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m releasedbg</code> 来切换到此编译模式。</p>
+<h2 id="mode.minsizerel">mode.minsizerel</h2>
+<p>为当前工程 xmake.lua 添加 minsizerel 编译模式的配置规则，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.minsizerel&quot;)
+</code></pre>
+<blockquote>
+<p>与 release 模式相比，此模式更加倾向于最小代码编译优化，而不是速度优先。</p>
+</blockquote>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;minsizerel&quot;) then
+    set_symbols(&quot;hidden&quot;)
+    set_optimize(&quot;smallest&quot;)
+    set_strip(&quot;all&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m minsizerel</code> 来切换到此编译模式。</p>
+<h2 id="mode.check">mode.check</h2>
+<p>为当前工程 xmake.lua 添加 check 编译模式的配置规则，一般用于内存检测，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.check&quot;)
+</code></pre>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;check&quot;) then
+    set_symbols(&quot;debug&quot;)
+    set_optimize(&quot;none&quot;)
+    add_cxflags(&quot;-fsanitize=address&quot;, &quot;-ftrapv&quot;)
+    add_mxflags(&quot;-fsanitize=address&quot;, &quot;-ftrapv&quot;)
+    add_ldflags(&quot;-fsanitize=address&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m check</code> 来切换到此编译模式。</p>
+<h2 id="mode.profile">mode.profile</h2>
+<p>为当前工程 xmake.lua 添加 profile 编译模式的配置规则，一般用于性能分析，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.profile&quot;)
+</code></pre>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;profile&quot;) then
+    set_symbols(&quot;debug&quot;)
+    add_cxflags(&quot;-pg&quot;)
+    add_ldflags(&quot;-pg&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m profile</code> 来切换到此编译模式。</p>
+<h2 id="mode.coverage">mode.coverage</h2>
+<p>为当前工程 xmake.lua 添加 coverage 编译模式的配置规则，一般用于覆盖分析，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.coverage&quot;)
+</code></pre>
+<p>相当于：</p>
+
+<pre class="language-lua"><code class="language-lua">if is_mode(&quot;coverage&quot;) then
+    add_cxflags(&quot;--coverage&quot;)
+    add_mxflags(&quot;--coverage&quot;)
+    add_ldflags(&quot;--coverage&quot;)
+end
+</code></pre>
+<p>我们可以通过：<code>xmake f -m coverage</code> 来切换到此编译模式。</p>
+<h2 id="mode.valgrind">mode.valgrind</h2>
+<p>此模式提供 valgrind 内存分析检测支持。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.valgrind&quot;)
+</code></pre>
+<p>我们可以通过：<code>xmake f -m valgrind</code> 来切换到此编译模式。</p>
+<h2 id="mode.asan">mode.asan</h2>
+<p>此模式提供 AddressSanitizer 内存分析检测支持。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.asan&quot;)
+</code></pre>
+<p>我们可以通过：<code>xmake f -m asan</code> 来切换到此编译模式。</p>
+<h2 id="mode.tsan">mode.tsan</h2>
+<p>此模式提供 ThreadSanitizer 内存分析检测支持。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.tsan&quot;)
+</code></pre>
+<p>我们可以通过：<code>xmake f -m tsan</code> 来切换到此编译模式。</p>
+<h2 id="mode.lsan">mode.lsan</h2>
+<p>此模式提供 LeakSanitizer 内存分析检测支持。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.lsan&quot;)
+</code></pre>
+<p>我们可以通过：<code>xmake f -m lsan</code> 来切换到此编译模式。</p>
+<h2 id="mode.ubsan">mode.ubsan</h2>
+<p>此模式提供 UndefinedBehaviorSanitizer 内存分析检测支持。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.ubsan&quot;)
+</code></pre>
+<p>我们可以通过：<code>xmake f -m ubsan</code> 来切换到此编译模式。</p>
+<h2 id="qt.static">qt.static</h2>
+<p>用于编译生成 Qt 环境的静态库程序：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.static&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_frameworks(&quot;QtNetwork&quot;, &quot;QtGui&quot;)
+end)
+</code></pre>
+<h2 id="qt.shared">qt.shared</h2>
+<p>用于编译生成 Qt 环境的动态库程序：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.shared&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_frameworks(&quot;QtNetwork&quot;, &quot;QtGui&quot;)
+end)
+</code></pre>
+<h2 id="qt.console">qt.console</h2>
+<p>用于编译生成 Qt 环境的控制台程序：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.console&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+end)
+</code></pre>
+<h2 id="qt.quickapp">qt.quickapp</h2>
+<p>用于编译生成 Qt 环境的 Quick(qml) ui 应用程序。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.quickapp&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/qml.qrc&quot;)
+end)
+</code></pre>
+<h2 id="qt.quickapp_static">qt.quickapp_static</h2>
+<p>用于编译生成 Qt 环境的 Quick(qml) ui 应用程序（静态链接版本）。</p>
+<blockquote>
+<p>需要切换到静态库版本 Qt SDK</p>
+</blockquote>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.quickapp_static&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/qml.qrc&quot;)
+end)
+</code></pre>
+<h2 id="qt.widgetapp">qt.widgetapp</h2>
+<p>用于编译 Qt Widgets(ui/moc) 应用程序</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.widgetapp&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/mainwindow.ui&quot;)
+    add_files(&quot;src/mainwindow.h&quot;)  -- 添加带有 Q_OBJECT 的 meta 头文件
+end)
+</code></pre>
+<h2 id="qt.widgetapp_static">qt.widgetapp_static</h2>
+<p>用于编译 Qt Widgets(ui/moc) 应用程序（静态库版本）</p>
+<blockquote>
+<p>需要切换到静态库版本 Qt SDK</p>
+</blockquote>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;qt.widgetapp_static&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_files(&quot;src/mainwindow.ui&quot;)
+    add_files(&quot;src/mainwindow.h&quot;)  -- 添加带有 Q_OBJECT 的 meta 头文件
+end)
+</code></pre>
+<p>更多 Qt 相关描述见：<a href="https://github.com/xmake-io/xmake/issues/160"  target="_blank">#160</a></p>
+<h2 id="xcode.bundle">xcode.bundle</h2>
+<p>用于编译生成 ios/macos bundle 程序</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.bundle&quot;)
+    add_files(&quot;src/*.m&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<h2 id="xcode.framework">xcode.framework</h2>
+<p>用于编译生成 ios/macos framework 程序</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.framework&quot;)
+    add_files(&quot;src/*.m&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<h2 id="xcode.application">xcode.application</h2>
+<p>用于编译生成 ios/macos 应用程序</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_rules(&quot;xcode.application&quot;)
+    add_files(&quot;src/*.m&quot;, &quot;src/**.storyboard&quot;, &quot;src/*.xcassets&quot;)
+    add_files(&quot;src/Info.plist&quot;)
+end)
+</code></pre>
+<h2 id="plugin.compile_commands.autoupdate">plugin.compile_commands.autoupdate</h2>
+<p>我们也可以使用这个规则来自动更新生成 compile_commandss.json</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;plugin.compile_commands.autoupdate&quot;, {outputdir = &quot;.vscode&quot;})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+end)
+</code></pre>
+<h2 id="utils.symbols.export_list">utils.symbols.export_list</h2>
+<p>我们可以在 xmake.lua 里面直接定义导出的符号列表，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;foo&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_files(&quot;src/foo.c&quot;)
+    add_rules(&quot;utils.symbols.export_list&quot;, {symbols = {
+        &quot;add&quot;,
+        &quot;sub&quot;}})
+end)
+</code></pre>
+<p>或者，在 <code>*.export.txt</code> 文件中添加导出的符号列表。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;foo2&quot;, function()
+    set_kind(&quot;shared&quot;)
+    add_files(&quot;src/foo.c&quot;)
+    add_files(&quot;src/foo.export.txt&quot;)
+    add_rules(&quot;utils.symbols.export_list&quot;)
+end)
+</code></pre>
+<p>完整的工程例子见：<a href="https://github.com/xmake-io/xmake/tree/dev/tests/projects/c/shared_library_export_list"  target="_blank">导出符号例子</a></p>
+<h2 id="utils.install.cmake_importfiles">utils.install.cmake_importfiles</h2>
+<p>可以使用此规则在安装 target 目标库文件的时候，导出 .cmake 文件，用于其他 cmake 项目的库导入和查找。</p>
+<h2 id="utils.install.pkgconfig_importfiles">utils.install.pkgconfig_importfiles</h2>
+<p>可以使用此规则在安装 target 目标库文件的时候，导出 pkgconfig/.pc 文件，用于其他项目的库导入和查找。</p>
+<h2 id="utils.bin2c">utils.bin2c</h2>
+<p>可以使用此规则，在项目中引入一些二进制文件，并见他们作为 c/c++ 头文件的方式提供开发者使用，获取这些文件的数据。</p>
+<p>比如，我们可以在项目中，内嵌一些 png/jpg 资源文件到代码中。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;console&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;utils.bin2c&quot;, {extensions = {&quot;.png&quot;, &quot;.jpg&quot;}})
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;res/*.png&quot;, &quot;res/*.jpg&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>extensions 的设置是可选的，默认后缀名是 .bin</p>
+</blockquote>
+<p>然后，我们就可以通过 <code>#include &quot;filename.png.h&quot;</code> 的方式引入进来使用，xmake 会自动帮你生成对应的头文件，并且添加对应的搜索目录。</p>
+
+<pre class="language-c"><code class="language-c">static unsigned char g_png_data[] = {
+    #include &quot;image.png.h&quot;
+};
+
+int main(int argc, char** argv)
+{
+    printf(&quot;image.png: %s, size: %d\n&quot;, g_png_data, sizeof(g_png_data));
+    return 0;
+}
+</code></pre>
+<p>生成头文件内容类似：</p>
+
+<pre class="language-console"><code class="language-console">cat build/.gens/test/macosx/x86_64/release/rules/c++/bin2c/image.png.h
+  0x68, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x78, 0x6D, 0x61, 0x6B, 0x65, 0x21, 0x0A, 0x00
+</code></pre>
+<h2 id="utils.glsl2spv">utils.glsl2spv</h2>
+<p>可以使用此规则，在项目中引入 <code>*.vert/*.frag</code> 等 glsl shader 文件，然后实现自动编译生成 <code>*.spv</code> 文件。</p>
+<p>另外，我们还支持以 C/C++ 头文件的方式，二进制内嵌 spv 文件数据，方便程序使用。</p>
+<h3 id="%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90-spv-%E6%96%87%E4%BB%B6">编译生成 spv 文件</h3>
+<p>xmake 会自动调用 glslangValidator 或者 glslc 去编译 shaders 生成 .spv 文件，然后输出到指定的 <code>{outputdir = &quot;build&quot;}</code> 目录下。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;glslang&quot;, {configs = {binaryonly = true}})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;utils.glsl2spv&quot;, {outputdir = &quot;build&quot;})
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;src/*.vert&quot;, &quot;src/*.frag&quot;)
+    add_packages(&quot;glslang&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>注，这里的 <code>add_packages(&quot;glslang&quot;)</code> 主要用于引入和绑定 glslang 包中的 glslangValidator，确保 xmake 总归能够使用它。</p>
+</blockquote>
+<p>当然，如果用户自己系统上已经安装了它，也可以不用额外绑定这个包，不过我还是建议添加一下。</p>
+<h3 id="%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90-c/c%2B%2B-%E5%A4%B4%E6%96%87%E4%BB%B6">编译生成 c/c++ 头文件</h3>
+<p>我们也可以内部借助 bin2c 模块，将编译后的 spv 文件生成对应的二进制头文件，方便用户代码中直接引入，我们只需要启用 <code>{bin2c = true}</code>。:</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;glslang&quot;, {configs = {binaryonly = true}})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;utils.glsl2spv&quot;, {bin2c = true})
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;src/*.vert&quot;, &quot;src/*.frag&quot;)
+    add_packages(&quot;glslang&quot;)
+end)
+</code></pre>
+<p>然后我们可以在代码这么引入：</p>
+
+<pre class="language-c"><code class="language-c">static unsigned char g_test_vert_spv_data[] = {
+    #include &quot;test.vert.spv.h&quot;
+};
+
+static unsigned char g_test_frag_spv_data[] = {
+    #include &quot;test.frag.spv.h&quot;
+};
+</code></pre>
+<p>跟 bin2c 规则的使用方式类似，完整例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/other/glsl2spv"  target="_blank">glsl2spv example</a></p>
+<h2 id="utils.hlsl2spv">utils.hlsl2spv</h2>
+<p>除了 <code>utils.glsl2spv</code> 规则，我们现在还支持 <code>utils.hlsl2spv</code> 规则。</p>
+
+<pre class="language-bash"><code class="language-bash">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+add_requires(&quot;glslang&quot;, {configs = {binaryonly = true}})
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;utils.hlsl2spv&quot;, {bin2c = true})
+    add_files(&quot;src/*.c&quot;)
+    add_files(&quot;src/*.hlsl&quot;, &quot;src/*.hlsl&quot;)
+    add_packages(&quot;directxshadercompiler&quot;)
+end)
+</code></pre>
+<h2 id="python.library">python.library</h2>
+<p>我们可以用这个规则，配合 pybind11 生成 python 库模块，它会调整 python 库的模块名。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;pybind11&quot;)
+
+target(&quot;example&quot;, function()
+    add_rules(&quot;python.library&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;pybind11&quot;)
+    set_languages(&quot;c++11&quot;)
+end)
+</code></pre>
+<p>带有 soabi：</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.release&quot;, &quot;mode.debug&quot;)
+add_requires(&quot;pybind11&quot;)
+
+target(&quot;example&quot;, function()
+    add_rules(&quot;python.library&quot;, {soabi = true})
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;pybind11&quot;)
+    set_languages(&quot;c++11&quot;)
+end)
+</code></pre>
+<h2 id="nodejs.module">nodejs.module</h2>
+<p>构建 nodejs 模块。</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;node-addon-api&quot;)
+
+target(&quot;foo&quot;, function()
+    set_languages(&quot;cxx17&quot;)
+    add_rules(&quot;nodejs.module&quot;)
+    add_packages(&quot;node-addon-api&quot;)
+    add_files(&quot;*.cc&quot;)
+end)
+</code></pre>
+<h2 id="utils.ipsc">utils.ipsc</h2>
+<p>ipsc 编译器规则支持，使用方式如下：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_rules(&quot;utils.ispc&quot;, {header_extension = &quot;_ispc.h&quot;})
+    set_values(&quot;ispc.flags&quot;, &quot;--target=host&quot;)
+    add_files(&quot;src/*.ispc&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+end)
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/rule/index.html">
+                            <span class="icon"></span>
+                            <span class="label">rule 规则</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/rule/description-scope.html">
+                            <span class="label">描述域</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
