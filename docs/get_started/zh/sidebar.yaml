@@ -42,7 +42,11 @@ items:
         -   label: 描述域
             file: rule/description-scope.md
 -   label: toolchain 工具链
-    file: toolchain/README.md
+    items:
+        -   label: 内置工具链
+            file: toolchain/builtin-toolchains.md
+        -   label: 自定义工具链
+            file: toolchain/custom-toolchains.md
 -   label: plugin 插件
     file: plugin/README.md
 # -   label: 其他特性
