@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/toolchain/custom-toolchains.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/toolchain/custom-toolchains.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=package/index.html&from=/get_started/zh/package/index.html"><span class="label">package 包管理</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html"><span class="label">plugin 插件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/toolchain/custom-toolchains.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE">自定义工具链</h1>
+<p>xmake 支持在用户的项目 xmake.lua 中自定义工具链，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">-- define toolchain
+toolchain(&quot;myclang&quot;, function()
+
+    -- mark as standalone toolchain
+    set_kind(&quot;standalone&quot;)
+
+    -- set toolset
+    set_toolset(&quot;cc&quot;, &quot;clang&quot;)
+    set_toolset(&quot;cxx&quot;, &quot;clang&quot;, &quot;clang++&quot;)
+    set_toolset(&quot;ld&quot;, &quot;clang++&quot;, &quot;clang&quot;)
+    set_toolset(&quot;sh&quot;, &quot;clang++&quot;, &quot;clang&quot;)
+    set_toolset(&quot;ar&quot;, &quot;ar&quot;)
+    set_toolset(&quot;ex&quot;, &quot;ar&quot;)
+    set_toolset(&quot;strip&quot;, &quot;strip&quot;)
+    set_toolset(&quot;mm&quot;, &quot;clang&quot;)
+    set_toolset(&quot;mxx&quot;, &quot;clang&quot;, &quot;clang++&quot;)
+    set_toolset(&quot;as&quot;, &quot;clang&quot;)
+
+    add_defines(&quot;MYCLANG&quot;)
+
+    -- check toolchain
+    on_check(function (toolchain)
+        return import(&quot;lib.detect.find_tool&quot;)(&quot;clang&quot;)
+    end)
+
+    -- on load
+    on_load(function (toolchain)
+
+        -- get march
+        local march = is_arch(&quot;x86_64&quot;, &quot;x64&quot;) and &quot;-m64&quot; or &quot;-m32&quot;
+
+        -- init flags for c/c++
+        toolchain:add(&quot;cxflags&quot;, march)
+        toolchain:add(&quot;ldflags&quot;, march)
+        toolchain:add(&quot;shflags&quot;, march)
+        if not is_plat(&quot;windows&quot;) and os.isdir(&quot;/usr&quot;) then
+            for _, includedir in ipairs({&quot;/usr/local/include&quot;, &quot;/usr/include&quot;}) do
+                if os.isdir(includedir) then
+                    toolchain:add(&quot;includedirs&quot;, includedir)
+                end
+            end
+            for _, linkdir in ipairs({&quot;/usr/local/lib&quot;, &quot;/usr/lib&quot;}) do
+                if os.isdir(linkdir) then
+                    toolchain:add(&quot;linkdirs&quot;, linkdir)
+                end
+            end
+        end
+
+        -- init flags for objc/c++  (with ldflags and shflags)
+        toolchain:add(&quot;mxflags&quot;, march)
+
+        -- init flags for asm
+        toolchain:add(&quot;asflags&quot;, march)
+    end)
+end)
+</code></pre>
+<p>然后通过下面的命令切到自己定义的工具链就行了：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --toolchain=myclang
+</code></pre>
+<p>当然，我们也可以通过 <code>set_toolchains</code> 接口直接对指定 target 切换设置到自定义工具链。</p>
+<p>在自定义工具前，我们可以通过先运行以下命令，查看完整的内置工具链列表，确保 xmake 没有提供，如果有的话，直接使用就行了，没必要自己定义：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake show -l toolchains
+</code></pre>
+<p>下面是自定义 toolchain 目前支持的接口列表：</p>
+<table>
+<thead>
+<tr>
+  <th>接口</th>
+  <th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="#toolchain"  >toolchain</a></td>
+  <td>定义工具链</td>
+</tr>
+<tr>
+  <td><a href="#toolchainset_kind"  >set_kind</a></td>
+  <td>设置工具链类型</td>
+</tr>
+<tr>
+  <td><a href="#toolchainset_toolset"  >set_toolset</a></td>
+  <td>设置工具集</td>
+</tr>
+<tr>
+  <td><a href="#toolchainset_sdkdir"  >set_sdkdir</a></td>
+  <td>设置工具链 sdk 目录路径</td>
+</tr>
+<tr>
+  <td><a href="#toolchainset_bindir"  >set_bindir</a></td>
+  <td>设置工具链 bin 目录路径</td>
+</tr>
+<tr>
+  <td><a href="#toolchainon_check"  >on_check</a></td>
+  <td>检测工具链</td>
+</tr>
+<tr>
+  <td><a href="#toolchainonon_load"  >on_load</a></td>
+  <td>加载工具链</td>
+</tr>
+<tr>
+  <td><a href="#toolchain_end"  >toolchain_end</a></td>
+  <td>结束定义工具链</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_includedirs"  >add_includedirs</a></td>
+  <td>添加头文件搜索目录</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_defines"  >add_defines</a></td>
+  <td>添加宏定义</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_undefines"  >add_undefines</a></td>
+  <td>取消宏定义</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_cflags"  >add_cflags</a></td>
+  <td>添加 c 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_cxflags"  >add_cxflags</a></td>
+  <td>添加 c/c++ 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_cxxflags"  >add_cxxflags</a></td>
+  <td>添加 c++ 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_mflags"  >add_mflags</a></td>
+  <td>添加 objc 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_mxflags"  >add_mxflags</a></td>
+  <td>添加 objc/objc++ 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_mxxflags"  >add_mxxflags</a></td>
+  <td>添加 objc++ 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_scflags"  >add_scflags</a></td>
+  <td>添加 swift 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_asflags"  >add_asflags</a></td>
+  <td>添加汇编编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_gcflags"  >add_gcflags</a></td>
+  <td>添加 go 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_dcflags"  >add_dcflags</a></td>
+  <td>添加 dlang 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_rcflags"  >add_rcflags</a></td>
+  <td>添加 rust 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_cuflags"  >add_cuflags</a></td>
+  <td>添加 cuda 编译选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_culdflags"  >add_culdflags</a></td>
+  <td>添加 cuda 设备链接选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_ldflags"  >add_ldflags</a></td>
+  <td>添加链接选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_arflags"  >add_arflags</a></td>
+  <td>添加静态库归档选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_shflags"  >add_shflags</a></td>
+  <td>添加动态库链接选项</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_languages"  >add_languages</a></td>
+  <td>添加语言标准</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_frameworks"  >add_frameworks</a></td>
+  <td>添加链接框架</td>
+</tr>
+<tr>
+  <td><a href="/zh-cn/manual/project_target?id=targetadd_frameworkdirs"  >add_frameworkdirs</a></td>
+  <td>添加链接框架</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toolchain">toolchain</h2>
+<h3 id="%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E9%93%BE">定义工具链</h3>
+<p>可以在用户项目 xmake.lua 中定义，也可以通过 includes 独立到单独的 xmake.lua 去专门定义各种工具链</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    set_toolset(&quot;cc&quot;, &quot;clang&quot;)
+    set_toolset(&quot;cxx&quot;, &quot;clang&quot;, &quot;clang++&quot;)
+end)
+</code></pre>
+<h3 id="%E5%AE%9A%E4%B9%89%E4%BA%A4%E5%8F%89%E5%B7%A5%E5%85%B7%E9%93%BE">定义交叉工具链</h3>
+<p>我们也可以在 xmake.lua 中针对不同的交叉工具链 sdk 进行自定义配置，通常只需要指定 sdkdir，xmake 就可以自动检测其他的配置，比如 cross 等信息，例如:</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;my_toolchain&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_sdkdir(&quot;/tmp/arm-linux-musleabi-cross&quot;)
+end)
+
+target(&quot;hello&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;apps/hello/*.c&quot;)
+end)
+</code></pre>
+<p>这是一个最精简的交叉工具链配置，仅仅设置了对应的 sdk 路径，然后通过 <code>set_kind(&quot;standalone&quot;)</code> 将其标记为完整独立的工具链。</p>
+<p>这个时候，我们就可以通过命令行 <code>--toolchain=my_toolchain</code> 去手动切换到此工具链来使用。</p>
+
+<pre class="language-console"><code class="language-console">xmake f --toolchain=my_toolchain
+xmake
+</code></pre>
+<p>另外，我们还可以直接在 xmake.lua 中通过 <code>set_toolchains</code> 将其绑定到对应的 target 上去，那么仅仅只在编译此 target 时候，才会切换到我们自定义的工具链。</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;my_toolchain&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_sdkdir(&quot;/tmp/arm-linux-musleabi-cross&quot;)
+end)
+
+target(&quot;hello&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;apps/hello/*.c&quot;)
+    set_toolchains(&quot;my_toolchain&quot;)
+end)
+</code></pre>
+<p>这样，我们不再需要手动切换工具链了，只需要执行 xmake，就会默认自动切换到 my_toolchain 工具链。</p>
+<p>这对于嵌入式开发来讲尤其有用，因为嵌入式平台的交叉编译工具链非常多，我们经常需要各种切换来完成不同平台的编译。</p>
+<p>因此，我们可以将所有的工具链定义放置到独立的 lua 文件中去定义，例如：</p>
+
+<pre class="language-none"><code class="language-none">projectdir
+    - xmake.lua
+    - toolchains
+      - my_toolchain1.lua
+      - my_toolchain2.lua
+      - ...
+</code></pre>
+<p>然后，我们只需要再 xmake.lua 中通过 includes 去引入它们，并根据不同的自定义平台，绑定不同的工具链：</p>
+
+<pre class="language-lua"><code class="language-lua">includes(&quot;toolchains/*.lua&quot;)
+target(&quot;hello&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;apps/hello/*.c&quot;)
+    if is_plat(&quot;myplat1&quot;) then
+        set_toolchains(&quot;my_toolchain1&quot;)
+    elseif is_plat(&quot;myplat2&quot;) then
+        set_toolchains(&quot;my_toolchain2&quot;)
+    end
+end)
+</code></pre>
+<p>这样，我们就可以编译的时候，直接快速切换指定平台，来自动切换对应的工具链了。</p>
+
+<pre class="language-console"><code class="language-console">xmake f -p myplat1
+xmake
+</code></pre>
+<p>如果，有些交叉编译工具链结构复杂，自动检测还不足够，那么可以根据实际情况，使用 <code>set_toolset</code>, <code>set_cross</code> 和 <code>set_bindir</code> 等接口，针对性的配置上其他的设置。</p>
+<p>例如下面的例子，我们还额外添加了一些 cxflags/ldflags 以及内置的系统库 links。</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;my_toolchain&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_sdkdir(&quot;/tmp/arm-linux-musleabi-cross&quot;)
+    on_load(function (toolchain)
+        -- add flags for arch
+        if toolchain:is_arch(&quot;arm&quot;) then
+            toolchain:add(&quot;cxflags&quot;, &quot;-march=armv7-a&quot;, &quot;-msoft-float&quot;, {force = true})
+            toolchain:add(&quot;ldflags&quot;, &quot;-march=armv7-a&quot;, &quot;-msoft-float&quot;, {force = true})
+        end
+        toolchain:add(&quot;ldflags&quot;, &quot;--static&quot;, {force = true})
+        toolchain:add(&quot;syslinks&quot;, &quot;gcc&quot;, &quot;c&quot;)
+    end)
+end)
+</code></pre>
+<p>更多自定义工具链的例子，我们可以看下面的接口文档，也可以到 xmake 的源码的目录参考内置的工具链定义：<a href="https://github.com/xmake-io/xmake/blob/master/xmake/toolchains/"  target="_blank">内部工具链列表</a></p>
+<h2 id="toolchain%3Aset_kind">toolchain:set_kind</h2>
+<h3 id="%E8%AE%BE%E7%BD%AE%E5%B7%A5%E5%85%B7%E9%93%BE%E7%B1%BB%E5%9E%8B">设置工具链类型</h3>
+<p>目前仅支持设置为 <code>standalone</code> 类型，表示当前工具链是独立完整的工具链，包括 cc/cxx/ld/sh/ar 等编译器、归档器、链接器等一整套工具集的配置。</p>
+<p>通常用于某个 target 被同时设置了多个工具链的情况，但同时只能生效一个独立工具链，通过此配置可以保证生效的工具链存在互斥关系，比如 gcc/clang 工具链不会同时生效。</p>
+<p>而像 yasm/nasm 这种局部工具链，属于附加的局部工具链扩展，不用设置 standalone，因为 clang/yasm 两个工具链有可能同时存在。</p>
+<blockquote>
+<p>只要记住，存在完整编译环境的工具链，都设置为 standalone 就行。</p>
+</blockquote>
+<h2 id="toolchain%3Aset_toolset">toolchain:set_toolset</h2>
+<p>设置工具集。</p>
+<p>用于设置每个单独工具名和路径，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_toolset(&quot;cc&quot;, &quot;clang&quot;)
+    set_toolset(&quot;cxx&quot;, &quot;clang&quot;, &quot;clang++&quot;)
+    set_toolset(&quot;ld&quot;, &quot;clang++&quot;, &quot;clang&quot;)
+    set_toolset(&quot;sh&quot;, &quot;clang++&quot;, &quot;clang&quot;)
+    set_toolset(&quot;ar&quot;, &quot;ar&quot;)
+    set_toolset(&quot;ex&quot;, &quot;ar&quot;)
+    set_toolset(&quot;strip&quot;, &quot;strip&quot;)
+    set_toolset(&quot;mm&quot;, &quot;clang&quot;)
+    set_toolset(&quot;mxx&quot;, &quot;clang&quot;, &quot;clang++&quot;)
+    set_toolset(&quot;as&quot;, &quot;clang&quot;)
+end)
+</code></pre>
+<p>关于这个接口的详情，可以看下：<a href="/zh-cn/manual/project_target?id=targetset_toolset"  >target.set_toolset</a></p>
+<h2 id="toolchain%3Aset_sdkdir">toolchain:set_sdkdir</h2>
+<p>设置工具链 sdk 目录路径。</p>
+<p>通常我们可以通过 <code>xmake f --toolchain=myclang --sdk=xxx</code> 来配置 sdk 目录，但是每次配置比较繁琐，我们也可以通过此接口预先配置到 xmake.lua 中去，方便快速切换使用。</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_sdkdir(&quot;/tmp/sdkdir&quot;)
+    set_toolset(&quot;cc&quot;, &quot;clang&quot;)
+end)
+</code></pre>
+<h2 id="toolchain%3Aset_bindir">toolchain:set_bindir</h2>
+<p>设置工具链 bin 目录路径。</p>
+<p>通常我们可以通过 <code>xmake f --toolchain=myclang --bin=xxx</code> 来配置 sdk 目录，但是每次配置比较繁琐，我们也可以通过此接口预先配置到 xmake.lua 中去，方便快速切换使用。</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    set_bindir(&quot;/tmp/sdkdir/bin&quot;)
+    set_toolset(&quot;cc&quot;, &quot;clang&quot;)
+end)
+</code></pre>
+<h2 id="toolchain%3Aon_check">toolchain:on_check</h2>
+<p>检测工具链。</p>
+<p>用于检测指定工具链所在 sdk 或者程序在当前系统上是否存在，通常用于多个 standalone 工具链的情况，进行自动探测和选择有效工具链。</p>
+<p>而对于 <code>xmake f --toolchain=myclang</code> 手动指定的场景，此检测配置不是必须的，可以省略。</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    on_check(function (toolchain)
+        return import(&quot;lib.detect.find_tool&quot;)(&quot;clang&quot;)
+    end)
+end)
+</code></pre>
+<h2 id="toolchain%3Aon_load">toolchain:on_load</h2>
+<p>加载工具链。</p>
+<p>对于一些复杂的场景，我们可以在 on_load 中动态灵活的设置各种工具链配置，比在描述域设置更加灵活，更加强大：</p>
+
+<pre class="language-lua"><code class="language-lua">toolchain(&quot;myclang&quot;, function()
+    set_kind(&quot;standalone&quot;)
+    on_load(function (toolchain)
+
+        -- set toolset
+        toolchain:set(&quot;toolset&quot;, &quot;cc&quot;, &quot;clang&quot;)
+        toolchain:set(&quot;toolset&quot;, &quot;ld&quot;, &quot;clang++&quot;)
+
+        -- init flags
+        local march = toolchain:is_arch(&quot;x86_64&quot;, &quot;x64&quot;) and &quot;-m64&quot; or &quot;-m32&quot;
+        toolchain:add(&quot;cxflags&quot;, march)
+        toolchain:add(&quot;ldflags&quot;, march)
+        toolchain:add(&quot;shflags&quot;, march)
+    end)
+end)
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/toolchain/builtin-toolchains.html">
+                            <span class="icon"></span>
+                            <span class="label">内置工具链</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html">
+                            <span class="label">plugin 插件</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

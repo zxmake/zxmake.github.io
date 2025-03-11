@@ -1,86 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/rule/description-scope.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/FAQ.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/project-examples.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/environment-variables.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/syntax-description.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/quick-start.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/build-policies.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/description-scope.html</loc>
-            <lastmod>2025-03-10</lastmod>
-            <changefreq>weekly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
             <loc>https://tomo-cat.github.io/get_started/zh/rule/index.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/rule/builtin-rules.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/rule/description-scope.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/FAQ.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/project-examples.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/environment-variables.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/syntax-description.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/quick-start.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/build-policies.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/tutorial/description-scope.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/toolchain/builtin-toolchains.html</loc>
+            <lastmod>2025-03-11</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        <url>
+            <loc>https://tomo-cat.github.io/get_started/zh/toolchain/custom-toolchains.html</loc>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/target/description-scope.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/option/description-scope.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/configuration.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/install.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
@@ -92,7 +104,7 @@
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/en/no_translate.html</loc>
-            <lastmod>2025-03-10</lastmod>
+            <lastmod>2025-03-11</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
