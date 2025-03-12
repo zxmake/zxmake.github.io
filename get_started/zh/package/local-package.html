@@ -78,8 +78,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
             <div>
                 <ul id="nav_right">
 <li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
-<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/toolchain/builtin-toolchains.html">English</a></li>
-<li class="active"><a  href="/get_started/zh/toolchain/builtin-toolchains.html">中文 简体</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/package/local-package.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/package/local-package.html">中文 简体</a></li>
 </ul></li>
 </ul>
 
@@ -125,9 +125,9 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="active_parent no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
 </ul>
 </li>
 <li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
@@ -135,8 +135,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="active_parent no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator"></span></a><ul class="show">
-<li class="active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
 </ul>
@@ -174,7 +174,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/toolchain/builtin-toolchains.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/package/local-package.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -191,222 +191,199 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7%E9%93%BE">内置工具链</h1>
-<h2 id="Gcc">Gcc</h2>
-<p>如果 linux 上安装了 gcc 工具链，通常 xmake 都会优先探测使用，当然我们也可以手动切换到 gcc 来构建。</p>
+                            <h1 id="%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%8C%85">使用本地包</h1>
+<h2 id="%E9%BB%98%E8%AE%A4%E6%89%93%E5%8C%85%E6%A0%BC%E5%BC%8F">默认打包格式</h2>
+<p>xmake 提供了一种新的本地包打包方案，将会更加无缝的对接 <code>add_requires</code> 和 <code>add_packages</code>。</p>
+<p>我们执行 <code>xmake package</code> 命令就能够生成默认的新版打包格式。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gcc -c
-$ xmake
+<pre class="language-console"><code class="language-console">$ xmake package
+package(foo): build/packages/f/foo generated
 </code></pre>
-<h3 id="%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-Gcc">使用指定版本的 Gcc</h3>
-<p>如果用户额外安装了 gcc-11, gcc-10 等特定版本的 gcc 工具链，在本地的 gcc 程序命名可能是 <code>/usr/bin/gcc-11</code>。</p>
-<p>一种办法是通过 <code>xmake f --cc=gcc-11 --cxx=gcc-11 --ld=g++-11</code> 挨个指定配置来切换，但非常繁琐。</p>
-<p>所以，xmake 也提供了更加快捷的切换方式：</p>
+<p>它将会产生 <code>build/packages/f/foo/xmake.lua</code> 文件，内容如下：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gcc-11 -c
-$ xmake
-</code></pre>
-<p>只需要指定 <code>gcc-11</code> 对应的版本名，就可以快速切换整个 gcc 工具链。</p>
-<h2 id="Clang">Clang</h2>
-<p>在 macOS 和 linux，通常 xmake 也会优先尝试去自动探测和使用它，当然我们也可以手动切换。</p>
+<pre class="language-lua"><code class="language-lua">package(&quot;foo&quot;, function()
+    set_description(&quot;The foo package&quot;)
+    set_license(&quot;Apache-2.0&quot;)
+    add_deps(&quot;add&quot;, &quot;sub&quot;)
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=clang -c
-$ xmake
-</code></pre>
-<h2 id="LLVM">LLVM</h2>
-<p>除了独立 clang 编译器，如果用户安装了完整 llvm 工具链，我们也可以整个切换过去，包括 <code>llvm-ar</code> 等工具。</p>
+    on_load(function (package)
+        package:set(&quot;installdir&quot;, path.join(os.scriptdir(), package:plat(), package:arch(), package:mode()))
+    end)
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=llvm --sdk=/xxxx/llvm
-$ xmake
-</code></pre>
-<p>如果是手动下载的 llvm sdk，我们需要额外指定 llvm sdk 根目录，确保 xmake 能找到它，当然，如果用户已经安装到 PATH 目录下，<code>--sdk</code> 参数的设置也是可选的。</p>
-<h2 id="Circle">Circle</h2>
-<p>xmake 新增了 circle 编译器的支持，这是个新的 C++20 编译器，额外附带了一些有趣的编译期元编程特性，有兴趣的同学可以到官网查看：<a href="https://www.circle-lang.org/"  target="_blank">https://www.circle-lang.org/</a></p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=circle
-$ xmake
-</code></pre>
-<h2 id="Tinyc">Tinyc</h2>
-<p><a href="https://bellard.org/tcc/"  target="_blank">Tiny C 编译器</a> 非常的轻量，在一些不想安装 msvc/llvm 等重量型编译器的情况下，使用它可能快速编译一些 c 代码。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=tinycc
-$ xmake
-</code></pre>
-<p>使用的时候，请先把 tinycc 编译器加入 PATH 环境。</p>
-<p>我们也可以使用远程工具链自动下载集成它，真正做到全平台一键编译，无任何用户手动安装操作。</p>
-
-<pre class="language-lua"><code class="language-lua">add_requires(&quot;tinycc&quot;)
-target(&quot;test&quot;, function()
-    set_kind(&quot;binary&quot;)
-    add_files(&quot;src/*.c&quot;)
-    set_toolchains(&quot;@tinycc&quot;)
+    on_fetch(function (package)
+        local result = {}
+        result.links = &quot;foo&quot;
+        result.linkdirs = package:installdir(&quot;lib&quot;)
+        result.includedirs = package:installdir(&quot;include&quot;)
+        return result
+    end)
 end)
 </code></pre>
-<h2 id="Armcc-for-Keil/MDK">Armcc for Keil/MDK</h2>
-<p>对 Keil/MDK 下 armcc 的工具链支持，相关 issue 见：<a href="https://github.com/xmake-io/xmake/issues/1753"  target="_blank">#1753</a></p>
+<p>其实就是采用 <code>package()</code> 来定义描述本地包，就跟远程包一样。</p>
+<p>而生成的目录结构如下：</p>
 
-<pre class="language-console"><code class="language-console">xmake f -p cross -a cortex-m3 --toolchain=armcc -c
-xmake
+<pre class="language-console"><code class="language-console">$ tree build/packages/f/foo/
+build/packages/f/foo/
+├── macosx
+│   └── x86_64
+│       └── release
+│           ├── include
+│           │   └── foo.h
+│           └── lib
+│               └── libfoo.a
+└── xmake.lua
 </code></pre>
-<p>这个工具链主要用于嵌入式交叉编译，所以指定了 <code>-p cross</code> 交叉编译平台，<code>-a cortex-m3</code> 指定使用的 cpu，这里复用了 <code>-a/--arch</code> 参数。</p>
-<h2 id="Armclang-for-Keil/MDK">Armclang for Keil/MDK</h2>
-<p>对 Keil/MDK 下 armclang 的工具链支持，相关 issue 见：<a href="https://github.com/xmake-io/xmake/issues/1753"  target="_blank">#1753</a></p>
+<p>我们也能够使用 <code>add_requires</code>/<code>add_repositories</code> 接口来无缝集成这个包。</p>
 
-<pre class="language-console"><code class="language-console">xmake f -p cross -a cortex-m3 --toolchain=armclang -c
-xmake
-</code></pre>
-<p>这个工具链主要用于嵌入式交叉编译，所以指定了 <code>-p cross</code> 交叉编译平台，<code>-a cortex-m3</code> 指定使用的 cpu，这里复用了 <code>-a/--arch</code> 参数。</p>
-<h2 id="GNU-RM">GNU-RM</h2>
-<p>另外一个嵌入式 arm 的交叉工具链，官网：<a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm"  target="_blank">https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm</a></p>
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gnu-rm -c
-$ xmake
-</code></pre>
-<h2 id="SDCC">SDCC</h2>
-<p>也是一个嵌入式的 arm 编译工具链。</p>
+add_repositories(&quot;local-repo build&quot;)
+add_requires(&quot;foo&quot;)
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=sdcc -a stm8
-$ xmake
+target(&quot;bar&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;foo&quot;)
+end)
 </code></pre>
-<p>我们可以指定 <code>-a stm8</code> 切换 cpu 架构，目前支持的有：</p>
-<ul>
-<li>stm8</li>
-<li>mcs51</li>
-<li>z80</li>
-<li>z180</li>
-<li>r2k</li>
-<li>r3ka</li>
-<li>s08</li>
-<li>hc08</li>
-</ul>
-<h2 id="Zig">Zig</h2>
-<p>如果要构建 Zig 程序，我们默认执行 xmake 就能自动使用 zig 工具链，但前提是 zig 已经在 PATH 环境下。</p>
+<p>其中，add_repositories 配置指定本地包的仓库根目录，然后就可以通过 <code>add_requires</code> 来引用这个包了。</p>
+<p>另外，生成的本地包，还有一个特性，就是支持 <code>target/add_deps</code>，会自动关联多个包的依赖关系，集成时候，也会自动对接所有依赖链接。</p>
+<p>这里有完整的 <a href="https://github.com/xmake-io/xmake/blob/dev/tests/actions/package/localpkg/test.lua"  target="_blank">测试例子</a>。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-bash"><code class="language-bash">&quot;/usr/bin/xcrun -sdk macosx clang++&quot; -o build/macosx/x86_64/release/bar build/.objs/bar/macosx/x86_64/release/src/main.cpp.o -arch x86_64 -mmacosx-version-min=10.15 -isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -stdlib=libc++
+ -L/Users/ruki/projects/personal/xmake/tests/actions/package/localpkg/bar/build/packages/f/foo/macosx/x86_64/release/lib
+ -L/Users/ruki/projects/personal/xmake/tests/actions/package/localpkg/bar/build/packages/s/sub/macosx/x86_64/release/lib
+ -L/Users/ruki/projects/personal/xmake/tests/actions/package/localpkg/bar/build/packages/a/add/macosx/x86_64/release/lib
+ -Wl,-x -lfoo -lsub -ladd -lz
 </code></pre>
-<p>当然，我们也可以手动设置它。</p>
+<h2 id="%E7%94%9F%E6%88%90%E8%BF%9C%E7%A8%8B%E5%8C%85">生成远程包</h2>
+<p>除了本地包格式，<code>xmake package</code> 现在也支持生成远程包，便于用户将他们快速提交到远程仓库。</p>
+<p>我们只需要在打包时候，修改包格式。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig -c
-$ xmake
+<pre class="language-console"><code class="language-console">$ xmake package -f remote
 </code></pre>
-<p>也可以指定 zig 编译器的路径。</p>
+<p>他也会产生 packages/f/foo/xmake.lua 文件。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig --zc=/xxxx/zig -c
-$ xmake
-</code></pre>
-<h3 id="Zig-CC">Zig CC</h3>
-<p>我们也可以使用 zig 提供的 <code>zig cc</code> 编译器去编译 C/C++ 代码。</p>
+<pre class="language-lua"><code class="language-lua">package(&quot;foo&quot;, function()
+    set_description(&quot;The foo package&quot;)
+    set_license(&quot;Apache-2.0&quot;)
+    add_deps(&quot;add&quot;, &quot;sub&quot;)
 
-<pre class="language-console"><code class="language-console">$ xmake f --cc=&quot;zig cc&quot; --cxx=&quot;zig cc&quot; --ld=&quot;zig c++&quot; -c
-$ xmake
-</code></pre>
-<h3 id="%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">交叉编译</h3>
-<p>另外，我们也可以使用 zig 实现交叉编译。</p>
+    add_urls(&quot;https://github.com/myrepo/foo.git&quot;)
+    add_versions(&quot;1.0&quot;, &quot;&lt;shasum256 or gitcommit&gt;&quot;)
 
-<pre class="language-console"><code class="language-console">$ xmake f -p cross --cross=riscv64-linux-musl --toolchain=zig
-$ xmake
-</code></pre>
-<p>或者编译 arm64 架构：</p>
+    on_install(function (package)
+        local configs = {}
+        if package:config(&quot;shared&quot;) then
+            configs.kind = &quot;shared&quot;
+        end
+        import(&quot;package.tools.xmake&quot;).install(package, configs)
+    end)
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig -a arm64 -c
-$ xmake
+    on_test(function (package)
+        -- TODO check includes and interfaces
+        -- assert(package:has_cfuncs(&quot;foo&quot;, {includes = &quot;foo.h&quot;})
+    end)
+end)
 </code></pre>
-<h2 id="Emcc-%28WASM%29">Emcc (WASM)</h2>
-<p>如果要编译 wasm 程序，我们只需要切换到 wasm 平台，默认就会使用 emcc 工具链去编译。</p>
+<p>包定义配置相比本地包，多了实际的安装逻辑，以及 urls 和 versions 的设置，</p>
+<p>我们也能够通过附加参数，去修改 urls，versions 等配置值，例如：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p wasm
-$ xmake
+<pre class="language-console"><code class="language-console">$ xmake package -f remote --url=https://xxxx/xxx.tar.gz --shasum=xxxxx --homepage=xxxxx`
 </code></pre>
-<h2 id="Wasi-%28WASM%29">Wasi (WASM)</h2>
-<p>这是另外一个启用了 WASI 的 Wasm 工具链，我们需要手动切换使用。</p>
+<p>xmake 也会从 target 的 <code>set_license</code> 和 <code>set_version</code> 等配置中读取相关配置信息。</p>
+<h2 id="%E4%BB%8E-CMake-%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%8C%85">从 CMake 中查找包</h2>
+<p>现在 cmake 已经是事实上的标准，所以 CMake 提供的 find_package 已经可以查找大量的库和模块，我们完全复用 cmake 的这部分生态来扩充 xmake 对包的集成。</p>
+<p>我们可以通过 <code>find_package(&quot;cmake::xxx&quot;)</code> 去借助 cmake 来找一些包，xmake 会自动生成一个 cmake 脚本来调用 cmake 的 find_package 去查找一些包，获取里面包信息。</p>
+<p>例如：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p wasm --toolchain=wasi
-$ xmake
+<pre class="language-console"><code class="language-console">$ xmake l find_package cmake::ZLIB
+{
+  links = {
+    &quot;z&quot;
+  },
+  includedirs = {
+    &quot;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.
+15.sdk/usr/include&quot;
+  },
+  linkdirs = {
+    &quot;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.
+15.sdk/usr/lib&quot;
+  }
+}
+$ xmake l find_package cmake::LibXml2
+{
+  links = {
+    &quot;xml2&quot;
+  },
+  includedirs = {
+    &quot;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/libxml2&quot;
+  },
+  linkdirs = {
+    &quot;/usr/lib&quot;
+  }
+}
 </code></pre>
-<h2 id="Icc-%28Intel-C/C%2B%2B-Compiler%29">Icc (Intel C/C++ Compiler)</h2>
-<p>我们也可以切换到 Intel 的 C/C++ 编译器去使用。</p>
+<h3 id="1.-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%9B%86%E6%88%90%E5%8C%85">1. 在项目中集成包</h3>
+<p>如果我们在 xmake.lua 项目配置中集成查找 cmake 的依赖包，通常不需要直接使用 find_package，我们可以用更加通用、简单的包集成方式。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=icc -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::ZLIB&quot;, {alias = &quot;zlib&quot;, system = true})
+target(&quot;test&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;zlib&quot;)
 </code></pre>
-<h2 id="Ifort-%28Intel-Fortain-Compiler%29">Ifort (Intel Fortain Compiler)</h2>
-<p>我们也可以切换到 Intel 的 Fortran 编译器去使用。</p>
+<p>我们指定 <code>system = true</code> 告诉 xmake 强制从系统中调用 cmake 查找包，如果找不到，不再走安装逻辑，因为 cmake 没有提供类似 vcpkg/conan 等包管理器的安装功能，只提供了包查找特性。</p>
+<h3 id="2.-%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC">2. 指定版本</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=ifort -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::OpenCV 4.1.1&quot;, {system = true})
 </code></pre>
-<h2 id="gfortran">gfortran</h2>
-<p>除了 Intel 的 Fortran 编译器，我们还有 gnu fortran 编译器可用。</p>
+<h3 id="3.-%E6%8C%87%E5%AE%9A%E7%BB%84%E4%BB%B6">3. 指定组件</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gfortran -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::Boost&quot;, {system = true, configs = {components = {&quot;regex&quot;, &quot;system&quot;}}})
 </code></pre>
-<h2 id="fpc-%28Free-Pascal%29">fpc (Free Pascal)</h2>
-<p>对于 pascal 程序，xmake 默认就会使用 fpc 编译器来编译。</p>
+<h3 id="4.-%E9%A2%84%E8%AE%BE%E5%BC%80%E5%85%B3">4. 预设开关</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::Boost&quot;, {system = true, configs = {components = {&quot;regex&quot;, &quot;system&quot;},
+                                             presets = {Boost_USE_STATIC_LIB = true}}})
 </code></pre>
-<p>当然，我们也可以手动切换。</p>
+<p>相当于内部调用 find_package 查找包之前，在 CMakeLists.txt 中预定义一些配置，控制 find_package 的查找策略和状态。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=fpc -c
-$ xmake
+<pre class="language-none"><code class="language-none">set(Boost_USE_STATIC_LIB ON) -- will be used in FindBoost.cmake
+find_package(Boost REQUIRED COMPONENTS regex system)
 </code></pre>
-<h2 id="Dlang">Dlang</h2>
-<p>对于 dlang 程序，xmake 默认就会使用 dmd 编译器来编译。</p>
+<h3 id="5.-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">5. 设置环境变量</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::OpenCV&quot;, {system = true, configs = {envs = {CMAKE_PREFIX_PATH = &quot;xxx&quot;}}})
 </code></pre>
-<p>当然，我们也可以手动切换。</p>
+<h3 id="6.-%E6%8C%87%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89-FindFoo.cmake-%E6%A8%A1%E5%9D%97%E8%84%9A%E6%9C%AC%E7%9B%AE%E5%BD%95">6. 指定自定义 FindFoo.cmake 模块脚本目录</h3>
+<p>mydir/cmake_modules/FindFoo.cmake：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=dlang -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::Foo&quot;, {system = true, configs = {moduledirs = &quot;mydir/cmake_modules&quot;}})
 </code></pre>
-<p>需要注意的是，此处的 dlang 工具链其实内部包含了对 <code>dmd</code>, <code>ldc2</code> 和 <code>gdc</code> 的自动探测和切换。</p>
-<h2 id="Cuda">Cuda</h2>
-<p>对于 Cuda 程序，我们需要手动切换到 cuda 工具链。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1632"  target="_blank">#1632</a></p>
+<h3 id="7.-%E6%8C%87%E5%AE%9A%E9%93%BE%E6%8E%A5%E9%A1%B9">7. 指定链接项</h3>
+<p>对于 cmake 包，我们新增了 <code>link_libraries</code> 配置选项，让用户在查找使用 cmake 包的时候，可以自定义配置包依赖的链接库，甚至对 target 链接的支持。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=cuda -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::xxx&quot;, {configs = {link_libraries = {&quot;abc::lib1&quot;, &quot;abc::lib2&quot;}}})
 </code></pre>
-<p>我们也可以手动切换 nvcc 内部调用的 C/C++ 编译器。</p>
+<p>xmake 在查找 cmake 包的时候，会自动追加下面的配置，改进对 links 库的提取。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=cuda --cu-ccbin=clang -c
-$ xmake
+<pre class="language-cmake"><code class="language-cmake">target_link_libraries(test PRIVATE ABC::lib1 ABC::lib2)
 </code></pre>
-<h2 id="%E6%B1%87%E7%BC%96%E5%99%A8">汇编器</h2>
-<p>关于独立的汇编器工具链，xmake 支持：yasm, nasm, fasm 三个，可以随意切换，如果没设置，默认使用 gcc/clang/msvc 自带的汇编器。</p>
+<h3 id="8.-%E6%8C%87%E5%AE%9A%E6%90%9C%E7%B4%A2%E6%A8%A1%E5%BC%8F">8. 指定搜索模式</h3>
+<p>另外，我们增加的搜索模式配置：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=nasm -c
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;cmake::xxx&quot;, {configs = {search_mode = &quot;config&quot;}})
+add_requires(&quot;cmake::xxx&quot;, {configs = {search_mode = &quot;module&quot;}})
+add_requires(&quot;cmake::xxx&quot;) -- both
 </code></pre>
-<p>也可以单独指定汇编器路径</p>
+<p>比如指定 config 搜索模式，告诉 cmake 从 <code>XXXConfig.cmake</code> 中查找包。</p>
+<p>xmake 在查找 cmake 包的时候，内部会自动追加下面的配置。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=nasm --as=/xxx/nasm -c
-$ xmake
+<pre class="language-cmake"><code class="language-cmake">find_package(ABC CONFIG REQUIRED)
 </code></pre>
-<h2 id="Go">Go</h2>
-<p>golang 编译工具链，默认编译 go 程序会自动启用。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake
-</code></pre>
-<h2 id="Rust">Rust</h2>
-<p>rust 编译工具链，默认编译 rust 程序会自动启用。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake
-</code></pre>
-<p>目前 rust 工具链还可以支持 android 等交叉编译环境。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f -p android --ndk=~/android-ndk-r20b -c
-$ xmake
-</code></pre>
-<h2 id="NDK">NDK</h2>
-<p>Android 的 NDK 编译工具链，只要启用 android 平台，就会默认启用。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f -p android --ndk=~/android-ndk-r20b -c
-$ xmake
-</code></pre>
-<p>如果 <code>--ndk</code> 参数不指定，xmake 也会默认从 AndroidSDK/ndk-bundle 目录，以及 <code>$ANDROID_NDK_HOME</code>, <code>ANDROID_NDK_ROOT</code> 等环境变量中去探测它。</p>
-<p>另外，我们也可以设置导全局的 <code>xmake g --ndk=</code> 配置中，避免每次重复设置。</p>
 
                         
                     </div>
@@ -414,7 +391,7 @@ $ xmake
                 <div id="previous_next">
                     <div id="previous">
                         
-                        <a href="/get_started/zh/rule/description-scope.html">
+                        <a href="/get_started/zh/package/description-scope.html">
                             <span class="icon"></span>
                             <span class="label">描述域</span>
                         </a>
@@ -422,8 +399,8 @@ $ xmake
                     </div>
                     <div id="next">
                         
-                        <a href="/get_started/zh/toolchain/custom-toolchains.html">
-                            <span class="label">自定义工具链</span>
+                        <a href="/get_started/zh/rule/index.html">
+                            <span class="label">rule 规则</span>
                             <span class="icon"></span>
                         </a>
                         

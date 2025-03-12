@@ -38,6 +38,8 @@ items:
     items:
         -   label: 描述域
             file: package/description-scope.md
+        -   label: 使用本地包
+            file: package/local-package.md
 -   label: rule 规则
     file: rule/README.md
     items:
