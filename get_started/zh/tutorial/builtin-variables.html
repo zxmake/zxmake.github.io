@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/tutorial/builtin-variables.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/tutorial/builtin-variables.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html"><span class="label">plugin 插件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/builtin-variables.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F">内置变量</h1>
+<p>xmake 提供了 <code>$(varname)</code> 的语法，来支持内置变量的获取，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">add_cxflags(&quot;-I$(buildir)&quot;)
+</code></pre>
+<p>它将会在在实际编译的时候，将内置的 <code>buildir</code> 变量转换为实际的构建输出目录：<code>-I./build</code></p>
+<p>一般内置变量可用于在传参时快速获取和拼接变量字符串，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    -- 添加工程源码目录下的源文件
+    add_files(&quot;$(projectdir)/src/*.c&quot;)
+
+    -- 添加构建目录下的头文件搜索路径
+    add_includedirs(&quot;$(buildir)/inc&quot;)
+end)
+</code></pre>
+<p>也可以在自定义脚本的模块接口中使用，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    on_run(function (target)
+        -- 复制当前脚本目录下的头文件到输出目录
+        os.cp(&quot;$(scriptdir)/xxx.h&quot;, &quot;$(buildir)/inc&quot;)
+    end)
+end)
+</code></pre>
+<p>所有的内置变量，也可以通过 <a href="#val"  >val</a> 接口，来获取他们的值。</p>
+<p>这种使用内置变量的方式，使得描述编写更加的简洁易读，下面是一些 xmake 内置的变量，可以直接获取：</p>
+<table>
+<thead>
+<tr>
+  <th>接口</th>
+  <th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="#varos"  >$(os)</a></td>
+  <td>获取当前编译平台的操作系统</td>
+</tr>
+<tr>
+  <td><a href="#varhost"  >$(host)</a></td>
+  <td>获取本机操作系统</td>
+</tr>
+<tr>
+  <td><a href="#vartmpdir"  >$(tmpdir)</a></td>
+  <td>获取临时目录</td>
+</tr>
+<tr>
+  <td><a href="#varcurdir"  >$(curdir)</a></td>
+  <td>获取当前目录</td>
+</tr>
+<tr>
+  <td><a href="#varbuildir"  >$(buildir)</a></td>
+  <td>获取构建输出目录</td>
+</tr>
+<tr>
+  <td><a href="#varscriptdir"  >$(scriptdir)</a></td>
+  <td>获取工程描述脚本目录</td>
+</tr>
+<tr>
+  <td><a href="#varglobaldir"  >$(globaldir)</a></td>
+  <td>获取全局配置目录</td>
+</tr>
+<tr>
+  <td><a href="#varconfigdir"  >$(configdir)</a></td>
+  <td>获取本地工程配置目录</td>
+</tr>
+<tr>
+  <td><a href="#varprogramdir"  >$(programdir)</a></td>
+  <td>xmake 安装脚本目录</td>
+</tr>
+<tr>
+  <td><a href="#varprojectdir"  >$(projectdir)</a></td>
+  <td>获取工程根目录</td>
+</tr>
+<tr>
+  <td><a href="#varshell"  >$(shell)</a></td>
+  <td>执行外部 shell 命令</td>
+</tr>
+<tr>
+  <td><a href="#varenv"  >$(env)</a></td>
+  <td>获取外部环境变量</td>
+</tr>
+<tr>
+  <td><a href="#varreg"  >$(reg)</a></td>
+  <td>获取 windows 注册表配置项的值</td>
+</tr>
+</tbody>
+</table>
+<p>当然这种变量模式，也是可以扩展的，默认通过 <code>xmake f --var=val</code> 命令，配置的参数都是可以直接获取，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_defines(&quot;-DTEST=$(var)&quot;)
+end)
+</code></pre>
+<blockquote>
+<p>所有 <code>xmake f --xxx=...</code> 配置的参数值，都是可以通过内置变量获取到，例如：<code>xmake f --arch=x86</code> 对应 <code>$(arch)</code>，其他的还有 <code>$(plat)</code>, <code>$(mode)</code> 等等。<br />
+具体有哪些参数，可以通过：<code>xmake f -h</code> 查看。</p>
+</blockquote>
+<p>既然支持直接从配置选项中获取，那么当然也就能很方便的扩展自定义的选项，来获取自定义的变量了，具体如何自定义选项见：<a href="#option"  >option</a></p>
+<h2 id="var.%24%28os%29">var.$(os)</h2>
+<p>获取当前编译平台的操作系统。</p>
+<p>如果当前编译的是 iphoneos，那么这个值就是：<code>ios</code>，以此类推。</p>
+<h2 id="var.%24%28host%29">var.$(host)</h2>
+<p>获取本机操作系统。</p>
+<p>指的是当前本机环境的主机系统，如果你是在 macOS 上编译，那么系统就是：<code>macosx</code></p>
+<h2 id="var.%24%28tmpdir%29">var.$(tmpdir)</h2>
+<p>获取临时目录。</p>
+<p>一般用于临时存放一些非永久性文件。</p>
+<h2 id="var.%24%28curdir%29">var.$(curdir)</h2>
+<p>获取当前目录。</p>
+<p>一般默认是执行 <code>xmake</code> 命令时的工程根目录，当然如果通过 <a href="#os-cd"  >os.cd</a> 改变了目录的话，这个值也会一起改变。</p>
+<h2 id="var.%24%28buildir%29">var.$(buildir)</h2>
+<p>获取当前的构建输出目录。</p>
+<p>默认一般为当前工程根目录下的：<code>./build</code> 目录，也可以通过执行：<code>xmake f -o /tmp/build</code> 命令来修改默认的输出目录。</p>
+<h2 id="var.%24%28scriptdir%29">var.$(scriptdir)</h2>
+<p>获取当前工程描述脚本的目录。</p>
+<p>也就是对应 <code>xmake.lua</code> 所在的目录路径。</p>
+<h2 id="var.%24%28globaldir%29">var.$(globaldir)</h2>
+<p>全局配置目录。</p>
+<p>xmake 的 <code>xmake g|global</code> 全局配置命令，数据存储的目录路径，在里面可以放置一些自己的插件、平台脚本。</p>
+<p>默认为：<code>~/.config</code></p>
+<h2 id="var.%24%28configdir%29">var.$(configdir)</h2>
+<p>当前工程配置目录。</p>
+<p>当前工程的配置存储目录，也就是 <code>xmake f|config</code> 配置命令的存储目录，默认为：<code>projectdir/.config</code></p>
+<h2 id="var.%24%28programdir%29">var.$(programdir)</h2>
+<p>xmake 安装脚本目录。</p>
+<p>也就是 <code>XMAKE_PROGRAM_DIR</code> 环境变量所在目录，我们也可以通过设置这个环境量，来修改 xmake 的加载脚本，实现版本切换。</p>
+<h3 id="var.%24%28projectdir%29">var.$(projectdir)</h3>
+<p>工程根目录。</p>
+<p>也就是 <code>xmake -P xxx</code> 命令中指定的目录路径，默认不指定就是 <code>xmake</code> 命令执行时的当前目录，一般用于定位工程文件。</p>
+<h2 id="var.%24%28shell%29">var.$(shell)</h2>
+<p>执行外部 shell 命令。</p>
+<p>除了内置的变量处理，xmake 还支持原生 shell 的运行，来处理一些 xmake 内置不支持的功能</p>
+<p>例如，现在有个需求，我想用在编译 linux 程序时，调用 <code>pkg-config</code> 获取到实际的第三方链接库名，可以这么做：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    if is_plat(&quot;linux&quot;) then
+        add_ldflags(&quot;$(shell pkg-config --libs sqlite3)&quot;)
+    end
+end)
+</code></pre>
+<p>当然，xmake 有自己的自动化第三库检测机制，一般情况下不需要这么麻烦，而且 lua 自身的脚本化已经很不错了。</p>
+<p>但是这个例子可以说明，xmake 是完全可以通过原生 shell，来与一些第三方的工具进行配合使用。</p>
+<h2 id="var.%24%28env%29">var.$(env)</h2>
+<p>获取外部环境变量。</p>
+<p>例如，可以通过获取环境变量中的路径：</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    add_includedirs(&quot;$(env PROGRAMFILES)/OpenSSL/inc&quot;)
+end)
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                    </div>
+                    <div id="next">
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
