@@ -20,6 +20,8 @@ items:
             file: tutorial/environment-variables.md
         -   label: 构建策略
             file: tutorial/build-policies.md
+        -   label: 内置变量
+            file: tutorial/builtin-variables.md
         -   label: FAQ
             file: tutorial/FAQ.md
 -   label: target 编译目标
