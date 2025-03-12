@@ -33,7 +33,9 @@ items:
     -   label: 描述域
         file: option/description-scope.md
 -   label: package 包管理
-    file: package/README.md
+    items:
+        -   label: 描述域
+            file: package/description-scope.md
 -   label: rule 规则
     file: rule/README.md
     items:
@@ -47,6 +49,8 @@ items:
             file: toolchain/builtin-toolchains.md
         -   label: 自定义工具链
             file: toolchain/custom-toolchains.md
+        -   label: 远程工具链
+            file: toolchain/remote-toolchains.md
 -   label: plugin 插件
     file: plugin/README.md
 # -   label: 其他特性
