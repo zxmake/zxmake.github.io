@@ -21,24 +21,6 @@
             "/blog/": "blog"
         }
     },
-    "translate": {
-        "docs": {
-            "/get_started/zh/": [
-                {
-                    "url": "/get_started/en/",
-                    "src": "docs/get_started/en"
-                }
-            ]
-        },
-        "pages": {
-            "/": [
-                {
-                    "url": "/en/",
-                    "src": "pages/index/en"
-                }
-            ]
-        }
-    },
     "plugins": {
         "teedoc-plugin-markdown-parser": {
             "from": "pypi",
