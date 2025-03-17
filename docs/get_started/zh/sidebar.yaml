@@ -44,6 +44,8 @@ items:
             file: package/remote-package.md
         -   label: 使用系统包
             file: package/system-package.md
+        -   label: 继承本地第三方源码库
+            file: package/local-3rd-source-package.md
 -   label: rule 规则
     file: rule/README.md
     items:
