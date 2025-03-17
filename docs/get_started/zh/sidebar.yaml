@@ -35,6 +35,7 @@ items:
     -   label: 描述域
         file: option/description-scope.md
 -   label: package 包管理
+    collapsed: false
     items:
         -   label: 描述域
             file: package/description-scope.md

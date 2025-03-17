@@ -6,7 +6,7 @@ class: heading_no_counter
 
 ## 集成 CMake 代码库
 
-我们能够通过 XMake 的包模式直接集成自己项目中带有 CMakeLists.txt 的代码库，而不是通过远程下载安装。
+我们能够通过 xmake 的包模式直接集成自己项目中带有 CMakeLists.txt 的代码库，而不是通过远程下载安装。
 
 相关 issues: [#1714](https://github.com/xmake-io/xmake/issues/1714)
 
@@ -65,7 +65,7 @@ target("demo")
 
 ## 集成 Meson 代码库
 
-XMake 支持集成更多其他构建系统维护的第三方源码库，比如 meson，仅仅只需要导入使用 `package.tools.meson` 辅助构建模块调用 meson 来构建它们。
+xmake 支持集成更多其他构建系统维护的第三方源码库，比如 meson，仅仅只需要导入使用 `package.tools.meson` 辅助构建模块调用 meson 来构建它们。
 
 例如，我们从 xmake-repo 仓库中挑选一个使用 meson 构建的包作为例子：
 

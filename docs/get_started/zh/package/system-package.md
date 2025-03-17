@@ -20,7 +20,7 @@ target("test", function()
 end)
 ```
 
-通过 `{system = true}` 就可以强制禁用远程下载，这时候，他就等价于 XMake/CMake 的 `find_package`，但是更加简单易用，并且和远程包使用方式完全一致。
+通过 `{system = true}` 就可以强制禁用远程下载，这时候，他就等价于 xmake/CMake 的 `find_package`，但是更加简单易用，并且和远程包使用方式完全一致。
 
 默认情况下，如果找不到系统库，就是提示失败，如果这个包是可选的，那么可以额外配置 `{optional = true}` 选项。
 
