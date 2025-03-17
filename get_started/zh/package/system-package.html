@@ -207,7 +207,7 @@ target(&quot;test&quot;, function()
     add_packages(&quot;zlib&quot;)
 end)
 </code></pre>
-<p>通过 <code>{system = true}</code> 就可以强制禁用远程下载，这时候，他就等价于 XMake/CMake 的 <code>find_package</code>，但是更加简单易用，并且和远程包使用方式完全一致。</p>
+<p>通过 <code>{system = true}</code> 就可以强制禁用远程下载，这时候，他就等价于 xmake/CMake 的 <code>find_package</code>，但是更加简单易用，并且和远程包使用方式完全一致。</p>
 <p>默认情况下，如果找不到系统库，就是提示失败，如果这个包是可选的，那么可以额外配置 <code>{optional = true}</code> 选项。</p>
 
 <pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {system = true, optional = true})

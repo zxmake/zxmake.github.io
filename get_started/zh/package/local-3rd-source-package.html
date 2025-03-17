@@ -196,7 +196,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         
                             <h1 id="%E7%BB%A7%E6%89%BF%E6%9C%AC%E5%9C%B0%E7%AC%AC%E4%B8%89%E6%96%B9%E6%BA%90%E7%A0%81%E5%BA%93">继承本地第三方源码库</h1>
 <h2 id="%E9%9B%86%E6%88%90-CMake-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 CMake 代码库</h2>
-<p>我们能够通过 XMake 的包模式直接集成自己项目中带有 CMakeLists.txt 的代码库，而不是通过远程下载安装。</p>
+<p>我们能够通过 xmake 的包模式直接集成自己项目中带有 CMakeLists.txt 的代码库，而不是通过远程下载安装。</p>
 <p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1714"  target="_blank">#1714</a></p>
 <p>例如，我们有如下项目结构：</p>
 
@@ -244,7 +244,7 @@ target(&quot;demo&quot;)
 <p>另外，<code>on_test</code> 是可选的，如果想要严格检测包的编译安装是否成功，可以在里面做一些测试。</p>
 <p>完整例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/c/library_with_cmakelists"  target="_blank">Library with CMakeLists</a></p>
 <h2 id="%E9%9B%86%E6%88%90-Meson-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 Meson 代码库</h2>
-<p>XMake 支持集成更多其他构建系统维护的第三方源码库，比如 meson，仅仅只需要导入使用 <code>package.tools.meson</code> 辅助构建模块调用 meson 来构建它们。</p>
+<p>xmake 支持集成更多其他构建系统维护的第三方源码库，比如 meson，仅仅只需要导入使用 <code>package.tools.meson</code> 辅助构建模块调用 meson 来构建它们。</p>
 <p>例如，我们从 xmake-repo 仓库中挑选一个使用 meson 构建的包作为例子：</p>
 
 <pre class="language-lua"><code class="language-lua">package(&quot;harfbuzz&quot;, function()
