@@ -78,8 +78,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
             <div>
                 <ul id="nav_right">
 <li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
-<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/tutorial/quick-start.html">English</a></li>
-<li class="active"><a  href="/get_started/zh/tutorial/quick-start.html">中文 简体</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/package/system-package.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/package/system-package.html">中文 简体</a></li>
 </ul></li>
 </ul>
 
@@ -104,7 +104,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                 <ul class="show">
 <li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
-<li class="active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
@@ -125,11 +125,11 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="active_parent no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
 </ul>
 </li>
 <li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
@@ -176,7 +176,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/quick-start.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/package/system-package.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -193,85 +193,47 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B">快速开始</h1>
-<h2 id="%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B">创建工程</h2>
-<p>创建一个名叫 <code>hello</code> 的 <code>c</code> 控制台工程：</p>
+                            <h1 id="%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%8C%85">使用系统包</h1>
+<h2 id="%E6%9F%A5%E6%89%BE%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E5%8C%85">查找使用系统包</h2>
+<p>xmake 对远程包和系统包的使用进行了统一，全部使用 <code>add_requires(&quot;zlib&quot;)</code> 接口来描述集成，而默认的配置方式，它会优先从系统上查找库，如果没有，会自动下载安装集成。</p>
+<p>而如果我们仅仅想查找使用系统库，不想远程下载，可以这么配置：</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake create --language=c --project=./hello
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {system = true})
 
-# 或
-
-$ xmake create -l c -P ./hello
-</code></pre>
-<p>执行完后，将会生成一个简单工程结构：</p>
-
-<pre class="language-none"><code class="language-none">./hello/
-├── src
-│   └── main.c
-└── xmake.lua
-</code></pre>
-<p>其中 <code>xmake.lua</code> 是工程描述文件，内容非常简单，告诉 xmake 添加 <code>src</code> 目录下的所有 <code>.c</code> 源文件：</p>
-
-<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
-
-target(&quot;hello&quot;, function()
+target(&quot;test&quot;, function()
     set_kind(&quot;binary&quot;)
     add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;zlib&quot;)
 end)
 </code></pre>
-<p>目前支持的语言如下：</p>
-<ul>
-<li>c/c++</li>
-<li>objc/c++</li>
-<li>cuda</li>
-<li>asm</li>
-<li>swift</li>
-<li>dlang</li>
-<li>golang</li>
-<li>rust</li>
-</ul>
-<blockquote>
-<p>如果你想了解更多参数选项，请运行: <code>xmake create --help</code>。</p>
-</blockquote>
-<h2 id="%E6%9E%84%E5%BB%BA%E5%B7%A5%E7%A8%8B">构建工程</h2>
+<p>通过 <code>{system = true}</code> 就可以强制禁用远程下载，这时候，他就等价于 XMake/CMake 的 <code>find_package</code>，但是更加简单易用，并且和远程包使用方式完全一致。</p>
+<p>默认情况下，如果找不到系统库，就是提示失败，如果这个包是可选的，那么可以额外配置 <code>{optional = true}</code> 选项。</p>
 
-<pre class="language-bash"><code class="language-bash">$ cd hello
-$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;, {system = true, optional = true})
 </code></pre>
-<h2 id="%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F">运行程序</h2>
+<h2 id="%E6%9F%A5%E6%89%BE%E5%8C%85%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95">查找包快速测试</h2>
+<p>我们可以使用下面的命令，快速检测系统上指定的包信息：</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake run hello
+<pre class="language-console"><code class="language-console">$ xmake l find_package x264
+{
+    links = {
+      &quot;x264&quot;
+    },
+    linkdirs = {
+      &quot;/usr/local/Cellar/x264/r2699/lib&quot;
+    },
+    version = &quot;0.148.2699 a5e06b9&quot;,
+    includedirs = {
+      &quot;/usr/local/Cellar/x264/r2699/include&quot;
+    }
+}
 </code></pre>
-<h2 id="%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F">调试程序</h2>
-<p>首先你需要切换到 debug 模式去重新编译程序。</p>
+<p>我们也可以追加第三方包管理器前缀来测试：</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake config -m debug 
-$ xmake
-</code></pre>
-<p>然后执行下面的命令去开始调试：</p>
-
-<pre class="language-bash"><code class="language-bash">$ xmake run -d hello 
-</code></pre>
-<p>xmake 将会使用调试器去加载程序运行，目前支持：lldb, gdb, windbg, vsjitdebugger, ollydbg 等各种调试器。</p>
-
-<pre class="language-bash"><code class="language-bash">(gdb) b main
-Breakpoint 1 at 0x115c: file src/main.c, line 4.
-(gdb) r
-Starting program: /tmp/test-xmake/hello/build/linux/x86_64/debug/hello 
-[Thread debugging using libthread_db enabled]
-Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
-
-Breakpoint 1, main (argc=1, argv=0x7fffffffdac8) at src/main.c:4
-4           printf(&quot;hello world!\n&quot;);
-(gdb)
-</code></pre>
-<p>如果想要使用指定的调试器：</p>
-
-<pre class="language-bash"><code class="language-bash">$ xmake f --debugger=gdb
-$ xmake run -d hello
+<pre class="language-console"><code class="language-console">xmake l find_package conan::OpenSSL/1.0.2g
 </code></pre>
 <blockquote>
-<p>你也可以使用简写的命令行选项，例如: <code>xmake r</code> 或者 <code>xmake run</code>。</p>
+<p>需要注意的是，find_package 命令如果在带有 xmake.lua 的工程目录下执行，是会有缓存的，如果查找失败，下次查找也会使用缓存的结果，如果要每次强制重新检测，请切换到非工程目录下执行上面的命令。</p>
 </blockquote>
 
                         
@@ -280,16 +242,16 @@ $ xmake run -d hello
                 <div id="previous_next">
                     <div id="previous">
                         
-                        <a href="/get_started/zh/tutorial/install.html">
+                        <a href="/get_started/zh/package/remote-package.html">
                             <span class="icon"></span>
-                            <span class="label">安装</span>
+                            <span class="label">使用远程包</span>
                         </a>
                         
                     </div>
                     <div id="next">
                         
-                        <a href="/get_started/zh/tutorial/syntax-description.html">
-                            <span class="label">语法描述</span>
+                        <a href="/get_started/zh/rule/index.html">
+                            <span class="label">rule 规则</span>
                             <span class="icon"></span>
                         </a>
                         
