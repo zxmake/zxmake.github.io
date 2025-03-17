@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>mysite</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.md">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li class="sub_items "><a  >Language: 中文 简体</a><ul><li class=""><a  href="/get_started/en/package/local-3rd-source-package.html">English</a></li>
+<li class="active"><a  href="/get_started/zh/package/local-3rd-source-package.html">中文 简体</a></li>
+</ul></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/builtin-variables.html"><span class="label">内置变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/package/local-3rd-source-package.html"><span class="label">继承本地第三方源码库</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/no_translate.html?ref=plugin/index.html&from=/get_started/zh/plugin/index.html"><span class="label">plugin 插件</span><span class=""></span></a></li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/package/local-3rd-source-package.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E7%BB%A7%E6%89%BF%E6%9C%AC%E5%9C%B0%E7%AC%AC%E4%B8%89%E6%96%B9%E6%BA%90%E7%A0%81%E5%BA%93">继承本地第三方源码库</h1>
+<h2 id="%E9%9B%86%E6%88%90-CMake-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 CMake 代码库</h2>
+<p>我们能够通过 XMake 的包模式直接集成自己项目中带有 CMakeLists.txt 的代码库，而不是通过远程下载安装。</p>
+<p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1714"  target="_blank">#1714</a></p>
+<p>例如，我们有如下项目结构：</p>
+
+<pre class="language-none"><code class="language-none">├── foo
+│   ├── CMakeLists.txt
+│   └── src
+│       ├── foo.c
+│       └── foo.h
+├── src
+│   └── main.c
+├── test.lua
+└── xmake.lua
+</code></pre>
+<p>foo 目录下是一个使用 cmake 维护的静态库，而根目录下使用了 xmake 来维护，我们可以在 xmake.lua 中通过定义 <code>package(&quot;foo&quot;)</code> 包来描述如何构建 foo 代码库。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+package(&quot;foo&quot;, function()
+    add_deps(&quot;cmake&quot;)
+    set_sourcedir(path.join(os.scriptdir(), &quot;foo&quot;))
+    on_install(function (package)
+        local configs = {}
+        table.insert(configs, &quot;-DCMAKE_BUILD_TYPE=&quot; .. (package:debug() and &quot;Debug&quot; or &quot;Release&quot;))
+        table.insert(configs, &quot;-DBUILD_SHARED_LIBS=&quot; .. (package:config(&quot;shared&quot;) and &quot;ON&quot; or &quot;OFF&quot;))
+        import(&quot;package.tools.cmake&quot;).install(package, configs)
+    end)
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;add&quot;, {includes = &quot;foo.h&quot;}))
+    end)
+end)
+
+add_requires(&quot;foo&quot;)
+
+target(&quot;demo&quot;)
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/main.c&quot;)
+    add_packages(&quot;foo&quot;)
+</code></pre>
+<p>其中，我们通过 <code>set_sourcedir()</code> 来设置 foo 包的代码目录位置，然后通过 import 导入 <code>package.tools.cmake</code> 辅助模块来调用 cmake 构建代码，xmake 会自动获取生成的 libfoo.a 和对应的头文件。</p>
+<blockquote>
+<p>如果仅仅本地源码集成，我们不需要额外设置 <code>add_urls</code> 和 <code>add_versions</code>。</p>
+</blockquote>
+<p>关于包的配置描述，详情见：<a href="https://xmake.io/#/zh-cn/package/remote_package?id=%e5%8c%85%e6%8f%8f%e8%bf%b0%e8%af%b4%e6%98%8e"  target="_blank">包描述说明</a></p>
+<p>定义完包后，我们就可以通过 <code>add_requires(&quot;foo&quot;)</code> 和 <code>add_packages(&quot;foo&quot;)</code> 来集成使用它了，就跟集成远程包一样的使用方式。</p>
+<p>另外，<code>on_test</code> 是可选的，如果想要严格检测包的编译安装是否成功，可以在里面做一些测试。</p>
+<p>完整例子见：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/c/library_with_cmakelists"  target="_blank">Library with CMakeLists</a></p>
+<h2 id="%E9%9B%86%E6%88%90-Meson-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 Meson 代码库</h2>
+<p>XMake 支持集成更多其他构建系统维护的第三方源码库，比如 meson，仅仅只需要导入使用 <code>package.tools.meson</code> 辅助构建模块调用 meson 来构建它们。</p>
+<p>例如，我们从 xmake-repo 仓库中挑选一个使用 meson 构建的包作为例子：</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;harfbuzz&quot;, function()
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/harfbuzz&quot;))
+
+    add_deps(&quot;meson&quot;)
+    if not is_plat(&quot;windows&quot;) then
+        add_deps(&quot;freetype&quot;)
+    end
+    on_load(&quot;windows&quot;, &quot;linux&quot;, &quot;macosx&quot;, function (package)
+        if package:config(&quot;icu&quot;) then
+            package:add(&quot;deps&quot;, &quot;icu4c&quot;)
+        end
+    end)
+
+    on_install(&quot;windows&quot;, &quot;linux&quot;, &quot;macosx&quot;, function (package)
+        local configs = {&quot;-Dtests=disabled&quot;, &quot;-Ddocs=disabled&quot;, &quot;-Dbenchmark=disabled&quot;, &quot;-Dcairo=disabled&quot;, &quot;-Dfontconfig=disabled&quot;, &quot;-Dglib=disabled&quot;, &quot;-Dgobject=disabled&quot;}
+        table.insert(configs, &quot;-Ddefault_library=&quot; .. (package:config(&quot;shared&quot;) and &quot;shared&quot; or &quot;static&quot;))
+        if package:is_plat(&quot;windows&quot;) then
+            table.insert(configs, &quot;-Dfreetype=disabled&quot;)
+        end
+        import(&quot;package.tools.meson&quot;).install(package, configs)
+    end)
+
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;hb_buffer_add_utf8&quot;, {includes = &quot;harfbuzz/hb.h&quot;}))
+    end)
+end)
+</code></pre>
+<h2 id="%E9%9B%86%E6%88%90-autoconf-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 autoconf 代码库</h2>
+<p>我们也可以使用 <code>package.tools.autoconf</code> 来本地集成带有 autoconf 维护的第三方代码库。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;pcre2&quot;, function()
+
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/pcre2&quot;))
+
+    add_configs(&quot;jit&quot;, {description = &quot;Enable jit.&quot;, default = true, type = &quot;boolean&quot;})
+    add_configs(&quot;bitwidth&quot;, {description = &quot;Set the code unit width.&quot;, default = &quot;8&quot;, values = {&quot;8&quot;, &quot;16&quot;, &quot;32&quot;}})
+
+    on_load(function (package)
+        local bitwidth = package:config(&quot;bitwidth&quot;) or &quot;8&quot;
+        package:add(&quot;links&quot;, &quot;pcre2-&quot; .. bitwidth)
+        package:add(&quot;defines&quot;, &quot;PCRE2_CODE_UNIT_WIDTH=&quot; .. bitwidth)
+        if not package:config(&quot;shared&quot;) then
+            package:add(&quot;defines&quot;, &quot;PCRE2_STATIC&quot;)
+        end
+    end)
+
+    on_install(&quot;macosx&quot;, &quot;linux&quot;, &quot;mingw&quot;, function (package)
+        local configs = {}
+        table.insert(configs, &quot;--enable-shared=&quot; .. (package:config(&quot;shared&quot;) and &quot;yes&quot; or &quot;no&quot;))
+        table.insert(configs, &quot;--enable-static=&quot; .. (package:config(&quot;shared&quot;) and &quot;no&quot; or &quot;yes&quot;))
+        if package:debug() then
+            table.insert(configs, &quot;--enable-debug&quot;)
+        end
+        if package:config(&quot;pic&quot;) ~= false then
+            table.insert(configs, &quot;--with-pic&quot;)
+        end
+        if package:config(&quot;jit&quot;) then
+            table.insert(configs, &quot;--enable-jit&quot;)
+        end
+        local bitwidth = package:config(&quot;bitwidth&quot;) or &quot;8&quot;
+        if bitwidth ~= &quot;8&quot; then
+            table.insert(configs, &quot;--disable-pcre2-8&quot;)
+            table.insert(configs, &quot;--enable-pcre2-&quot; .. bitwidth)
+        end
+        import(&quot;package.tools.autoconf&quot;).install(package, configs)
+    end)
+
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;pcre2_compile&quot;, {includes = &quot;pcre2.h&quot;}))
+    end)
+end)
+</code></pre>
+<p><code>package.tools.autoconf</code> 和 <code>package.tools.cmake</code> 模块都是可以支持 mingw/cross/iphoneos/android 等交叉编译平台和工具链的，xmake 会自动传递对应的工具链进去，用户不需要做任何其他事情。</p>
+<h2 id="%E9%9B%86%E6%88%90-Scons-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 Scons 代码库</h2>
+<p>我们也可以使用 <code>package.tools.scons</code> 来本地集成带有 Scons 维护的第三方代码库。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;godotcpp&quot;, function()
+
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/godotcpp&quot;))
+
+    add_deps(&quot;scons&quot;)
+
+    add_includedirs(&quot;include&quot;, &quot;include/core&quot;, &quot;include/gen&quot;)
+
+    on_install(&quot;linux&quot;, &quot;windows&quot;, &quot;macosx&quot;, &quot;mingw&quot;, &quot;cygwin&quot;, &quot;iphoneos&quot;, &quot;android&quot;, &quot;msys&quot;, function (package)
+        local configs = {&quot;generate_bindings=yes&quot;}
+        table.insert(configs, &quot;bits=&quot; .. ((package:is_arch(&quot;x64&quot;) or package:is_arch(&quot;x86_64&quot;)) and &quot;64&quot; or &quot;32&quot;))
+        if package:is_plat(&quot;windows&quot;) then
+            io.replace(&quot;SConstruct&quot;, &quot;/MD&quot;, &quot;/&quot; .. package:config(&quot;vs_runtime&quot;), {plain = true})
+        end
+
+        -- this fixes an error on ios and osx (https://godotengine.org/qa/65616/problems-compiling-gdnative-c-example-on-osx)
+        if package:is_plat(&quot;macosx&quot;, &quot;iphoneos&quot;) then
+            io.replace(&quot;SConstruct&quot;, &quot;-std=c++14&quot;, &quot;-std=c++17&quot;, {plain = true})
+        end
+
+        -- fix to use correct ranlib, @see https://github.com/godotengine/godot-cpp/issues/510
+        if package:is_plat(&quot;android&quot;) then
+            io.replace(&quot;SConstruct&quot;,
+                [[env['AR'] = toolchain + &quot;/bin/&quot; + arch_info['tool_path'] + &quot;-ar&quot;]],
+                [[env['AR'] = toolchain + &quot;/bin/&quot; + arch_info['tool_path'] + &quot;-ar&quot;
+    env['RANLIB'] = toolchain + &quot;/bin/&quot; + arch_info['tool_path'] + &quot;-ranlib&quot;]], {plain = true})
+        end
+
+        import(&quot;package.tools.scons&quot;).build(package, configs)
+        os.cp(&quot;bin/*.&quot; .. (package:is_plat(&quot;windows&quot;) and &quot;lib&quot; or &quot;a&quot;), package:installdir(&quot;lib&quot;))
+        os.cp(&quot;include/core/*.hpp&quot;, package:installdir(&quot;include/core&quot;))
+        os.cp(&quot;include/gen/*.hpp&quot;,  package:installdir(&quot;include/gen&quot;))
+        os.cp(&quot;godot-headers/android&quot;,            package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/arvr&quot;,               package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/gdnative&quot;,           package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/nativescript&quot;,       package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/net&quot;,                package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/pluginscript&quot;,       package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/videodecoder&quot;,       package:installdir(&quot;include&quot;))
+        os.cp(&quot;godot-headers/*.h&quot;,                package:installdir(&quot;include&quot;))
+    end)
+end)
+</code></pre>
+<h2 id="%E9%9B%86%E6%88%90-makefile-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 makefile 代码库</h2>
+<h3 id="%E4%BD%BF%E7%94%A8-Nmake">使用 Nmake</h3>
+<p>我们也可以使用 <code>package.tools.nmake</code> 来本地集成带有 nmake 维护的第三方代码库。</p>
+<p><code>nmake.install</code> 会自动绑定当前用户的 msvc 构建环境，确保用户能够顺利调用到 nmake.exe 以及 msbuild 和 cl.exe 等程序。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;libxml2&quot;, function()
+
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/libxml2&quot;))
+
+    add_includedirs(&quot;include/libxml2&quot;)
+    if is_plat(&quot;windows&quot;) then
+        add_syslinks(&quot;wsock32&quot;, &quot;ws2_32&quot;)
+    end
+
+    on_load(&quot;windows&quot;, function (package)
+        if not package:config(&quot;shared&quot;) then
+            package:add(&quot;defines&quot;, &quot;LIBXML_STATIC&quot;)
+        end
+    end)
+
+    on_install(&quot;windows&quot;, function (package)
+        os.cd(&quot;win32&quot;)
+        os.vrun(&quot;cscript configure.js iso8859x=yes iconv=no compiler=msvc cruntime=/%s debug=%s prefix=\&quot;%s\&quot;&quot;, package:config(&quot;vs_runtime&quot;), package:debug() and &quot;yes&quot; or &quot;no&quot;, package:installdir())
+        import(&quot;package.tools.nmake&quot;).install(package, {&quot;/f&quot;, &quot;Makefile.msvc&quot;})
+        os.tryrm(path.join(package:installdir(&quot;lib&quot;), &quot;libxml2_a_dll.lib&quot;))
+        if package:config(&quot;shared&quot;) then
+            os.tryrm(path.join(package:installdir(&quot;lib&quot;), &quot;libxml2_a.lib&quot;))
+        else
+            os.tryrm(path.join(package:installdir(&quot;lib&quot;), &quot;libxml2.lib&quot;))
+            os.tryrm(path.join(package:installdir(&quot;bin&quot;), &quot;libxml2.dll&quot;))
+        end
+    end)
+
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;xmlNewNode&quot;, {includes = {&quot;libxml/parser.h&quot;, &quot;libxml/tree.h&quot;}}))
+    end)
+end)
+</code></pre>
+<h3 id="%E4%BD%BF%E7%94%A8-GnuMake">使用 GnuMake</h3>
+<p>我们也可以使用 <code>package.tools.make</code> 来本地集成带有 gnumake 维护的第三方代码库。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;openssl&quot;, function()
+
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/openssl&quot;))
+
+    add_links(&quot;ssl&quot;, &quot;crypto&quot;)
+    if is_plat(&quot;linux&quot;, &quot;cross&quot;) then
+        add_syslinks(&quot;dl&quot;)
+    end
+
+    on_install(&quot;linux&quot;, &quot;macosx&quot;, function (package)
+        -- https://wiki.openssl.org/index.php/Compilation_and_Installation#PREFIX_and_OPENSSLDIR
+        os.vrun(&quot;./config %s --openssldir=\&quot;%s\&quot; --prefix=\&quot;%s\&quot;&quot;, package:debug() and &quot;--debug&quot; or &quot;&quot;, package:installdir(), package:installdir())
+        import(&quot;package.tools.make&quot;).install(package)
+    end)
+
+    on_test(function (package)
+        assert(package:has_cfuncs(&quot;SSL_new&quot;, {includes = &quot;openssl/ssl.h&quot;}))
+    end)
+end)
+</code></pre>
+<blockquote>
+<p>我们也可以直接使用 <code>os.vrunv(&quot;make&quot;, {})</code> 来调用 make/gmake 程序来构建库。</p>
+</blockquote>
+<h2 id="%E9%9B%86%E6%88%90-Gn-%E4%BB%A3%E7%A0%81%E5%BA%93">集成 Gn 代码库</h2>
+<p>我们也可以使用 <code>package.tools.gn</code> 来本地集成带有 GN 维护的第三方代码库。</p>
+
+<pre class="language-lua"><code class="language-lua">package(&quot;skia&quot;, function()
+
+    set_sourcedir(path.join(os.scriptdir(), &quot;3rd/openssl&quot;))
+
+    add_deps(&quot;gn&quot;, &quot;ninja&quot;)
+    add_deps(&quot;python&quot;, {kind = &quot;binary&quot;})
+
+    on_install(&quot;linux&quot;, &quot;macosx&quot;, &quot;windows&quot;, function (package)
+        import(&quot;package.tools.gn&quot;).install(package)
+    end)
+
+    on_test(function (package)
+        -- TODO
+    end)
+end)
+</code></pre>
+<p>这里有完整的脚本例子：<a href="https://github.com/xmake-io/xmake-repo/blob/master/packages/s/skia/xmake.lua"  target="_blank">Skia with GN</a></p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/package/system-package.html">
+                            <span class="icon"></span>
+                            <span class="label">使用系统包</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/rule/index.html">
+                            <span class="label">rule 规则</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
