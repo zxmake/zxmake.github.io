@@ -42,6 +42,8 @@ items:
             file: package/local-package.md
         -   label: 使用远程包
             file: package/remote-package.md
+        -   label: 使用系统包
+            file: package/system-package.md
 -   label: rule 规则
     file: rule/README.md
     items:
