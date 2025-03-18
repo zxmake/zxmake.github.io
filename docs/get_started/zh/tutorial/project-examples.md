@@ -1,7 +1,6 @@
 ---
 class: heading_no_counter
 ---
-
 # 工程例子
 
 以下是一些常用的工程例子，更多的 examples 可以到 [project examples](https://github.com/TOMO-CAT/xmake/tree/master/tests/projects) 中查看。
@@ -712,7 +711,7 @@ end)
 ```
 
 > 默认构建会启用 device-link。（参见 [Separate Compilation and Linking of CUDA C++ Device Code](https://devblogs.nvidia.com/separate-compilation-linking-cuda-device-code/)）
-如果要显式禁用 device-link，可以通过 `set_policy("build.cuda.devlink", false)` 来设置。
+> 如果要显式禁用 device-link，可以通过 `set_policy("build.cuda.devlink", false)` 来设置。
 > cuda 源文件中的 device 函数需要被 device-link 且只 device-link 一次。在 `shared` 或 `binary` 的 target 上 xmake 会自动进行 device-link ，这时它们依赖的 `static` target 也会同时被 device-link ，因此默认情况下 `static` target 不会被 device-link。然而，如果最终的 `shared` 或 `binary` 的 target 不包含任何 cuda 源文件，则不会发生 device-link 阶段，导致出现 undefined reference 错误。这种情况下，需要手动为 `static` target 指定 `add_values("cuda.build.devlink", true)`.
 
 默认会自动探测 cuda 环境，当然也可以指定 Cuda SDK 环境目录，或者指定 cuda 版本（此时将在默认安装目录进行查找）：
@@ -890,7 +889,7 @@ target("test")
 
 ### 使用 cxxbridge 在 c++ 中调用 rust
 
-例子: <https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cxx_call_rust_library>
+例子: [https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cxx_call_rust_library](https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/cxx_call_rust_library)
 
 ```lua
 add_rules("mode.debug", "mode.release")
@@ -953,7 +952,7 @@ int main(int argc, char** argv) {
 
 ### 在 Rust 中调用 C++
 
-例子: <https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/rust_call_cxx_library>
+例子: [https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/rust_call_cxx_library](https://github.com/xmake-io/xmake/tree/dev/tests/projects/rust/rust_call_cxx_library)
 
 ```lua
 add_rules("mode.debug", "mode.release")
@@ -1214,7 +1213,6 @@ end)
 ```
 
 更多例子：[Pascal examples](https://github.com/xmake-io/xmake/tree/master/tests/projects/pascal)
-
 
 ## Swig 模块
 
@@ -1512,7 +1510,6 @@ end)
 
 相关 issues: [#1638](https://github.com/xmake-io/xmake/issues/1638)
 
-
 ## Nim 程序
 
 xmake 支持 Nimlang 项目，相关 issues 见：[#1756](https://github.com/xmake-io/xmake/issues/1756)
@@ -1731,7 +1728,7 @@ end)
 
 ## Lua 模块
 
-参考 <https://github.com/xmake-io/luarocks-build-xmake>
+参考 [https://github.com/xmake-io/luarocks-build-xmake](https://github.com/xmake-io/luarocks-build-xmake)
 如果你的 lua 模块含有 C 代码，你可以使用 [LuaNativeObjects](https://github.com/Neopallium/LuaNativeObjects) 去从 lua 代码生成 C 代码。
 参考[例子](https://github.com/Freed-Wu/rime.nvim/blob/main/xmake.lua)。
 
