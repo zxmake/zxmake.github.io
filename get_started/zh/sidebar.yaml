@@ -62,6 +62,8 @@ items:
             file: toolchain/custom-toolchains.md
         -   label: 远程工具链
             file: toolchain/remote-toolchains.md
--   label: plugin 插件
-    file: plugin/README.md
+-   label: task 插件任务
+    items:
+        -   label: 描述域
+            file: task/description-scope.md
 # -   label: 其他特性
