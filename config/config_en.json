@@ -18,7 +18,7 @@
                 "position": "left"
             },
             {
-                "url": "https://github.com/neutree/teedoc",
+                "url": "https://github.com/zxmake/zxmake.github.io",
                 "label": "github",
                 "target": "_blank",
                 "position": "right"
@@ -52,12 +52,12 @@
                 "items": [
                     {
                         "label": "github",
-                        "url": "https://github.com/neutree/teedoc",
+                        "url": "https://github.com/zxmake/zxmake.github.io",
                         "target": "_blank"
                     },
                     {
                         "label": "website source files",
-                        "url": "https://github.com/teedoc/teedoc.github.io",
+                        "url": "https://github.com/zxmake/zxmake.github.io",
                         "target": "_blank"
                     }
                 ]
