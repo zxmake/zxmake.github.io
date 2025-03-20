@@ -72,4 +72,12 @@ items:
     items:
         -   label: 描述域
             file: task/description-scope.md
+-   label: module 模块
+    items:
+        -   label: 内置模块
+            file: module/builtin-modules.md
+        -   label: 扩展模块
+            file: module/extension-modules.md
+        -   label: Lua 原生模块
+            file: module/native-modules.md
 # -   label: 其他特性
