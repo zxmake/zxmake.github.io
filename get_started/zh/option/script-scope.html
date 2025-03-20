@@ -100,7 +100,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                 </div>
                 <ul class="show">
 <li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
-<li class="active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
 <li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
@@ -119,9 +119,9 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/target/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active_parent no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/option/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/option/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
 </ul>
 </li>
 <li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
@@ -180,7 +180,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/tutorial/install.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/option/script-scope.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -197,74 +197,37 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E5%AE%89%E8%A3%85">安装</h1>
-<h2 id="%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85">源码编译安装</h2>
-<h3 id="%E5%AE%89%E8%A3%85">安装</h3>
-<blockquote>
-<p>切记，xmake 不建议在 root 下安装和使用，所以尽量不要在 root 下拉取源码编译安装。</p>
-</blockquote>
+                            <h1 id="%E8%84%9A%E6%9C%AC%E5%9F%9F">脚本域</h1>
+<h2 id="option%3Avalue">option:value</h2>
+<p>获取选项的值。</p>
+<h2 id="option%3Aname">option:name</h2>
+<p>获取选项的名字。</p>
+<h2 id="option%3Aget">option:get</h2>
+<p>获取选项在描述域的配置值。</p>
+<p>任何在描述域的 <code>set_xxx</code> 和 <code>add_xxx</code> 配置值都可以通过这个接口获取到。</p>
 
-<pre class="language-bash"><code class="language-bash">git clone https://github.com/TOMO-CAT/xmake.git
-cd ./xmake
-bash scripts/install.sh
+<pre class="language-lua"><code class="language-lua">-- get the links
+option:get(&quot;links&quot;)
+-- get the defined macros
+option:get(&quot;defines&quot;)
 </code></pre>
-<p>如果没有外网环境，可以通过 gitee 镜像拉取（xmake repo 也会自动切到 gitee 源）：</p>
+<h2 id="option%3Aset">option:set</h2>
+<p>设置选项的配置值，（如果你想添加值可以用 <a href="#optionadd"  >option:add</a>）。</p>
 
-<pre class="language-bash"><code class="language-bash">git clone https://gitee.com/tomocat/xmake.git
+<pre class="language-lua"><code class="language-lua">-- set the links
+option:set(&quot;links&quot;, &quot;sdl2&quot;)
+-- set the defined macros
+option:set(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
+-- set configvar
+option:set(&quot;configvar&quot;, option:name(), option:value(), {quote = false})
 </code></pre>
-<p>安装完后检查是否安装完成：</p>
+<h2 id="option%3Aadd">option:add</h2>
+<p>按名称添加到选项的值</p>
 
-<pre class="language-bash"><code class="language-bash">xmake --version
-</code></pre>
-<h3 id="%E5%90%AF%E7%94%A8-Luajit">启用 Luajit</h3>
-<p>对于一些大型项目（比如包含 300+ targets），我们可以启用 Luajit 加速构建，提升构建速度。</p>
-
-<pre class="language-bash"><code class="language-bash">bash scripts/install.sh --runtime=luajit
-</code></pre>
-<h3 id="%E4%BB%85%E6%9B%B4%E6%96%B0-lua-%E8%84%9A%E6%9C%AC">仅更新 lua 脚本</h3>
-<p>这个开发者本地调试 xmake 源码才需要：</p>
-
-<pre class="language-bash"><code class="language-bash">./scripts/get.sh __local__ __install_only__
-</code></pre>
-<h3 id="%E7%BC%96%E8%AF%91-xmake-bundle-%E5%8C%85">编译 xmake bundle 包</h3>
-<p>默认编译方式会安装 xmake 二进制和 Lua 脚本，这样做的好处是方便源码调试 Lua 脚本，但是不方便发布和迁移，可以只编译 xmake 二进制：</p>
-
-<pre class="language-bash"><code class="language-bash"># TODO:
-</code></pre>
-<h3 id="root-%E4%B8%8B%E5%AE%89%E8%A3%85">root 下安装</h3>
-<p>xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root 用户运行 xmake 会打印一条 warning 日志，用户可以设置环境变量 <code>XMAKE_ROOT=y</code> 屏蔽相关的报警，用户需要随时注意root下误操作系统文件文件的风险。</p>
-<h3 id="%E5%90%AF%E7%94%A8-ccache">启用 ccache</h3>
-<p>默认情况下 xmake 用的是内部的 xcache，但可能会出现一些非预期的 bug。如果需要启用 ccache，可以手动安装 ccache，xmake会自动检测并使用。</p>
-<h2 id="%E6%9B%B4%E6%96%B0%E5%8D%87%E7%BA%A7">更新升级</h2>
-<p>我们可以通过 <code>xmake update</code> 命令来快速进行自我更新和升级，默认是升级到最新版本，当然也可以指定升级或者回退到某个 tag 版本：</p>
-
-<pre class="language-bash"><code class="language-bash"># 如果不是 force 的话, xmake 版本一样就会跳过安装, 不会精确到 git tag / branch
-# 例如 xmake v3.0.4+dev.39db22335 版本也会跳过
-xmake update --force --diagnosis --verbose v3.0.4
-</code></pre>
-<p>我们也可以指定更新到 master/dev 分支版本：</p>
-
-<pre class="language-bash"><code class="language-bash">xmake update master
-xmake update dev
-</code></pre>
-<p>从指定 git 源更新：</p>
-
-<pre class="language-bash"><code class="language-bash"># 指定 github 源
-xmake update github:TOMO-CAT/xmake#master
-
-# 指定 gitee 源
-xmake update gitee:tomocat/xmake#dev
-</code></pre>
-<p>如果 xmake/core 没动过，仅仅更新 xmake 的 lua 脚本改动，可以加 <code>-s/--scriptonly</code> 快速更新 lua 脚本：</p>
-
-<pre class="language-bash"><code class="language-bash">xmake update --scriptonly --force dev
-</code></pre>
-<h2 id="%E5%8D%B8%E8%BD%BD">卸载</h2>
-<p>最后，我们如果要卸载 xmake，也是支持的：</p>
-
-<pre class="language-bash"><code class="language-bash">rm -rf /usr/local/share/xmake
-rm /usr/local/bin/xrepo
-rm /usr/local/bin/xmake
+<pre class="language-lua"><code class="language-lua">-- add links
+option:add(&quot;links&quot;, &quot;sdl2&quot;)
+-- add defined macros
+option:add(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
 </code></pre>
 
                         
@@ -273,11 +236,16 @@ rm /usr/local/bin/xmake
                 <div id="previous_next">
                     <div id="previous">
                         
+                        <a href="/get_started/zh/option/description-scope.html">
+                            <span class="icon"></span>
+                            <span class="label">描述域</span>
+                        </a>
+                        
                     </div>
                     <div id="next">
                         
-                        <a href="/get_started/zh/tutorial/quick-start.html">
-                            <span class="label">快速入门</span>
+                        <a href="/get_started/zh/package/description-scope.html">
+                            <span class="label">描述域</span>
                             <span class="icon"></span>
                         </a>
                         

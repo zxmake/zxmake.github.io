@@ -36,6 +36,8 @@ items:
     items:
     -   label: 描述域
         file: option/description-scope.md
+    -   label: 脚本域
+        file: option/script-scope.md
 -   label: package 包管理
     collapsed: false
     items:
