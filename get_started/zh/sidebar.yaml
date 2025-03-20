@@ -39,6 +39,8 @@ items:
     items:
         -   label: 描述域
             file: package/description-scope.md
+        -   label: 脚本域
+            file: package/script-scope.md
         -   label: 使用本地包
             file: package/local-package.md
         -   label: 使用远程包

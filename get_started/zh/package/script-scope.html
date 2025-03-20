@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>xmake-docs</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.html">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/builtin-variables.html"><span class="label">内置变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/package/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-3rd-source-package.html"><span class="label">继承本地第三方源码库</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/package/script-scope.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E8%84%9A%E6%9C%AC%E5%9F%9F">脚本域</h1>
+<p>此页面描述了 <a href="zh-cn/manual/package_dependencies.html"  >包依赖管理</a> 的 <code>on_load()</code>、<code>on_install()</code> 或 <code>on_test()</code> 等函数的 <code>package</code> 接口</p>
+<h2 id="package%3Aname">package:name</h2>
+<p>获取包的名字。</p>
+<h2 id="package%3Aget">package:get</h2>
+<p>获取包在描述域的配置值。</p>
+<p>任何在描述域的 <code>set_xxx</code> 和 <code>add_xxx</code> 配置值都可以通过这个接口获取到。</p>
+
+<pre class="language-lua"><code class="language-lua">-- get the dependencies
+package:get(&quot;deps&quot;)
+-- get the links
+package:get(&quot;links&quot;)
+-- get the defined macros
+package:get(&quot;defines&quot;)
+</code></pre>
+<h2 id="package%3Aset">package:set</h2>
+<p>设置包的配置值，（如果你想添加值可以用 <a href="#packageadd"  >package:add</a>）。</p>
+
+<pre class="language-lua"><code class="language-lua">-- set the dependencies
+package:set(&quot;deps&quot;, &quot;python&quot;)
+-- set the links
+package:set(&quot;links&quot;, &quot;sdl2&quot;)
+-- set the defined macros
+package:set(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
+</code></pre>
+<h2 id="package%3Aadd">package:add</h2>
+<p>按名称添加到包的值。</p>
+
+<pre class="language-lua"><code class="language-lua">-- add dependencies
+package:add(&quot;deps&quot;, &quot;python&quot;)
+-- add links
+package:add(&quot;links&quot;, &quot;sdl2&quot;)
+-- add defined macros
+package:add(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
+</code></pre>
+<h2 id="package%3Alicense">package:license</h2>
+<p>获取包的许可证（同 <code>package:get(&quot;license&quot;)</code>）。</p>
+<h2 id="package%3Adescription">package:description</h2>
+<p>获取包的描述（同 <code>package:get(&quot;description&quot;)</code>）。</p>
+<h2 id="package%3Aplat">package:plat</h2>
+<p>获取包的平台。</p>
+<p>可以是以下任何一种：</p>
+<ul>
+<li>windows</li>
+<li>linux</li>
+<li>macosx</li>
+<li>android</li>
+<li>iphoneos</li>
+<li>watchos</li>
+<li>mingw</li>
+<li>cygwin</li>
+<li>bsd</li>
+</ul>
+<p>如果包是二进制的，则会返回 <a href="zh-cn/manual/builtin_modules.md#oshost"  ><code>os.host</code></a> 的值。</p>
+<h2 id="package%3Aarch">package:arch</h2>
+<p>获取包的架构（例如 x86、x64、x86_64）。</p>
+<p>如果包是二进制的，则返回 <a href="zh-cn/manual/builtin_modules.md#osarch"  ><code>os.arch</code></a>。</p>
+<h2 id="package%3Atargetos">package:targetos</h2>
+<p>获取包的目标操作系统，可以具有与 <a href="#packageplat"  >package:plat</a> 相同的值。</p>
+<h2 id="package%3Atargetarch">package:targetarch</h2>
+<p>获取包的目标架构，可以具有与 <a href="#packagearch"  >package:arch</a> 相同的值。</p>
+<h2 id="package%3Ais_plat">package:is_plat</h2>
+<p>当前平台是否是给定平台之一。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the current platform android?
+package:is_plat(&quot;android&quot;)
+-- Is the current platform windows, linux or macosx?
+package:is_plat(&quot;windows&quot;, &quot;linux&quot;, &quot;macosx&quot;)
+</code></pre>
+<h2 id="package%3Ais_arch">package:is_arch</h2>
+<p>当前架构是否是给定架构之一。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the current architecture x86
+package:is_arch(&quot;x86&quot;)
+-- Is the current architecture x64 or x86_64
+package:is_arch(&quot;x64&quot;, &quot;x86_64&quot;)
+</code></pre>
+<h2 id="package%3Ais_targetos">package:is_targetos</h2>
+<p>当前目标操作系统是否是给定操作系统之一。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the currently targeted OS windows?
+package:is_targetos(&quot;windows&quot;)
+-- Is the currently targeted OS android or iphoneos?
+package:is_targetos(&quot;android&quot;, &quot;iphoneos&quot;)
+</code></pre>
+<h2 id="package%3Ais_targetarch">package:is_targetarch</h2>
+<p>当前目标架构是否是给定架构之一。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the currently targeted architecture x86
+package:is_targetarch(&quot;x86&quot;)
+-- Is the currently targeted architecture x64 or x86_64
+package:is_targetarch(&quot;x64&quot;, &quot;x86_64&quot;)
+</code></pre>
+<h2 id="package%3Aalias">package:alias</h2>
+<p>获取包的别名。</p>
+<p>如果用户像这样设置别名：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libsdl&quot;, {alias = &quot;sdl&quot;})
+</code></pre>
+<p>那么这个别名可以通过这个接口获取到：</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns &quot;sdl&quot;
+package:alias()
+</code></pre>
+<h2 id="package%3Aurls">package:urls</h2>
+<p>获取包的 urls 列表。</p>
+<p>如果我们设置了如下 URLs：</p>
+
+<pre class="language-lua"><code class="language-lua">add_urls(&quot;https://example.com/library-$(version).zip&quot;)
+-- or so
+set_urls(&quot;https://example.com/library-$(version).zip&quot;)
+</code></pre>
+<p>那么我们可以通过下面的接口来获取：</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns the table {&quot;https://example.com/library-$(version).zip&quot;}
+package:urls()
+</code></pre>
+<h2 id="package%3Adep">package:dep</h2>
+<p>通过名称获取包的依赖项。 该名称需要是包的依赖项。</p>
+
+<pre class="language-lua"><code class="language-lua">local python = package:dep(&quot;python&quot;)
+-- returns &quot;python&quot;
+python:name()
+</code></pre>
+<h2 id="package%3Adeps">package:deps</h2>
+<p>获取包的所有依赖项。</p>
+
+<pre class="language-lua"><code class="language-lua">-- prints the names of all dependencies
+for _,dep in pairs(package:deps()) do
+    print(dep:name())
+end
+</code></pre>
+<h2 id="package%3Asourcehash">package:sourcehash</h2>
+<p>获取 URL 别名的 sha256 校验和。</p>
+<p>如果校验和是这样提供的：</p>
+
+<pre class="language-lua"><code class="language-lua">add_urls(&quot;https://example.com/library-$(version).zip&quot;, {alias = &quot;example&quot;})
+add_versions(&quot;example:2.4.1&quot;, &quot;29f9983cc7196e882c4bc3d23d7492f9c47574c7cf658afafe7d00c185429941&quot;)
+</code></pre>
+<p>您可以像这样获取它：</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns &quot;29f9983cc7196e882c4bc3d23d7492f9c47574c7cf658afafe7d00c185429941&quot;
+package:sourcehash(&quot;example&quot;)
+-- or so
+package:sourcehash(package:url_alias(package:urls()[1]))
+</code></pre>
+<h2 id="package%3Akind">package:kind</h2>
+<p>获取包的类型。 可以是以下任何一种：</p>
+<ul>
+<li>binary</li>
+<li>toolchain (is also binary)</li>
+<li>library (default)</li>
+<li>template <a href="https://github.com/xmake-io/xmake/issues/2138"  target="_blank">#2138</a></li>
+<li>headeronly</li>
+</ul>
+<h2 id="package%3Ais_binary">package:is_binary</h2>
+<p>包是否为二进制类型。</p>
+<h2 id="package%3Ais_toolchain">package:is_toolchain</h2>
+<p>报是否为工具链类型。</p>
+<h2 id="package%3Ais_library">package:is_library</h2>
+<p>包是否为库类型。</p>
+<h2 id="package%3Ais_toplevel">package:is_toplevel</h2>
+<p>包是否在用户 xmake.lua 里面通过 add_requires 直接引用。</p>
+<h2 id="package%3Ais_thirdparty">package:is_thirdparty</h2>
+<p>包是否由第三方包管理器提供（例如 brew、conan、vcpkg）。</p>
+<h2 id="package%3Ais_debug">package:is_debug</h2>
+<p>包是否以调试模式构建（同 <code>package:config(&quot;debug&quot;)</code>）。</p>
+<h2 id="package%3Ais_supported">package:is_supported</h2>
+<p>当前平台和架构是否支持该包。</p>
+<h2 id="package%3Adebug">package:debug</h2>
+<p>包是否使用调试模式构建（不推荐使用：使用 <a href="#packageis_debug"  ><code>package:is_debug</code></a> 代替）。</p>
+<h2 id="package%3Ais_cross">package:is_cross</h2>
+<p>包是否正在交叉编译。</p>
+<h2 id="package%3Acachedir">package:cachedir</h2>
+<p>获取包的缓存目录。</p>
+<h2 id="package%3Ainstalldir">package:installdir</h2>
+<p>获取包的安装目录。 也可用于获取子目录。 如果给定的目录树不存在，它将被创建。</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns the installation directory
+package:installdir()
+-- returns the subdirectory include inside the installation directory
+package:installdir(&quot;include&quot;)
+-- returns the subdirectory include/files
+package:installdir(&quot;include&quot;, &quot;files&quot;)
+</code></pre>
+<h2 id="package%3Ascriptdir">package:scriptdir</h2>
+<p>获取包的 xmake.lua 所在目录。</p>
+<h2 id="package%3Aenvs">package:envs</h2>
+<p>获取包导出的环境变量。</p>
+<h2 id="package%3Agetenv">package:getenv</h2>
+<p>获取给定的环境变量。</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns a table
+package:getenv(&quot;PATH&quot;)
+</code></pre>
+<h2 id="package%3Asetenv">package:setenv</h2>
+<p>设置给定的环境变量。 覆盖变量。</p>
+
+<pre class="language-lua"><code class="language-lua">-- sets PATH to {&quot;bin&quot;, &quot;lib&quot;}
+package:setenv(&quot;PATH&quot;, &quot;bin&quot;, &quot;lib&quot;)
+</code></pre>
+<h2 id="package%3Aaddenv">package:addenv</h2>
+<p>将给定的值添加到环境变量。</p>
+
+<pre class="language-lua"><code class="language-lua">-- adds &quot;bin&quot; and &quot;lib&quot; to PATH
+package:addenv(&quot;PATH&quot;, &quot;bin&quot;, &quot;lib&quot;)
+</code></pre>
+<h2 id="package%3Aversions">package:versions</h2>
+<p>获取包的所有版本列表。</p>
+<h2 id="package%3Aversion">package:version</h2>
+<p>获取包的版本。</p>
+<p>它会返回一个语义版本对象，便于做版本之间的判断。</p>
+
+<pre class="language-lua"><code class="language-lua">local version = package:version()
+-- get the major version
+version:major()
+-- get the minor version
+version:minor()
+-- get the patch version
+version:patch()
+</code></pre>
+<h2 id="package%3Aversion_str">package:version_str</h2>
+<p>以字符串形式获取包的版本。</p>
+<h2 id="package%3Aconfig">package:config</h2>
+<p>获取包的给定配置值。</p>
+
+<pre class="language-lua"><code class="language-lua">-- if configurations are set like so
+add_require(&quot;example&quot;, {configs = {enable_x = true, value_y = 6}})
+-- these values can be retrieved like so
+-- returns true
+package:config(&quot;enable_x&quot;)
+-- returns 6
+package:config(&quot;value_y&quot;)
+</code></pre>
+<h2 id="package%3Aconfig_set">package:config_set</h2>
+<p>设置包的给定配置值。</p>
+
+<pre class="language-lua"><code class="language-lua">package:config_set(&quot;enable_x&quot;, true)
+package:config_set(&quot;value_y&quot;, 6)
+</code></pre>
+<h2 id="package%3Aconfigs">package:configs</h2>
+<p>获取包的所有配置。</p>
+
+<pre class="language-lua"><code class="language-lua">-- returns a table with the configuration names as keys and their values as values
+local configs = package:configs()
+local enable_x = configs[&quot;enable_x&quot;]
+local value_y = configs[&quot;value_y&quot;]
+</code></pre>
+<h2 id="package%3Abuildhash">package:buildhash</h2>
+<p>获取包的构建哈希。</p>
+<p>它确保每个包，不同的配置安装到唯一的路径下，相互之间不冲突。</p>
+<h2 id="package%3Apatches">package:patches</h2>
+<ul>
+<li>获取当前版本的所有补丁</li>
+</ul>
+
+<pre class="language-lua"><code class="language-lua">-- returns a table with all patches
+local patches = package:patches()
+-- each element contains the keys &quot;url&quot; and &quot;sha256&quot;
+local url = patches[1][&quot;url&quot;]
+local sha256 = patches[1][&quot;sha256&quot;]
+</code></pre>
+<h2 id="package%3Ahas_cfuncs">package:has_cfuncs</h2>
+<p>检测包是否具有给定的 C 函数。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_cfuncs(&quot;foo&quot;))
+  -- you can also add configs
+  assert(package:has_cfuncs(&quot;bar&quot;, {includes = &quot;foo_bar.h&quot;}))
+  assert(package:has_cfuncs(&quot;blob&quot;, {includes = &quot;blob.h&quot;, configs = {defines = &quot;USE_BLOB&quot;}}))
+  -- you can even set the language
+  assert(package:has_cfuncs(&quot;bla&quot;, {configs = {languages = &quot;c99&quot;}}))
+end)
+</code></pre>
+<h2 id="package%3Ahas_cxxfuncs">package:has_cxxfuncs</h2>
+<p>检测包是否具有给定的 C++ 函数。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_cxxfuncs(&quot;foo&quot;))
+  -- you can also add configs
+  assert(package:has_cxxfuncs(&quot;bar&quot;, {includes = &quot;foo_bar.hpp&quot;}))
+  assert(package:has_cxxfuncs(&quot;blob&quot;, {includes = &quot;blob.hpp&quot;, configs = {defines = &quot;USE_BLOB&quot;}}))
+  -- you can even set the language
+  assert(package:has_cxxfuncs(&quot;bla&quot;, {configs = {languages = &quot;cxx17&quot;}}))
+end)
+</code></pre>
+<h2 id="package%3Ahas_ctypes">package:has_ctypes</h2>
+<p>检测包是否具有给定的 C 类型。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_ctypes(&quot;foo&quot;))
+  -- you can also add configs
+  assert(package:has_ctypes(&quot;bar&quot;, {includes = &quot;foo_bar.h&quot;}))
+  assert(package:has_ctypes(&quot;blob&quot;, {includes = &quot;blob.h&quot;, configs = {defines = &quot;USE_BLOB&quot;}}))
+  -- you can even set the language
+  assert(package:has_ctypes(&quot;bla&quot;, {configs = {languages = &quot;c99&quot;}}))
+end)
+</code></pre>
+<h2 id="package%3Ahas_cxxtypes">package:has_cxxtypes</h2>
+<p>检测包是否具有给定的 C++ 类型。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_cxxtypes(&quot;foo&quot;))
+  -- you can also add configs
+  assert(package:has_cxxtypes(&quot;bar&quot;, {includes = &quot;foo_bar.hpp&quot;}))
+  assert(package:has_cxxtypes(&quot;blob&quot;, {includes = &quot;blob.hpp&quot;, configs = {defines = &quot;USE_BLOB&quot;}}))
+  -- you can even set the language
+  assert(package:has_cxxtypes(&quot;bla&quot;, {configs = {languages = &quot;cxx17&quot;}}))
+end)
+</code></pre>
+<h2 id="package%3Ahas_cincludes">package:has_cincludes</h2>
+<p>检测包是否具有给定的 C 头文件。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_cincludes(&quot;foo.h&quot;))
+end)
+</code></pre>
+<h2 id="package%3Ahas_cxxincludes">package:has_cxxincludes</h2>
+<p>检测包是否具有给定的 C++ 头文件。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:has_cincludes(&quot;foo.hpp&quot;))
+end)
+</code></pre>
+<h2 id="package%3Acheck_csnippets">package:check_csnippets</h2>
+<p>检测是否可以编译和链接给定的 C 代码片段。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:check_csnippets({test = [[
+    #define USE_BLOB
+    #include &lt;blob.h&gt;
+    void test(int argc, char** argv) {
+      foo bar;
+      printf(&quot;%s&quot;, bar.blob);
+    }
+  ]]}, {configs = {languages = &quot;c99&quot;}, includes = &quot;foo.h&quot;}))
+end)
+</code></pre>
+<h2 id="package%3Acheck_cxxsnippets">package:check_cxxsnippets</h2>
+<p>检测是否可以编译和链接给定的 C++ 代码片段。</p>
+<p>这应该在 <code>on_test</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">on_test(function (package)
+  assert(package:check_cxxsnippets({test = [[
+    #define USE_BLOB
+    #include &lt;blob.hpp&gt;
+    void test(int argc, char** argv) {
+      foo bar();
+      std::cout &lt;&lt; bar.blob;
+    }
+  ]]}, {configs = {languages = &quot;cxx11&quot;}, includes = &quot;foo.hpp&quot;}))
+end)
+</code></pre>
+<h2 id="package%3Acheck_fcsnippets">package:check_fcsnippets</h2>
+<p>检测是否可以编译和链接给定的 Fortran 代码片段。</p>
+<p>用法如上。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/package/description-scope.html">
+                            <span class="icon"></span>
+                            <span class="label">描述域</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/package/local-package.html">
+                            <span class="label">使用本地包</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
