@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>xmake-docs</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.html">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/builtin-variables.html"><span class="label">内置变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/target/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-3rd-source-package.html"><span class="label">继承本地第三方源码库</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/target/script-scope.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E8%84%9A%E6%9C%AC%E5%9F%9F">脚本域</h1>
+<p>此页面描述了 <a href="zh-cn/manual/project_target.html"  >工程目标</a> 的 <code>on_load()</code>、<code>before_build()</code> 或 <code>after_install()</code> 等函数的 <code>target</code> 接口。</p>
+<h2 id="target%3Aname">target:name</h2>
+<p>获取目标的名字。</p>
+<h2 id="target%3Aget">target:get</h2>
+<p>获取目标在描述域的配置值。</p>
+<p>任何在描述域的 <code>set_xxx</code> 和 <code>add_xxx</code> 配置值都可以通过这个接口获取到。</p>
+
+<pre class="language-lua"><code class="language-lua">-- get the links
+target:get(&quot;links&quot;)
+-- get the defined macros
+target:get(&quot;defines&quot;)
+</code></pre>
+<h2 id="target%3Aset">target:set</h2>
+<p>设置目标的配置值，（如果你想添加值可以用 <a href="#targetadd"  >target:add</a>）。</p>
+
+<pre class="language-lua"><code class="language-lua">-- set the links
+target:set(&quot;links&quot;, &quot;sdl2&quot;)
+-- set the defined macros
+target:set(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
+</code></pre>
+<h2 id="target%3Aadd">target:add</h2>
+<p>按名称添加到目标的值。</p>
+
+<pre class="language-lua"><code class="language-lua">-- add links
+target:add(&quot;links&quot;, &quot;sdl2&quot;)
+-- add defined macros
+target:add(&quot;defines&quot;, &quot;SDL_MAIN_HANDLED&quot;)
+</code></pre>
+<h2 id="target%3Akind">target:kind</h2>
+<p>获取目标程序类型。</p>
+<p>对应 <code>set_kind</code> 描述域接口设置。目标类型主要有：binary, static, shared, phony, object, headeronly。</p>
+<h2 id="target%3Ais_plat">target:is_plat</h2>
+<p>当前平台是否是给定平台之一。</p>
+<p>尽管，我们也可以用 <code>is_plat</code> 全局接口直接判断平台，但是 xmake 支持使用 <code>set_plat</code> 针对特定 target 单独设置编译平台。</p>
+<p>这个时候，使用全局接口，就不适用了，所以通常我们推荐使用 target 提供的接口，来直接对当前 target 判断编译平台，更加可靠。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the current platform android?
+target:is_plat(&quot;android&quot;)
+-- Is the current platform windows, linux or macosx?
+target:is_plat(&quot;windows&quot;, &quot;linux&quot;, &quot;macosx&quot;)
+</code></pre>
+<h2 id="target%3Ais_arch">target:is_arch</h2>
+<p>当前架构是否是给定架构之一。</p>
+<p>尽管，我们也可以用 <code>is_arch</code> 全局接口直接判断架构，但是 xmake 支持使用 <code>set_arch</code> 针对特定 target 单独设置编译架构。</p>
+<p>这个时候，使用全局接口，就不适用了，所以通常我们推荐使用 target 提供的接口，来直接对当前 target 判断编译架构，更加可靠。</p>
+
+<pre class="language-lua"><code class="language-lua">-- Is the current architecture x86
+target:is_arch(&quot;x86&quot;)
+-- Is the current architecture x64 or x86_64
+target:is_arch(&quot;x64&quot;, &quot;x86_64&quot;)
+</code></pre>
+<h2 id="target%3Atargetfile">target:targetfile</h2>
+<p>获取目标文件路径。</p>
+<p>主要用于获取 static, shared, binary 目标程序文件的输出路径。</p>
+
+<pre class="language-lua"><code class="language-lua">os.cp(target:targetfile(), &quot;/tmp/&quot;)
+</code></pre>
+<h2 id="target%3Atargetdir">target:targetdir</h2>
+<p>获取目标文件的输出目录。</p>
+<p>也就是 target:targetfile() 对应的存储目录。</p>
+<h2 id="target%3Abasename">target:basename</h2>
+<p>获取目标文件的 base 名。</p>
+<p>也就是 libfoo.a，foo.dll, foo.exe 中的 <code>foo</code>。</p>
+<h2 id="target%3Afilename">target:filename</h2>
+<p>获取目标文件名。</p>
+<p>目标文件的完整文件名，等价于 <code>path.filename(target:targetfile())</code>。</p>
+<h2 id="target%3Ainstalldir">target:installdir</h2>
+<p>获取目标文件的安装目录。</p>
+<p>通常用于 <code>xmake install/uninstall</code> 的 after_install 等脚本中获取对应的安装目录路径，可以用于用户自定义安装脚本。</p>
+<h2 id="target%3Aautogendir">target:autogendir</h2>
+<p>获取自动生成目录。</p>
+<p>这个通常用于一些自定义规则脚本中，存放一些特定于 target 的自动生成文件，路径通常在 <code>build/.gens/target</code> 下面。</p>
+<p>比如，我们在处理 lex/yacc 自动生成一些源码文件，就可以存放在这个目录下，方便之后去处理它。</p>
+<h2 id="target%3Aobjectfile">target:objectfile</h2>
+<p>获取对象文件路径。</p>
+<p>通常用于自定义脚本中，获取源文件对应的目标文件路径，例如：</p>
+
+<pre class="language-lua"><code class="language-lua">local objectfile = target:objectfile(sourcefile)
+</code></pre>
+<h2 id="target%3Asourcebatches">target:sourcebatches</h2>
+<p>获取所有源文件。</p>
+<p>它可以获取到 <code>add_files</code> 添加的所有源文件，并且根据不同源文件类型，分别存储。</p>
+<p>大概结构如下：</p>
+
+<pre class="language-lua"><code class="language-lua">{
+  &quot;c++.build&quot; = {
+    objectfiles = {
+      &quot;build/.objs/test/macosx/x86_64/release/src/main.cpp.o&quot;
+    },
+    rulename = &quot;c++.build&quot;,
+    sourcekind = &quot;cxx&quot;,
+    sourcefiles = {
+      &quot;src/main.cpp&quot;
+    },
+    dependfiles = {
+      &quot;build/.deps/test/macosx/x86_64/release/src/main.cpp.o.d&quot;
+    }
+  },
+  &quot;asm.build&quot; = {
+    objectfiles = {
+      &quot;build/.objs/test/macosx/x86_64/release/src/test.S.o&quot;
+    },
+    rulename = &quot;asm.build&quot;,
+    sourcekind = &quot;as&quot;,
+    sourcefiles = {
+      &quot;src/test.S&quot;
+    },
+    dependfiles = {
+      &quot;build/.deps/test/macosx/x86_64/release/src/test.S.o.d&quot;
+    }
+  }
+}
+</code></pre>
+<p>我们可以通过遍历去获取处理每种类型的源文件。</p>
+
+<pre class="language-lua"><code class="language-lua">for _, sourcebatch in pairs(target:sourcebatches()) do
+    local sourcekind = sourcebatch.sourcekind
+    if sourcekind == &quot;cc&quot; or sourcekind == &quot;cxx&quot; or sourcekind == &quot;as&quot; then
+        for _, sourcefile in ipairs(sourcebatch.sourcefiles) do
+            -- TODO
+        end
+    end
+end
+</code></pre>
+<p>其中 sourcekind 是每种源文件的类型，cc 是 c 文件类型，cxx 是 c++ 源文件，as 是 asm 源文件。</p>
+<p>sourcebatch 对应每种类型的源文件 batch，对应一批同类型源文件。</p>
+<p>sourcebatch.sourcefiles 是源文件列表，sourcebatch.objectfiles 是对象文件列表，sourcebatch.rulename 是对应的规则名。</p>
+<h2 id="target%3Aobjectfiles">target:objectfiles</h2>
+<p>获取所有对象文件列表。</p>
+<p>尽管 <code>target:sourcebatches()</code> 也可以获取所有对象文件，但是它们是根据源文件类型分类过的，且不直接参与最终链接。</p>
+<p>如果我们想动态修改最终链接的对象文件列表，可以修改 <code>target:objectfiles()</code>，它是一个数组列表。</p>
+<h2 id="target%3Aheaderfiles">target:headerfiles</h2>
+<p>获取所有的头文件列表。</p>
+<p>可以获取到 <code>add_headerfiles()</code> 接口设置的所有头文件列表。</p>
+
+<pre class="language-lua"><code class="language-lua">for _, headerfile in ipairs(target:headerfiles()) do
+    -- TODO
+end
+</code></pre>
+<h2 id="target%3Ascriptdir">target:scriptdir</h2>
+<p>获取目标定义所在的 xmake.lua 目录。</p>
+<p>这通常在自定义规则中使用的比较多，想获取当前 target 实际被定义在哪个 xmake.lua 所在目录下，方便引用一些资源文件，可以用这个接口。</p>
+<h2 id="target%3Ahas_cfuncs">target:has_cfuncs</h2>
+<p>检测目标编译配置能否获取给定的 C 函数。</p>
+<p>这应该在 <code>on_config</code> 中使用，比如可以用它来判断当前目标能否获取到 zlib 依赖包的一些函数接口，然后自动定义 <code>HAVE_INFLATE</code>：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;)
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;zlib&quot;)
+    on_config(function (target)
+        if target:has_cfuncs(&quot;inflate&quot;, {includes = &quot;zlib.h&quot;}) then
+            target:add(&quot;defines&quot;, &quot;HAVE_INFLATE&quot;)
+        end
+    end)
+end)
+</code></pre>
+<p>尽管 option 也提供了类似的检测功能，但 option 的检测使用的是全局的平台工具链，它无法附带上 target 相关的一些编译配置，也无法根据 target 设置不同编译工具链来适配检测，并且无法检测包里面的一些接口。</p>
+<p>如果我们仅仅是想粗粒度的检测函数接口，并且 target 没有额外设置不同的工具链，那么 option 提供的检测功能已经足够使用了。</p>
+<p>如果想要更细粒度控制检测，可以使用 target 实例接口提供的检测特性。</p>
+<h2 id="target%3Ahas_cxxfuncs">target:has_cxxfuncs</h2>
+<p>检测目标编译配置能否获取给定的 C++ 函数。</p>
+<p>用法跟 <a href="#targethas_cfuncs"  >target:has_cfuncs</a> 类似，只是这里主要用于检测 C++ 的函数。</p>
+<p>不过，在检测函数的同时，我们还可以额外配置 std languages，来辅助检测。</p>
+
+<pre class="language-lua"><code class="language-lua">target:has_cxxfuncs(&quot;foo&quot;, {includes = &quot;foo.h&quot;, configs = {languages = &quot;cxx17&quot;}})
+</code></pre>
+<h2 id="target%3Ahas_ctypes">target:has_ctypes</h2>
+<p>检测目标编译配置能否获取给定的 C 类型。</p>
+<p>这应该在 <code>on_config</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;)
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;zlib&quot;)
+    on_config(function (target)
+        if target:has_ctypes(&quot;z_stream&quot;, {includes = &quot;zlib.h&quot;}) then
+            target:add(&quot;defines&quot;, &quot;HAVE_ZSTEAM_T&quot;)
+        end
+    end)
+end)
+</code></pre>
+<h2 id="target%3Ahas_cxxtypes">target:has_cxxtypes</h2>
+<p>检测目标编译配置能否获取给定的 C++ 类型。</p>
+<p>用法跟 <a href="#targethas_ctypes"  >target:has_ctypes</a> 类似，只是这里主要用于检测 C++ 的类型。</p>
+<h2 id="target%3Ahas_cflags">target:has_cflags</h2>
+<p>检测目标编译配置能否获取给定的 C 编译 flags。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    on_config(function (target)
+        if target:has_cxxflags(&quot;-fPIC&quot;) then
+            target:add(&quot;defines&quot;, &quot;HAS_PIC&quot;)
+        end
+    end)
+end)
+</code></pre>
+<h2 id="target%3Ahas_cxxflags">target:has_cxxflags</h2>
+<p>检测目标编译配置能否获取给定的 C++ 编译 flags。</p>
+<p>用法跟 <a href="#targethas_cflags"  >target:has_cflags</a> 类似，只是这里主要用于检测 C++ 的编译 flags。</p>
+<h2 id="target%3Ahas_cincludes">target:has_cincludes</h2>
+<p>检测目标编译配置能否获取给定的 C 头文件。</p>
+<p>这应该在 <code>on_config</code> 中使用，比如可以用它来判断当前目标能否获取到 zlib 依赖包的 zlib.h 头文件，然后自动定义 <code>HAVE_INFLATE</code>：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib&quot;)
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.c&quot;)
+    add_packages(&quot;zlib&quot;)
+    on_config(function (target)
+        if target:has_cincludes(&quot;zlib.h&quot;) then
+            target:add(&quot;defines&quot;, &quot;HAVE_ZLIB_H&quot;)
+        end
+    end)
+end)
+</code></pre>
+<h2 id="target%3Ahas_cxxincludes">target:has_cxxincludes</h2>
+<p>检测目标编译配置能否获取给定的 C++ 头文件。</p>
+<p>用法跟 <a href="#targethas_cincludes"  >target:has_cincludes</a> 类似，只是这里主要用于检测 C++ 的头文件。</p>
+<h2 id="target%3Acheck_csnippets">target:check_csnippets</h2>
+<p>检测是否可以编译和链接给定的 C 代码片段。</p>
+<p>用法跟 <a href="#targetcheck_cxxsnippets"  >target:check_cxxsnippets</a> 类似，只是这里主要用于检测 C 的代码片段。</p>
+<h2 id="target%3Acheck_cxxsnippets">target:check_cxxsnippets</h2>
+<p>检测是否可以编译和链接给定的 C++ 代码片段。</p>
+<p>这应该在 <code>on_config</code> 中使用，如下所示：</p>
+
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;libtins&quot;)
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    add_packages(&quot;libtins&quot;)
+    on_config(function (target)
+        local has_snippet = target:check_cxxsnippets({test = [[
+            #include &lt;string&gt;
+            using namespace Tins;
+            void test() {
+                std::string name = NetworkInterface::default_interface().name();
+                printf(&quot;%s\n&quot;, name.c_str());
+            }
+        ]]}, {configs = {languages = &quot;c++11&quot;}, includes = {&quot;tins/tins.h&quot;}})
+        if has_snippet then
+            target:add(&quot;defines&quot;, &quot;HAS_XXX&quot;)
+        end
+    end)
+end)
+</code></pre>
+<p>默认仅仅检测编译链接是否通过，如果想要尝试运行时检测，可以再设置 <code>tryrun = true</code>。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    on_config(function (target)
+        local has_int_4 = target:check_cxxsnippets({test = [[
+            return (sizeof(int) == 4)? 0 : -1;
+        ]]}, {configs = {languages = &quot;c++11&quot;}, tryrun = true})
+        if has_int_4 then
+            target:add(&quot;defines&quot;, &quot;HAS_INT4&quot;)
+        end
+    end)
+end)
+</code></pre>
+<p>我们也可以继续通过设置 <code>output = true</code> 来捕获检测的运行输出，并且加上自定义的 <code>main</code> 入口，实现完整的测试代码，而不仅仅是代码片段。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    on_config(function (target)
+        local int_size = target:check_cxxsnippets({test = [[
+            #include &lt;stdio.h&gt;
+            int main(int argc, char** argv) {
+                printf(&quot;%d&quot;, sizeof(int)); return 0;
+                return 0;
+            }
+        ]]}, {configs = {languages = &quot;c++11&quot;}, tryrun = true, output = true})
+    end)
+end)
+</code></pre>
+<h2 id="target%3Acheck_sizeof">target:check_sizeof</h2>
+<p>检测类型大小。</p>
+
+<pre class="language-lua"><code class="language-lua">add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    on_config(function (target)
+        print(&quot;sizeof(long) = %s&quot;, target:check_sizeof(&quot;long&quot;))
+        print(&quot;sizeof(string) = %s&quot;, target:check_sizeof(&quot;std::string&quot;, {includes = &quot;string&quot;}))
+        if target:check_size(&quot;long&quot;) == 8 then
+            target:add(&quot;defines&quot;, &quot;LONG64&quot;)
+        end
+    end)
+end)
+</code></pre>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+sizeof(long) = 8
+sizeof(string) = 24
+</code></pre>
+<h2 id="target%3Ahas_features">target:has_features</h2>
+<p>检测是否指定的 C/C++ 编译特性。</p>
+<p>它相比使用 <code>check_cxxsnippets</code> 来检测，会更加快一些，因为它仅仅执行一次预处理就能检测所有的编译器特性，而不是每次都去调用编译器尝试编译。</p>
+
+<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
+    set_kind(&quot;binary&quot;)
+    add_files(&quot;src/*.cpp&quot;)
+    on_config(function (target)
+        if target:has_features(&quot;c_static_assert&quot;) then
+            target:add(&quot;defines&quot;, &quot;HAS_STATIC_ASSERT&quot;)
+        end
+        if target:has_features(&quot;cxx_constexpr&quot;) then
+            target:add(&quot;defines&quot;, &quot;HAS_CXX_CONSTEXPR&quot;)
+        end
+    end)
+end)
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/target/description-scope.html">
+                            <span class="icon"></span>
+                            <span class="label">描述域</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/option/description-scope.html">
+                            <span class="label">描述域</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/neutree/teedoc">github</a></li>
+<li><a target="_blank" href="https://gitee.com/teedoc/teedoc">gitee</a></li>
+<li><a target="_blank" href="https://github.com/teedoc/teedoc.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
