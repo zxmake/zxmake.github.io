@@ -29,6 +29,8 @@ items:
     items:
     -   label: 描述域
         file: target/description-scope.md
+    -   label: 脚本域
+        file: target/script-scope.md
 -   label: option 选项
     collapsed: false
     items:
