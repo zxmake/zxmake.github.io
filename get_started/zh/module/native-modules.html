@@ -204,6 +204,129 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     <div id="article_content">
                         
                             <h1 id="Lua-%E5%8E%9F%E7%94%9F%E6%A8%A1%E5%9D%97">Lua 原生模块</h1>
+<p>构建流程里可以使用原生模块。</p>
+<p>我们知道，在 xmake 中，可以通过 import 接口去导入一些 lua 模块在脚本域中使用，但是如果一些模块的操作比较耗时，那么 lua 实现并不是理想的选择。</p>
+<p>因此，新版本中，我们新增了 native lua 模块的支持，可以通过 native 实现，来达到提速优化的效果，并且模块导入和使用，还是跟 lua 模块一样简单。</p>
+<p>使用原生模块时，xmake 会进行两段编译，先会自动编译原生模块，后将模块导入 lua 作为库或二进制，而对于用户，仅仅只需要调用 import 导入即可。</p>
+<h2 id="%E5%AE%9A%E4%B9%89%E5%8A%A8%E6%80%81%E5%BA%93%E6%A8%A1%E5%9D%97">定义动态库模块</h2>
+<p>动态库模块的好处是，不仅仅通过 native 实现了性能加速，另外避免了每次调用额外的子进程创建，因此更加的轻量，速度进一步得到提升。</p>
+<p>我们可以先定义一个动态库模块，里面完全支持 lua 的所有 c API，因此我们也可以将一些第三方的开源 lua native 模块直接引入进来使用。</p>
+<p>这里我们也有一个完整的导入 lua-cjson 模块的例子可以参考：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/other/native_module_cjson"  target="_blank">native_module_cjson</a></p>
+<p>首先，我们先实现 shared 的 native 代码，所以接口通过 lua API 导出。</p>
+
+<pre class="language-c++"><code class="language-c++">// ./modules/foo/foo.c
+#include &lt;xmi.h&gt;
+
+static int c_add(lua_State* lua) {
+    int a = lua_tointeger(lua, 1);
+    int b = lua_tointeger(lua, 2);
+    lua_pushinteger(lua, a + b);
+    return 1;
+}
+
+static int c_sub(lua_State* lua) {
+    int a = lua_tointeger(lua, 1);
+    int b = lua_tointeger(lua, 2);
+    lua_pushinteger(lua, a - b);
+    return 1;
+}
+
+int luaopen(foo, lua_State* lua) {
+    // 收集 add 和 sub
+    static const luaL_Reg funcs[] = {
+        {&quot;add&quot;, c_add},
+        {&quot;sub&quot;, c_sub},
+        {NULL, NULL}
+    };
+    lua_newtable(lua);
+    // 传递函数列表
+    luaL_setfuncs(lua, funcs, 0);
+    return 1;
+}
+</code></pre>
+<p>注意到这里，我们 include 了一个 <code>xmi.h</code> 的接口头文件，其实我们也可以直接引入 <code>lua.h</code>，<code>luaconf.h</code>，效果是一样的，但是会提供更好的跨平台性，内部会自动处理 lua/luajit 还有版本间的差异。</p>
+<p>然后，我们配置 <code>add_rules(&quot;modules.shared&quot;)</code> 作为 shared native 模块来编译，不需要引入任何其他依赖。</p>
+<p>甚至连 lua 的依赖也不需要引入，因为 xmake 主程序已经对其导出了所有的 lua 接口，可直接使用，所以整个模块是非常轻量的。</p>
+
+<pre class="language-lua"><code class="language-lua">-- ./modules/foo/xmake.lua
+add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;foo&quot;)
+    -- 指定目标为库 lua 模块
+    add_rules(&quot;module.shared&quot;)
+    add_files(&quot;foo.c&quot;)
+</code></pre>
+<h2 id="%E5%AE%9A%E4%B9%89%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%A8%A1%E5%9D%97">定义二进制模块</h2>
+<p>出了动态库模块，我们还提供了另外一种二进制模块的导入。它其实就是一个可执行文件，每次调用模块接口，都会去调用一次子进程。</p>
+<p>那它有什么好处呢，尽管它没有动态库模块那么高效，但是它的模块实现更加的简单，不需要调用 lua API，仅仅只需要处理参数数据，通过 stdout 去输出返回值即可。</p>
+<p>另外，相比二进制分发，它是通过源码分发的，因此也解决了跨平台的问题。</p>
+<p>具体是使用动态库模块，还是二进制模块，具体看自己的需求，如果想要实现简单，可以考虑二进制模块，如果想要高效，就用动态库模块。</p>
+<p>另外，如果需要通过并行执行来提速，也可以使用二进制模块。</p>
+
+<pre class="language-c++"><code class="language-c++">// ./modules/bar/bar.cpp
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;cstdlib&gt;
+
+int main(int argc, char** argv) {
+    int a = atoi(argv[1]);
+    int b = atoi(argv[2]);
+    printf(&quot;%d&quot;, a + b);
+    return 0;
+}
+</code></pre>
+
+<pre class="language-lua"><code class="language-lua">-- ./modules/bar/xmake.lua
+add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+
+target(&quot;add&quot;)
+    -- 指定目标为二进制 lua 模块
+    add_rules(&quot;module.binary&quot;)
+    add_files(&quot;bar.cpp&quot;)
+</code></pre>
+<h2 id="%E5%AF%BC%E5%85%A5%E5%8E%9F%E7%94%9F%E6%A8%A1%E5%9D%97">导入原生模块</h2>
+<p>对于模块导入，我们仅仅需要调用 import，跟导入 lua 模块的用法完全一致。</p>
+
+<pre class="language-lua"><code class="language-lua">-- ./xmake.lua
+add_rules(&quot;mode.debug&quot;, &quot;mode.release&quot;)
+-- 添加./modules 目录内原生模块
+add_moduledirs(&quot;modules&quot;)
+
+target(&quot;test&quot;)
+    set_kind(&quot;phony&quot;)
+    on_load(function(target)
+        import(&quot;foo&quot;, {always_build = true})
+        import(&quot;bar&quot;)
+        print(&quot;foo: 1 + 1 = %s&quot;, foo.add(1, 1))
+        print(&quot;foo: 1 - 1 = %s&quot;, foo.sub(1, 1))
+        print(&quot;bar: 1 + 1 = %s&quot;, bar.add(1, 1))
+    end)
+</code></pre>
+<p>由于插件模块的构建是跟主工程完全独立的，因此，native 模块只会被构建一次，如果想要触发增量的插件编译，需要配置上 <code>always_build = true</code>，这样，xmake 就会每次检测插件代码是否有改动，如果有改动，会自动增量构建插件。</p>
+<p>首次执行效果如下：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+[50%]: cache compiling.release src/foo.c
+[50%]: cache compiling.release src/bar.c
+[75%]: linking.release libmodule_foo.dylib
+[75%]: linking.release module_bar
+[100%]: build ok, spent 1.296s
+foo: 1 + 1 = 2
+foo: 1 - 1 = 0
+bar: 1 + 1 = 2
+[100%]: build ok, spent 0.447s
+</code></pre>
+<p>第二次执行，就不会再构建插件，可以直接使用模块：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+foo: 1 + 1 = 2
+foo: 1 - 1 = 0
+bar: 1 + 1 = 2
+[100%]: build ok, spent 0.447s
+</code></pre>
+<h2 id="%E4%BD%9C%E4%B8%BA-codegen-%E6%9D%A5%E4%BD%BF%E7%94%A8">作为 codegen 来使用</h2>
+<p>通过新的 native 模块特性，我们也可以用来实现 auto-codegen，然后根据自动生成的代码，继续执行后续编译流程。</p>
+<p>这里也有完整的例子可以参考：<a href="https://github.com/xmake-io/xmake/tree/master/tests/projects/other/autogen_shared_module"  target="_blank">autogen_shared_module</a>。</p>
 
                         
                     </div>
