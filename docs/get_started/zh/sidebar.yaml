@@ -84,6 +84,12 @@ items:
             file: module/extension-modules.md
         -   label: Lua 原生模块
             file: module/native-modules.md
+-   label: theme 主题风格
+    items:
+        -   label: 切换主题
+            file: theme/switch-themes.md
+        -   label: 内置主题
+            file: theme/builtin-themes.md
 -   label: 其他特性
     items:
         -   label: 远程编译
