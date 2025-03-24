@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>xmake-docs</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.html">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">github</a></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/builtin-variables.html"><span class="label">内置变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/target/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/option/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-3rd-source-package.html"><span class="label">继承本地第三方源码库</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">module 模块</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/module/builtin-modules.html"><span class="label">内置模块</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/module/extension-modules.html"><span class="label">扩展模块</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/module/native-modules.html"><span class="label">Lua 原生模块</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">其他特性</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="active with_link"><a href="/get_started/zh/features/remote-build.html"><span class="label">远程编译</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/distcc-build.html"><span class="label">分布式编译</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/build-cache.html"><span class="label">编译缓存</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/unity-build.html"><span class="label">Unity 编译加速</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/autogen.html"><span class="label">自动扫描源码生成工程</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/features/remote-build.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E8%BF%9C%E7%A8%8B%E7%BC%96%E8%AF%91">远程编译</h1>
+<h2 id="%E5%89%8D%E8%A8%80">前言</h2>
+<p>xmake 提供了远程编译支持，我们可以通过它可以远程服务器上编译代码，远程运行和调试。</p>
+<p>服务器可以部署在 Linux/MacOS/Windows 上，实现跨平台编译，例如：在 Linux 上编译运行 Windows 程序，在 Windows 上编译运行 macOS/Linux 程序。</p>
+<p>相比 ssh 远程登入编译，它更加的稳定，使用更加流畅，不会因为网络不稳定导致 ssh 终端输入卡顿，也可以实现本地快速编辑代码文件。</p>
+<p>甚至我们可以在 vs/sublime/vscode/idea 等编辑器和IDE 中无缝实现远程编译，而不需要依赖 IDE 本身对远程编译的支持力度。</p>
+<h2 id="%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1">开启服务</h2>
+
+<pre class="language-console"><code class="language-console">$ xmake service
+&lt;remote_build_server&gt;: listening 0.0.0.0:9091 ..
+</code></pre>
+<p>我们也可以开启服务的同时，回显详细日志信息。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake service -vD
+&lt;remote_build_server&gt;: listening 0.0.0.0:9091 ..
+</code></pre>
+<h2 id="%E4%BB%A5-Daemon-%E6%A8%A1%E5%BC%8F%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1">以 Daemon 模式开启服务</h2>
+
+<pre class="language-console"><code class="language-console">$ xmake service --start
+$ xmake service --restart
+$ xmake service --stop
+</code></pre>
+<h2 id="%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E7%AB%AF">配置服务端</h2>
+<p>我们首先，运行 <code>xmake service</code> 命令，它会自动生成一个默认的 <code>server.conf</code> 配置文件，存储到 <code>~/.xmake/service/server.conf</code>。</p>
+<p>然后，我们编辑它，修复服务器的监听端口（可选）。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/server.conf
+{
+    known_hosts = { },
+    logfile = &quot;/Users/ruki/.xmake/service/server/logs.txt&quot;,
+    remote_build = {
+        listen = &quot;0.0.0.0:9691&quot;,
+        workdir = &quot;/Users/ruki/.xmake/service/server/remote_build&quot;
+    },
+    tokens = {
+        &quot;e438d816c95958667747c318f1532c0f&quot;
+    }
+}
+</code></pre>
+<h2 id="%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF">配置客户端</h2>
+<p>客户端配置文件在 <code>~/.xmake/service/client.conf</code>，我们可以在里面配置客户端需要连接的服务器地址。</p>
+
+<pre class="language-console"><code class="language-console">$ cat ~/.xmake/service/client.conf
+{
+    remote_build = {
+        connect = &quot;127.0.0.1:9691&quot;,
+        token = &quot;e438d816c95958667747c318f1532c0f&quot;
+    }
+}
+</code></pre>
+<h2 id="%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83">用户认证和授权</h2>
+<p>在实际连接之前，我们简单介绍下 xmake 提供的服务目前提供的几种认证机制。</p>
+<ol>
+<li>Token 认证</li>
+<li>密码认证</li>
+<li>可信主机验证</li>
+</ol>
+<h3 id="Token-%E8%AE%A4%E8%AF%81">Token 认证</h3>
+<p>这也是我们默认推荐的方式，更加安全，配置和连接也更加方便，每次连接也不用输入密码。</p>
+<p>我们在执行 <code>xmake service</code> 命令时候，默认就会生成一个服务端和客户端的配置文件，并且自动生成一个默认的 token，因此本地直连是不需要任何配置的。</p>
+<h4 id="%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE">服务端认证配置</h4>
+<p>服务端可以配置多个 token 用于对不同用户主机进行授权连接，当然也可以共用一个 token。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/server.conf
+{
+    known_hosts = { },
+    logfile = &quot;/Users/ruki/.xmake/service/server/logs.txt&quot;,
+    remote_build = {
+        listen = &quot;0.0.0.0:9691&quot;,
+        workdir = &quot;/Users/ruki/.xmake/service/server/remote_build&quot;
+    },
+    tokens = {
+        &quot;e438d816c95958667747c318f1532c0f&quot;
+    }
+}
+</code></pre>
+<h4 id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE">客户端认证配置</h4>
+<p>客户端只需要添加服务器上的 token 到对应的客户端配置中即可。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/client.conf
+{
+    remote_build = {
+        connect = &quot;127.0.0.1:9691&quot;,
+        token = &quot;e438d816c95958667747c318f1532c0f&quot;
+    }
+}
+</code></pre>
+<h4 id="%E6%89%8B%E5%8A%A8%E7%94%9F%E6%88%90%E6%96%B0-token">手动生成新 token</h4>
+<p>我们也可以执行下面的命令，手动生成一个新的 token，自己添加到服务器配置中。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake service --gen-token
+New token a7b9fc2d3bfca1472aabc38bb5f5d612 is generated!
+</code></pre>
+<h3 id="%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81">密码认证</h3>
+<p>我们也提供密码认证的授权模式，相比 token 认证，它需要用户每次连接的时候，输入密码，验证通过后，才能连接上。</p>
+<h4 id="%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE">服务端认证配置</h4>
+<p>密码认证，我们不需要手动配置 token，只需要执行下面的命令，添加用户就行了，添加过程中，会提示用户输入密码。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake service --add-user=ruki
+Please input user ruki password:
+123456
+Add user ruki ok!
+</code></pre>
+<p>然后，xmake 就会通过用户名，密码生成一个新的 token 添加到服务器配置的 token 列表中去。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/server.conf
+{
+    known_hosts = { },
+    logfile = &quot;/Users/ruki/.xmake/service/server/logs.txt&quot;,
+    remote_build = {
+        listen = &quot;0.0.0.0:9691&quot;,
+        workdir = &quot;/Users/ruki/.xmake/service/server/remote_build&quot;
+    },
+    tokens = {
+        &quot;e438d816c95958667747c318f1532c0f&quot;,
+        &quot;7889e25402413e93fd37395a636bf942&quot;
+    }
+}
+</code></pre>
+<p>当然，我们也可以删除指定的用户和密码。</p>
+
+<pre class="language-bash"><code class="language-bash">$xmake service --rm-user=ruki
+Please input user ruki password:
+123456
+Remove user ruki ok!
+</code></pre>
+<h4 id="%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%A4%E8%AF%81%E9%85%8D%E7%BD%AE">客户端认证配置</h4>
+<p>对于客户端，我们不再需要设置服务器的 token 了，只需要在连接配置中，追加需要连接的用户名即可开启密码认证，格式：<code>user@address:port</code></p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/client.conf
+{
+    remote_build = {
+        connect = &quot;root@127.0.0.1:9691&quot;
+  }
+}
+</code></pre>
+<p>!&gt; 如果去掉用户名，也没配置 token，那就是匿名模式，如果服务器也没配置 token，就是完全禁用认证，直接连接。</p>
+<h3 id="%E5%8F%AF%E4%BF%A1%E4%B8%BB%E6%9C%BA%E9%AA%8C%E8%AF%81">可信主机验证</h3>
+<p>另外，为了更进一步提高安全性，我们还提供了服务端可信主机验证，如果在服务器配置的 known_hosts 列表中，配置了可以连接的客户端主机 ip 地址，<br />
+那么只有这些主机可以成功连接上这台服务器，其他主机对它的连接都会被提示为不可信而拒绝连接，即使 token 和密码认证都没问题也不行。</p>
+
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/server.conf
+{
+    logfile = &quot;/Users/ruki/.xmake/service/logs.txt&quot;,
+    server = {
+        tokens = {
+            &quot;4b928c7563a0cba10ff4c3f5ca0c8e24&quot;
+        },
+        known_hosts = { &quot;127.0.0.1&quot;, &quot;xx.xx.xx.xx&quot;}
+    }
+}
+</code></pre>
+<h2 id="%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8">连接远程的服务器</h2>
+<p>接下来，我们只需要进入需要远程编译的工程根目录，执行 <code>xmake service --connect</code> 命令，进行连接。</p>
+<p>如果是 token 认证模式，那么不需要的额外的密码输入，直接连接。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake create test
+$ cd test
+$ xmake service --connect
+&lt;remote_build_client&gt;: connect 192.168.56.110:9091 ..
+&lt;remote_build_client&gt;: connected!
+&lt;remote_build_client&gt;: sync files in 192.168.56.110:9091 ..
+Scanning files ..
+Comparing 3 files ..
+    [+]: src/main.cpp
+    [+]: .gitignore
+    [+]: xmake.lua
+3 files has been changed!
+Archiving files ..
+Uploading files with 1372 bytes ..
+&lt;remote_build_client&gt;: sync files ok!
+</code></pre>
+<p>如果是密码认证，那么会提示用户输入密码，才能继续连接。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake service --connect
+Please input user root password:
+000000
+&lt;remote_build_client&gt;: connect 127.0.0.1:9691 ..
+&lt;remote_build_client&gt;: connected!
+&lt;remote_build_client&gt;: sync files in 127.0.0.1:9691 ..
+Scanning files ..
+Comparing 3 files ..
+    [+]: xmake.lua
+    [+]: .gitignore
+    [+]: src/main.cpp
+3 files has been changed!
+Archiving files ..
+Uploading files with 1591 bytes ..
+&lt;remote_build_client&gt;: sync files ok!
+</code></pre>
+<p>如果密码不对，就会提示错误。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake service --connect
+Please input user root password:
+123
+&lt;remote_build_client&gt;: connect 127.0.0.1:9691 ..
+&lt;remote_build_client&gt;: connect 127.0.0.1:9691 failed, user and password are incorrect!
+</code></pre>
+<h2 id="%E8%BF%9C%E7%A8%8B%E6%9E%84%E5%BB%BA%E5%B7%A5%E7%A8%8B">远程构建工程</h2>
+<p>连接成功后，我们就可以像正常本地编译一样，进行远程编译。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake
+&lt;remote_build_client&gt;: run xmake in 192.168.56.110:9091 ..
+checking for platform ... macosx
+checking for architecture ... x86_64
+checking for Xcode directory ... /Applications/Xcode.app
+checking for Codesign Identity of Xcode ... Apple Development: waruqi@gmail.com (T3NA4MRVPU)
+checking for SDK version of Xcode for macosx (x86_64) ... 11.3
+checking for Minimal target version of Xcode for macosx (x86_64) ... 11.4
+[ 25%]: cache compiling.release src/main.cpp
+[ 50%]: linking.release test
+[100%]: build ok!
+&lt;remote_build_client&gt;: run command ok!
+</code></pre>
+<h2 id="%E8%BF%9C%E7%A8%8B%E8%BF%90%E8%A1%8C%E7%9B%AE%E6%A0%87%E7%A8%8B%E5%BA%8F">远程运行目标程序</h2>
+<p>我们也可以像本地运行调试那样，远程运行调试编译的目标程序。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake run
+&lt;remote_build_client&gt;: run xmake run in 192.168.56.110:9091 ..
+hello world!
+&lt;remote_build_client&gt;: run command ok!
+</code></pre>
+<h2 id="%E8%BF%9C%E7%A8%8B%E9%87%8D%E5%BB%BA%E5%B7%A5%E7%A8%8B">远程重建工程</h2>
+
+<pre class="language-console"><code class="language-console">$ xmake -rv
+&lt;remote_build_client&gt;: run xmake -rv in 192.168.56.110:9091 ..
+[ 25%]: cache compiling.release src/main.cpp
+/usr/local/bin/ccache /usr/bin/xcrun -sdk macosx clang -c -Qunused-arguments -arch x86_64 -mmacosx-version-min=11.4 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG -o build/.objs/test/macosx/x86_64/release/src/main.cpp.o src/main.cpp
+[ 50%]: linking.release test
+&quot;/usr/bin/xcrun -sdk macosx clang++&quot; -o build/macosx/x86_64/release/test build/.objs/test/macosx/x86_64/release/src/main.cpp.o -arch x86_64 -mmacosx-version-min=11.4 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -stdlib=libc++ -Wl,-x -lz
+[100%]: build ok!
+&lt;remote_build_client&gt;: run command ok!
+</code></pre>
+<h2 id="%E8%BF%9C%E7%A8%8B%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0">远程配置编译参数</h2>
+
+<pre class="language-console"><code class="language-console">$ xmake f --xxx --yy
+</code></pre>
+<h2 id="%E6%89%8B%E5%8A%A8%E5%90%8C%E6%AD%A5%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6">手动同步工程文件</h2>
+<p>连接的时候，会自动同步一次代码，后期代码改动，可以执行此命令来手动同步改动的文件。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake service --sync
+&lt;remote_build_client&gt;: sync files in 192.168.56.110:9091 ..
+Scanning files ..
+Comparing 3 files ..
+    [+]: src/main.cpp
+    [+]: .gitignore
+    [+]: xmake.lua
+3 files has been changed!
+Archiving files ..
+Uploading files with 1372 bytes ..
+&lt;remote_build_client&gt;: sync files ok!
+</code></pre>
+<h2 id="%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6">拉取远程文件</h2>
+<p>v2.7.1 版本我们新增了一个参数用于拉取远程指定的文件，通常我们可以用来完成构建后目标文件的拉取，将编译后的库文件下载到本地。</p>
+<p>例如：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake service --pull 'build/**' outputdir
+</code></pre>
+<p>我们可以指定远程路径 <code>build/**</code> ，将所有匹配的文件全部拉取到本地 outputdir 目录下。</p>
+<h2 id="%E6%96%AD%E5%BC%80%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5">断开远程连接</h2>
+<p>针对当前工程，断开连接，这仅仅影响当前工程，其他项目还是可以同时连接和编译。</p>
+
+<pre class="language-console"><code class="language-console">$ xmake service --disconnect
+&lt;remote_build_client&gt;: disconnect 192.168.56.110:9091 ..
+&lt;remote_build_client&gt;: disconnected!
+</code></pre>
+<h2 id="%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%A5%E5%BF%97">查看服务器日志</h2>
+
+<pre class="language-console"><code class="language-console">$ xmake service --logs
+</code></pre>
+<h2 id="%E6%B8%85%E7%90%86%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E7%BC%93%E5%AD%98%E5%92%8C%E6%9E%84%E5%BB%BA%E6%96%87%E4%BB%B6">清理远程服务缓存和构建文件</h2>
+<p>我们也可以手动清理远程的任何缓存和构建生成的文件。</p>
+
+<pre class="language-console"><code class="language-console">$ cd projectdir
+$ xmake service --clean
+</code></pre>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/module/native-modules.html">
+                            <span class="icon"></span>
+                            <span class="label">Lua 原生模块</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/features/distcc-build.html">
+                            <span class="label">分布式编译</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">github</a></li>
+<li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">gitee</a></li>
+<li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>

@@ -144,8 +144,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="active_parent no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator"></span></a><ul class="show">
-<li class="active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
 <li class="not_active no_link"><a><span class="label">module 模块</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
@@ -154,13 +154,13 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/module/native-modules.html"><span class="label">Lua 原生模块</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active no_link"><a><span class="label">其他特性</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="active_parent no_link"><a><span class="label">其他特性</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/features/remote-build.html"><span class="label">远程编译</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/distcc-build.html"><span class="label">分布式编译</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/build-cache.html"><span class="label">编译缓存</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/unity-build.html"><span class="label">Unity 编译加速</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/autogen.html"><span class="label">自动扫描源码生成工程</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
 </ul>
 </li>
 </ul>
@@ -195,7 +195,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/task/description-scope.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/features/try-build.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -212,286 +212,136 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E6%8F%8F%E8%BF%B0%E5%9F%9F">描述域</h1>
-<p>xmake 可以实现自定义任务或者插件，其两者的核心就是 <code>task</code> 任务，其两者实际上是一样的，xmake 的插件都是用 <code>task</code> 实现的。</p>
-<p>本质上都是任务，只是 <a href="#taskset_category"  >set_category</a> 分类不同而已。</p>
-<table>
-<thead>
-<tr>
-  <th>接口</th>
-  <th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><a href="#task"  >task</a></td>
-  <td>定义插件或者任务</td>
-</tr>
-<tr>
-  <td><a href="#taskset_menu"  >set_menu</a></td>
-  <td>设置任务菜单</td>
-</tr>
-<tr>
-  <td><a href="#taskset_category"  >set_category</a></td>
-  <td>设置任务类别</td>
-</tr>
-<tr>
-  <td><a href="#taskon_run"  >on_run</a></td>
-  <td>设置任务运行脚本</td>
-</tr>
-</tbody>
-</table>
-<h2 id="task">task</h2>
-<p>定义插件或者任务。</p>
-<p><code>task</code> 域用于描述一个自定义的任务实现，与 <a href="#target"  >target</a> 和<a href="#option"  >option</a>同级。</p>
-<p>例如，这里定义一个最简单的任务：</p>
+                            <h1 id="%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F">尝试使用其他构建系统</h1>
+<p>xmake 直接对接了其他第三方构建系统，即使其他项目中没有使用 xmake.lua 来维护，xmake 也可以直接调用其他构建工具来完成编译。</p>
+<p>那用户直接调用使用第三方构建工具来编译不就行了，为啥还要用 xmake 去调用呢？主要有以下好处：</p>
+<ol>
+<li>完全的行为一致，简化编译流程，不管用了哪个其他构建系统，都只需要执行 xmake 这个命令就可以编译，用户不再需要去研究其他工具的不同的编译流程</li>
+<li>完全对接 <code>xmake config</code> 的配置环境，复用 xmake 的平台探测和 sdk 环境检测，简化平台配置</li>
+<li>对接交叉编译环境，即使是用 autotools 维护的项目，也能通过 xmake 快速实现交叉编译</li>
+</ol>
+<p>目前已支持的构建系统：</p>
+<ul>
+<li>autotools（已完全对接 xmake 的交叉编译环境）</li>
+<li>xcodebuild</li>
+<li>cmake（已完全对接 xmake 的交叉编译环境）</li>
+<li>make</li>
+<li>msbuild</li>
+<li>scons</li>
+<li>meson</li>
+<li>bazel</li>
+<li>ndkbuild</li>
+<li>ninja</li>
+</ul>
+<h2 id="%E8%87%AA%E5%8A%A8%E6%8E%A2%E6%B5%8B%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F%E5%B9%B6%E7%BC%96%E8%AF%91">自动探测构建系统并编译</h2>
+<p>例如，对于一个使用 cmake 维护的项目，直接在项目根目录执行 xmake，就会自动触发探测机制，检测到 CMakeLists.txt，然后提示用户是否需要使用 cmake 来继续完成编译。</p>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-
-    -- 设置运行脚本
-    on_run(function ()
-        print(&quot;hello xmake!&quot;)
-    end)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake
+note: CMakeLists.txt found, try building it (pass -y or --confirm=y/n/d to skip confirm)?
+please input: y (y/n)
+-- Symbol prefix:
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/ruki/Downloads/libpng-1.6.35/build
+[7%] Built target png-fix-itxt
+[21%] Built target genfiles
+[81%] Built target png
+[83%] Built target png_static
+...
+output to /Users/ruki/Downloads/libpng-1.6.35/build/artifacts
+build ok!
 </code></pre>
-<p>这个任务只需要打印 <code>hello xmake!</code>，那如何来运行呢？</p>
-<p>由于这里没有使用 <a href="#taskset_menu"  >set_menu</a> 设置菜单，因此这个任务只能在 <code>xmake.lua</code> 的自定义脚本或者其他任务内部调用，例如：</p>
+<h2 id="%E6%97%A0%E7%BC%9D%E5%AF%B9%E6%8E%A5-xmake-%E5%91%BD%E4%BB%A4">无缝对接 xmake 命令</h2>
+<p>目前支持 <code>xmake clean</code>, <code>xmake --rebuild</code> 和 <code>xmake config</code> 等常用命令与第三方系统的无缝对接。</p>
+<p>我们可以直接清理 cmake 维护项目的编译输出文件</p>
 
-<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
-
-    after_build(function (target)
-
-        -- 导入 task 模块
-        import(&quot;core.project.task&quot;)
-
-        -- 运行 hello 任务
-        task.run(&quot;hello&quot;)
-    end)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake clean
+$ xmake clean --all
 </code></pre>
-<p>在构建完 <code>test</code> 目标后运行 <code>hello</code> 任务。</p>
-<h2 id="task%3Aset_menu">task:set_menu</h2>
-<p>设置任务菜单。</p>
-<p>通过设置一个菜单，这个任务就可以开放给用户自己通过命令行手动调用，菜单的设置如下：</p>
+<p>如果带上 <code>--all</code> 执行清理，会清除 autotools/cmake 生成的所有文件，不仅仅只清理对象文件。</p>
+<p>默认 <code>xmake</code> 对接的是增量构建行为，不过我们也可以强制快速重建：</p>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;echo&quot;, function()
-
-    -- 设置运行脚本
-    on_run(function ()
-
-        -- 导入参数选项模块
-        import(&quot;core.base.option&quot;)
-
-        -- 初始化颜色模式
-        local modes = &quot;&quot;
-        for _, mode in ipairs({&quot;bright&quot;, &quot;dim&quot;, &quot;blink&quot;, &quot;reverse&quot;}) do
-            if option.get(mode) then
-                modes = modes .. &quot; &quot; .. mode
-            end
-        end
-
-        -- 获取参数内容并且显示信息
-        cprint(&quot;${%s%s}%s&quot;, option.get(&quot;color&quot;), modes, table.concat(option.get(&quot;contents&quot;) or {}, &quot; &quot;))
-    end)
-
-    -- 设置插件的命令行选项，这里没有任何参数选项，仅仅显示插件描述
-    set_menu {
-                -- 设置菜单用法
-                usage = &quot;xmake echo [options]&quot;
-
-                -- 设置菜单描述
-            ,   description = &quot;Echo the given info!&quot;
-
-                -- 设置菜单选项，如果没有选项，可以设置为 {}
-            ,   options =
-                {
-                    -- 设置 k 模式作为 key-only 型 bool 参数
-                    {'b', &quot;bright&quot;,     &quot;k&quot;,  nil,       &quot;Enable bright.&quot;}
-                ,   {'d', &quot;dim&quot;,        &quot;k&quot;,  nil,       &quot;Enable dim.&quot;}
-                ,   {'-', &quot;blink&quot;,      &quot;k&quot;,  nil,       &quot;Enable blink.&quot;}
-                ,   {'r', &quot;reverse&quot;,    &quot;k&quot;,  nil,       &quot;Reverse color.&quot;}
-
-                    -- 菜单显示时，空白一行
-                ,   {}
-
-                    -- 设置 kv 作为 key-value 型参数，并且设置默认值：black
-                ,   {'c', &quot;color&quot;,      &quot;kv&quot;, &quot;black&quot;,   &quot;Set the output color.&quot;
-                                                     ,   &quot;- red&quot;
-                                                     ,   &quot;- blue&quot;
-                                                     ,   &quot;- yellow&quot;
-                                                     ,   &quot;- green&quot;
-                                                     ,   &quot;- magenta&quot;
-                                                     ,   &quot;- cyan&quot;
-                                                     ,   &quot;- white&quot;                  }
-
-                    -- 设置 `vs` 作为 values 多值型参数，还有 `v` 单值类型
-                    -- 一般放置在最后，用于获取可变参数列表
-                ,   {}
-                ,   {nil, &quot;contents&quot;,   &quot;vs&quot;, nil,       &quot;The info contents.&quot;}
-                }
-            }
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake --rebuild
 </code></pre>
-<p>定义完这个任务后，执行 <code>xmake --help</code>，就会多出一个任务项来：</p>
+<h2 id="%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2%E6%8C%87%E5%AE%9A%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F">手动切换指定构建系统</h2>
+<p>如果一个项目下有多个构建系统同时在维护，比如 libpng 项目，自带 autotools/cmake/makefile 等构建系统维护，xmake 默认优先探测使用了 autotools，如果想要强制切换其他构建系统，可以执行：</p>
 
-<pre class="language-none"><code class="language-none">Tasks:
-
-    ...
-
-    echo                    Echo the given info!
+<pre class="language-bash"><code class="language-bash">$ xmake f --trybuild=[autotools|cmake|make|msbuild| ..]
+$ xmake
 </code></pre>
-<p>如果通过 <a href="#taskset_category"  >set_category</a> 设置分类为 <code>plugin</code>，那么这个任务就是一个插件了：</p>
+<p>另外，配置了 <code>--trybuild=</code> 参数手动指定了默认的构建系统，后续的 build 过程就不会额外提示用户选择了。</p>
+<h2 id="%E5%AE%9E%E7%8E%B0%E5%BF%AB%E9%80%9F%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">实现快速交叉编译</h2>
+<p>众所周知，cmake/autotools 维护的项目虽然很多都支持交叉编译，但是交叉编译的配置过程很复杂，不同的工具链处理方式还有很多的差异，中途会踩到很多的坑。</p>
+<p>即使跑通了一个工具链的交叉编译，如果切到另外一个工具链环境，可能又要折腾好久，而如果使用 xmake，通常只需要两条简单的命令即可：</p>
+<blockquote>
+<p>目前 cmake/autotools 都已对接支持了 xmake 的交叉编译。</p>
+</blockquote>
+<h3 id="%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-android-%E5%B9%B3%E5%8F%B0">交叉编译 android 平台</h3>
 
-<pre class="language-none"><code class="language-none">Plugins:
-
-    ...
-
-    echo                    Echo the given info!
-</code></pre>
-<p>想要手动运行这个任务，可以执行：</p>
-
-<pre class="language-bash"><code class="language-bash">$ xmake echo hello xmake!
-</code></pre>
-<p>就行了，如果要看这个任务定义的菜单，只需要执行：<code>xmake echo [-h|--help]</code>，显示结果如下：</p>
-
-<pre class="language-bash"><code class="language-bash">Usage: $xmake echo [options]
-
-Echo the given info!
-
-Options:
-    -v, --verbose                          Print lots of verbose information.
-        --backtrace                        Print backtrace information for debugging.
-        --profile                          Print performance data for debugging.
-        --version                          Print the version number and exit.
-    -h, --help                             Print this help message and exit.
-
-    -F FILE, --file=FILE                   Read a given xmake.lua file.
-    -P PROJECT, --project=PROJECT          Change to the given project directory.
-                                           Search priority:
-                                               1. The Given Command Argument
-                                               2. The Envirnoment Variable: XMAKE_PROJECT_DIR
-                                               3. The Current Directory
-
-    -b, --bright                           Enable bright.
-    -d, --dim                              Enable dim.
-    --, --blink                            Enable blink.
-    -r, --reverse                          Reverse color.
-
-    -c COLOR, --color=COLOR                Set the output color. (default: black)
-                                               - red
-                                               - blue
-                                               - yellow
-                                               - green
-                                               - magenta
-                                               - cyan
-                                               - white
-
-    contents ...                           The info contents.
+<pre class="language-bash"><code class="language-bash">$ xmake f -p android --trybuild=autotools [--ndk=xxx]
+$ xmake
 </code></pre>
 <blockquote>
-<p>其中菜单最开头的部分选项，是 xmake 内置的常用选项，基本上每个任务都会用到，不需要自己额外定义，简化菜单定义。</p>
+<p>其中，--ndk 参数配置是可选的，如果用户设置了 ANDROID_NDK_HOME 环境变量，或者 ndk 放置在 <code>~/Library/Android/sdk/ndk-bundle</code>，xmake 都能自动检测到。</p>
 </blockquote>
-<p>下面，我们来实际运行下这个任务，例如我要显示红色的 <code>hello xmake!</code>，只需要：</p>
+<p>是不是很简单？如果你觉得这没啥，那么可以对比下直接操作 <code>./configure</code> 去配置交叉编译，可以看下这篇文档对比下：<a href="https://developer.android.com/ndk/guides/other_build_systems#autoconf"  target="_blank">将 NDK 与其他编译系统配合使用</a></p>
+<p>说白了，你大概得这样，还不一定一次就能搞定：</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake echo -c red hello xmake!
+<pre class="language-bash"><code class="language-bash">$ export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/$HOST_TAG
+$ export AR=$TOOLCHAIN/bin/aarch64-linux-android-ar
+$ export AS=$TOOLCHAIN/bin/aarch64-linux-android-as
+$ export CC=$TOOLCHAIN/bin/aarch64-linux-android21-clang
+$ export CXX=$TOOLCHAIN/bin/aarch64-linux-android21-clang++
+$ export LD=$TOOLCHAIN/bin/aarch64-linux-android-ld
+$ export RANLIB=$TOOLCHAIN/bin/aarch64-linux-android-ranlib
+$ export STRIP=$TOOLCHAIN/bin/aarch64-linux-android-strip
+$ ./configure --host aarch64-linux-android
+$ make
 </code></pre>
-<p>也可以使用选项全名，并且加上高亮：</p>
+<p>如果是 cmake 呢，交叉编译也不省事，对于 android 平台，得这么配置。</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake echo --color=red --bright hello xmake!
+<pre class="language-bash"><code class="language-bash">$ cmake \
+    -DCMAKE_TOOLCHAIN_FILE=$NDK/build/cmake/android.toolchain.cmake \
+    -DANDROID_ABI=$ABI \
+    -DANDROID_NATIVE_API_LEVEL=$MINSDKVERSION \
+    $OTHER_ARGS
 </code></pre>
-<p>最后面的可变参数列表，在 <code>run</code> 脚本中通过 <code>option.get(&quot;contents&quot;)</code> 获取，返回的是一个 <code>table</code> 类型的数组。</p>
-<h2 id="task%3Aset_category">task:set_category</h2>
-<p>设置任务类别。</p>
-<p>仅仅用于菜单的分组显示，当然插件默认会用 <code>plugin</code>，内置任务默认会用：<code>action</code>，但也仅仅只是个约定。</p>
-<blockquote>
-<p>你可以使用任何自己定义的名字，相同名字会分组归类到一起显示，如果设置为 <code>plugin</code>，就会显示到 xmake 的 Plugins 分组中去。</p>
-</blockquote>
-<p>例如：</p>
+<p>而对于 ios 平台，没找到简单的配置方式，就找到个第三方的 ios 工具链配置，很复杂：<a href="https://github.com/leetal/ios-cmake/blob/master/ios.toolchain.cmake"  target="_blank">https://github.com/leetal/ios-cmake/blob/master/ios.toolchain.cmake</a></p>
+<p>而对接了 xmake 后，不管是 cmake 还是 autotools，交叉编译都是非常简单的，而且配置方式也完全一样，精简一致。</p>
+<h3 id="%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-iphoneos-%E5%B9%B3%E5%8F%B0">交叉编译 iphoneos 平台</h3>
 
-<pre class="language-lua"><code class="language-lua">Plugins:
-    l, lua               Run the lua script.
-    m, macro             Run the given macro.
-       doxygen           Generate the doxygen document.
-       project           Generate the project file.
-       hello             Hello xmake!
-       app2ipa           Generate .ipa file from the given .app
-       echo              Echo the given info!
+<pre class="language-bash"><code class="language-bash">$ xmake f -p iphoneos --trybuild=[cmake|autotools]
+$ xmake
 </code></pre>
-<p>如果没有调用这个接口设置分类，默认使用 <code>Tasks</code> 分组显示，代表普通任务。</p>
-<h2 id="task%3Aon_run">task:on_run</h2>
-<p>设置任务运行脚本。</p>
-<p>可以有两种设置方式，最简单的就是设置内嵌函数：</p>
+<h3 id="%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7%E9%93%BE">使用其他交叉编译工具链</h3>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-    on_run(function ()
-        print(&quot;hello xmake!&quot;)
-    end)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake f -p cross --trybuild=[cmake|autotools] --sdk=/xxxx
+$ xmake
 </code></pre>
-<p>这种对于小任务很方便，也很简洁，但是对于大型任务就不太适用了，例如插件等，需要复杂的脚本支持。</p>
-<p>这个时候就需要独立的模块文件来设置运行脚本，例如：</p>
+<p>关于更多交叉编译的配置细节，请参考文档：<a href="https://xmake.io/#/zh-cn/guide/configuration?id=%e4%ba%a4%e5%8f%89%e7%bc%96%e8%af%91"  target="_blank">交叉编译</a>，除了多了一个 <code>--trybuild=</code> 参数，其他交叉编译配置参数都是完全通用的。</p>
+<h2 id="%E4%BC%A0%E9%80%92%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0">传递用户配置参数</h2>
+<p>我们可以通过 <code>--tryconfigs=</code> 来传递用户额外的配置参数到对应的第三方构建系统，比如：autotools 会传递给 <code>./configure</code>，cmake 会传递给 <code>cmake</code> 命令。</p>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-    on_run(&quot;main&quot;)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake f --trybuild=autotools --tryconfigs=&quot;--enable-shared=no&quot;
+$ xmake
 </code></pre>
-<p>这里的 <code>main</code> 设置为脚本运行主入口模块，文件名为 <code>main.lua</code>，放在定义 <code>task</code> 的 <code>xmake.lua</code> 的同目录下，当然你可以起其他文件名。</p>
-<p>目录结构如下：</p>
+<p>比如上述命令，传递 <code>--enable-shared=no</code> 给 <code>./configure</code>，来禁用动态库编译。</p>
+<p>另外，对于 <code>--cflags</code>, <code>--includedirs</code> 和 <code>--ldflags</code> 等参数，不需要通过 <code>--tryconfigs</code>，通过 <code>xmake config --cflags=</code> 等内置参数就可透传过去。</p>
+<h2 id="%E7%BC%96%E8%AF%91%E5%85%B6%E4%BB%96%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B">编译其他构建系统过程示例</h2>
+<h3 id="%E9%80%9A%E7%94%A8%E7%BC%96%E8%AF%91%E6%96%B9%E5%BC%8F">通用编译方式</h3>
+<p>大多数情况下，每个构建系统对接后的编译方式都是一致的，除了 <code>--trybuild=</code> 配置参数除外。</p>
 
-<pre class="language-none"><code class="language-none">projectdir
-    - xmake.lua
-    - main.lua
+<pre class="language-bash"><code class="language-bash">$ xmake f --trybuild=[autotools|cmake|meson|ninja|bazel|make|msbuild|xcodebuild]
+$ xmake
 </code></pre>
-<p><code>main.lua</code> 里面内容如下：</p>
+<p>!&gt; 我们还需要确保 --trybuild 指定的构建工具已经安装能够正常使用。</p>
+<h3 id="%E6%9E%84%E5%BB%BA-Android-jni-%E7%A8%8B%E5%BA%8F">构建 Android jni 程序</h3>
+<p>如果当前项目下存在 <code>jni/Android.mk</code>，那么 xmake 可以直接调用 ndk-build 来构建 jni 库。</p>
 
-<pre class="language-lua"><code class="language-lua">function main(...)
-    print(&quot;hello xmake!&quot;)
-end
+<pre class="language-bash"><code class="language-bash">$ xmake f -p android --trybuild=ndkbuild [--ndk=]
+$ xmake
 </code></pre>
-<p>就是一个简单的带 <code>main</code> 主函数的脚本文件，你可以通过 <a href="/zh-cn/manual/builtin_modules?id=import"  >import</a> 导入各种扩展模块，实现复杂功能，例如：</p>
-
-<pre class="language-lua"><code class="language-lua">-- 导入参数选项模块
-import(&quot;core.base.option&quot;)
-
--- 入口函数
-function main(...)
-
-    -- 获取参数内容
-    print(&quot;color: %s&quot;, option.get(&quot;color&quot;))
-end
-</code></pre>
-<p>你也可以在当前目录下，创建多个自定义的模块文件，通过 <a href="/zh-cn/manual/builtin_modules?id=import"  >import</a> 导入后使用，例如：</p>
-
-<pre class="language-none"><code class="language-none">projectdir
-    - xmake.lua
-    - main.lua
-    - module.lua
-</code></pre>
-<p><code>module.lua</code> 的内容如下：</p>
-
-<pre class="language-lua"><code class="language-lua">-- 定义一个导出接口
-function hello()
-    print(&quot;hello xmake!&quot;)
-end
-</code></pre>
-<blockquote>
-<p>私有接口，通过 <code>_hello</code> 带下滑线前缀命名，这样导入的模块就不会包含此接口，只在模块自身内部使用。</p>
-</blockquote>
-<p>然后在 <code>main.lua</code> 进行调用：</p>
-
-<pre class="language-lua"><code class="language-lua">import(&quot;module&quot;)
-
-function main(...)
-    module.hello()
-end
-</code></pre>
-<p>更多模块介绍见：<a href="/zh-cn/manual/builtin_modules"  >内置模块</a> 和 <a href="/zh-cn/manual/extension_modules"  >扩展模块</a></p>
-<p>其中，<code>main(...)</code> 中参数，是通过 <code>task.run</code> 指定的，例如：</p>
-
-<pre class="language-lua"><code class="language-lua">task.run(&quot;hello&quot;, {color=&quot;red&quot;}, arg1, arg2, arg3)
-</code></pre>
-<p>里面的 <code>arg1, arg2</code> 这些就是传入 <code>hello</code> 任务 <code>main(...)</code> 入口的参数列表，而 <code>{color=&quot;red&quot;}</code> 用来指定任务菜单中的参数选项。</p>
-<p>更加详细的 <code>task.run</code> 描述，见：<a href="#task-run"  >task.run</a>。</p>
+<p>如果觉得命令行编译 jni 比较麻烦，xmake 也提供了相关的 gradle 集成插件 <a href="https://github.com/xmake-io/xmake-gradle"  target="_blank">xmake-gradle</a>，可以无缝集成 xmake 进行 jni 库的编译集成，具体详情见：<a href="https://xmake.io/#/zh-cn/plugin/more_plugins?id=gradle%e6%8f%92%e4%bb%b6%ef%bc%88jni%ef%bc%89"  target="_blank">使用 xmake-gradle 插件构建 JNI 程序</a></p>
 
                         
                     </div>
@@ -499,18 +349,13 @@ end
                 <div id="previous_next">
                     <div id="previous">
                         
-                        <a href="/get_started/zh/toolchain/remote-toolchains.html">
+                        <a href="/get_started/zh/features/autogen.html">
                             <span class="icon"></span>
-                            <span class="label">远程工具链</span>
+                            <span class="label">自动扫描源码生成工程</span>
                         </a>
                         
                     </div>
                     <div id="next">
-                        
-                        <a href="/get_started/zh/module/builtin-modules.html">
-                            <span class="label">内置模块</span>
-                            <span class="icon"></span>
-                        </a>
                         
                     </div>
                 </div>

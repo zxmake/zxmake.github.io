@@ -144,8 +144,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="active_parent no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator"></span></a><ul class="show">
-<li class="active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
 <li class="not_active no_link"><a><span class="label">module 模块</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
@@ -154,10 +154,10 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/module/native-modules.html"><span class="label">Lua 原生模块</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active no_link"><a><span class="label">其他特性</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="active_parent no_link"><a><span class="label">其他特性</span><span class="sub_indicator"></span></a><ul class="show">
 <li class="not_active with_link"><a href="/get_started/zh/features/remote-build.html"><span class="label">远程编译</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/distcc-build.html"><span class="label">分布式编译</span><span class=""></span></a></li>
-<li class="not_active with_link"><a href="/get_started/zh/features/build-cache.html"><span class="label">编译缓存</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/features/build-cache.html"><span class="label">编译缓存</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/unity-build.html"><span class="label">Unity 编译加速</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/autogen.html"><span class="label">自动扫描源码生成工程</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
@@ -195,7 +195,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/task/description-scope.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/features/build-cache.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -212,286 +212,140 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E6%8F%8F%E8%BF%B0%E5%9F%9F">描述域</h1>
-<p>xmake 可以实现自定义任务或者插件，其两者的核心就是 <code>task</code> 任务，其两者实际上是一样的，xmake 的插件都是用 <code>task</code> 实现的。</p>
-<p>本质上都是任务，只是 <a href="#taskset_category"  >set_category</a> 分类不同而已。</p>
-<table>
-<thead>
-<tr>
-  <th>接口</th>
-  <th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><a href="#task"  >task</a></td>
-  <td>定义插件或者任务</td>
-</tr>
-<tr>
-  <td><a href="#taskset_menu"  >set_menu</a></td>
-  <td>设置任务菜单</td>
-</tr>
-<tr>
-  <td><a href="#taskset_category"  >set_category</a></td>
-  <td>设置任务类别</td>
-</tr>
-<tr>
-  <td><a href="#taskon_run"  >on_run</a></td>
-  <td>设置任务运行脚本</td>
-</tr>
-</tbody>
-</table>
-<h2 id="task">task</h2>
-<p>定义插件或者任务。</p>
-<p><code>task</code> 域用于描述一个自定义的任务实现，与 <a href="#target"  >target</a> 和<a href="#option"  >option</a>同级。</p>
-<p>例如，这里定义一个最简单的任务：</p>
+                            <h1 id="%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98">编译缓存</h1>
+<h2 id="%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98">本地编译缓存</h2>
+<p>默认情况下，如果你本机安装了 ccache，xmake 就会使用外置的 ccache。如果本机没有安装 ccache，就会降级到 xmake 内置的 xcache 跨平台本地缓存方案。</p>
+<p>相比 ccache 等第三方独立进程，xmake 内部状态维护，更加便于优化，也避免了频繁的独立进程加载耗时，也避免了与守护进程额外的通信。</p>
+<p>另外，内置的缓存能够更好的支持跨平台，Windows 上 msvc 也能够很好的支持，而 ccache 仅仅支持 gcc/clang。</p>
+<p>当然，我们也可以通过下面的命令禁用缓存。</p>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-
-    -- 设置运行脚本
-    on_run(function ()
-        print(&quot;hello xmake!&quot;)
-    end)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake f --ccache=n
 </code></pre>
-<p>这个任务只需要打印 <code>hello xmake!</code>，那如何来运行呢？</p>
-<p>由于这里没有使用 <a href="#taskset_menu"  >set_menu</a> 设置菜单，因此这个任务只能在 <code>xmake.lua</code> 的自定义脚本或者其他任务内部调用，例如：</p>
+<p>注：不管是否使用内置本地缓存，配置名都是 <code>--ccache=</code>，意思是 c/c++ 构建缓存，而不仅仅是指 ccache 工具的名字。</p>
+<p>我们如果想继续使用外置的其他缓存工具，我们也是可以通过下面的方式来配置。</p>
 
-<pre class="language-lua"><code class="language-lua">target(&quot;test&quot;, function()
-
-    after_build(function (target)
-
-        -- 导入 task 模块
-        import(&quot;core.project.task&quot;)
-
-        -- 运行 hello 任务
-        task.run(&quot;hello&quot;)
-    end)
-end)
+<pre class="language-bash"><code class="language-bash">$ xmake f --ccache=n --cxx=&quot;ccache gcc&quot; --cc=&quot;ccache gcc&quot;
+$ xmake
 </code></pre>
-<p>在构建完 <code>test</code> 目标后运行 <code>hello</code> 任务。</p>
-<h2 id="task%3Aset_menu">task:set_menu</h2>
-<p>设置任务菜单。</p>
-<p>通过设置一个菜单，这个任务就可以开放给用户自己通过命令行手动调用，菜单的设置如下：</p>
+<h2 id="%E8%BF%9C%E7%A8%8B%E7%BC%96%E8%AF%91%E7%BC%93%E5%AD%98">远程编译缓存</h2>
+<p>除了本地缓存，我们也提供了远程缓存服务，类似 mozilla 的 sscache，如果只是个人开发，平常不会用到它。</p>
+<p>但是，如果是公司内部多人协同开发一个大型项目，仅仅靠分布式编译和本地缓存，是不够的。我们还需要对编译的对象文件缓存到独立的服务器上进行共享。</p>
+<p>这样，其他人即使首次编译，也不需要每次都去分布式编译它，直接从远程拉取缓存来加速编译。</p>
+<p>另外，Xmake 提供的远程缓存服务，也是全平台支持的，不仅支持 gcc/clang 还支持 msvc。</p>
+<h3 id="%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1">开启服务</h3>
+<p>我们可以指定 <code>--ccache</code> 参数来开启远程编译缓存服务，当然如果不指定这个参数，xmake 会默认开启所有服务端配置的服务。</p>
 
-<pre class="language-lua"><code class="language-lua">task(&quot;echo&quot;, function()
-
-    -- 设置运行脚本
-    on_run(function ()
-
-        -- 导入参数选项模块
-        import(&quot;core.base.option&quot;)
-
-        -- 初始化颜色模式
-        local modes = &quot;&quot;
-        for _, mode in ipairs({&quot;bright&quot;, &quot;dim&quot;, &quot;blink&quot;, &quot;reverse&quot;}) do
-            if option.get(mode) then
-                modes = modes .. &quot; &quot; .. mode
-            end
-        end
-
-        -- 获取参数内容并且显示信息
-        cprint(&quot;${%s%s}%s&quot;, option.get(&quot;color&quot;), modes, table.concat(option.get(&quot;contents&quot;) or {}, &quot; &quot;))
-    end)
-
-    -- 设置插件的命令行选项，这里没有任何参数选项，仅仅显示插件描述
-    set_menu {
-                -- 设置菜单用法
-                usage = &quot;xmake echo [options]&quot;
-
-                -- 设置菜单描述
-            ,   description = &quot;Echo the given info!&quot;
-
-                -- 设置菜单选项，如果没有选项，可以设置为 {}
-            ,   options =
-                {
-                    -- 设置 k 模式作为 key-only 型 bool 参数
-                    {'b', &quot;bright&quot;,     &quot;k&quot;,  nil,       &quot;Enable bright.&quot;}
-                ,   {'d', &quot;dim&quot;,        &quot;k&quot;,  nil,       &quot;Enable dim.&quot;}
-                ,   {'-', &quot;blink&quot;,      &quot;k&quot;,  nil,       &quot;Enable blink.&quot;}
-                ,   {'r', &quot;reverse&quot;,    &quot;k&quot;,  nil,       &quot;Reverse color.&quot;}
-
-                    -- 菜单显示时，空白一行
-                ,   {}
-
-                    -- 设置 kv 作为 key-value 型参数，并且设置默认值：black
-                ,   {'c', &quot;color&quot;,      &quot;kv&quot;, &quot;black&quot;,   &quot;Set the output color.&quot;
-                                                     ,   &quot;- red&quot;
-                                                     ,   &quot;- blue&quot;
-                                                     ,   &quot;- yellow&quot;
-                                                     ,   &quot;- green&quot;
-                                                     ,   &quot;- magenta&quot;
-                                                     ,   &quot;- cyan&quot;
-                                                     ,   &quot;- white&quot;                  }
-
-                    -- 设置 `vs` 作为 values 多值型参数，还有 `v` 单值类型
-                    -- 一般放置在最后，用于获取可变参数列表
-                ,   {}
-                ,   {nil, &quot;contents&quot;,   &quot;vs&quot;, nil,       &quot;The info contents.&quot;}
-                }
-            }
-end)
+<pre class="language-console"><code class="language-console">$ xmake service --ccache
+&lt;remote_cache_server&gt;: listening 0.0.0.0:9092 ..
 </code></pre>
-<p>定义完这个任务后，执行 <code>xmake --help</code>，就会多出一个任务项来：</p>
+<p>我们也可以开启服务的同时，回显详细日志信息。</p>
 
-<pre class="language-none"><code class="language-none">Tasks:
-
-    ...
-
-    echo                    Echo the given info!
+<pre class="language-console"><code class="language-console">$ xmake service --ccache -vD
+&lt;remote_cache_server&gt;: listening 0.0.0.0:9092 ..
 </code></pre>
-<p>如果通过 <a href="#taskset_category"  >set_category</a> 设置分类为 <code>plugin</code>，那么这个任务就是一个插件了：</p>
+<h3 id="%E4%BB%A5-Daemon-%E6%A8%A1%E5%BC%8F%E5%BC%80%E5%90%AF%E6%9C%8D%E5%8A%A1">以 Daemon 模式开启服务</h3>
 
-<pre class="language-none"><code class="language-none">Plugins:
-
-    ...
-
-    echo                    Echo the given info!
+<pre class="language-console"><code class="language-console">$ xmake service --ccache --start
+$ xmake service --ccache --restart
+$ xmake service --ccache --stop
 </code></pre>
-<p>想要手动运行这个任务，可以执行：</p>
+<h3 id="%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E7%AB%AF">配置服务端</h3>
+<p>我们首先，运行 <code>xmake service</code> 命令，它会自动生成一个默认的 <code>server.conf</code> 配置文件，存储到 <code>~/.xmake/service/server.conf</code>。</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake echo hello xmake!
+<pre class="language-bash"><code class="language-bash">$ xmake service
+generating the config file to /Users/ruki/.xmake/service/server.conf ..
+an token(590234653af52e91b9e438ed860f1a2b) is generated, we can use this token to connect service.
+generating the config file to /Users/ruki/.xmake/service/client.conf ..
+&lt;remote_cache_server&gt;: listening 0.0.0.0:9692 ..
 </code></pre>
-<p>就行了，如果要看这个任务定义的菜单，只需要执行：<code>xmake echo [-h|--help]</code>，显示结果如下：</p>
+<p>然后，我们编辑它，修复服务器的监听端口（可选）。</p>
 
-<pre class="language-bash"><code class="language-bash">Usage: $xmake echo [options]
+<pre class="language-bash"><code class="language-bash">$ cat ~/.xmake/service/server.conf
+{
+    distcc_build = {
+        listen = &quot;0.0.0.0:9692&quot;,
+        workdir = &quot;/Users/ruki/.xmake/service/server/remote_cache&quot;
+    },
+    known_hosts = { },
+    logfile = &quot;/Users/ruki/.xmake/service/server/logs.txt&quot;,
+    tokens = {
+        &quot;590234653af52e91b9e438ed860f1a2b&quot;
+    }
+}
+</code></pre>
+<h3 id="%E9%85%8D%E7%BD%AE%E5%AE%A2%E6%88%B7%E7%AB%AF">配置客户端</h3>
+<p>客户端配置文件在 <code>~/.xmake/service/client.conf</code>，我们可以在里面配置客户端需要连接的服务器地址。</p>
+<p>我们可以在 hosts 列表里面配置多个服务器地址，以及对应的 token。</p>
 
-Echo the given info!
+<pre class="language-console"><code class="language-console">$cat ~/.xmake/service/client.conf
+{
+    remote_cache = {
+            connect = &quot;127.0.0.1:9692,
+            token = &quot;590234653af52e91b9e438ed860f1a2b&quot;
+        }
+    }
+}
+</code></pre>
+<h4 id="%E9%85%8D%E7%BD%AE%E8%B6%85%E6%97%B6">配置超时</h4>
+<p>默认情况下，客户端连接，收发数据都是无限等待不超时的，但是如果访问服务端的网络不稳定，那么有可能会导致访问卡死，这个时候可以配置超时来解决。</p>
+<p>如果发生超时异常，就会自动退化到本地缓存，不会永远卡死。</p>
+<p>我们可以配置，<code>send_timeout</code>, <code>recv_timeout</code> 和 <code>connect_timeout</code> 三种超时，如果在根节点设置，那么所有客户端服务都会生效。</p>
 
-Options:
-    -v, --verbose                          Print lots of verbose information.
-        --backtrace                        Print backtrace information for debugging.
-        --profile                          Print performance data for debugging.
-        --version                          Print the version number and exit.
-    -h, --help                             Print this help message and exit.
+<pre class="language-console"><code class="language-console">$ cat ~/.xmake/service/client.conf
+{
+    send_timeout = 5000,
+    recv_timeout = 5000,
+    connect_timeout = 5000
+}
+</code></pre>
+<p>我们也可以仅仅针对当前远程缓存服务配置超时，其他服务还是默认超时。</p>
 
-    -F FILE, --file=FILE                   Read a given xmake.lua file.
-    -P PROJECT, --project=PROJECT          Change to the given project directory.
-                                           Search priority:
-                                               1. The Given Command Argument
-                                               2. The Envirnoment Variable: XMAKE_PROJECT_DIR
-                                               3. The Current Directory
-
-    -b, --bright                           Enable bright.
-    -d, --dim                              Enable dim.
-    --, --blink                            Enable blink.
-    -r, --reverse                          Reverse color.
-
-    -c COLOR, --color=COLOR                Set the output color. (default: black)
-                                               - red
-                                               - blue
-                                               - yellow
-                                               - green
-                                               - magenta
-                                               - cyan
-                                               - white
-
-    contents ...                           The info contents.
+<pre class="language-console"><code class="language-console">$ cat ~/.xmake/service/client.conf
+{
+    distcc_build = {
+        send_timeout = 5000,
+        recv_timeout = 5000,
+        connect_timeout = 5000,
+    }
+}
 </code></pre>
 <blockquote>
-<p>其中菜单最开头的部分选项，是 xmake 内置的常用选项，基本上每个任务都会用到，不需要自己额外定义，简化菜单定义。</p>
+<p>服务端配置同样支持超时配置。</p>
 </blockquote>
-<p>下面，我们来实际运行下这个任务，例如我要显示红色的 <code>hello xmake!</code>，只需要：</p>
+<h3 id="%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%92%8C%E6%8E%88%E6%9D%83">用户认证和授权</h3>
+<p>关于用户认证和授权，可以参考 <a href="/#/zh-cn/guide/other_features?id=%e7%94%a8%e6%88%b7%e8%ae%a4%e8%af%81%e5%92%8c%e6%8e%88%e6%9d%83"  >远程编译 / 用户认证和授权</a> 里面的详细说明，用法是完全一致的。</p>
+<h3 id="%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8">连接服务器</h3>
+<p>配置完认证和服务器地址后，就可以输入下面的命令，将当前工程连接到配置的服务器上了。</p>
+<p>我们需要在连接时候，输入 <code>--ccache</code>，指定仅仅连接远程编译缓存服务。</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake echo -c red hello xmake!
+<pre class="language-bash"><code class="language-bash">$ cd projectdir
+$ xmake service --connect --ccache
+&lt;client&gt;: connect 127.0.0.1:9692 ..
+&lt;client&gt;: 127.0.0.1:9692 connected!
 </code></pre>
-<p>也可以使用选项全名，并且加上高亮：</p>
+<p>我们也可以同时连接多个服务，比如分布式编译和远程编译缓存服务。</p>
 
-<pre class="language-bash"><code class="language-bash">$ xmake echo --color=red --bright hello xmake!
-</code></pre>
-<p>最后面的可变参数列表，在 <code>run</code> 脚本中通过 <code>option.get(&quot;contents&quot;)</code> 获取，返回的是一个 <code>table</code> 类型的数组。</p>
-<h2 id="task%3Aset_category">task:set_category</h2>
-<p>设置任务类别。</p>
-<p>仅仅用于菜单的分组显示，当然插件默认会用 <code>plugin</code>，内置任务默认会用：<code>action</code>，但也仅仅只是个约定。</p>
-<blockquote>
-<p>你可以使用任何自己定义的名字，相同名字会分组归类到一起显示，如果设置为 <code>plugin</code>，就会显示到 xmake 的 Plugins 分组中去。</p>
-</blockquote>
-<p>例如：</p>
-
-<pre class="language-lua"><code class="language-lua">Plugins:
-    l, lua               Run the lua script.
-    m, macro             Run the given macro.
-       doxygen           Generate the doxygen document.
-       project           Generate the project file.
-       hello             Hello xmake!
-       app2ipa           Generate .ipa file from the given .app
-       echo              Echo the given info!
-</code></pre>
-<p>如果没有调用这个接口设置分类，默认使用 <code>Tasks</code> 分组显示，代表普通任务。</p>
-<h2 id="task%3Aon_run">task:on_run</h2>
-<p>设置任务运行脚本。</p>
-<p>可以有两种设置方式，最简单的就是设置内嵌函数：</p>
-
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-    on_run(function ()
-        print(&quot;hello xmake!&quot;)
-    end)
-end)
-</code></pre>
-<p>这种对于小任务很方便，也很简洁，但是对于大型任务就不太适用了，例如插件等，需要复杂的脚本支持。</p>
-<p>这个时候就需要独立的模块文件来设置运行脚本，例如：</p>
-
-<pre class="language-lua"><code class="language-lua">task(&quot;hello&quot;, function()
-    on_run(&quot;main&quot;)
-end)
-</code></pre>
-<p>这里的 <code>main</code> 设置为脚本运行主入口模块，文件名为 <code>main.lua</code>，放在定义 <code>task</code> 的 <code>xmake.lua</code> 的同目录下，当然你可以起其他文件名。</p>
-<p>目录结构如下：</p>
-
-<pre class="language-none"><code class="language-none">projectdir
-    - xmake.lua
-    - main.lua
-</code></pre>
-<p><code>main.lua</code> 里面内容如下：</p>
-
-<pre class="language-lua"><code class="language-lua">function main(...)
-    print(&quot;hello xmake!&quot;)
-end
-</code></pre>
-<p>就是一个简单的带 <code>main</code> 主函数的脚本文件，你可以通过 <a href="/zh-cn/manual/builtin_modules?id=import"  >import</a> 导入各种扩展模块，实现复杂功能，例如：</p>
-
-<pre class="language-lua"><code class="language-lua">-- 导入参数选项模块
-import(&quot;core.base.option&quot;)
-
--- 入口函数
-function main(...)
-
-    -- 获取参数内容
-    print(&quot;color: %s&quot;, option.get(&quot;color&quot;))
-end
-</code></pre>
-<p>你也可以在当前目录下，创建多个自定义的模块文件，通过 <a href="/zh-cn/manual/builtin_modules?id=import"  >import</a> 导入后使用，例如：</p>
-
-<pre class="language-none"><code class="language-none">projectdir
-    - xmake.lua
-    - main.lua
-    - module.lua
-</code></pre>
-<p><code>module.lua</code> 的内容如下：</p>
-
-<pre class="language-lua"><code class="language-lua">-- 定义一个导出接口
-function hello()
-    print(&quot;hello xmake!&quot;)
-end
+<pre class="language-hash"><code class="language-hash">$ xmake service --connect --distcc --ccache
 </code></pre>
 <blockquote>
-<p>私有接口，通过 <code>_hello</code> 带下滑线前缀命名，这样导入的模块就不会包含此接口，只在模块自身内部使用。</p>
+<p>如果不带任何参数，默认连接的是远程编译服务。</p>
 </blockquote>
-<p>然后在 <code>main.lua</code> 进行调用：</p>
+<h3 id="%E6%96%AD%E5%BC%80%E8%BF%9E%E6%8E%A5">断开连接</h3>
 
-<pre class="language-lua"><code class="language-lua">import(&quot;module&quot;)
-
-function main(...)
-    module.hello()
-end
+<pre class="language-bash"><code class="language-bash">$ xmake service --disconnect --ccache
 </code></pre>
-<p>更多模块介绍见：<a href="/zh-cn/manual/builtin_modules"  >内置模块</a> 和 <a href="/zh-cn/manual/extension_modules"  >扩展模块</a></p>
-<p>其中，<code>main(...)</code> 中参数，是通过 <code>task.run</code> 指定的，例如：</p>
+<h3 id="%E6%B8%85%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BC%93%E5%AD%98">清理服务器缓存</h3>
+<p>我们也可以通过下面的命令，清理当前工程对应的远程服务器上的缓存。</p>
 
-<pre class="language-lua"><code class="language-lua">task.run(&quot;hello&quot;, {color=&quot;red&quot;}, arg1, arg2, arg3)
+<pre class="language-bash"><code class="language-bash">$ xmake service --clean --ccache
 </code></pre>
-<p>里面的 <code>arg1, arg2</code> 这些就是传入 <code>hello</code> 任务 <code>main(...)</code> 入口的参数列表，而 <code>{color=&quot;red&quot;}</code> 用来指定任务菜单中的参数选项。</p>
-<p>更加详细的 <code>task.run</code> 描述，见：<a href="#task-run"  >task.run</a>。</p>
+<p>而如果我们执行 <code>xmake clean --all</code>，在连接了远程服务的状态下，也会去自动清理所有的缓存。</p>
+<h3 id="%E4%B8%80%E4%BA%9B%E5%86%85%E9%83%A8%E4%BC%98%E5%8C%96">一些内部优化</h3>
+<ol>
+<li>拉取远程缓存的快照，通过 bloom filter + lz4 回传本地后，用于快速判断缓存是否存在，避免频繁的查询服务端缓存信息</li>
+<li>配合本地缓存，可以避免频繁地请求远程服务器，拉取缓存。</li>
+<li>内部状态维护，相比 sscache 等独立工具，避免了频繁的独立进程加载耗时，也避免了与守护进程额外的通信</li>
+</ol>
 
                         
                     </div>
@@ -499,16 +353,16 @@ end
                 <div id="previous_next">
                     <div id="previous">
                         
-                        <a href="/get_started/zh/toolchain/remote-toolchains.html">
+                        <a href="/get_started/zh/features/distcc-build.html">
                             <span class="icon"></span>
-                            <span class="label">远程工具链</span>
+                            <span class="label">分布式编译</span>
                         </a>
                         
                     </div>
                     <div id="next">
                         
-                        <a href="/get_started/zh/module/builtin-modules.html">
-                            <span class="label">内置模块</span>
+                        <a href="/get_started/zh/features/unity-build.html">
+                            <span class="label">Unity 编译加速</span>
                             <span class="icon"></span>
                         </a>
                         

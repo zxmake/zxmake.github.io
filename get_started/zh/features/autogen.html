@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"  class=" language_zh  heading_no_counter ">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="">
+    
+    
+    <meta name="description" content="">
+    
+    <meta name="generator" content="teedoc">
+    <meta name="theme" content="teedoc-plugin-theme-default">
+    
+        
+        <meta name="markdown-generator" content="teedoc-plugin-markdown-parser">
+        
+        <script>
+MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]]}, "svg": {"fontCache": "global"}};
+</script>
+        
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+        <script src="/static/js/theme_default/pre_main.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/prism.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/viewer.min.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/dark.css" type="text/css"/>
+        
+        <link rel="stylesheet" href="/static/css/theme_default/light.css" type="text/css"/>
+        
+        <script src="/static/js/theme_default/jquery.min.js"></script>
+        
+        <script src="/static/js/theme_default/split.js"></script>
+        
+        <link rel="stylesheet" href="/static/css/search/style.css" type="text/css"/>
+        
+        <meta name="blog-generator" content="teedoc-plugin-blog">
+        
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css"/>
+        
+    
+    
+    <title>xmake-docs</title>
+    
+    <script type="text/javascript">js_vars = {}</script>
+    <script type="text/javascript">metadata = {"tags": [], "date": false, "update": [], "ts": 0, "author": "", "brief": "", "cover": "", "class": "heading_no_counter"}</script>
+</head>
+
+
+<body class="type_doc">
+    
+    <div id="navbar">
+        <div id="navbar_menu">
+            <a class="site_title" href="/">
+                
+                    <img class="site_logo" src="/static/image/logo-1600.png" alt="logo">
+                
+                
+                    <h2>xmake</h2>
+                
+        </a>
+            <a id="navbar_menu_btn"></a>
+        </div>
+        <div id="navbar_items">
+            <div>
+                <ul id="nav_left">
+<li class=""><a  href="/get_started/zh/tutorial/quick-start.html">安装使用</a></li>
+<li class=""><a  href="/dev/">开发文档</a></li>
+</ul>
+
+            </div>
+            <div>
+                <ul id="nav_right">
+<li class=""><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">github</a></li>
+</ul>
+
+                <ul class="nav_plugins"><li><a id="themes" class="light"></a></li></ul><ul class="nav_plugins"><li><a id="search"><span class="icon"></span><span class="placeholder">搜索</span>
+                            <div id="search_hints">
+                                <span id="search_input_hint">输入关键词，多关键词空格隔开</span>
+                                <span id="search_loading_hint">正在加载，请稍候。。。</span>
+                                <span id="search_download_err_hint">下载文件失败，请刷新重试或检查网络</span>
+                                <span id="search_other_docs_result_hint">来自其它文档的结果</span>
+                                <span id="search_curr_doc_result_hint">当前文档搜索结果</span>
+                            </div></a></li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        <div id="sidebar_wrapper">
+            <div id="sidebar">
+                <div id="sidebar_title">
+                    
+                </div>
+                <ul class="show">
+<li class="not_active no_link sidebar_category"><span class="label">新手教程</span></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/install.html"><span class="label">安装</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/quick-start.html"><span class="label">快速入门</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/syntax-description.html"><span class="label">语法描述</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/project-examples.html"><span class="label">工程例子</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/configuration.html"><span class="label">配置说明</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/environment-variables.html"><span class="label">环境变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/build-policies.html"><span class="label">构建策略</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/builtin-variables.html"><span class="label">内置变量</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/tutorial/FAQ.html"><span class="label">FAQ</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">target 编译目标</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/target/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/target/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">option 选项</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/option/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/option/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">package 包管理</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/package/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/script-scope.html"><span class="label">脚本域</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-package.html"><span class="label">使用本地包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/remote-package.html"><span class="label">使用远程包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/system-package.html"><span class="label">使用系统包</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/package/local-3rd-source-package.html"><span class="label">继承本地第三方源码库</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/index.html"><span class="label">rule 规则</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/rule/builtin-rules.html"><span class="label">内建规则</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">task 插件任务</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/task/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="not_active no_link"><a><span class="label">module 模块</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/module/builtin-modules.html"><span class="label">内置模块</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/module/extension-modules.html"><span class="label">扩展模块</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/module/native-modules.html"><span class="label">Lua 原生模块</span><span class=""></span></a></li>
+</ul>
+</li>
+<li class="active_parent no_link"><a><span class="label">其他特性</span><span class="sub_indicator"></span></a><ul class="show">
+<li class="not_active with_link"><a href="/get_started/zh/features/remote-build.html"><span class="label">远程编译</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/distcc-build.html"><span class="label">分布式编译</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/build-cache.html"><span class="label">编译缓存</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/unity-build.html"><span class="label">Unity 编译加速</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/features/autogen.html"><span class="label">自动扫描源码生成工程</span><span class=""></span></a></li>
+<li class="not_active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        </div>
+        <div id="article">
+            <div id="menu_wrapper">
+                <div id="menu">
+                </div>
+            </div>
+            <div id="content_wrapper">
+                <div id="content_body">
+                    <div id="article_head">
+                        <div id="article_title">
+                            
+                            <h1></h1>
+                            
+                        </div>
+                        <div id="article_tags">
+                            <ul>
+                            
+                            </ul>
+                        </div>
+                        <div id="article_info">
+                        <div id="article_info_left">
+                            <span class="article_author">
+                                
+                            </span>
+                            
+                        </div>
+                        <div id="article_info_right">
+                            
+                            <div id="source_link">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/features/autogen.md" target="_blank">
+                                    编辑本页
+                                </a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div id="article_tools">
+                        <span></span>
+                        <span id="toc_btn"></span>
+                    </div>
+                    <div id="update_history">
+                        
+                    </div>
+                    <div id="article_content">
+                        
+                            <h1 id="%E8%87%AA%E5%8A%A8%E6%89%AB%E6%8F%8F%E6%BA%90%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E7%A8%8B">自动扫描源码生成工程</h1>
+<p>对于一份工程源码，可以不用编写 makefile，也不用编写各种 make 相关的工程描述文件（例如：xmake.lua，makefile.am, cmakelist.txt 等）</p>
+<p>xmake 就可以直接编译他们，这是如何做到的呢，简单来说下实现原理：</p>
+<ol>
+<li>首先扫描当前目录下，xmake 可以支持的所有源代码文件</li>
+<li>分析代码，检测哪些代码拥有 main 入口函数</li>
+<li>所有没有 main 入口的代码编译成静态库</li>
+<li>带有 main 入口的代码，编译成可执行程序，同时链接其他静态库程序</li>
+</ol>
+<p>这种代码扫描和智能编译，非常简单，目前 xmake 还不支持多级目录扫描，只对单级目录的代码进行扫描编译。</p>
+<h2 id="%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</h2>
+<ol>
+<li>临时快速编译和运行一些零散的测试代码</li>
+<li>尝试对其他开源库做移植编译</li>
+<li>快速基于现有代码创建新 xmake 工程</li>
+</ol>
+<h2 id="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">如何使用</h2>
+<p>直接在带有源码的目录（没有 xmake.lua）下执行 xmake，然后根据提示操作：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+note: xmake.lua not found, try generating it (pass -y or --confirm=y/n/d to skip confirm)?
+please input: n (y/n)
+y
+</code></pre>
+<p>另外, 当存在其他构建系统标识性文件的时候 (比如 CMakeLists.txt), 不会触发自动生成 xmake.lua 的流程, 而是首先触发 [自动探测构建系统并编译](# 自动探测构建系统并编译), 如果要强制触发自动扫描生成 xmake.lua 的流程, 可运行:</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -y
+</code></pre>
+<h2 id="%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E7%A7%BB%E6%A4%8D%E5%92%8C%E7%BC%96%E8%AF%91">开源代码的移植和编译</h2>
+<p>虽然这种方式，并不是非常智能，限制也不少，但是对于想临时写些代码进行编译运行，或者临时想交叉编译一些简单的开源库代码</p>
+<p>这种方式已经足够使用了，下面看下一个实际的例子：</p>
+<p>我下载了一份 zlib-1.2.10 的源码，想要编译它，只需要进入 zlib 的源码目录执行：</p>
+
+<pre class="language-bash"><code class="language-bash">$ cd zlib-1.2.10
+$ xmake
+note: xmake.lua not found, try generating it (pass -y or --confirm=y/n/d to skip confirm)?
+please input: n (y/n)
+y
+</code></pre>
+<p>就行了，输入 y 确认后，输出结果如下：</p>
+
+<pre class="language-none"><code class="language-none">target(zlib-1.2): static
+    [+]: ./adler32.c
+    [+]: ./compress.c
+    [+]: ./crc32.c
+    [+]: ./deflate.c
+    [+]: ./gzclose.c
+    [+]: ./gzlib.c
+    [+]: ./gzread.c
+    [+]: ./gzwrite.c
+    [+]: ./infback.c
+    [+]: ./inffast.c
+    [+]: ./inflate.c
+    [+]: ./inftrees.c
+    [+]: ./trees.c
+    [+]: ./uncompr.c
+    [+]: ./zutil.c
+xmake.lua generated, scan ok!👌
+checking for the architecture ... x86_64
+checking for the Xcode SDK version for macosx ... 10.12
+checking for the target minimal version ... 10.12
+checking for the c compiler (cc) ... xcrun -sdk macosx clang
+checking for the c++ compiler (cxx) ... xcrun -sdk macosx clang
+checking for the objc compiler (mm) ... xcrun -sdk macosx clang
+checking for the objc++ compiler (mxx) ... xcrun -sdk macosx clang++
+checking for the swift compiler (sc) ... xcrun -sdk macosx swiftc
+checking for the assember (as) ... xcrun -sdk macosx clang
+checking for the linker (ld) ... xcrun -sdk macosx clang++
+checking for the static library archiver (ar) ... xcrun -sdk macosx ar
+checking for the static library extractor (ex) ... xcrun -sdk macosx ar
+checking for the shared library linker (sh) ... xcrun -sdk macosx clang++
+checking for the debugger (dd) ... xcrun -sdk macosx lldb
+checking for the golang compiler (go) ... go
+configure
+{
+    ex = &quot;xcrun -sdk macosx ar&quot;
+,   sh = &quot;xcrun -sdk macosx clang++&quot;
+,   host = &quot;macosx&quot;
+,   ar = &quot;xcrun -sdk macosx ar&quot;
+,   buildir = &quot;build&quot;
+,   as = &quot;xcrun -sdk macosx clang&quot;
+,   plat = &quot;macosx&quot;
+,   xcode_dir = &quot;/Applications/Xcode.app&quot;
+,   arch = &quot;x86_64&quot;
+,   mxx = &quot;xcrun -sdk macosx clang++&quot;
+,   go = &quot;go&quot;
+,   target_minver = &quot;10.12&quot;
+,   ccache = &quot;ccache&quot;
+,   mode = &quot;release&quot;
+,   clean = true
+,   cxx = &quot;xcrun -sdk macosx clang&quot;
+,   cc = &quot;xcrun -sdk macosx clang&quot;
+,   dd = &quot;xcrun -sdk macosx lldb&quot;
+,   kind = &quot;static&quot;
+,   ld = &quot;xcrun -sdk macosx clang++&quot;
+,   xcode_sdkver = &quot;10.12&quot;
+,   sc = &quot;xcrun -sdk macosx swiftc&quot;
+,   mm = &quot;xcrun -sdk macosx clang&quot;
+}
+configure ok!
+clean ok!
+[00%]: cache compiling.release ./adler32.c
+[06%]: cache compiling.release ./compress.c
+[13%]: cache compiling.release ./crc32.c
+[20%]: cache compiling.release ./deflate.c
+[26%]: cache compiling.release ./gzclose.c
+[33%]: cache compiling.release ./gzlib.c
+[40%]: cache compiling.release ./gzread.c
+[46%]: cache compiling.release ./gzwrite.c
+[53%]: cache compiling.release ./infback.c
+[60%]: cache compiling.release ./inffast.c
+[66%]: cache compiling.release ./inflate.c
+[73%]: cache compiling.release ./inftrees.c
+[80%]: cache compiling.release ./trees.c
+[86%]: cache compiling.release ./uncompr.c
+[93%]: cache compiling.release ./zutil.c
+[100%]: archiving.release libzlib-1.2.a
+build ok!👌
+</code></pre>
+<p>通过输出结果，可以看到，xmake 会去检测扫描当前目录下的所有. c 代码，发现没有 main 入口，应该是静态库程序，因此执行 xmake 后，就直接编译成静态库 libzlib-1.2.a 了</p>
+<p>连 xmake.lua 都没有编写，其实 xmake 在扫描完成后，会去自动在当前目录下生成一份 xmake.lua，下次编译就不需要重新扫描检测了。</p>
+<p>自动生成的 xmake.lua 内容如下：</p>
+
+<pre class="language-lua"><code class="language-lua">-- define target
+target(&quot;zlib-1.2&quot;， function()
+
+    -- set kind
+    set_kind(&quot;static&quot;)
+
+    -- add files
+    add_files(&quot;./adler32.c&quot;)
+    add_files(&quot;./compress.c&quot;)
+    add_files(&quot;./crc32.c&quot;)
+    add_files(&quot;./deflate.c&quot;)
+    add_files(&quot;./gzclose.c&quot;)
+    add_files(&quot;./gzlib.c&quot;)
+    add_files(&quot;./gzread.c&quot;)
+    add_files(&quot;./gzwrite.c&quot;)
+    add_files(&quot;./infback.c&quot;)
+    add_files(&quot;./inffast.c&quot;)
+    add_files(&quot;./inflate.c&quot;)
+    add_files(&quot;./inftrees.c&quot;)
+    add_files(&quot;./trees.c&quot;)
+    add_files(&quot;./uncompr.c&quot;)
+    add_files(&quot;./zutil.c&quot;)
+end)
+</code></pre>
+<p>也许你会说，像这种开源库，直接 <code>configure; make</code> 不就好了吗，他们自己也有提供 makefile 来直接编译的，的确是这样，我这里只是举个例子而已。</p>
+<p>当然，很多开源库在交叉编译的时候，通过自带的 <code>configure</code>，处理起来还是很繁琐的，用 xmake 进行交叉编译会更方便些。。</p>
+<h2 id="%E5%8D%B3%E6%97%B6%E5%9C%B0%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99%E5%92%8C%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C">即时地代码编写和编译运行</h2>
+<p>xmake 的这个扫描代码编译特性，主要的目的：还是为了让我们在临时想写些测试代码的时候，不用考虑太多东西，直接上手敲代码，然后快速执行 <code>xmake run</code> 来调试验证结果。</p>
+<p>例如：</p>
+<p>我想写了个简单的 main.c 的测试程序，打印 <code>hello world!</code>，如果要写 makefile 或者直接通过 gcc 命令来，就很繁琐了，你需要：</p>
+
+<pre class="language-bash"><code class="language-bash">gcc ./main.c -o demo
+./demo
+</code></pre>
+<p>最快速的方式，也需要执行两行命令，而如果用 xmake，只需要执行：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake run
+</code></pre>
+<p>就行了，它会自动检测到代码后，自动生成对应的 xmake.lua，自动编译，自动运行，然后输出：</p>
+
+<pre class="language-bash"><code class="language-bash">hello world!
+</code></pre>
+<p>如果你有十几个代码文件，用手敲 gcc 的方式，或者写 makefile 的方式，这个差距就更明显了，用 xmake 还是只需要一行命令：</p>
+
+<pre class="language-bash"><code class="language-bash">xmake run
+</code></pre>
+<h2 id="%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81">多语言支持</h2>
+<p>这种代码检测和即时编译，是支持多语言的，不仅支持 c/c++，还支持 objc/swift。</p>
+<p>例如我下载了一份 fmdb 的 ios 开源框架代码：</p>
+
+<pre class="language-none"><code class="language-none">.
+├── FMDB.h
+├── FMDatabase.h
+├── FMDatabase.m
+├── FMDatabaseAdditions.h
+├── FMDatabaseAdditions.m
+├── FMDatabasePool.h
+├── FMDatabasePool.m
+├── FMDatabaseQueue.h
+├── FMDatabaseQueue.m
+├── FMResultSet.h
+└── FMResultSet.m
+</code></pre>
+<p>想要把它编译成 ios 的静态库，但是又不想写 xmake.lua，或者 makefile，那么只需要使用 xmake 的这个新特性，直接执行：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f -p iphoneos; xmake
+</code></pre>
+<p>就行了，输出结果如下：</p>
+
+<pre class="language-none"><code class="language-none">xmake.lua not found, scanning files ..
+target(FMDB): static
+    [+]: ./FMDatabase.m
+    [+]: ./FMDatabaseAdditions.m
+    [+]: ./FMDatabasePool.m
+    [+]: ./FMDatabaseQueue.m
+    [+]: ./FMResultSet.m
+xmake.lua generated, scan ok!👌
+checking for the architecture ... armv7
+checking for the Xcode SDK version for iphoneos ... 10.1
+checking for the target minimal version ... 10.1
+checking for the c compiler (cc) ... xcrun -sdk iphoneos clang
+checking for the c++ compiler (cxx) ... xcrun -sdk iphoneos clang
+checking for the objc compiler (mm) ... xcrun -sdk iphoneos clang
+checking for the objc++ compiler (mxx) ... xcrun -sdk iphoneos clang++
+checking for the assember (as) ... gas-preprocessor.pl xcrun -sdk iphoneos clang
+checking for the linker (ld) ... xcrun -sdk iphoneos clang++
+checking for the static library archiver (ar) ... xcrun -sdk iphoneos ar
+checking for the static library extractor (ex) ... xcrun -sdk iphoneos ar
+checking for the shared library linker (sh) ... xcrun -sdk iphoneos clang++
+checking for the swift compiler (sc) ... xcrun -sdk iphoneos swiftc
+configure
+{
+    ex = &quot;xcrun -sdk iphoneos ar&quot;
+,   ccache = &quot;ccache&quot;
+,   host = &quot;macosx&quot;
+,   ar = &quot;xcrun -sdk iphoneos ar&quot;
+,   buildir = &quot;build&quot;
+,   as = &quot;/usr/local/share/xmake/tools/utils/gas-preprocessor.pl xcrun -sdk iphoneos clang&quot;
+,   arch = &quot;armv7&quot;
+,   mxx = &quot;xcrun -sdk iphoneos clang++&quot;
+,   cxx = &quot;xcrun -sdk iphoneos clang&quot;
+,   target_minver = &quot;10.1&quot;
+,   xcode_dir = &quot;/Applications/Xcode.app&quot;
+,   clean = true
+,   sh = &quot;xcrun -sdk iphoneos clang++&quot;
+,   cc = &quot;xcrun -sdk iphoneos clang&quot;
+,   ld = &quot;xcrun -sdk iphoneos clang++&quot;
+,   mode = &quot;release&quot;
+,   kind = &quot;static&quot;
+,   plat = &quot;iphoneos&quot;
+,   xcode_sdkver = &quot;10.1&quot;
+,   sc = &quot;xcrun -sdk iphoneos swiftc&quot;
+,   mm = &quot;xcrun -sdk iphoneos clang&quot;
+}
+configure ok!
+clean ok!
+[00%]: cache compiling.release ./FMDatabase.m
+[20%]: cache compiling.release ./FMDatabaseAdditions.m
+[40%]: cache compiling.release ./FMDatabasePool.m
+[60%]: cache compiling.release ./FMDatabaseQueue.m
+[80%]: cache compiling.release ./FMResultSet.m
+[100%]: archiving.release libFMDB.a
+build ok!👌
+</code></pre>
+<h2 id="%E5%90%8C%E6%97%B6%E7%BC%96%E8%AF%91%E5%A4%9A%E4%B8%AA%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">同时编译多个可执行文件</h2>
+<p>输出结果的开头部分，就是对代码的分析结果，虽然目前只支持单级目录结构的代码扫描，但是还是可以同时支持检测和编译多个可执行文件的</p>
+<p>我们以 libjpeg 的开源库为例：</p>
+<p>我们进入 jpeg-6b 目录后，执行：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake
+</code></pre>
+<p>输出如下：</p>
+
+<pre class="language-none"><code class="language-none">xmake.lua not found, scanning files ..
+target(jpeg-6b): static
+    [+]: ./cdjpeg.c
+    [+]: ./example.c
+    [+]: ./jcapimin.c
+    [+]: ./jcapistd.c
+    [+]: ./jccoefct.c
+    [+]: ./jccolor.c
+    [+]: ./jcdctmgr.c
+    [+]: ./jchuff.c
+    [+]: ./jcinit.c
+    [+]: ./jcmainct.c
+    [+]: ./jcmarker.c
+    [+]: ./jcmaster.c
+    [+]: ./jcomapi.c
+    [+]: ./jcparam.c
+    [+]: ./jcphuff.c
+    [+]: ./jcprepct.c
+    [+]: ./jcsample.c
+    [+]: ./jctrans.c
+    [+]: ./jdapimin.c
+    [+]: ./jdapistd.c
+    [+]: ./jdatadst.c
+    [+]: ./jdatasrc.c
+    [+]: ./jdcoefct.c
+    [+]: ./jdcolor.c
+    [+]: ./jddctmgr.c
+    [+]: ./jdhuff.c
+    [+]: ./jdinput.c
+    [+]: ./jdmainct.c
+    [+]: ./jdmarker.c
+    [+]: ./jdmaster.c
+    [+]: ./jdmerge.c
+    [+]: ./jdphuff.c
+    [+]: ./jdpostct.c
+    [+]: ./jdsample.c
+    [+]: ./jdtrans.c
+    [+]: ./jerror.c
+    [+]: ./jfdctflt.c
+    [+]: ./jfdctfst.c
+    [+]: ./jfdctint.c
+    [+]: ./jidctflt.c
+    [+]: ./jidctfst.c
+    [+]: ./jidctint.c
+    [+]: ./jidctred.c
+    [+]: ./jmemansi.c
+    [+]: ./jmemmgr.c
+    [+]: ./jmemname.c
+    [+]: ./jmemnobs.c
+    [+]: ./jquant1.c
+    [+]: ./jquant2.c
+    [+]: ./jutils.c
+    [+]: ./rdbmp.c
+    [+]: ./rdcolmap.c
+    [+]: ./rdgif.c
+    [+]: ./rdppm.c
+    [+]: ./rdrle.c
+    [+]: ./rdswitch.c
+    [+]: ./rdtarga.c
+    [+]: ./transupp.c
+    [+]: ./wrbmp.c
+    [+]: ./wrgif.c
+    [+]: ./wrppm.c
+    [+]: ./wrrle.c
+    [+]: ./wrtarga.c
+target(ansi2knr): binary
+    [+]: ./ansi2knr.c
+target(cjpeg): binary
+    [+]: ./cjpeg.c
+target(ckconfig): binary
+    [+]: ./ckconfig.c
+target(djpeg): binary
+    [+]: ./djpeg.c
+target(jpegtran): binary
+    [+]: ./jpegtran.c
+target(rdjpgcom): binary
+    [+]: ./rdjpgcom.c
+target(wrjpgcom): binary
+    [+]: ./wrjpgcom.c
+xmake.lua generated, scan ok!👌
+checking for the architecture ... x86_64
+checking for the Xcode SDK version for macosx ... 10.12
+checking for the target minimal version ... 10.12
+checking for the c compiler (cc) ... xcrun -sdk macosx clang
+checking for the c++ compiler (cxx) ... xcrun -sdk macosx clang
+checking for the objc compiler (mm) ... xcrun -sdk macosx clang
+checking for the objc++ compiler (mxx) ... xcrun -sdk macosx clang++
+checking for the swift compiler (sc) ... xcrun -sdk macosx swiftc
+checking for the assember (as) ... xcrun -sdk macosx clang
+checking for the linker (ld) ... xcrun -sdk macosx clang++
+checking for the static library archiver (ar) ... xcrun -sdk macosx ar
+checking for the static library extractor (ex) ... xcrun -sdk macosx ar
+checking for the shared library linker (sh) ... xcrun -sdk macosx clang++
+checking for the debugger (dd) ... xcrun -sdk macosx lldb
+checking for the golang compiler (go) ... go
+configure
+{
+    ex = &quot;xcrun -sdk macosx ar&quot;
+,   sh = &quot;xcrun -sdk macosx clang++&quot;
+,   host = &quot;macosx&quot;
+,   ar = &quot;xcrun -sdk macosx ar&quot;
+,   buildir = &quot;build&quot;
+,   as = &quot;xcrun -sdk macosx clang&quot;
+,   plat = &quot;macosx&quot;
+,   xcode_dir = &quot;/Applications/Xcode.app&quot;
+,   arch = &quot;x86_64&quot;
+,   mxx = &quot;xcrun -sdk macosx clang++&quot;
+,   go = &quot;go&quot;
+,   target_minver = &quot;10.12&quot;
+,   ccache = &quot;ccache&quot;
+,   mode = &quot;release&quot;
+,   clean = true
+,   cxx = &quot;xcrun -sdk macosx clang&quot;
+,   cc = &quot;xcrun -sdk macosx clang&quot;
+,   dd = &quot;xcrun -sdk macosx lldb&quot;
+,   kind = &quot;static&quot;
+,   ld = &quot;xcrun -sdk macosx clang++&quot;
+,   xcode_sdkver = &quot;10.12&quot;
+,   sc = &quot;xcrun -sdk macosx swiftc&quot;
+,   mm = &quot;xcrun -sdk macosx clang&quot;
+}
+configure ok!
+clean ok!
+[00%]: cache compiling.release ./cdjpeg.c
+[00%]: cache compiling.release ./example.c
+[00%]: cache compiling.release ./jcapimin.c
+[00%]: cache compiling.release ./jcapistd.c
+[00%]: cache compiling.release ./jccoefct.c
+[00%]: cache compiling.release ./jccolor.c
+[01%]: cache compiling.release ./jcdctmgr.c
+[01%]: cache compiling.release ./jchuff.c
+[01%]: cache compiling.release ./jcinit.c
+[01%]: cache compiling.release ./jcmainct.c
+[01%]: cache compiling.release ./jcmarker.c
+[02%]: cache compiling.release ./jcmaster.c
+[02%]: cache compiling.release ./jcomapi.c
+[02%]: cache compiling.release ./jcparam.c
+[02%]: cache compiling.release ./jcphuff.c
+[02%]: cache compiling.release ./jcprepct.c
+[03%]: cache compiling.release ./jcsample.c
+[03%]: cache compiling.release ./jctrans.c
+[03%]: cache compiling.release ./jdapimin.c
+[03%]: cache compiling.release ./jdapistd.c
+[03%]: cache compiling.release ./jdatadst.c
+[04%]: cache compiling.release ./jdatasrc.c
+[04%]: cache compiling.release ./jdcoefct.c
+[04%]: cache compiling.release ./jdcolor.c
+[04%]: cache compiling.release ./jddctmgr.c
+[04%]: cache compiling.release ./jdhuff.c
+[05%]: cache compiling.release ./jdinput.c
+[05%]: cache compiling.release ./jdmainct.c
+[05%]: cache compiling.release ./jdmarker.c
+[05%]: cache compiling.release ./jdmaster.c
+[05%]: cache compiling.release ./jdmerge.c
+[06%]: cache compiling.release ./jdphuff.c
+[06%]: cache compiling.release ./jdpostct.c
+[06%]: cache compiling.release ./jdsample.c
+[06%]: cache compiling.release ./jdtrans.c
+[06%]: cache compiling.release ./jerror.c
+[07%]: cache compiling.release ./jfdctflt.c
+[07%]: cache compiling.release ./jfdctfst.c
+[07%]: cache compiling.release ./jfdctint.c
+[07%]: cache compiling.release ./jidctflt.c
+[07%]: cache compiling.release ./jidctfst.c
+[08%]: cache compiling.release ./jidctint.c
+[08%]: cache compiling.release ./jidctred.c
+[08%]: cache compiling.release ./jmemansi.c
+[08%]: cache compiling.release ./jmemmgr.c
+[08%]: cache compiling.release ./jmemname.c
+[09%]: cache compiling.release ./jmemnobs.c
+[09%]: cache compiling.release ./jquant1.c
+[09%]: cache compiling.release ./jquant2.c
+[09%]: cache compiling.release ./jutils.c
+[09%]: cache compiling.release ./rdbmp.c
+[10%]: cache compiling.release ./rdcolmap.c
+[10%]: cache compiling.release ./rdgif.c
+[10%]: cache compiling.release ./rdppm.c
+[10%]: cache compiling.release ./rdrle.c
+[10%]: cache compiling.release ./rdswitch.c
+[11%]: cache compiling.release ./rdtarga.c
+[11%]: cache compiling.release ./transupp.c
+[11%]: cache compiling.release ./wrbmp.c
+[11%]: cache compiling.release ./wrgif.c
+[11%]: cache compiling.release ./wrppm.c
+[12%]: cache compiling.release ./wrrle.c
+[12%]: cache compiling.release ./wrtarga.c
+[12%]: archiving.release libjpeg-6b.a
+[12%]: cache compiling.release ./wrjpgcom.c
+[25%]: linking.release wrjpgcom
+[25%]: cache compiling.release ./ansi2knr.c
+[37%]: linking.release ansi2knr
+[37%]: cache compiling.release ./jpegtran.c
+[50%]: linking.release jpegtran
+[50%]: cache compiling.release ./djpeg.c
+[62%]: linking.release djpeg
+[62%]: cache compiling.release ./ckconfig.c
+[75%]: linking.release ckconfig
+[75%]: cache compiling.release ./rdjpgcom.c
+[87%]: linking.release rdjpgcom
+[87%]: cache compiling.release ./cjpeg.c
+[100%]: linking.release cjpeg
+build ok!👌
+</code></pre>
+<p>可以看到，处理静态库，xmake 还分析出了很多可执行的测试程序，剩下的代码统一编译成一个 libjpeg.a 的静态库，供哪些测试程序链接使用。。</p>
+
+<pre class="language-none"><code class="language-none">target(ansi2knr): binary
+    [+]: ./ansi2knr.c
+target(cjpeg): binary
+    [+]: ./cjpeg.c
+target(ckconfig): binary
+    [+]: ./ckconfig.c
+target(djpeg): binary
+    [+]: ./djpeg.c
+target(jpegtran): binary
+    [+]: ./jpegtran.c
+target(rdjpgcom): binary
+    [+]: ./rdjpgcom.c
+target(wrjpgcom): binary
+    [+]: ./wrjpgcom.c
+</code></pre>
+<h2 id="%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%92%8C%E9%99%90%E5%88%B6">遇到的一些问题和限制</h2>
+<p>当前 xmake 的这种自动分析检测还不是非常智能，对于：</p>
+<ol>
+<li>需要特殊的编译选项</li>
+<li>需要依赖其他目录的头文件搜索</li>
+<li>需要分条件编译不同源文件</li>
+<li>同目录需要生成多个静态库</li>
+<li>需要多级目录支持的源码库</li>
+</ol>
+<p>以上这些情况，xmake 暂时还没发自动化的智能处理，其中限制 1，2 还是可以解决的，通过半手动的方式，例如：</p>
+
+<pre class="language-bash"><code class="language-bash">$ xmake f --cxflags=&quot;&quot;--ldflags=&quot;&quot; --includedirs=&quot;&quot;--linkdirs=&quot;&quot;; xmake
+</code></pre>
+<p>在自动检测编译的时候，手动配置这个源码工程需要的特殊编译选项，就可以直接通过编译了</p>
+<p>而限制 3，暂时只能通过删源代码来解决了，就像刚才编译 jpeg 的代码，其实它的目录下面同时存在了：</p>
+
+<pre class="language-none"><code class="language-none">jmemdos.c
+jmemmac.c
+jmemansi.c
+</code></pre>
+<p>其中两个是没法编译过的，需要删掉后才行。</p>
+
+                        
+                    </div>
+                </div>
+                <div id="previous_next">
+                    <div id="previous">
+                        
+                        <a href="/get_started/zh/features/unity-build.html">
+                            <span class="icon"></span>
+                            <span class="label">Unity 编译加速</span>
+                        </a>
+                        
+                    </div>
+                    <div id="next">
+                        
+                        <a href="/get_started/zh/features/try-build.html">
+                            <span class="label">尝试使用其他构建系统</span>
+                            <span class="icon"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="comments-container"></div>
+            </div>
+            <div id="toc_wrapper">
+                <div id="toc">
+                    <div id="toc_content">
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a id="to_top" href="#"></a>
+    <div id="doc_footer">
+        <div id="footer">
+            <div id="footer_top">
+                <ul>
+<li><a>链接</a><ul><li><a target="_blank" href="https://teedoc.neucrack.com">使用 teedoc 构建</a></li>
+<li><a  href="/sitemap.xml">网站地图</a></li>
+</ul>
+</li>
+<li><a>源码</a><ul><li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">github</a></li>
+<li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">gitee</a></li>
+<li><a target="_blank" href="https://github.com/zxmake/zxmake.github.io">本网站源文件</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <div id="footer_bottom">
+                <ul>
+<li><a target="_blank" href="https://beian.miit.gov.cn">*ICP备********号</a></li>
+<li><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****************">*公网安备***********号</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+    
+        <script src="/teedoc-plugin-markdown-parser/mermaid.min.js"></script>
+    
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    
+        <script src="/static/js/theme_default/tocbot.min.js"></script>
+    
+        <script src="/static/js/theme_default/main.js"></script>
+    
+        <script src="/static/js/theme_default/viewer.min.js"></script>
+    
+        <script src="/static/css/theme_default/prism.min.js"></script>
+    
+        <script src="/static/js/search/search_main.js"></script>
+    
+        <script src="/static/js/plugin_blog/main.js"></script>
+    
+        <script src="/static/js/custom.js"></script>
+    
+</body>
+
+</html>
