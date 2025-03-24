@@ -72,6 +72,10 @@ items:
     items:
         -   label: 描述域
             file: task/description-scope.md
+        -   label: 插件开发
+            file: task/plugin-development.md
+        -   label: 内置插件
+            file: task/builtin-plugins.md
 -   label: module 模块
     items:
         -   label: 内置模块

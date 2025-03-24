@@ -1,6 +1,7 @@
 ---
 class: heading_no_counter
 ---
+
 # 描述域
 
 xmake 可以实现自定义任务或者插件，其两者的核心就是 `task` 任务，其两者实际上是一样的，xmake 的插件都是用 `task` 实现的。
