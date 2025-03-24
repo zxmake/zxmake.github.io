@@ -80,4 +80,17 @@ items:
             file: module/extension-modules.md
         -   label: Lua 原生模块
             file: module/native-modules.md
-# -   label: 其他特性
+-   label: 其他特性
+    items:
+        -   label: 远程编译
+            file: features/remote-build.md
+        -   label: 分布式编译
+            file: features/distcc-build.md
+        -   label: 编译缓存
+            file: features/build-cache.md
+        -   label: Unity 编译加速
+            file: features/unity-build.md
+        -   label: 自动扫描源码生成工程
+            file: features/autogen.md
+        -   label: 尝试使用其他构建系统
+            file: features/try-build.md
