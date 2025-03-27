@@ -1385,6 +1385,27 @@ end)
 </code></pre>
 <p>但是它有一些缺陷：如果使用 ar，可能会存在 .obj 对象文件同名冲突导致合并失败，因此推荐使用上文介绍的合并方式，更加的稳定可靠，也更加的简单。</p>
 <p>相关 issues: <a href="https://github.com/xmake-io/xmake/issues/1638"  target="_blank">#1638</a></p>
+<h3 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E8%84%9A%E6%9C%AC%E5%90%88%E5%B9%B6%E9%9D%99%E6%80%81%E5%BA%93">自定义脚本合并静态库</h3>
+<blockquote>
+<p>在这个例子中我们在 package 准备安装时将所有的 lib 静态库合并成一个，方便用户集成使用：</p>
+</blockquote>
+
+<pre class="language-lua"><code class="language-lua">on_install(function(package)
+    local archivefile = &quot;libxcore.a&quot;
+    local tmpfile = os.tmpfile()
+    local mrifile = io.open(tmpfile, &quot;w&quot;)
+    mrifile:print(&quot;create %s&quot;, archivefile)
+    for _, libraryfile in ipairs(os.files(&quot;lib/*.a&quot;)) do
+        cprint(format(&quot;${bright blue}[info]${clear} merge static lib [%s] to [%s]&quot;, libraryfile, archivefile))
+        mrifile:print(&quot;addlib %s&quot;, libraryfile)
+    end
+    mrifile:print(&quot;save&quot;)
+    mrifile:print(&quot;end&quot;)
+    mrifile:close()
+    os.vrunv(&quot;ar&quot;, {&quot;-M&quot;}, {stdin = tmpfile})
+    os.rm(tmpfile)
+end)
+</code></pre>
 <h2 id="Nim-%E7%A8%8B%E5%BA%8F">Nim 程序</h2>
 <p>xmake 支持 Nimlang 项目，相关 issues 见：<a href="https://github.com/xmake-io/xmake/issues/1756"  target="_blank">#1756</a></p>
 <h3 id="%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%B7%A5%E7%A8%8B">创建空工程</h3>
