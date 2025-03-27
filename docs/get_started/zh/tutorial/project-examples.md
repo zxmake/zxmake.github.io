@@ -1510,6 +1510,28 @@ end)
 
 相关 issues: [#1638](https://github.com/xmake-io/xmake/issues/1638)
 
+### 自定义脚本合并静态库
+
+> 在这个例子中我们在 package 准备安装时将所有的 lib 静态库合并成一个，方便用户集成使用：
+
+```lua
+on_install(function(package)
+    local archivefile = "libxcore.a"
+    local tmpfile = os.tmpfile()
+    local mrifile = io.open(tmpfile, "w")
+    mrifile:print("create %s", archivefile)
+    for _, libraryfile in ipairs(os.files("lib/*.a")) do
+        cprint(format("${bright blue}[info]${clear} merge static lib [%s] to [%s]", libraryfile, archivefile))
+        mrifile:print("addlib %s", libraryfile)
+    end
+    mrifile:print("save")
+    mrifile:print("end")
+    mrifile:close()
+    os.vrunv("ar", {"-M"}, {stdin = tmpfile})
+    os.rm(tmpfile)
+end)
+```
+
 ## Nim 程序
 
 xmake 支持 Nimlang 项目，相关 issues 见：[#1756](https://github.com/xmake-io/xmake/issues/1756)
