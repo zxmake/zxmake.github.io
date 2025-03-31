@@ -104,3 +104,5 @@ items:
             file: features/autogen.md
         -   label: 尝试使用其他构建系统
             file: features/try-build.md
+-   label: xrepo 包管理器
+    file: xrepo/usage.md

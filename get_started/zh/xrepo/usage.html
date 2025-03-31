@@ -138,8 +138,8 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/rule/description-scope.html"><span class="label">描述域</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="active_parent no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator"></span></a><ul class="show">
-<li class="active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
+<li class="not_active no_link"><a><span class="label">toolchain 工具链</span><span class="sub_indicator sub_indicator_collapsed"></span></a><ul class="">
+<li class="not_active with_link"><a href="/get_started/zh/toolchain/builtin-toolchains.html"><span class="label">内置工具链</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/custom-toolchains.html"><span class="label">自定义工具链</span><span class=""></span></a></li>
 <li class="not_active with_link"><a href="/get_started/zh/toolchain/remote-toolchains.html"><span class="label">远程工具链</span><span class=""></span></a></li>
 </ul>
@@ -170,7 +170,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
 <li class="not_active with_link"><a href="/get_started/zh/features/try-build.html"><span class="label">尝试使用其他构建系统</span><span class=""></span></a></li>
 </ul>
 </li>
-<li class="not_active with_link"><a href="/get_started/zh/xrepo/usage.html"><span class="label">xrepo 包管理器</span><span class=""></span></a></li>
+<li class="active with_link"><a href="/get_started/zh/xrepo/usage.html"><span class="label">xrepo 包管理器</span><span class=""></span></a></li>
 </ul>
 
             </div>
@@ -203,7 +203,7 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                         <div id="article_info_right">
                             
                             <div id="source_link">
-                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/toolchain/builtin-toolchains.md" target="_blank">
+                                <a href="https://github.com/TOMO-CAT/xmake-teedoc/docs/get_started/zh/xrepo/usage.md" target="_blank">
                                     编辑本页
                                 </a>
                             </div>
@@ -220,222 +220,253 @@ MathJax = {"loader": {"load": ["output/svg"]}, "tex": {"inlineMath": [["$", "$"]
                     </div>
                     <div id="article_content">
                         
-                            <h1 id="%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7%E9%93%BE">内置工具链</h1>
-<h2 id="Gcc">Gcc</h2>
-<p>如果 linux 上安装了 gcc 工具链，通常 xmake 都会优先探测使用，当然我们也可以手动切换到 gcc 来构建。</p>
+                            <h1 id="xrepo">xrepo</h1>
+<p>xrepo 是一个基于 <a href="https://github.com/xmake-io/xmake"  target="_blank">Xmake</a> 的跨平台 C/C++ 包管理器。</p>
+<p>它基于 xmake 提供的运行时，但却是一个完整独立的包管理程序，相比 vcpkg/homebrew 此类包管理器，xrepo 能够同时提供更多平台和架构的 C/C++ 包。</p>
+<p>并且还支持多版本语义选择，另外它还是一个去中心化的分布式仓库，不仅仅提供了官方的 <a href="https://github.com/xmake-io/xmake-repo"  target="_blank">xmake-repo</a> 仓库，还支持用户自建多个私有仓库。</p>
+<p>同时，xrepo 也支持从 vcpkg/homebrew/conan 等第三方包管理器中安装包，并提供统一一致的库链接信息，方便与第三方项目的集成对接。</p>
+<h2 id="%E5%AE%89%E8%A3%85">安装</h2>
+<p>我们只需要安装上 xmake 就可以使用 xrepo 命令。</p>
+<h2 id="%E6%94%AF%E6%8C%81%E5%B9%B3%E5%8F%B0">支持平台</h2>
+<ul>
+<li>macOS (i386, x86_64, arm64)</li>
+<li>Linux (i386, x86_64, cross-toolchains ..)</li>
+<li>BSD (i386, x86_64)</li>
+<li>Android (x86, x86_64, armeabi, armeabi-v7a, arm64-v8a)</li>
+<li>iOS (armv7, armv7s, arm64, i386, x86_64)</li>
+<li>Cross Toolchains</li>
+</ul>
+<h2 id="%E5%88%86%E5%B8%83%E5%BC%8F%E4%BB%93%E5%BA%93%E6%94%AF%E6%8C%81">分布式仓库支持</h2>
+<p>除了可以直接从官方仓库：<a href="https://github.com/xmake-io/xmake-repo"  target="_blank">xmake-repo</a> 检索安装包之外，<br />
+我们还可以添加任意多个自建的仓库，甚至可以完全隔离外网，仅仅在公司内部网络维护私有包的安装集成。</p>
+<p>只需要通过下面的命令，添加上自己的仓库地址：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gcc -c
-$ xmake
+<pre class="language-console"><code class="language-console">$ xrepo add-repo myrepo https://github.com/mygroup/myrepo
 </code></pre>
-<h3 id="%E4%BD%BF%E7%94%A8%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-Gcc">使用指定版本的 Gcc</h3>
-<p>如果用户额外安装了 gcc-11, gcc-10 等特定版本的 gcc 工具链，在本地的 gcc 程序命名可能是 <code>/usr/bin/gcc-11</code>。</p>
-<p>一种办法是通过 <code>xmake f --cc=gcc-11 --cxx=gcc-11 --ld=g++-11</code> 挨个指定配置来切换，但非常繁琐。</p>
-<p>所以，xmake 也提供了更加快捷的切换方式：</p>
+<h2 id="%E4%B8%8E-xmake-%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%97%A0%E7%BC%9D%E9%9B%86%E6%88%90">与 xmake 的工程无缝集成</h2>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gcc-11 -c
-$ xmake
-</code></pre>
-<p>只需要指定 <code>gcc-11</code> 对应的版本名，就可以快速切换整个 gcc 工具链。</p>
-<h2 id="Clang">Clang</h2>
-<p>在 macOS 和 linux，通常 xmake 也会优先尝试去自动探测和使用它，当然我们也可以手动切换。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=clang -c
-$ xmake
-</code></pre>
-<h2 id="LLVM">LLVM</h2>
-<p>除了独立 clang 编译器，如果用户安装了完整 llvm 工具链，我们也可以整个切换过去，包括 <code>llvm-ar</code> 等工具。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=llvm --sdk=/xxxx/llvm
-$ xmake
-</code></pre>
-<p>如果是手动下载的 llvm sdk，我们需要额外指定 llvm sdk 根目录，确保 xmake 能找到它，当然，如果用户已经安装到 PATH 目录下，<code>--sdk</code> 参数的设置也是可选的。</p>
-<h2 id="Circle">Circle</h2>
-<p>xmake 新增了 circle 编译器的支持，这是个新的 C++20 编译器，额外附带了一些有趣的编译期元编程特性，有兴趣的同学可以到官网查看：<a href="https://www.circle-lang.org/"  target="_blank">https://www.circle-lang.org/</a></p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=circle
-$ xmake
-</code></pre>
-<h2 id="Tinyc">Tinyc</h2>
-<p><a href="https://bellard.org/tcc/"  target="_blank">Tiny C 编译器</a> 非常的轻量，在一些不想安装 msvc/llvm 等重量型编译器的情况下，使用它可能快速编译一些 c 代码。</p>
-
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=tinycc
-$ xmake
-</code></pre>
-<p>使用的时候，请先把 tinycc 编译器加入 PATH 环境。</p>
-<p>我们也可以使用远程工具链自动下载集成它，真正做到全平台一键编译，无任何用户手动安装操作。</p>
-
-<pre class="language-lua"><code class="language-lua">add_requires(&quot;tinycc&quot;)
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;tbox&gt;1.6.1&quot;, &quot;libuv master&quot;, &quot;vcpkg::ffmpeg&quot;, &quot;brew::pcre2/libpcre2-8&quot;)
+add_requires(&quot;conan::openssl/1.1.1g&quot;, {alias = &quot;openssl&quot;, optional = true, debug = true})
 target(&quot;test&quot;, function()
     set_kind(&quot;binary&quot;)
     add_files(&quot;src/*.c&quot;)
-    set_toolchains(&quot;@tinycc&quot;)
+    add_packages(&quot;tbox&quot;, &quot;libuv&quot;, &quot;vcpkg::ffmpeg&quot;, &quot;brew::pcre2/libpcre2-8&quot;, &quot;openssl&quot;)
 end)
 </code></pre>
-<h2 id="Armcc-for-Keil/MDK">Armcc for Keil/MDK</h2>
-<p>对 Keil/MDK 下 armcc 的工具链支持，相关 issue 见：<a href="https://github.com/xmake-io/xmake/issues/1753"  target="_blank">#1753</a></p>
+<p>下面是与 xmake 集成的整体架构和编译流程。</p>
+<img src="https://xmake.io/assets/img/index/package_arch.png" width="650px" />
+<h2 id="%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</h2>
+<h3 id="%E5%AE%89%E8%A3%85%E5%8C%85">安装包</h3>
+<h4 id="%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">基本使用</h4>
 
-<pre class="language-console"><code class="language-console">xmake f -p cross -a cortex-m3 --toolchain=armcc -c
-xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install zlib tbox
 </code></pre>
-<p>这个工具链主要用于嵌入式交叉编译，所以指定了 <code>-p cross</code> 交叉编译平台，<code>-a cortex-m3</code> 指定使用的 cpu，这里复用了 <code>-a/--arch</code> 参数。</p>
-<h2 id="Armclang-for-Keil/MDK">Armclang for Keil/MDK</h2>
-<p>对 Keil/MDK 下 armclang 的工具链支持，相关 issue 见：<a href="https://github.com/xmake-io/xmake/issues/1753"  target="_blank">#1753</a></p>
+<h4 id="%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E5%8C%85">安装指定版本包</h4>
+<p>完整支持 Semantic Versioning (语义版本)。</p>
 
-<pre class="language-console"><code class="language-console">xmake f -p cross -a cortex-m3 --toolchain=armclang -c
-xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install &quot;zlib 1.2.x&quot;
+$ xrepo install &quot;zlib &gt;=1.2.0&quot;
 </code></pre>
-<p>这个工具链主要用于嵌入式交叉编译，所以指定了 <code>-p cross</code> 交叉编译平台，<code>-a cortex-m3</code> 指定使用的 cpu，这里复用了 <code>-a/--arch</code> 参数。</p>
-<h2 id="GNU-RM">GNU-RM</h2>
-<p>另外一个嵌入式 arm 的交叉工具链，官网：<a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm"  target="_blank">https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm</a></p>
+<h4 id="%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E5%B9%B3%E5%8F%B0%E5%8C%85">安装指定平台包</h4>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gnu-rm -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install -p iphoneos -a arm64 zlib
+$ xrepo install -p android [--ndk=/xxx] zlib
+$ xrepo install -p mingw [--mingw=/xxx] zlib
+$ xrepo install -p cross --sdk=/xxx/arm-linux-musleabi-cross zlib
 </code></pre>
-<h2 id="SDCC">SDCC</h2>
-<p>也是一个嵌入式的 arm 编译工具链。</p>
+<h4 id="%E5%AE%89%E8%A3%85%E8%B0%83%E8%AF%95%E7%89%88%E6%9C%AC%E5%8C%85">安装调试版本包</h4>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=sdcc -a stm8
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install -m debug zlib
 </code></pre>
-<p>我们可以指定 <code>-a stm8</code> 切换 cpu 架构，目前支持的有：</p>
-<ul>
-<li>stm8</li>
-<li>mcs51</li>
-<li>z80</li>
-<li>z180</li>
-<li>r2k</li>
-<li>r3ka</li>
-<li>s08</li>
-<li>hc08</li>
-</ul>
-<h2 id="Zig">Zig</h2>
-<p>如果要构建 Zig 程序，我们默认执行 xmake 就能自动使用 zig 工具链，但前提是 zig 已经在 PATH 环境下。</p>
+<h4 id="%E5%AE%89%E8%A3%85%E5%8A%A8%E6%80%81%E5%BA%93%E7%89%88%E6%9C%AC%E5%8C%85">安装动态库版本包</h4>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install -k shared zlib
 </code></pre>
-<p>当然，我们也可以手动设置它。</p>
+<h4 id="%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E9%85%8D%E7%BD%AE%E5%8C%85">安装指定配置包</h4>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install -f &quot;vs_runtime='MD'&quot; zlib
+$ xrepo install -f &quot;regex=true,thread=true&quot; boost
 </code></pre>
-<p>也可以指定 zig 编译器的路径。</p>
+<h4 id="%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E5%8C%85">安装第三方包管理器的包</h4>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig --zc=/xxxx/zig -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo install brew::zlib
+$ xrepo install vcpkg::zlib
+$ xrepo install conan::zlib/1.2.11
 </code></pre>
-<h3 id="Zig-CC">Zig CC</h3>
-<p>我们也可以使用 zig 提供的 <code>zig cc</code> 编译器去编译 C/C++ 代码。</p>
+<h3 id="%E6%9F%A5%E6%89%BE%E5%8C%85%E7%9A%84%E5%BA%93%E4%BD%BF%E7%94%A8%E4%BF%A1%E6%81%AF">查找包的库使用信息</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f --cc=&quot;zig cc&quot; --cxx=&quot;zig cc&quot; --ld=&quot;zig c++&quot; -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo fetch pcre2
+{
+  {
+    linkdirs = {
+      &quot;/usr/local/Cellar/pcre2/10.33/lib&quot;
+    },
+    links = {
+      &quot;pcre2-8&quot;
+    },
+    defines = {
+      &quot;PCRE2_CODE_UNIT_WIDTH=8&quot;
+    },
+    includedirs = &quot;/usr/local/Cellar/pcre2/10.33/include&quot;
+  }
+}
 </code></pre>
-<h3 id="%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91">交叉编译</h3>
-<p>另外，我们也可以使用 zig 实现交叉编译。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p cross --cross=riscv64-linux-musl --toolchain=zig
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo fetch --ldflags openssl
+-L/Users/ruki/.xmake/packages/o/openssl/1.1.1/d639b7d6e3244216b403b39df5101abf/lib -lcrypto -lssl
 </code></pre>
-<p>或者编译 arm64 架构：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=zig -a arm64 -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo fetch --cflags openssl
+-I/Users/ruki/.xmake/packages/o/openssl/1.1.1/d639b7d6e3244216b403b39df5101abf/include
 </code></pre>
-<h2 id="Emcc-%28WASM%29">Emcc (WASM)</h2>
-<p>如果要编译 wasm 程序，我们只需要切换到 wasm 平台，默认就会使用 emcc 工具链去编译。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p wasm
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo fetch -p [iphoneos|android] --cflags &quot;zlib 1.2.x&quot;
+-I/Users/ruki/.xmake/packages/z/zlib/1.2.11/df72d410e7e14391b1a4375d868a240c/include
 </code></pre>
-<h2 id="Wasi-%28WASM%29">Wasi (WASM)</h2>
-<p>这是另外一个启用了 WASI 的 Wasm 工具链，我们需要手动切换使用。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p wasm --toolchain=wasi
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo fetch --cflags --ldflags conan::zlib/1.2.11
+-I/Users/ruki/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/include -L/Users/ruki/.conan/data/zlib/1.2.11/_/_/package/f74366f76f700cc6e991285892ad7a23c30e6d47/lib -lz
 </code></pre>
-<h2 id="Icc-%28Intel-C/C%2B%2B-Compiler%29">Icc (Intel C/C++ Compiler)</h2>
-<p>我们也可以切换到 Intel 的 C/C++ 编译器去使用。</p>
+<h3 id="%E5%AF%BC%E5%87%BA%E5%AE%89%E8%A3%85%E5%90%8E%E7%9A%84%E5%8C%85">导出安装后的包</h3>
+<p>xrepo 可以快速导出已经安装后的包，包括对应的库文件，头文件等等。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=icc -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo export -o /tmp/output zlib
 </code></pre>
-<h2 id="Ifort-%28Intel-Fortain-Compiler%29">Ifort (Intel Fortain Compiler)</h2>
-<p>我们也可以切换到 Intel 的 Fortran 编译器去使用。</p>
+<h3 id="%E6%90%9C%E7%B4%A2%E6%94%AF%E6%8C%81%E7%9A%84%E5%8C%85">搜索支持的包</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=ifort -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo search zlib &quot;pcr*&quot;
+    zlib:
+      -&gt; zlib: A Massively Spiffy Yet Delicately Unobtrusive Compression Library (in xmake-repo)
+    pcr*:
+      -&gt; pcre2: A Perl Compatible Regular Expressions Library (in xmake-repo)
+      -&gt; pcre: A Perl Compatible Regular Expressions Library (in xmake-repo)
 </code></pre>
-<h2 id="gfortran">gfortran</h2>
-<p>除了 Intel 的 Fortran 编译器，我们还有 gnu fortran 编译器可用。</p>
+<h3 id="%E6%9F%A5%E7%9C%8B%E5%8C%85%E7%8E%AF%E5%A2%83%E4%BF%A1%E6%81%AF">查看包环境信息</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=gfortran -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env --show luajit
+{
+  OLDPWD = &quot;/mnt/tbox&quot;,
+  HOME = &quot;/home/ruki&quot;,
+  PATH = &quot;/home/ruki/.xmake/packages/l/luajit/2.1.0-beta3/fbac76d823b844f0b91abf3df0a3bc61/bin:/tmp:/tmp/arm-linux-musleabi-cross/bin:~/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;,
+  TERM = &quot;xterm&quot;,
+  PWD = &quot;/mnt/xmake&quot;,
+  XMAKE_PROGRAM_DIR = &quot;/mnt/xmake/xmake&quot;,
+  HOSTNAME = &quot;e6edd61ff1ab&quot;,
+  LD_LIBRARY_PATH = &quot;/home/ruki/.xmake/packages/l/luajit/2.1.0-beta3/fbac76d823b844f0b91abf3df0a3bc61/lib&quot;,
+  SHLVL = &quot;1&quot;,
+  _ = &quot;/mnt/xmake/scripts/xrepo.sh&quot;
+}
 </code></pre>
-<h2 id="fpc-%28Free-Pascal%29">fpc (Free Pascal)</h2>
-<p>对于 pascal 程序，xmake 默认就会使用 fpc 编译器来编译。</p>
+<h3 id="%E5%8C%85%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">包虚拟环境</h3>
+<h4 id="%E8%BF%9B%E5%85%A5%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">进入虚拟环境</h4>
+<p>我们可以通过在当前目录下，添加 xmake.lua 文件，定制化一些包配置，然后进入特定的包虚拟环境。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-lua"><code class="language-lua">add_requires(&quot;zlib 1.2.11&quot;)
+add_requires(&quot;python 3.x&quot;, &quot;luajit&quot;)
 </code></pre>
-<p>当然，我们也可以手动切换。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=fpc -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env shell
+&gt; python --version
+&gt; luajit --version
 </code></pre>
-<h2 id="Dlang">Dlang</h2>
-<p>对于 dlang 程序，xmake 默认就会使用 dmd 编译器来编译。</p>
+<p>我们也可以在 xmake.lua 配置加载对应的工具链环境，比如加载 vs 的编译环境。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-lua"><code class="language-lua">set_toolchains(&quot;msvc&quot;)
 </code></pre>
-<p>当然，我们也可以手动切换。</p>
+<h4 id="%E7%AE%A1%E7%90%86%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">管理虚拟环境</h4>
+<p>我们可以使用下面的命令，把指定的虚拟环境配置全局注册到系统中，方便快速切换。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=dlang -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env --add /tmp/base.lua
 </code></pre>
-<p>需要注意的是，此处的 dlang 工具链其实内部包含了对 <code>dmd</code>, <code>ldc2</code> 和 <code>gdc</code> 的自动探测和切换。</p>
-<h2 id="Cuda">Cuda</h2>
-<p>对于 Cuda 程序，我们需要手动切换到 cuda 工具链。</p>
+<p>这个时候，我们就保存了一个名叫 base 的全局虚拟环境，我们可以通过 list 命令去查看它。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=cuda -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env --list
+/Users/ruki/.xmake/envs:
+  - base
+envs(1) found!
 </code></pre>
-<p>我们也可以手动切换 nvcc 内部调用的 C/C++ 编译器。</p>
+<p>我们也可以删除它。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=cuda --cu-ccbin=clang -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env --remove base
 </code></pre>
-<h2 id="%E6%B1%87%E7%BC%96%E5%99%A8">汇编器</h2>
-<p>关于独立的汇编器工具链，xmake 支持：yasm, nasm, fasm 三个，可以随意切换，如果没设置，默认使用 gcc/clang/msvc 自带的汇编器。</p>
+<h4 id="%E5%88%87%E6%8D%A2%E5%85%A8%E5%B1%80%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">切换全局虚拟环境</h4>
+<p>如果我们注册了多个虚拟环境，我们也可以快速切换它们。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=nasm -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env -b base shell
+&gt; python --version
 </code></pre>
-<p>也可以单独指定汇编器路径</p>
+<p>或者直接加载指定虚拟环境运行特定命令</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f --toolchain=nasm --as=/xxx/nasm -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env -b base python --version
 </code></pre>
-<h2 id="Go">Go</h2>
-<p>golang 编译工具链，默认编译 go 程序会自动启用。</p>
+<p><code>xrepo env -b/--bind</code> 就是绑定指定的虚拟环境，更多详情见：<a href="https://github.com/xmake-io/xmake/issues/1762"  target="_blank">#1762</a></p>
+<h4 id="%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E4%B8%B4%E6%97%B6%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">快速切换临时虚拟环境</h4>
+<p>我们不仅可以通过配置 <code>myenv.lua</code> 等环境配置文件，来管理切换环境，也可以直接在命令行临时指定需要绑定的环境包列表，实现快速切换，无需任何配置。</p>
+<p>例如，我们想进入一个带有 python 3.0, luajit 和 cmake 的环境，只需要执行：</p>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo env -b &quot;python 3.x,luajit,cmake&quot; shell
+[python,luajit,cmake] $ python --version
+Python 3.10.6
+[python,luajit,cmake] $ cmake --version
+cmake version 3.25.3
 </code></pre>
-<h2 id="Rust">Rust</h2>
-<p>rust 编译工具链，默认编译 rust 程序会自动启用。</p>
+<p>xmake 会自动安装相关依赖，然后开启一个新的 shell 环境，新环境终端左边也有 prompt 提示。</p>
+<p>如果我们想退出当前环境，仅仅需要执行</p>
 
-<pre class="language-console"><code class="language-console">$ xmake
+<pre class="language-bash"><code class="language-bash">[python,luajit,cmake] $ xrepo env quit
+$
 </code></pre>
-<p>目前 rust 工具链还可以支持 android 等交叉编译环境。</p>
+<h3 id="%E6%9F%A5%E7%9C%8B%E5%8C%85%E4%BF%A1%E6%81%AF">查看包信息</h3>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p android --ndk=~/android-ndk-r20b -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo info zlib
+The package info of project:
+    require(zlib):
+      -&gt; description: A Massively Spiffy Yet Delicately Unobtrusive Compression Library
+      -&gt; version: 1.2.11
+      -&gt; urls:
+         -&gt; http://zlib.net/zlib-1.2.11.tar.gz
+            -&gt; c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
+         -&gt; https://downloads.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz
+            -&gt; c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
+      -&gt; repo: xmake-repo https://gitee.com/tboox/xmake-repo.git master
+      -&gt; cachedir: /Users/ruki/.xmake/cache/packages/2010/z/zlib/1.2.11
+      -&gt; installdir: /Users/ruki/.xmake/packages/z/zlib/1.2.11/d639b7d6e3244216b403b39df5101abf
+      -&gt; searchdirs:
+      -&gt; searchnames: zlib-1.2.11.tar.gz
+      -&gt; fetchinfo: 1.2.11, system
+          -&gt; version: 1.2.11
+          -&gt; links: z
+          -&gt; linkdirs: /usr/local/Cellar/zlib/1.2.11/lib
+          -&gt; includedirs: /usr/local/Cellar/zlib/1.2.11/include
+      -&gt; platforms: iphoneos, mingw@windows, macosx, mingw@linux,macosx, android@linux,macosx, windows, linux
+      -&gt; requires:
+         -&gt; plat: macosx
+         -&gt; arch: x86_64
+         -&gt; configs:
+            -&gt; debug: false
+            -&gt; vs_runtime: MT
+            -&gt; shared: false
+      -&gt; configs:
+      -&gt; configs (builtin):
+         -&gt; debug: Enable debug symbols. (default: false)
+         -&gt; shared: Enable shared library. (default: false)
+         -&gt; cflags: Set the C compiler flags.
+         -&gt; cxflags: Set the C/C++ compiler flags.
+         -&gt; cxxflags: Set the C++ compiler flags.
+         -&gt; asflags: Set the assembler flags.
+         -&gt; vs_runtime: Set vs compiler runtime. (default: MT)
+            -&gt; values: {&quot;MT&quot;,&quot;MD&quot;}
 </code></pre>
-<h2 id="NDK">NDK</h2>
-<p>Android 的 NDK 编译工具链，只要启用 android 平台，就会默认启用。</p>
+<h3 id="%E4%B8%8B%E8%BD%BD%E5%8C%85%E6%BA%90%E7%A0%81">下载包源码</h3>
+<p>我们可以使用 <code>xrepo download</code> 命令，仅仅下载指定包的源码，而不去安装它。</p>
 
-<pre class="language-console"><code class="language-console">$ xmake f -p android --ndk=~/android-ndk-r20b -c
-$ xmake
+<pre class="language-bash"><code class="language-bash">$ xrepo download zlib
+$ xrepo download &quot;zlib 2.x&quot;
 </code></pre>
-<p>如果 <code>--ndk</code> 参数不指定，xmake 也会默认从 AndroidSDK/ndk-bundle 目录，以及 <code>$ANDROID_NDK_HOME</code>, <code>ANDROID_NDK_ROOT</code> 等环境变量中去探测它。</p>
-<p>另外，我们也可以设置导全局的 <code>xmake g --ndk=</code> 配置中，避免每次重复设置。</p>
+<p>默认的下载目录就是当前的目录下 <code>packages</code> 子目录中，我们也可以通过 <code>-o outputdir</code> 参数修改下载目录。</p>
+
+<pre class="language-bash"><code class="language-bash">$ xrepo download -o /tmp zlib
+</code></pre>
 
                         
                     </div>
@@ -443,18 +474,13 @@ $ xmake
                 <div id="previous_next">
                     <div id="previous">
                         
-                        <a href="/get_started/zh/rule/description-scope.html">
+                        <a href="/get_started/zh/features/try-build.html">
                             <span class="icon"></span>
-                            <span class="label">描述域</span>
+                            <span class="label">尝试使用其他构建系统</span>
                         </a>
                         
                     </div>
                     <div id="next">
-                        
-                        <a href="/get_started/zh/toolchain/custom-toolchains.html">
-                            <span class="label">自定义工具链</span>
-                            <span class="icon"></span>
-                        </a>
                         
                     </div>
                 </div>
