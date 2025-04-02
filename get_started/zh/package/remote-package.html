@@ -237,8 +237,7 @@ end)
 
 <pre class="language-console"><code class="language-console">$ xmake
 </code></pre>
-<p>xmake 会去远程拉取相关源码包，然后自动编译安装，最后编译项目，进行依赖包的链接，具体效果见下图：</p>
-<img src="/assets/img/index/package_manage.png" width="80%" />
+<p>xmake 会去远程拉取相关源码包，然后自动编译安装，最后编译项目，进行依赖包的链接。</p>
 <p>关于包依赖管理的更多相关信息和进展见相关 issues：<a href="https://github.com/xmake-io/xmake/issues/69"  target="_blank">Remote package management</a></p>
 <h2 id="%E7%9B%AE%E5%89%8D%E6%94%AF%E6%8C%81%E7%9A%84%E7%89%B9%E6%80%A7">目前支持的特性</h2>
 <ul>
@@ -249,7 +248,7 @@ end)
 </ul>
 <h2 id="%E4%BE%9D%E8%B5%96%E5%8C%85%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6">依赖包处理机制</h2>
 <p>这里我们简单介绍下整个依赖包的处理机制：</p>
-<img src="/assets/img/index/package_arch.png" width="80%" />
+<p><img src="image/package-arch.png" alt="package arch" /></p>
 <ol>
 <li>优先检测当前系统目录、第三方包管理下有没有存在指定的包，如果有匹配的包，那么就不需要下载安装了 （当然也可以设置不使用系统包）</li>
 <li>检索匹配对应版本的包，然后下载、编译、安装（注：安装在特定 xmake 目录，不会干扰系统库环境）</li>
