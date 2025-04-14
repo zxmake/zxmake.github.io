@@ -712,6 +712,13 @@ on_install(function (package)
     import(&quot;package.tools.meson&quot;).install(package, {&quot;-Dxxx=ON&quot;})
 end)
 </code></pre>
+<p>如果是 makefile：</p>
+
+<pre class="language-lua"><code class="language-lua">-- 参考 z3 package
+on_install(function(package)
+    import(&quot;package.tools.make&quot;).install(package)
+end)
+</code></pre>
 <h2 id="package%3Aon_test">package:on_test</h2>
 <p>测试包。</p>
 <p>安装后，需要设置对应的测试脚本，执行一些测试，确保安装包的可靠性，如果测试不通过，则会撤销整个安装包。</p>

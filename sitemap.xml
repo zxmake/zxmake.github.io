@@ -2,247 +2,247 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
             <loc>https://tomo-cat.github.io/get_started/zh/toolchain/remote-toolchains.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/toolchain/custom-toolchains.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/rule/index.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/rule/builtin-rules.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/rule/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/task/plugin-development.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/task/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/task/builtin-plugins.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/environment-variables.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/syntax-description.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/quick-start.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/build-policies.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/builtin-variables.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/theme/switch-themes.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/theme/builtin-themes.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/xrepo/usage.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/toolchain/builtin-toolchains.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/target/script-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/target/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/option/script-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/option/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/system-package.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/local-package.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/local-3rd-source-package.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/script-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/remote-package.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/package/description-scope.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/distcc-build.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/build-cache.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/unity-build.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/autogen.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/try-build.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/features/remote-build.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/module/extension-modules.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/module/builtin-modules.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/module/native-modules.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/configuration.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/install.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/FAQ.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
         <url>
             <loc>https://tomo-cat.github.io/get_started/zh/tutorial/project-examples.html</loc>
-            <lastmod>2025-04-02</lastmod>
+            <lastmod>2025-04-14</lastmod>
             <changefreq>weekly</changefreq>
             <priority>1.0</priority>
         </url>
