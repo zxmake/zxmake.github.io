@@ -682,6 +682,15 @@ on_install(function (package)
 end)
 ```
 
+如果是 makefile：
+
+```lua
+-- 参考 z3 package
+on_install(function(package)
+    import("package.tools.make").install(package)
+end)
+```
+
 ## package:on_test
 
 测试包。
