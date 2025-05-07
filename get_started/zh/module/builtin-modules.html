@@ -1196,6 +1196,11 @@ os.run(&quot;ls -l $(buildir)&quot;)
 
 <pre class="language-lua"><code class="language-lua">local outdata, errdata = os.iorun(&quot;echo hello xmake!&quot;)
 </code></pre>
+<p>我们也可以利用 <code>bash -c</code> 来实现管道命令：</p>
+
+<pre class="language-lua"><code class="language-lua">local output = os.iorun([[bash -c &quot;cat /etc/passwd | grep '/bin/bash' | wc -l | tr -d '\n'&quot;]])
+print(&quot;match lines count: [&quot; .. output .. &quot;]&quot;)
+</code></pre>
 <h3 id="os.iorunv">os.iorunv</h3>
 <p>安静运行原生 shell 命令并获取输出内容，带参数列表。</p>
 <p>跟 <a href="#osiorun"  >os.iorun</a> 类似，只是传递参数的方式是通过参数列表传递，而不是字符串命令，例如：</p>
@@ -1205,6 +1210,17 @@ os.run(&quot;ls -l $(buildir)&quot;)
 <p>另外，此接口也支持 envs 参数设置：</p>
 
 <pre class="language-lua"><code class="language-lua">local outdata, errdata = os.iorunv(&quot;echo&quot;, {&quot;hello&quot;, &quot;xmake!&quot;}, {envs = {PATH = &quot;xxx;xx&quot;, CFLAGS = &quot;xx&quot;}}
+</code></pre>
+<h3 id="os.iorun_with_pipes">os.iorun_with_pipes</h3>
+<p>安静运行原生 shell 命令并获取输出内容，支持管道。</p>
+
+<pre class="language-lua"><code class="language-lua">-- 可以运行带管道符的复杂 shell 命令
+-- @see https://github.com/TOMO-CAT/xmake/issues/140
+--
+-- 官方实现方法比较复杂: https://github.com/xmake-io/xmake/discussions/6002
+local output = os.iorun_with_pipes(
+                    &quot;cat /etc/passwd | grep '/bin/bash' | wc -l | tr -d '\n'&quot;)
+print(&quot;match lines count: [&quot; .. output .. &quot;]&quot;)
 </code></pre>
 <h3 id="os.getenv">os.getenv</h3>
 <p>获取系统环境变量。</p>
