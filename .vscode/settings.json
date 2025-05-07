@@ -3,11 +3,16 @@
         "markdown": false
     },
     "cSpell.words": [
+        "alefragnani",
+        "Anson",
         "distcc",
+        "doxdocgen",
+        "Koihik",
         "pypi",
         "slogon",
         "tomo",
         "xmake",
         "xrepo"
-    ]
+    ],
+    "editor.formatOnSave": true
 }

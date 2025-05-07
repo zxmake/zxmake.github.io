@@ -980,6 +980,13 @@ xmake 还支持设置 stdin 参数，来支持重定向输入文件。
 local outdata, errdata = os.iorun("echo hello xmake!")
 ```
 
+我们也可以利用 `bash -c` 来实现管道命令：
+
+```lua
+local output = os.iorun([[bash -c "cat /etc/passwd | grep '/bin/bash' | wc -l | tr -d '\n'"]])
+print("match lines count: [" .. output .. "]")
+```
+
 ### os.iorunv
 
 安静运行原生 shell 命令并获取输出内容，带参数列表。
@@ -994,6 +1001,20 @@ local outdata, errdata = os.iorunv("echo", {"hello", "xmake!"})
 
 ```lua
 local outdata, errdata = os.iorunv("echo", {"hello", "xmake!"}, {envs = {PATH = "xxx;xx", CFLAGS = "xx"}}
+```
+
+### os.iorun_with_pipes
+
+安静运行原生 shell 命令并获取输出内容，支持管道。
+
+```lua
+-- 可以运行带管道符的复杂 shell 命令
+-- @see https://github.com/TOMO-CAT/xmake/issues/140
+--
+-- 官方实现方法比较复杂: https://github.com/xmake-io/xmake/discussions/6002
+local output = os.iorun_with_pipes(
+                    "cat /etc/passwd | grep '/bin/bash' | wc -l | tr -d '\n'")
+print("match lines count: [" .. output .. "]")
 ```
 
 ### os.getenv
