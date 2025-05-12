@@ -721,6 +721,57 @@ os.cp("src/**.h", "/tmp/", {rootdir = "src"})
 os.cp("/xxx/foo", "/xxx/bar", {symlink = true})
 ```
 
+和 Linux 上的 cp 命令不同，xmake 的 cp 接口无法将同名的文件夹复制到目标路径，最终只能保留一个文件夹。例如：
+
+文件路径，A 和 B 有一个同名的文件夹 conf：
+
+```bash
+.
+├── A
+│   └── conf
+│       ├── 1
+│       │   └── A1.txt
+│       └── 2
+│           └── A2.txt
+├── B
+│   └── conf
+│       ├── 1
+│       │   └── B1.txt
+│       └── 2
+│           └── B2.txt
+└── test.lua
+```
+
+我们希望将 A 和 B 两个 conf 文件夹的内容都**合并**到 output 目录下：
+
+```lua
+os.mkdir("output/test1")
+os.cp("A/conf", "output/test1", {rootdir = "A/conf"})
+os.cp("B/conf", "output/test1", {rootdir = "B/conf"})
+```
+
+合并完后丢失 A 的 conf 信息：
+
+```bash
+$tree output/
+output/
+└── test1
+    ├── 1
+    │   └── B1.txt
+    └── 2
+        └── B2.txt
+```
+
+最终我们不得已通过 `bash -c` 实现这个功能：
+
+```lua
+os.mkdir("output/test5")
+os.vrun("bash -c 'cp -r A/conf/* output/test5'")
+os.vrun("bash -c 'cp -r B/conf/* output/test5'")
+```
+
+相关的讨论可见 xmake 源码的 `example/api/os.cp` 例子。
+
 ### os.mv
 
 移动重命名文件或目录。
