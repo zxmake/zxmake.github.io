@@ -1021,6 +1021,47 @@ os.cp(&quot;$(curdir)/test/&quot;, &quot;$(tmpdir)/test&quot;)
 
 <pre class="language-lua"><code class="language-lua">os.cp(&quot;/xxx/foo&quot;, &quot;/xxx/bar&quot;, {symlink = true})
 </code></pre>
+<p>和 Linux 上的 cp 命令不同，xmake 的 cp 接口无法将同名的文件夹复制到目标路径，最终只能保留一个文件夹。例如：</p>
+<p>文件路径，A 和 B 有一个同名的文件夹 conf：</p>
+
+<pre class="language-bash"><code class="language-bash">.
+├── A
+│   └── conf
+│       ├── 1
+│       │   └── A1.txt
+│       └── 2
+│           └── A2.txt
+├── B
+│   └── conf
+│       ├── 1
+│       │   └── B1.txt
+│       └── 2
+│           └── B2.txt
+└── test.lua
+</code></pre>
+<p>我们希望将 A 和 B 两个 conf 文件夹的内容都<strong>合并</strong>到 output 目录下：</p>
+
+<pre class="language-lua"><code class="language-lua">os.mkdir(&quot;output/test1&quot;)
+os.cp(&quot;A/conf&quot;, &quot;output/test1&quot;, {rootdir = &quot;A/conf&quot;})
+os.cp(&quot;B/conf&quot;, &quot;output/test1&quot;, {rootdir = &quot;B/conf&quot;})
+</code></pre>
+<p>合并完后丢失 A 的 conf 信息：</p>
+
+<pre class="language-bash"><code class="language-bash">$tree output/
+output/
+└── test1
+    ├── 1
+    │   └── B1.txt
+    └── 2
+        └── B2.txt
+</code></pre>
+<p>最终我们不得已通过 <code>bash -c</code> 实现这个功能：</p>
+
+<pre class="language-lua"><code class="language-lua">os.mkdir(&quot;output/test5&quot;)
+os.vrun(&quot;bash -c 'cp -r A/conf/* output/test5'&quot;)
+os.vrun(&quot;bash -c 'cp -r B/conf/* output/test5'&quot;)
+</code></pre>
+<p>相关的讨论可见 xmake 源码的 <code>example/api/os.cp</code> 例子。</p>
 <h3 id="os.mv">os.mv</h3>
 <p>移动重命名文件或目录。</p>
 <p>跟 <a href="#oscp"  >os.cp</a> 的使用类似，同样支持多文件移动操作和模式匹配，例如：</p>
