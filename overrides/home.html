@@ -138,10 +138,16 @@
     }
     .features__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       max-width: 1000px;
       margin: 0 auto;
+    }
+    @media screen and (max-width: 900px) {
+      .features__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media screen and (max-width: 500px) {
+      .features__grid { grid-template-columns: 1fr; }
     }
     .feature-card {
       background: rgba(255,255,255,0.03);
