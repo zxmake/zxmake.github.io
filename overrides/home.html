@@ -1,0 +1,338 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <style>
+    .md-header { position: initial; }
+    .md-main__inner { margin: 0; }
+    .md-content { display: none; }
+    @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none; } }
+    @media screen and (min-width: 76.25em) { .md-sidebar--primary { display: none; } }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0d1117;
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .hero canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 800px;
+    }
+    .hero__title {
+      font-size: 5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #00d2ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .hero__subtitle {
+      font-size: 1.4rem;
+      color: #8b949e;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero__buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .hero__btn {
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .hero__btn--primary {
+      background: linear-gradient(135deg, #667eea, #00d2ff);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    }
+    .hero__btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+    }
+    .hero__btn--secondary {
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      background: rgba(255,255,255,0.05);
+    }
+    .hero__btn--secondary:hover {
+      border-color: #667eea;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .terminal {
+      width: 100%;
+      max-width: 560px;
+      background: #161b22;
+      border-radius: 12px;
+      border: 1px solid #30363d;
+      overflow: hidden;
+      text-align: left;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+    .terminal__header {
+      padding: 12px 16px;
+      background: #1c2128;
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid #30363d;
+    }
+    .terminal__dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .terminal__dot--red { background: #ff5f57; }
+    .terminal__dot--yellow { background: #febc2e; }
+    .terminal__dot--green { background: #28c840; }
+    .terminal__body {
+      padding: 1.2rem 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: #c9d1d9;
+      min-height: 140px;
+    }
+    .terminal__prompt { color: #7ee787; }
+    .terminal__cmd { color: #c9d1d9; }
+    .terminal__output { color: #8b949e; }
+    .terminal__success { color: #3fb950; }
+    .terminal__cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      background: #58a6ff;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .features {
+      background: #0d1117;
+      padding: 5rem 2rem;
+      border-top: 1px solid #21262d;
+    }
+    .features__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: #667eea;
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    }
+    .feature-card__icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #e6edf3;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card__desc {
+      font-size: 0.9rem;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hero__title { font-size: 3rem; }
+      .hero__subtitle { font-size: 1.1rem; }
+      .hero__buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <section class="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero__content">
+      <h1 class="hero__title">xmake</h1>
+      <p class="hero__subtitle">基于 Lua 的跨平台构建工具，更好地适配大型项目</p>
+      <div class="hero__buttons">
+        <a href="{{ 'tutorial/quick-start/' | url }}" class="hero__btn hero__btn--primary">快速开始</a>
+        <a href="https://github.com/zxmake" class="hero__btn hero__btn--secondary">GitHub →</a>
+      </div>
+      <div class="terminal">
+        <div class="terminal__header">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+        </div>
+        <div class="terminal__body" id="terminal-body">
+          <span class="terminal__cursor"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">🌍</div>
+        <div class="feature-card__title">跨平台</div>
+        <div class="feature-card__desc">Windows、Linux、macOS 全平台支持，一份配置到处构建</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">⚡</div>
+        <div class="feature-card__title">极速构建</div>
+        <div class="feature-card__desc">增量编译 + 并行构建，构建速度比 CMake 更快</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">🌙</div>
+        <div class="feature-card__title">Lua 语法</div>
+        <div class="feature-card__desc">简洁优雅的构建描述，告别 CMakeLists 的繁琐</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">📦</div>
+        <div class="feature-card__title">包管理</div>
+        <div class="feature-card__desc">内置依赖管理，一行代码集成第三方库</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  // Particle animation
+  (function() {
+    var canvas = document.getElementById('particles');
+    var ctx = canvas.getContext('2d');
+    var particles = [];
+    var mouse = { x: -1000, y: -1000 };
+
+    function resize() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    for (var i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 1.5 + 0.5
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(102, 126, 234, 0.6)';
+        ctx.fill();
+
+        for (var j = i + 1; j < particles.length; j++) {
+          var p2 = particles[j];
+          var dx = p.x - p2.x, dy = p.y - p2.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = 'rgba(102, 126, 234,' + (1 - dist / 120) * 0.3 + ')';
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
+  // Terminal typewriter
+  (function() {
+    var lines = [
+      { type: 'cmd', text: '$ xmake create -l c++ hello' },
+      { type: 'output', text: 'create hello ...' },
+      { type: 'success', text: 'create ok!' },
+      { type: 'cmd', text: '$ cd hello && xmake' },
+      { type: 'output', text: '[ 50%]: compiling src/main.cpp' },
+      { type: 'output', text: '[100%]: linking hello' },
+      { type: 'success', text: 'build ok! ✓' },
+      { type: 'cmd', text: '$ xmake run' },
+      { type: 'success', text: 'Hello, xmake!' }
+    ];
+    var el = document.getElementById('terminal-body');
+    var lineIdx = 0, charIdx = 0;
+    var currentHTML = '';
+
+    function typeNext() {
+      if (lineIdx >= lines.length) {
+        setTimeout(function() {
+          lineIdx = 0; charIdx = 0; currentHTML = '';
+          el.innerHTML = '<span class="terminal__cursor"></span>';
+          setTimeout(typeNext, 500);
+        }, 3000);
+        return;
+      }
+      var line = lines[lineIdx];
+      if (charIdx === 0) {
+        currentHTML += '<div class="terminal__' + line.type + '">';
+      }
+      if (charIdx < line.text.length) {
+        charIdx++;
+        var partial = currentHTML + line.text.substring(0, charIdx) + '<span class="terminal__cursor"></span>';
+        el.innerHTML = partial + '</div>';
+        setTimeout(typeNext, line.type === 'cmd' ? 50 : 20);
+      } else {
+        currentHTML += line.text + '</div>';
+        el.innerHTML = currentHTML + '<span class="terminal__cursor"></span>';
+        lineIdx++; charIdx = 0;
+        setTimeout(typeNext, line.type === 'cmd' ? 600 : 400);
+      }
+    }
+    setTimeout(typeNext, 800);
+  })();
+  </script>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}{{ super() }}{% endblock %}

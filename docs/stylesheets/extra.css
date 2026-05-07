@@ -1,0 +1,19 @@
+:root {
+    --md-primary-fg-color: #667eea;
+    --md-accent-fg-color: #00d2ff;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #667eea;
+    --md-accent-fg-color: #4dd0e1;
+}
+
+.md-header {
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.md-tabs {
+    background: rgba(13, 17, 23, 0.9);
+    border-bottom: 1px solid #21262d;
+}
