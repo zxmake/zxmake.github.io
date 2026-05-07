@@ -1,7 +1,7 @@
 site_name: xmake-docs
 site_url: https://zxmake.github.io/
-repo_url: https://github.com/zxmake/zxmake.github.io
-repo_name: zxmake/zxmake.github.io
+repo_url: https://github.com/TOMO-CAT/xmake
+repo_name: TOMO-CAT/xmake
 
 theme:
   name: material
@@ -10,7 +10,7 @@ theme:
   logo: assets/logo-64.png
   favicon: assets/favicon.ico
   font:
-    text: Noto Sans SC
+    text: Inter
     code: JetBrains Mono
   palette:
     - scheme: default
