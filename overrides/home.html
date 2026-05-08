@@ -5,17 +5,17 @@
 
   <style>
     :root {
-      --home-bg: #111a22;
-      --home-bg-2: #16242d;
-      --home-text: #f8f3e8;
-      --home-muted: #c8d0d5;
-      --home-dim: #83919a;
-      --home-gold: #e9bf66;
-      --home-gold-soft: #ffe3a1;
-      --home-cyan: #69dce7;
-      --home-green: #89d98b;
-      --home-border: rgba(244, 225, 180, 0.22);
-      --home-shadow: 0 30px 80px rgba(20, 30, 38, 0.34);
+      --home-bg: #090e11;
+      --home-bg-2: #0f161c;
+      --home-text: #ffffff;
+      --home-muted: #a1b0b9;
+      --home-dim: #60707a;
+      --home-gold: #f4c868;
+      --home-gold-soft: #ffeab0;
+      --home-cyan: #55dbe8;
+      --home-green: #83e086;
+      --home-border: rgba(255, 255, 255, 0.08);
+      --home-shadow: 0 32px 90px rgba(0, 0, 0, 0.6);
     }
 
     .md-header {
@@ -84,7 +84,7 @@
     .home {
       color: var(--home-text);
       background: var(--home-bg);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Plus Jakarta Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow: hidden;
     }
 
@@ -160,6 +160,7 @@
     .hero__visual {
       width: 100%;
       justify-self: stretch;
+      transform: translateY(1.15rem);
     }
 
     .hero__brand {
@@ -169,7 +170,7 @@
       min-height: 2.25rem;
       padding: 0.45rem 0.9rem;
       border: 1px solid var(--home-border);
-      border-radius: 999px;
+      border-radius: 8px;
       background: rgba(246, 241, 229, 0.1);
       color: var(--home-gold-soft);
       font-size: 0.8rem;
@@ -186,9 +187,10 @@
 
     .hero__title {
       margin: 1.3rem 0 0;
-      font-size: 7rem;
+      font-size: 7.5rem;
       font-weight: 880;
-      line-height: 0.92;
+      line-height: 0.95;
+      letter-spacing: 0;
     }
 
     .hero__title span {
@@ -222,10 +224,10 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      min-width: 10rem;
-      min-height: 3rem;
-      padding: 0.82rem 1.15rem;
-      border-radius: 6px;
+      min-width: 9.8rem;
+      min-height: 2.9rem;
+      padding: 0.78rem 1.1rem;
+      border-radius: 8px;
       font-size: 0.9rem;
       font-weight: 820;
       transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
@@ -265,6 +267,18 @@
       box-shadow: var(--home-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.12);
       overflow: hidden;
       backdrop-filter: blur(22px) saturate(1.25);
+      position: relative;
+    }
+
+    .command-deck::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(90deg, rgba(85, 219, 232, 0.08), transparent 36%, rgba(244, 200, 104, 0.08));
+      opacity: 0.8;
     }
 
     .command-deck__bar {
@@ -275,6 +289,7 @@
       padding: 0 1rem;
       border-bottom: 1px solid rgba(246, 241, 229, 0.13);
       background: rgba(246, 241, 229, 0.07);
+      position: relative;
     }
 
     .command-deck__dots {
@@ -304,6 +319,50 @@
       color: #a5b1b7;
       font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
       font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .command-deck__label span {
+      color: #dbe3e5;
+    }
+
+    .command-deck__label::before {
+      content: "cache 78%";
+      padding: 0.18rem 0.42rem;
+      border: 1px solid rgba(131, 224, 134, 0.25);
+      border-radius: 5px;
+      color: var(--home-green);
+      background: rgba(131, 224, 134, 0.08);
+      font-size: 0.62rem;
+    }
+
+    .command-deck__meter {
+      position: relative;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+
+    .command-deck__meter span {
+      display: block;
+      width: 78%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--home-cyan), var(--home-gold));
+      box-shadow: 0 0 18px rgba(244, 200, 104, 0.36);
+      animation: deck-progress 3.8s ease-in-out infinite;
+      transform-origin: left;
+    }
+
+    @keyframes deck-progress {
+      0%, 100% {
+        transform: scaleX(0.76);
+      }
+
+      55% {
+        transform: scaleX(1);
+      }
     }
 
     .command-deck__code {
@@ -313,6 +372,22 @@
       font-size: 0.86rem;
       line-height: 1.82;
       color: #edf4f4;
+      position: relative;
+    }
+
+    .command-deck__footer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      min-height: 2.35rem;
+      padding: 0 1rem;
+      border-top: 1px solid rgba(246, 241, 229, 0.11);
+      color: #91a2ab;
+      background: rgba(5, 12, 16, 0.18);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.68rem;
     }
 
     .line {
@@ -359,34 +434,41 @@
     }
 
     .hero__rail {
-      width: min(900px, 100%);
+      width: min(860px, 100%);
       grid-column: 1 / -1;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
+      gap: 0;
       margin: 0 auto;
+      border: 1px solid rgba(246, 241, 229, 0.12);
+      border-radius: 8px;
+      background: rgba(9, 14, 17, 0.22);
+      overflow: hidden;
+      backdrop-filter: blur(16px) saturate(1.15);
     }
 
     .hero__rail-item {
-      min-height: 4.4rem;
-      padding: 0.9rem;
-      border: 1px solid rgba(246, 241, 229, 0.16);
-      border-radius: 8px;
-      background: rgba(246, 241, 229, 0.08);
+      min-height: 3.9rem;
+      padding: 0.72rem 0.95rem;
+      border-right: 1px solid rgba(246, 241, 229, 0.1);
+      background: rgba(246, 241, 229, 0.035);
       text-align: left;
-      backdrop-filter: blur(18px);
+    }
+
+    .hero__rail-item:last-child {
+      border-right: 0;
     }
 
     .hero__rail-kicker {
-      color: var(--home-gold-soft);
+      color: rgba(255, 234, 176, 0.82);
       font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.7rem;
-      margin-bottom: 0.35rem;
+      font-size: 0.64rem;
+      margin-bottom: 0.28rem;
     }
 
     .hero__rail-copy {
       color: #eef4f3;
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       line-height: 1.35;
       font-weight: 720;
     }
@@ -505,7 +587,7 @@
       width: 2rem;
       height: 2rem;
       border: 1px solid rgba(22, 137, 147, 0.18);
-      border-radius: 6px;
+      border-radius: 8px;
       color: #168993;
       background: rgba(22, 137, 147, 0.08);
       font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -628,6 +710,10 @@
         margin: 0 auto;
       }
 
+      .hero__visual {
+        transform: none;
+      }
+
       .hero__title {
         font-size: 5.4rem;
       }
@@ -649,6 +735,18 @@
       .hero__rail {
         grid-column: auto;
         margin-top: 0.2rem;
+      }
+
+      .hero__rail-item {
+        border-bottom: 1px solid rgba(246, 241, 229, 0.1);
+      }
+
+      .hero__rail-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .hero__rail-item:nth-child(n+3) {
+        border-bottom: 0;
       }
 
       .section-heading {
@@ -695,10 +793,30 @@
         padding: 1rem;
       }
 
+      .command-deck__footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0.72rem 1rem;
+      }
+
+      .command-deck__label span {
+        display: none;
+      }
+
       .hero__rail,
       .capability-grid,
       .metric-strip {
         grid-template-columns: 1fr;
+      }
+
+      .hero__rail-item,
+      .hero__rail-item:nth-child(2n) {
+        border-right: 0;
+        border-bottom: 1px solid rgba(246, 241, 229, 0.1);
+      }
+
+      .hero__rail-item:last-child {
+        border-bottom: 0;
       }
 
       .home-section {
@@ -752,9 +870,15 @@
                 <span class="command-deck__dot"></span>
                 <span class="command-deck__dot"></span>
               </div>
-              <div class="command-deck__label">build pipeline</div>
+              <div class="command-deck__label"><span>workspace / build pipeline</span></div>
             </div>
+            <div class="command-deck__meter" aria-hidden="true"><span></span></div>
             <div class="command-deck__code" id="term"></div>
+            <div class="command-deck__footer" aria-hidden="true">
+              <span>linux-arm64</span>
+              <span>clang / release</span>
+              <span>elapsed 1.84s</span>
+            </div>
           </div>
         </div>
 
@@ -1001,10 +1125,12 @@
     var el = document.getElementById("term");
     if (!el) return;
     var lines = [
-      { cls: "line--cmd", text: "$ xmake f -p linux -a arm64" },
-      { cls: "line--cool", text: "toolchain: clang / target: arm64" },
+      { cls: "line--cmd", text: "$ xmake f -p linux -a arm64 --toolchain=clang" },
+      { cls: "line--dim", text: "resolving target graph ..." },
+      { cls: "line--cool", text: "toolchain clang -> linux/arm64" },
       { cls: "line--cmd", text: "$ xmake build -j16" },
-      { cls: "line--accent", text: "cache hit 78%" },
+      { cls: "line--accent", text: "[78%] cache hit, compiling engine.c" },
+      { cls: "line--dim", text: "linking build/xmake" },
       { cls: "line--ok", text: "build ok, elapsed 1.84s" }
     ];
     var line = 0;

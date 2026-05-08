@@ -10,7 +10,7 @@ theme:
   logo: assets/logo-64.png
   favicon: assets/favicon.ico
   font:
-    text: Inter
+    text: "Plus Jakarta Sans"
     code: JetBrains Mono
   palette:
     - scheme: default
