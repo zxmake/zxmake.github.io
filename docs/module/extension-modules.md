@@ -211,7 +211,7 @@ json.savefile("/tmp/xxx.json", {1, {a = 1}})
 linker.link("binary", "cc", {"a.o", "b.o", "c.o"}, target:targetfile(), {target = target})
 ```
 
-其中 [target](#target)，为工程目标，这里传入，主要用于获取 target 特定的链接选项，具体如果获取工程目标对象，见：[core.project.project](#core-project-project)
+其中 [target](#target)，为工程目标，这里传入，主要用于获取 target 特定的链接选项，具体如何获取工程目标对象，见：[core.project.project](#core-project-project)
 
 当然也可以不指定 target，例如：
 
@@ -316,9 +316,9 @@ end
 compiler.compile("xxx.c", "xxx.o", "xxx.h.d", {target = target})
 ```
 
-其中 [target](#target)，为工程目标，这里传入主要用于获取 taeget 的特定编译选项，具体如果获取工程目标对象，见：[core.project.project](#core-project-project)
+其中 [target](#target)，为工程目标，这里传入主要用于获取 target 的特定编译选项，具体如何获取工程目标对象，见：[core.project.project](#core-project-project)
 
-而 `xxx.h.d` 文件用于存储为此源文件的头文件依赖文件列表，最后这两个参数都是可选的，编译的时候可以不传他们：
+而 `xxx.h.d` 文件用于存储为此源文件的头文件依赖文件列表，最后这两个参数都是可选的，编译的时候可以不传它们：
 
 ```lua
 compiler.compile("xxx.c", "xxx.o")

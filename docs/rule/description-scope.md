@@ -233,7 +233,7 @@ rule("markdown", function()
 end)
 ```
 
-其中第三个参数 opt 是可选参数，用于获取一些编译过程中的信息状态，例如：opt.progress 为当期的编译进度。
+其中第三个参数 opt 是可选参数，用于获取一些编译过程中的信息状态，例如：opt.progress 为当前的编译进度。
 
 ## rule:on_buildcmd_file
 

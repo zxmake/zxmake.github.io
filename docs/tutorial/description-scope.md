@@ -500,7 +500,7 @@ set_xmakever("2.1.0")
 
 #### 添加模块目录
 
-xmake 内置的扩展模块都在 `xmake/modules` 目录下，可通过 [import](#import) 来导入他们，如果自己在工程里面实现了一些扩展模块，
+xmake 内置的扩展模块都在 `xmake/modules` 目录下，可通过 [import](#import) 来导入它们，如果自己在工程里面实现了一些扩展模块，
 可以放置在这个接口指定的目录下，import 也就会能找到，并且优先进行导入。
 
 ### add_plugindirs
@@ -608,7 +608,7 @@ add_requires("zlib", {system = false})
 
 默认包安装，对于下载的包都是会去自动校验完整性，避免被篡改，但是如果安装一些未知新版本的包，就不行了。
 
-用户可以通过 `{verify = false}` 强行禁用包完整性校验来临时安装他们（但通常不推荐这么做）。
+用户可以通过 `{verify = false}` 强行禁用包完整性校验来临时安装它们（但通常不推荐这么做）。
 
 ```lua
 add_requires("zlib", {verify = false})
@@ -891,7 +891,7 @@ add_requireconfs("libwebp.*|cmake", {debug = true})
 如果需要的包不在官方仓库 [xmake-repo](https://github.com/xmake-io/xmake-repo) 中，我们可以提交贡献代码到仓库进行支持。
 但如果有些包仅用于个人或者私有项目，我们可以建立一个私有仓库 repo，仓库组织结构可参考：[xmake-repo](https://github.com/xmake-io/xmake-repo)
 
-比如，现在我们有一个一个私有仓库 repo：`git@github.com:myrepo/xmake-repo.git`
+比如，现在我们有一个私有仓库 repo：`git@github.com:myrepo/xmake-repo.git`
 
 我们可以通过此接口来添加：
 

@@ -495,7 +495,7 @@ xmake 会同时支持这两种写法，内部会去自动智能检测，选择�
 
 这样的话，仅仅 hello 是显示红色，其他还是正常默认黑色显示。
 
-其他颜色属于，我这里就不一一介绍，直接贴上 xmake 代码里面的属性列表吧：
+其他颜色属性，我这里就不一一介绍，直接贴上 xmake 代码里面的属性列表吧：
 
 ```lua
     colors.keys =
@@ -599,7 +599,7 @@ local s = vformat("hello %s $(mode) $(arch) $(env PATH)", xmake)
 
 抛出异常中断程序。
 
-如果想在自定义脚本、插件任务中中断 xmake 运行，可以使用这个接口抛出异常，如果上层没有显示调用 [try-catch](#try-catch-finally) 捕获的话，xmake 就会中断执行，并且显示出错信息。
+如果想在自定义脚本、插件任务中中断 xmake 运行，可以使用这个接口抛出异常，如果上层没有显式调用 [try-catch](#try-catch-finally) 捕获的话，xmake 就会中断执行，并且显示出错信息。
 
 ```lua
 if (errors) raise(errors)

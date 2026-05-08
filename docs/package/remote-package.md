@@ -235,7 +235,7 @@ add_requires("zlib 1.x", {external = false})
 
 ## 第三方依赖包安装
 
-xmake 支持对对第三方包管理器里面的依赖库安装支持，例如：conan, brew, vcpkg 等
+xmake 支持对第三方包管理器里面的依赖库安装支持，例如：conan, brew, vcpkg 等
 
 ### 添加 homebrew 的依赖包
 
@@ -523,7 +523,7 @@ end)
 如果需要的包不在官方仓库 [xmake-repo](https://github.com/xmake-io/xmake-repo) 中，我们可以提交贡献代码到仓库进行支持。
 但如果有些包仅用于个人或者私有项目，我们可以建立一个私有仓库 repo，仓库组织结构可参考：[xmake-repo](https://github.com/xmake-io/xmake-repo)
 
-比如，现在我们有一个一个私有仓库 repo：`git@github.com:myrepo/xmake-repo.git`
+比如，现在我们有一个私有仓库 repo：`git@github.com:myrepo/xmake-repo.git`
 
 我们可以通过下面的命令进行仓库添加：
 
@@ -754,7 +754,7 @@ $ xmake g --help
                                  - xmake g --proxy_hosts='github.com,gitlab.*,*.xmake.io'
 ```
 
-如果设置了 hosts 列表，那么之后这个列表里面匹配的 host 才走代理。。
+如果设置了 hosts 列表，那么之后这个列表里面匹配的 host 才走代理。
 
 `--proxy_host` 支持多个 hosts 设置，逗号分隔，并且支持基础的模式匹配 *.github.com， 以及其他 lua 模式匹配规则也支持
 

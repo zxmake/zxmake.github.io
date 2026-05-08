@@ -97,7 +97,7 @@ target("test", function()
 end)
 ```
 
-然后我们就可以随意设置各种原始 flags，xmake 不会去自动检测和忽略他们了。
+然后我们就可以随意设置各种原始 flags，xmake 不会去自动检测和忽略它们了。
 
 ### check.auto_map_flags
 
@@ -130,7 +130,7 @@ set_policy("check.auto_map_flags", false)
 ### build.across_targets_in_parallel
 
 这个策略也是默认开启的，主要用于跨 target 间执行并行构建，v2.3.3 之前的版本，并行构建只能针对单个 target 内部的所有源文件，
-跨 target 的编译，必须要要等先前的 target 完全 link 成功，才能执行下一个 target 的编译，这在一定程度上会影响编译速度。
+跨 target 的编译，必须要等先前的 target 完全 link 成功，才能执行下一个 target 的编译，这在一定程度上会影响编译速度。
 
 然而每个 target 的源文件是可以完全并行化处理的，最终在一起执行 link 过程，v2.3.3 之后的版本通过这个优化，构建速度提升了30%。
 
@@ -265,7 +265,7 @@ $ xmake f --policies=build.optimization.lto
 
 可以通过这个配置，显示开启对特定目标的设备链接。
 
-这通常用于 Cuda 项目的构建，以及非 Cuda binary/shared 依赖 Cuda static 目标的情况，这个时候，Cuda static 目标就需要显示配置这个，开启设备链接。
+这通常用于 Cuda 项目的构建，以及非 Cuda binary/shared 依赖 Cuda static 目标的情况，这个时候，Cuda static 目标就需要显式配置这个，开启设备链接。
 
 ```lua
 target("test", function()
@@ -347,7 +347,7 @@ $ xmake f --policies=build.sanitizer.address,build.sanitizer.undefined
 
 ### build.always_update_configfiles
 
-这个策略用于对 `add_configfiles` 配置文件的自动生成行为。默认情况下，xmake 仅仅只会在首次 `xmake config` 时候，或者 xmake.lua 配置有改动的是否，才会触发 configfiles 的重新生成。
+这个策略用于对 `add_configfiles` 配置文件的自动生成行为。默认情况下，xmake 仅仅只会在首次 `xmake config` 时候，或者 xmake.lua 配置有改动的时候，才会触发 configfiles 的重新生成。
 
 之后的每次构建，只要配置没有变化，就不会重新生成 configfiles。
 

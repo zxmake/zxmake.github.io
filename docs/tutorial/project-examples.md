@@ -1264,7 +1264,7 @@ end)
 [完整例子](https://github.com/xmake-io/xmake/blob/dev/tests/projects/swig/java_c)
 
 ```lua
--- make sure you config to an enviroment with jni.h
+-- make sure you configure an environment with jni.h
 -- for example: xmake f -c -p android
 
 target("example", function()
@@ -1757,7 +1757,7 @@ end)
 
 ## Linux 内核驱动模块
 
-xmake 完整支持了 Linux 内核驱动模块的构建，这也许首个也是唯一一个支持编译 Linux 内核驱动的第三方构建工具了。
+xmake 完整支持了 Linux 内核驱动模块的构建，这也许是首个也是唯一一个支持编译 Linux 内核驱动的第三方构建工具了。
 
 ### Hello world 模块
 

@@ -51,7 +51,7 @@ bash scripts/install.sh --runtime=luajit
 
 ### root 下安装
 
-xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root 用户运行 xmake 会打印一条 warning 日志，用户可以设置环境变量 `XMAKE_ROOT=y` 屏蔽相关的报警，用户需要随时注意root下误操作系统文件文件的风险。
+xmake 不推荐 root 下安装使用，因为这很不安全。因此以 root 用户运行 xmake 会打印一条 warning 日志，用户可以设置环境变量 `XMAKE_ROOT=y` 屏蔽相关的报警，用户需要随时注意在 root 下误操作系统文件的风险。
 
 ### 启用 ccache
 

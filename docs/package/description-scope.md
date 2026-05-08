@@ -316,7 +316,7 @@ end)
 
 但如果用户通过 `apt install libusb-1.0` 安装了 libusb 库到系统，那么按理 xmake 应该会自动优先查找用户安装到系统环境的 libusb 包，直接使用，避免额外的下载编译安装。
 
-但是问题来了，xmake 内部通过 `find_package("libusb")` 并没有找打它，这是为什么呢？因为通过 apt 安装的 libusb 包名是 `libusb-1.0`, 而不是 libusb。
+但是问题来了，xmake 内部通过 `find_package("libusb")` 并没有找到它，这是为什么呢？因为通过 apt 安装的 libusb 包名是 `libusb-1.0`, 而不是 libusb。
 
 我们只能通过 `pkg-config --cflags libusb-1.0` 才能找到它，但是 xmake 内部的默认 find_package 逻辑并不知道 `libusb-1.0` 的存在，所以找不到。
 
@@ -401,7 +401,7 @@ end)
 
 这是 2.6.4 新加的接口，我们可以通过它去继承一个已有的包的全部配置，然后在此基础上重写部分配置。
 
-这通常在用户自己的项目中，修改 xmake-repo 官方仓库的内置包比较有用，比如：修复改 urls，修改版本列表，安装逻辑等等。
+这通常在用户自己的项目中，修改 xmake-repo 官方仓库的内置包比较有用，比如：修改 urls、修改版本列表、安装逻辑等等。
 
 例如，修改内置 zlib 包的 url，切到自己的 zlib 源码地址。
 

@@ -177,7 +177,7 @@ $ xmake
 -L/home/toolchains_sdkdir/lib
 ```
 
-这些都是 xmake 自动处理的，不需要手动配置他们。
+这些都是 xmake 自动处理的，不需要手动配置它们。
 
 ### 手动配置编译
 
@@ -609,7 +609,7 @@ $ xmake
 -I/home/toolchains_sdkdir/include -L/home/toolchains_sdkdir/lib
 ```
 
-这些都是xmake自动处理的，不需要手动配置他们。。
+这些都是 xmake 自动处理的，不需要手动配置它们。
 
 #### --bin
 

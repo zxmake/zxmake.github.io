@@ -3,7 +3,7 @@
 
 对于一份工程源码，可以不用编写 makefile，也不用编写各种 make 相关的工程描述文件（例如：xmake.lua，makefile.am, cmakelist.txt 等）
 
-xmake 就可以直接编译他们，这是如何做到的呢，简单来说下实现原理：
+xmake 就可以直接编译它们，这是如何做到的呢，简单来说一下实现原理：
 
 1. 首先扫描当前目录下，xmake 可以支持的所有源代码文件
 2. 分析代码，检测哪些代码拥有 main 入口函数
@@ -133,7 +133,7 @@ clean ok!
 build ok!👌
 ```
 
-通过输出结果，可以看到，xmake 会去检测扫描当前目录下的所有. c 代码，发现没有 main 入口，应该是静态库程序，因此执行 xmake 后，就直接编译成静态库 libzlib-1.2.a 了
+通过输出结果，可以看到，xmake 会去检测扫描当前目录下的所有 .c 代码，发现没有 main 入口，应该是静态库程序，因此执行 xmake 后，就直接编译成静态库 libzlib-1.2.a 了
 
 连 xmake.lua 都没有编写，其实 xmake 在扫描完成后，会去自动在当前目录下生成一份 xmake.lua，下次编译就不需要重新扫描检测了。
 
@@ -141,7 +141,7 @@ build ok!👌
 
 ```lua
 -- define target
-target("zlib-1.2"， function()
+target("zlib-1.2", function()
 
     -- set kind
     set_kind("static")
@@ -165,9 +165,9 @@ target("zlib-1.2"， function()
 end)
 ```
 
-也许你会说，像这种开源库，直接 `configure; make` 不就好了吗，他们自己也有提供 makefile 来直接编译的，的确是这样，我这里只是举个例子而已。
+也许你会说，像这种开源库，直接 `configure; make` 不就好了吗，它们自己也有提供 makefile 来直接编译的，的确是这样，我这里只是举个例子而已。
 
-当然，很多开源库在交叉编译的时候，通过自带的 `configure`，处理起来还是很繁琐的，用 xmake 进行交叉编译会更方便些。。
+当然，很多开源库在交叉编译的时候，通过自带的 `configure`，处理起来还是很繁琐的，用 xmake 进行交叉编译会更方便些。
 
 ## 即时地代码编写和编译运行
 
@@ -505,7 +505,7 @@ clean ok!
 build ok!👌
 ```
 
-可以看到，处理静态库，xmake 还分析出了很多可执行的测试程序，剩下的代码统一编译成一个 libjpeg.a 的静态库，供哪些测试程序链接使用。。
+可以看到，处理静态库，xmake 还分析出了很多可执行的测试程序，剩下的代码统一编译成一个 libjpeg.a 的静态库，供那些测试程序链接使用。
 
 ```
 target(ansi2knr): binary
@@ -534,7 +534,7 @@ target(wrjpgcom): binary
 4. 同目录需要生成多个静态库
 5. 需要多级目录支持的源码库
 
-以上这些情况，xmake 暂时还没发自动化的智能处理，其中限制 1，2 还是可以解决的，通过半手动的方式，例如：
+以上这些情况，xmake 暂时还没法自动化地智能处理，其中限制 1，2 还是可以解决的，通过半手动的方式，例如：
 
 ```bash
 $ xmake f --cxflags=""--ldflags="" --includedirs=""--linkdirs=""; xmake
