@@ -44,7 +44,8 @@ theme:
     repo: fontawesome/brands/github
 
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\.]+'
 
 markdown_extensions:
   - admonition
