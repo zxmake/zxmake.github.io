@@ -33,13 +33,13 @@ $ xmake f -p android --ndk=~/files/android-ndk-r10e/ [-a armeabi-v7a|arm64-v8a]
 $ xmake
 ```
 
-如果要手动指定 ndk 中具体某个工具链，而不是使用默认检测的配置，可以通过[--bin](#--bin)来设置，例如：
+如果要手动指定 ndk 中具体某个工具链，而不是使用默认检测的配置，可以通过**--bin**来设置，例如：
 
 ```bash
 $ xmake f -p android --ndk=~/files/android-ndk-r10e/ -a arm64-v8a --bin=~/files/android-ndk-r10e/toolchains/aarch64-linux-android-4.9/prebuilt/darwin-x86_64/bin
 ```
 
-[--bin](#--bin)主要用于设置选择编译工具的具体 bin 目录，这个的使用跟[交叉编译](#交叉编译配置)中的[--bin](#--bin)的行为是一致的。
+**--bin**主要用于设置选择编译工具的具体 bin 目录，这个的使用跟**交叉编译**中的**--bin**的行为是一致的。
 
 > 如果手动设置了 bin 目录，没有通过检测，可以看下是否 `--arch=` 参数没有匹配对。
 
@@ -185,7 +185,7 @@ $ xmake
 
 ### 设置工具链 bin 目录
 
-对于不规则工具链目录结构，靠单纯地[--sdk](#--sdk)选项设置，没法完全检测通过的情况下，可以通过这个选项继续附加设置工具链的 bin 目录位置。
+对于不规则工具链目录结构，靠单纯地**--sdk**选项设置，没法完全检测通过的情况下，可以通过这个选项继续附加设置工具链的 bin 目录位置。
 
 例如：一些特殊的交叉工具链的，编译器bin目录，并不在  `/home/toolchains_sdkdir/bin`  这个位置，而是独立到了 `/usr/opt/bin`。
 
@@ -465,7 +465,7 @@ toolchain("myclang", function()
 end)
 ```
 
-关于这块的详情介绍，可以到[自定义工具链](/zh-cn/manual/custom_toolchain)章节查看
+关于这块的详情介绍，可以到[自定义工具链](../toolchain/custom-toolchains.md)章节查看
 
 更多详情见：[#780](https://github.com/xmake-io/xmake/issues/780)
 
@@ -530,49 +530,49 @@ $ xmake
 
 | 参数名                       | 描述                             |
 | ---------------------------- | -------------------------------- |
-| [--sdk](#--sdk)               | 设置交叉工具链的sdk根目录        |
-| [--bin](#--bin)               | 设置工具链bin目录                |
-| [--cross](#--cross)           | 设置交叉工具链工具前缀           |
-| [--as](#--as)                 | 设置`asm`汇编器                  |
-| [--cc](#--cc)                 | 设置`c`编译器                    |
-| [--cxx](#--cxx)               | 设置`c++`编译器                  |
-| [--mm](#--mm)                 | 设置`objc`编译器                 |
-| [--mxx](#--mxx)               | 设置`objc++`编译器               |
-| [--sc](#--sc)                 | 设置`swift`编译器                |
-| [--gc](#--gc)                 | 设置`golang`编译器               |
-| [--dc](#--dc)                 | 设置`dlang`编译器                |
-| [--rc](#--rc)                 | 设置`rust`编译器                 |
-| [--cu](#--cu)                 | 设置`cuda`编译器                 |
-| [--ld](#--ld)                 | 设置`c/c++/objc/asm`链接器       |
-| [--sh](#--sh)                 | 设置`c/c++/objc/asm`共享库链接器 |
-| [--ar](#--ar)                 | 设置`c/c++/objc/asm`静态库归档器 |
-| [--scld](#--scld)             | 设置`swift`链接器                |
-| [--scsh](#--scsh)             | 设置`swift`共享库链接器          |
-| [--gcld](#--gcld)             | 设置`golang`链接器               |
-| [--gcar](#--gcar)             | 设置`golang`静态库归档器         |
-| [--dcld](#--dcld)             | 设置`dlang`链接器                |
-| [--dcsh](#--dcsh)             | 设置`dlang`共享库链接器          |
-| [--dcar](#--dcar)             | 设置`dlang`静态库归档器          |
-| [--rcld](#--rcld)             | 设置`rust`链接器                 |
-| [--rcsh](#--rcsh)             | 设置`rust`共享库链接器           |
-| [--rcar](#--rcar)             | 设置`rust`静态库归档器           |
-| [--cu-ccbin](#--cu-ccbin)     | 设置`cuda` host编译器            |
-| [--culd](#--culd)             | 设置`cuda`链接器                 |
-| [--asflags](#--asflags)       | 设置`asm`汇编编译选项            |
-| [--cflags](#--cflags)         | 设置`c`编译选项                  |
-| [--cxflags](#--cxflags)       | 设置`c/c++`编译选项              |
-| [--cxxflags](#--cxxflags)     | 设置`c++`编译选项                |
-| [--mflags](#--mflags)         | 设置`objc`编译选项               |
-| [--mxflags](#--mxflags)       | 设置`objc/c++`编译选项           |
-| [--mxxflags](#--mxxflags)     | 设置`objc++`编译选项             |
-| [--scflags](#--scflags)       | 设置`swift`编译选项              |
-| [--gcflags](#--gcflags)       | 设置`golang`编译选项             |
-| [--dcflags](#--dcflags)       | 设置`dlang`编译选项              |
-| [--rcflags](#--rcflags)       | 设置`rust`编译选项               |
-| [--cuflags](#--cuflags)       | 设置`cuda`编译选项               |
-| [--ldflags](#--ldflags)       | 设置链接选项                     |
-| [--shflags](#--shflags)       | 设置共享库链接选项               |
-| [--arflags](#--arflags)       | 设置静态库归档选项               |
+| **--sdk**               | 设置交叉工具链的sdk根目录        |
+| **--bin**               | 设置工具链bin目录                |
+| **--cross**           | 设置交叉工具链工具前缀           |
+| **--as**                 | 设置`asm`汇编器                  |
+| **--cc**                 | 设置`c`编译器                    |
+| **--cxx**               | 设置`c++`编译器                  |
+| **--mm**                 | 设置`objc`编译器                 |
+| **--mxx**               | 设置`objc++`编译器               |
+| **--sc**                 | 设置`swift`编译器                |
+| **--gc**                 | 设置`golang`编译器               |
+| **--dc**                 | 设置`dlang`编译器                |
+| **--rc**                 | 设置`rust`编译器                 |
+| **--cu**                 | 设置`cuda`编译器                 |
+| **--ld**                 | 设置`c/c++/objc/asm`链接器       |
+| **--sh**                 | 设置`c/c++/objc/asm`共享库链接器 |
+| **--ar**                 | 设置`c/c++/objc/asm`静态库归档器 |
+| **--scld**             | 设置`swift`链接器                |
+| **--scsh**             | 设置`swift`共享库链接器          |
+| **--gcld**             | 设置`golang`链接器               |
+| **--gcar**             | 设置`golang`静态库归档器         |
+| **--dcld**             | 设置`dlang`链接器                |
+| **--dcsh**             | 设置`dlang`共享库链接器          |
+| **--dcar**             | 设置`dlang`静态库归档器          |
+| **--rcld**             | 设置`rust`链接器                 |
+| **--rcsh**             | 设置`rust`共享库链接器           |
+| **--rcar**             | 设置`rust`静态库归档器           |
+| **--cu-ccbin**     | 设置`cuda` host编译器            |
+| **--culd**             | 设置`cuda`链接器                 |
+| **--asflags**       | 设置`asm`汇编编译选项            |
+| **--cflags**         | 设置`c`编译选项                  |
+| **--cxflags**       | 设置`c/c++`编译选项              |
+| **--cxxflags**     | 设置`c++`编译选项                |
+| **--mflags**         | 设置`objc`编译选项               |
+| **--mxflags**       | 设置`objc/c++`编译选项           |
+| **--mxxflags**     | 设置`objc++`编译选项             |
+| **--scflags**       | 设置`swift`编译选项              |
+| **--gcflags**       | 设置`golang`编译选项             |
+| **--dcflags**       | 设置`dlang`编译选项              |
+| **--rcflags**       | 设置`rust`编译选项               |
+| **--cuflags**       | 设置`cuda`编译选项               |
+| **--ldflags**       | 设置链接选项                     |
+| **--shflags**       | 设置共享库链接选项               |
+| **--arflags**       | 设置静态库归档选项               |
 
 > 如果你想要了解更多参数选项，请运行: `xmake f --help`。
 
@@ -615,7 +615,7 @@ $ xmake
 
 * 设置工具链bin目录
 
-对于不规则工具链目录结构，靠单纯地[--sdk](--sdk)选项设置，没法完全检测通过的情况下，可以通过这个选项继续附加设置工具链的 bin 目录位置。
+对于不规则工具链目录结构，靠单纯地**--sdk**选项设置，没法完全检测通过的情况下，可以通过这个选项继续附加设置工具链的 bin 目录位置。
 
 例如：一些特殊的交叉工具链的，编译器 bin 目录，并不在 `/home/toolchains_sdkdir/bin` 这个位置，而是独立到了 `/usr/opt/bin`。
 
@@ -628,7 +628,7 @@ $ xmake
 
 * 设置交叉工具链工具前缀
 
-像 `aarch64-linux-android-` 这种，通常如果你配置了[--sdk](#--sdk)或者[--bin](#--bin)的情况下，xmake 会去自动检测的，不需要自己手动设置。
+像 `aarch64-linux-android-` 这种，通常如果你配置了**--sdk**或者**--bin**的情况下，xmake 会去自动检测的，不需要自己手动设置。
 
 但是对于一些极特殊的工具链，一个目录下同时有多个 cross 前缀的工具 bin 混在一起的情况，你需要手动设置这个配置，来区分到底需要选用哪个 bin。
 

@@ -52,7 +52,7 @@ end)
 
 import 的主要用于导入 xmake 的扩展类库以及一些自定义的类库模块，一般用于：
 
-* 自定义脚本 ([on_build](/zh-cn/manual/project_target?id=targeton_build), [on_run](/zh-cn/manual/project_target?id=targeton_run) ..)
+* 自定义脚本 ([on_build](../target/description-scope.md), [on_run](../target/description-scope.md) ..)
 * 插件开发
 * 模板开发
 * 平台扩展
@@ -196,7 +196,7 @@ import("xxx.xxx", {inherit = true})
 inherit("xxx.xxx")
 ```
 
-使用实例，可以参看 xmake 的 tools 目录下的脚本：[clang.lua](#https://github.com/xmake-io/xmake/blob/master/xmake/tools/clang.lua)
+使用实例，可以参看 xmake 的 tools 目录下的脚本：**clang.lua**
 
 这个就是 clang 工具模块继承了 gcc 的部分实现。
 
@@ -579,7 +579,7 @@ $ xmake --version
 
 格式化字符串。
 
-如果只是想格式化字符串，不进行输出，可以使用这个接口，此接口跟 [string.format](#stringformat) 接口等价，只是个接口名简化版。
+如果只是想格式化字符串，不进行输出，可以使用这个接口，此接口跟 **string.format** 接口等价，只是个接口名简化版。
 
 ```lua
 local s = format("hello %s", xmake)
@@ -666,7 +666,7 @@ if (errors) raise(errors)
 | [os.addenvs](#osaddenvs) | 向当前环境变量中添加新值 | >= 2.5.6 |
 | [os.joinenvs](#osjoinenvs) | 拼接环境变量 | >= 2.5.6 |
 | [os.setenvp](#ossetenvp) | 使用给定分隔符设置环境变量 | >= 2.1.5 |
-| [os.addenvp](#osaddenvp) | 使用给定分隔符向环境变量添加新值 | >= 2.1.5 |
+| **os.addenvp** | 使用给定分隔符向环境变量添加新值 | >= 2.1.5 |
 | [os.workingdir](#osworkingdir) | 获取工作路径 | >= 2.1.9 |
 | [os.isroot](#osisroot) | 判断当前 xmake 是否以管理员权限运行 | >= 2.1.9 |
 | [os.fscase](#osfscase) | 判断当前系统的文件系统是否大小写敏感 | >= 2.1.9 |
@@ -691,9 +691,9 @@ os.cp("$(projectdir)/src/test/**.h", "$(buildir)/inc")
 
 上面的代码将：当前 `xmake.lua` 目录下的所有头文件、工程源码 test 目录下的头文件全部复制到 `$(buildir)` 输出目录中。
 
-其中 `$(scriptdir)`, `$(projectdir)` 这些变量是 xmake 的内置变量，具体详情见：[内置变量](# 内置变量) 的相关文档。
+其中 `$(scriptdir)`, `$(projectdir)` 这些变量是 xmake 的内置变量，具体详情见：**内置变量** 的相关文档。
 
-而 `*.h` 和 `**.h` 中的匹配模式，跟 [add_files](#targetadd_files) 中的类似，前者是单级目录匹配，后者是递归多级目录匹配。
+而 `*.h` 和 `**.h` 中的匹配模式，跟 **add_files** 中的类似，前者是单级目录匹配，后者是递归多级目录匹配。
 
 此接口同时支持目录的 ` 递归复制 `，例如：
 
@@ -915,7 +915,7 @@ end
 
 遍历获取指定目录下的所有目录。
 
-支持 [add_files](#targetadd_files) 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
+支持 **add_files** 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
 
 ```lua
 -- 递归遍历获取所有子目录
@@ -928,7 +928,7 @@ end
 
 遍历获取指定目录下的所有文件。
 
-支持 [add_files](#targetadd_files) 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
+支持 **add_files** 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
 
 ```lua
 -- 非递归遍历获取所有子文件
@@ -941,7 +941,7 @@ end
 
 遍历获取指定目录下的所有文件和目录。
 
-支持 [add_files](#targetadd_files) 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
+支持 **add_files** 中的模式匹配，支持递归和非递归模式遍历，返回的结果是一个 table 数组，如果获取不到，返回空数组，例如：
 
 ```lua
 -- 递归遍历获取所有子文件和目录
@@ -966,7 +966,7 @@ os.run("echo hello %s!", "xmake")
 os.run("ls -l $(buildir)")
 ```
 
-> 使用此接口执行 shell 命令，容易使构建跨平台性降低，对于 `os.run("cp ..")` 这种尽量使用 `os.cp` 代替。如果必须使用此接口运行 shell 程序，请自行使用 [config.plat](#config-plat) 接口判断平台支持。
+> 使用此接口执行 shell 命令，容易使构建跨平台性降低，对于 `os.run("cp ..")` 这种尽量使用 `os.cp` 代替。如果必须使用此接口运行 shell 程序，请自行使用 **config.plat** 接口判断平台支持。
 
 ### os.runv
 
@@ -1085,7 +1085,7 @@ os.setenv("HOME", "/tmp/")
 
 获取临时目录。
 
-跟 [$(tmpdir)](#var-tmpdir) 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
+跟 **$(tmpdir)** 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
 
 ```lua
 print(path.join(os.tmpdir(), "file.txt"))
@@ -1107,7 +1107,7 @@ print("$(tmpdir)/file.txt")
 
 获取当前目录路径。
 
-跟 [$(curdir)](#var-curdir) 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
+跟 **$(curdir)** 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
 
 用法参考：[os.tmpdir](#ostmpdir)。
 
@@ -1123,7 +1123,7 @@ print(os.filesize("/tmp/a"))
 
 获取当前描述脚本的路径。
 
-跟 [$(scriptdir)](#var-scriptdir) 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
+跟 **$(scriptdir)** 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
 
 用法参考：[os.tmpdir](#ostmpdir)。
 
@@ -1131,7 +1131,7 @@ print(os.filesize("/tmp/a"))
 
 获取 xmake 安装主程序脚本目录。
 
-跟 [$(programdir)](#var-programdir) 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
+跟 **$(programdir)** 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
 
 ### os.programfile
 
@@ -1141,7 +1141,7 @@ print(os.filesize("/tmp/a"))
 
 获取工程主目录。
 
-跟 [$(projectdir)](#var-projectdir) 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
+跟 **$(projectdir)** 结果一致，只不过是直接获取返回一个变量，可以用后续字符串维护。
 
 ### os.arch
 
@@ -1153,7 +1153,7 @@ print(os.filesize("/tmp/a"))
 
 获取当前主机的操作系统。
 
-跟 [$(host)](#var-host) 结果一致，例如我在 `linux x86_64` 上执行 xmake 进行构建，那么返回值是：`linux`
+跟 **$(host)** 结果一致，例如我在 `linux x86_64` 上执行 xmake 进行构建，那么返回值是：`linux`
 
 ### os.subhost
 
@@ -1398,8 +1398,8 @@ io 操作模块，扩展了 lua 内置的 io 模块，提供更多易用的接�
 | [io.open](#ioopen)                              | 打开文件用于读写                             | >= 2.0.1 |
 | [io.load](#ioload)                              | 从指定路径文件反序列化加载所有 table 内容      | >= 2.0.1 |
 | [io.save](#iosave)                              | 序列化保存所有 table 内容到指定路径文件        | >= 2.0.1 |
-| [io.readfile](#io.readfile)                     | 从指定路径文件读取所有内容                   | >= 2.1.3 |
-| [io.writefile](#io.writefile)                   | 写入所有内容到指定路径文件                   | >= 2.1.3 |
+| **io.readfile**                     | 从指定路径文件读取所有内容                   | >= 2.1.3 |
+| **io.writefile**                   | 写入所有内容到指定路径文件                   | >= 2.1.3 |
 | [io.gsub](#iogsub)                              | 全文替换指定路径文件的内容                   | >= 2.0.1 |
 | [io.tail](#iotail)                              | 读取和显示文件的尾部内容                     | >= 2.0.1 |
 | [io.cat](#iocat)                                | 读取和显示文件的所有内容                     | >= 2.0.1 |
@@ -1426,7 +1426,7 @@ if file then
 end
 ```
 
-或者可以使用 [io.readfile](#io.readfile) 更加快速地读取。
+或者可以使用 **io.readfile** 更加快速地读取。
 
 如果要写文件，可以这么操作：
 
@@ -1512,7 +1512,7 @@ io.writefile("xxx.txt", "all data")
 
 全文替换指定路径文件的内容。
 
-类似 [string.gsub](#stringgsub) 接口，全文模式匹配替换内容，不过这里是直接操作文件，例如：
+类似 **string.gsub** 接口，全文模式匹配替换内容，不过这里是直接操作文件，例如：
 
 ```lua
 -- 移除文件所有的空白字符
@@ -1648,7 +1648,7 @@ print(path.join("$(tmpdir)", "dir1", "dir2", "file.txt"))
 
 上述拼接在 unix 上相当于：`$(tmpdir)/dir1/dir2/file.txt`，而在 windows 上相当于：`$(tmpdir)\\dir1\\dir2\\file.txt`
 
-如果觉得这样很繁琐，不够清晰简洁，可以使用：[path.translate](path-translate) 方式，格式化转换路径字符串到当前平台支持的格式。
+如果觉得这样很繁琐，不够清晰简洁，可以使用：**path.translate** 方式，格式化转换路径字符串到当前平台支持的格式。
 
 ### path.translate
 
@@ -1807,7 +1807,7 @@ local newtable = table.join({a = "a", b = "b"}, {c = "c"}, {d = "d"})
 
 合并多个 table 到第一个 table。
 
-类似 [table.join](#table.join)，唯一的区别是，合并的结果放置在第一个参数中，例如：
+类似 **table.join**，唯一的区别是，合并的结果放置在第一个参数中，例如：
 
 ```lua
 local t = {0, 9}

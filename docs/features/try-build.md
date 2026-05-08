@@ -135,7 +135,7 @@ $ xmake f -p cross --trybuild=[cmake|autotools] --sdk=/xxxx
 $ xmake
 ```
 
-关于更多交叉编译的配置细节，请参考文档：[交叉编译](https://xmake.io/#/zh-cn/guide/configuration?id=%e4%ba%a4%e5%8f%89%e7%bc%96%e8%af%91)，除了多了一个 `--trybuild=` 参数，其他交叉编译配置参数都是完全通用的。
+关于更多交叉编译的配置细节，请参考文档：[交叉编译](../tutorial/configuration.md)，除了多了一个 `--trybuild=` 参数，其他交叉编译配置参数都是完全通用的。
 
 ## 传递用户配置参数
 

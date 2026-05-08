@@ -597,7 +597,7 @@ target("test", function()
 end)
 ```
 
-关于如何编写自定义包描述规则，详情见：[添加包到仓库](# 添加包到仓库)
+关于如何编写自定义包描述规则，详情见：**添加包到仓库**
 
 ## 包管理命令使用
 
@@ -876,15 +876,15 @@ end)
 
 当然，有些包依赖源码实现力度，并不能完全跨平台，那么只需对它支持的平台设置安装规则即可。
 
-更多详细的包配置 API 说明见：[包接口文档](/zh-cn/manual/package_dependencies)
+更多详细的包配置 API 说明见：[包接口文档](../package/description-scope.md)
 
 ### 扩展配置参数
 
-详情见：[add_configs](/zh-cn/manual/package_dependencies?id=packageadd_configs)
+详情见：[add_configs](../package/description-scope.md)
 
 ### 内置配置参数
 
-除了可以通过 [add_configs](/zh-cn/manual/package_dependencies?id=packageadd_configs) 设置一些扩展的配置参数以外，xmake 还提供了一些内置的配置参数，可以使用
+除了可以通过 [add_configs](../package/description-scope.md) 设置一些扩展的配置参数以外，xmake 还提供了一些内置的配置参数，可以使用
 
 #### 启用调试包
 
@@ -1001,7 +1001,7 @@ xmake l scripts/test.lua -v -D --shallow -p android --ndk=/xxxx zlib
 
 详细的贡献说明，见：[CONTRIBUTING.md](https://github.com/xmake-io/xmake-repo/blob/master/CONTRIBUTING.md)
 
-关于如何制作自己的包，可以看下上文：[添加包到仓库](# 添加包到仓库)。
+关于如何制作自己的包，可以看下上文：**添加包到仓库**。
 
 ## 依赖包的锁定和升级
 
@@ -1315,7 +1315,7 @@ package("myzlib")
     -- ...
 ```
 
-我们可以自定义一个包，具体定义方式，参考文档：[自定义 Xrepo 包](https://xmake.io/#/zh-cn/package/remote_package?id=package-description)。
+我们可以自定义一个包，具体定义方式，参考文档：[自定义 Xrepo 包](../package/remote-package.md)。
 
 ### 使用来自第三个存储库的包
 

@@ -179,7 +179,7 @@ end)
 
 我们可以把自定义的脚本放置到 xmake.lua 对应目录下，`modules/test/load.lua` 和 `modules/test/install.lua` 中独立维护。
 
-这些独立的 lua 脚本里面，我们还可以通过[import](/zh-cn/manual/builtin_modules?id=import)导入各种内置模块和自定义模块进来使用，就跟平常写lua, java 没啥区别。
+这些独立的 lua 脚本里面，我们还可以通过[import](../module/builtin-modules.md)导入各种内置模块和自定义模块进来使用，就跟平常写lua, java 没啥区别。
 
 而对于脚本的域的不同阶段，`on_load` 主要用于 target 加载时候，做一些动态化的配置（注意这里不像描述域，只会执行一遍）。
 
@@ -236,13 +236,13 @@ target_end()
 
 目前提供的配置域有：`target()`, `option()`, `task()`, `package()`
 
-每个域的详细说明，见：[API手册](/zh-cn/manual/project_target)
+每个域的详细说明，见：[API手册](../target/description-scope.md)
 
 ### 配置项
 
 只要是带有 `set_xxx` 和 `add_xxx` 字样的配置，都属于配置项，一个配置域里面可以设置多个配置项。
 
-关于配置项的规范说明，见：[接口规范](/zh-cn/manual/specification)
+关于配置项的规范说明，见：[接口规范](../tutorial/syntax-description.md)
 
 ## 作用域
 
@@ -318,7 +318,7 @@ end)
 - print
 - os
 
-当然虽然内置 lua api 提供不多，但 xmake 还提供了很多扩展 api，像描述 api 就不多说，详细可参考：[API手册](/zh-cn/manual/builtin_modules)
+当然虽然内置 lua api 提供不多，但 xmake 还提供了很多扩展 api，像描述 api 就不多说，详细可参考：[API手册](../module/builtin-modules.md)
 
 还有些辅助 api，例如：
 
@@ -377,7 +377,7 @@ end)
 
 在此作用域中，不仅可以使用大部分 lua 的 api，还可以使用很多 xmake 提供的扩展模块，所有扩展模块，通过 import 来导入
 
-具体可参考：[import模块导入文档](/zh-cn/manual/builtin_modules?id=import)
+具体可参考：[import模块导入文档](../module/builtin-modules.md)
 
 这里我们给个简单的例子，在编译完成后，对 ios 目标程序进行 ldid 签名：
 
@@ -470,7 +470,7 @@ end
 
 ## 多级配置
 
-在脚本域我们可以通过 import 导入各种丰富的扩展模块来使用，而在描述域我们可以通过[includes](/#/zh-cn/manual/global_interfaces?id=includes)接口，来引入项目子目录下的 xmake.lua 配置。
+在脚本域我们可以通过 import 导入各种丰富的扩展模块来使用，而在描述域我们可以通过[includes](../tutorial/description-scope.md)接口，来引入项目子目录下的 xmake.lua 配置。
 
 记住：xmake 的 includes 是按照 tree 结构来处理配置关系的，子目录下的 xmake.lua 里面的 target 配置会继承父 xmake.lua 中的根域配置，例如：
 

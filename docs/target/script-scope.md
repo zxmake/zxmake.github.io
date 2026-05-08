@@ -1,7 +1,7 @@
 
 # 脚本域
 
-此页面描述了 [工程目标](zh-cn/manual/project_target.md) 的 `on_load()`、`before_build()` 或 `after_install()` 等函数的 `target` 接口。
+此页面描述了 [工程目标](../target/description-scope.md) 的 `on_load()`、`before_build()` 或 `after_install()` 等函数的 `target` 接口。
 
 ## target:name
 

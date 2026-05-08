@@ -55,7 +55,7 @@ $ xmake project -k compile_commands
 
 ```
 
-对于 `compile_commands` 的详细说明见：[JSONCompilationDatabase](#https://clang.llvm.org/docs/JSONCompilationDatabase.html)
+对于 `compile_commands` 的详细说明见：**JSONCompilationDatabase**
 
 ### 生成 Xcode 工程文件
 
@@ -688,9 +688,6 @@ pack ok
 
 `test-windows-x64-v1.0.0.exe` 就是我们生成的安装包，双击运行它，就能安装我们的二进制文件到指定目录。
 
-![](/assets/img/manual/nsis_1.png)
-![](/assets/img/manual/nsis_2.png)
-![](/assets/img/manual/nsis_3.png)
 
 #### 增加组件安装
 
@@ -715,7 +712,6 @@ xpack_component("LongPath")
 
 这个例子中，我们在里面添加了一个 NSIS 特有的自定义命令，去实现对长路径的支持。
 
-![](/assets/img/manual/nsis_4.png)
 
 ### 生成自安装包
 
@@ -961,7 +957,7 @@ $ xmake pack --autobuild=n
 
 ### 接口描述
 
-更多 XPack 打包接口描述见：[XPack 打包接口文档](https://xmake.io/#/zh-cn/manual/xpack)。
+更多 XPack 打包接口描述见：[XPack 打包接口文档](../task/builtin-plugins.md)。
 
 ## 宏记录和回放
 

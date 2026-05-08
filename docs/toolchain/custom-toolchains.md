@@ -85,30 +85,30 @@ $ xmake show -l toolchains
 | [set_sdkdir](#toolchainset_sdkdir)                                           | 设置工具链 sdk 目录路径   |
 | [set_bindir](#toolchainset_bindir)                                           | 设置工具链 bin 目录路径   |
 | [on_check](#toolchainon_check)                                               | 检测工具链                |
-| [on_load](#toolchainonon_load)                                               | 加载工具链                |
-| [toolchain_end](#toolchain_end)                                              | 结束定义工具链            |
-| [add_includedirs](/zh-cn/manual/project_target?id=targetadd_includedirs)     | 添加头文件搜索目录        |
-| [add_defines](/zh-cn/manual/project_target?id=targetadd_defines)             | 添加宏定义                |
-| [add_undefines](/zh-cn/manual/project_target?id=targetadd_undefines)         | 取消宏定义                |
-| [add_cflags](/zh-cn/manual/project_target?id=targetadd_cflags)               | 添加 c 编译选项           |
-| [add_cxflags](/zh-cn/manual/project_target?id=targetadd_cxflags)             | 添加 c/c++ 编译选项       |
-| [add_cxxflags](/zh-cn/manual/project_target?id=targetadd_cxxflags)           | 添加 c++ 编译选项         |
-| [add_mflags](/zh-cn/manual/project_target?id=targetadd_mflags)               | 添加 objc 编译选项        |
-| [add_mxflags](/zh-cn/manual/project_target?id=targetadd_mxflags)             | 添加 objc/objc++ 编译选项 |
-| [add_mxxflags](/zh-cn/manual/project_target?id=targetadd_mxxflags)           | 添加 objc++ 编译选项      |
-| [add_scflags](/zh-cn/manual/project_target?id=targetadd_scflags)             | 添加 swift 编译选项       |
-| [add_asflags](/zh-cn/manual/project_target?id=targetadd_asflags)             | 添加汇编编译选项          |
-| [add_gcflags](/zh-cn/manual/project_target?id=targetadd_gcflags)             | 添加 go 编译选项          |
-| [add_dcflags](/zh-cn/manual/project_target?id=targetadd_dcflags)             | 添加 dlang 编译选项       |
-| [add_rcflags](/zh-cn/manual/project_target?id=targetadd_rcflags)             | 添加 rust 编译选项        |
-| [add_cuflags](/zh-cn/manual/project_target?id=targetadd_cuflags)             | 添加 cuda 编译选项        |
-| [add_culdflags](/zh-cn/manual/project_target?id=targetadd_culdflags)         | 添加 cuda 设备链接选项    |
-| [add_ldflags](/zh-cn/manual/project_target?id=targetadd_ldflags)             | 添加链接选项              |
-| [add_arflags](/zh-cn/manual/project_target?id=targetadd_arflags)             | 添加静态库归档选项        |
-| [add_shflags](/zh-cn/manual/project_target?id=targetadd_shflags)             | 添加动态库链接选项        |
-| [add_languages](/zh-cn/manual/project_target?id=targetadd_languages)         | 添加语言标准              |
-| [add_frameworks](/zh-cn/manual/project_target?id=targetadd_frameworks)       | 添加链接框架              |
-| [add_frameworkdirs](/zh-cn/manual/project_target?id=targetadd_frameworkdirs) | 添加链接框架              |
+| **on_load**                                               | 加载工具链                |
+| **toolchain_end**                                              | 结束定义工具链            |
+| [add_includedirs](../target/description-scope.md)     | 添加头文件搜索目录        |
+| [add_defines](../target/description-scope.md)             | 添加宏定义                |
+| [add_undefines](../target/description-scope.md)         | 取消宏定义                |
+| [add_cflags](../target/description-scope.md)               | 添加 c 编译选项           |
+| [add_cxflags](../target/description-scope.md)             | 添加 c/c++ 编译选项       |
+| [add_cxxflags](../target/description-scope.md)           | 添加 c++ 编译选项         |
+| [add_mflags](../target/description-scope.md)               | 添加 objc 编译选项        |
+| [add_mxflags](../target/description-scope.md)             | 添加 objc/objc++ 编译选项 |
+| [add_mxxflags](../target/description-scope.md)           | 添加 objc++ 编译选项      |
+| [add_scflags](../target/description-scope.md)             | 添加 swift 编译选项       |
+| [add_asflags](../target/description-scope.md)             | 添加汇编编译选项          |
+| [add_gcflags](../target/description-scope.md)             | 添加 go 编译选项          |
+| [add_dcflags](../target/description-scope.md)             | 添加 dlang 编译选项       |
+| [add_rcflags](../target/description-scope.md)             | 添加 rust 编译选项        |
+| [add_cuflags](../target/description-scope.md)             | 添加 cuda 编译选项        |
+| [add_culdflags](../target/description-scope.md)         | 添加 cuda 设备链接选项    |
+| [add_ldflags](../target/description-scope.md)             | 添加链接选项              |
+| [add_arflags](../target/description-scope.md)             | 添加静态库归档选项        |
+| [add_shflags](../target/description-scope.md)             | 添加动态库链接选项        |
+| [add_languages](../target/description-scope.md)         | 添加语言标准              |
+| [add_frameworks](../target/description-scope.md)       | 添加链接框架              |
+| [add_frameworkdirs](../target/description-scope.md) | 添加链接框架              |
 
 ## toolchain
 
@@ -256,7 +256,7 @@ toolchain("myclang", function()
 end)
 ```
 
-关于这个接口的详情，可以看下：[target.set_toolset](/zh-cn/manual/project_target?id=targetset_toolset)
+关于这个接口的详情，可以看下：[target.set_toolset](../target/description-scope.md)
 
 ## toolchain:set_sdkdir
 

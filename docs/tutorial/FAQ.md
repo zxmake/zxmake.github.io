@@ -94,7 +94,7 @@ xmake.lua 里面分描述域和脚本域，在描述域里面会对各种配置�
 
 如果要写各种复杂脚本，请在脚本域内进行配置，`target/on_load` 的脚本域里面同样可以灵活配置各种 target 相关设置，并且提供更强大的 lua 脚本模块支持。
 
-更多细节见：[描述语法说明](/zh-cn/guide/syntax_description)
+更多细节见：[描述语法说明](../tutorial/syntax-description.md)
 
 ## 如何调试 Xmake 源码?
 
@@ -250,7 +250,7 @@ $ xmake run
 
 我们也能够通过 `xmake service --pull=` 命令，回拉远程的文件到本地，进行分析。
 
-> 注：详细的远程编译特性说明，见 [远程编译文档](http://xmake.io/#/zh-cn/features/remote_build)。
+> 注：详细的远程编译特性说明，见 [远程编译文档](../features/remote-build.md)。
 
 ![](./image/xmake-remote.png)
 

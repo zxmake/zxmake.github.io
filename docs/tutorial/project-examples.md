@@ -78,7 +78,7 @@ $ xmake f -p wasm
 $ xmake
 ```
 
-详细的 Wasm 编译配置见：[Wasm 配置](/zh-cn/guide/configuration?id=wasm)
+详细的 Wasm 编译配置见：[Wasm 配置](../tutorial/configuration.md)
 
 另外，在编译带有 `--preload-file assets/xxx.md` 设置的文件时候，我们也可以通过配置，简化对它的设置。
 
@@ -111,11 +111,11 @@ $ xmake create -t qt.widgetapp test
 $ xmake f --qt=~/Qt/Qt5.9.1
 ```
 
-上述指定的 MingW SDK 用的是 Qt 下 Tools 目录自带的环境，当然如果有其他第三方 MingW 编译环境，也可以手动指定, 具体可以参考：[MingW 编译配置](/zh-cn/guide/configuration?id=mingw)。
+上述指定的 MingW SDK 用的是 Qt 下 Tools 目录自带的环境，当然如果有其他第三方 MingW 编译环境，也可以手动指定, 具体可以参考：[MingW 编译配置](../tutorial/configuration.md)。
 
 更多详情可以参考：[#160](https://github.com/xmake-io/xmake/issues/160)
 
-另外，当前 xmake 也支持 Qt/Wasm，详情见：[Wasm 配置](/zh-cn/guide/configuration?id=wasm)
+另外，当前 xmake 也支持 Qt/Wasm，详情见：[Wasm 配置](../tutorial/configuration.md)
 
 ```bash
 $ xmake f -p wasm
@@ -550,7 +550,6 @@ $ xmake run
 
 效果如下：
 
-![](/assets/img/guide/macapp.png)
 
 #### 生成程序包
 
@@ -1860,7 +1859,7 @@ end)
 
 这里用到的交叉工具链，可以从这里下载: [Download toolchains](https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/)
 
-更多，交叉编译配置文档，见：[配置交叉编译](/zh-cn/guide/configuration?id=common-cross-compilation-configuration)
+更多，交叉编译配置文档，见：[配置交叉编译](../tutorial/configuration.md)
 
 > 目前仅仅支持 arm/arm64 交叉编译架构，后续会支持更多的平台架构。
 

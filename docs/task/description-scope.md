@@ -7,7 +7,7 @@ xmake 可以实现自定义任务或者插件，其两者的核心就是 `task` 
 
 | 接口                           | 描述             |
 | ------------------------------ | ---------------- |
-| [task](#task)                     | 定义插件或者任务 |
+| **task**                     | 定义插件或者任务 |
 | [set_menu](#taskset_menu)         | 设置任务菜单     |
 | [set_category](#taskset_category) | 设置任务类别     |
 | [on_run](#taskon_run)             | 设置任务运行脚本 |
@@ -16,7 +16,7 @@ xmake 可以实现自定义任务或者插件，其两者的核心就是 `task` 
 
 定义插件或者任务。
 
-`task` 域用于描述一个自定义的任务实现，与 [target](#target) 和[option](#option)同级。
+`task` 域用于描述一个自定义的任务实现，与 **target** 和**option**同级。
 
 例如，这里定义一个最简单的任务：
 
@@ -261,7 +261,7 @@ function main(...)
 end
 ```
 
-就是一个简单的带 `main` 主函数的脚本文件，你可以通过 [import](/zh-cn/manual/builtin_modules?id=import) 导入各种扩展模块，实现复杂功能，例如：
+就是一个简单的带 `main` 主函数的脚本文件，你可以通过 [import](../module/builtin-modules.md) 导入各种扩展模块，实现复杂功能，例如：
 
 ```lua
 -- 导入参数选项模块
@@ -275,7 +275,7 @@ function main(...)
 end
 ```
 
-你也可以在当前目录下，创建多个自定义的模块文件，通过 [import](/zh-cn/manual/builtin_modules?id=import) 导入后使用，例如：
+你也可以在当前目录下，创建多个自定义的模块文件，通过 [import](../module/builtin-modules.md) 导入后使用，例如：
 
 ```
 projectdir
@@ -305,7 +305,7 @@ function main(...)
 end
 ```
 
-更多模块介绍见：[内置模块](/zh-cn/manual/builtin_modules) 和 [扩展模块](/zh-cn/manual/extension_modules)
+更多模块介绍见：[内置模块](../module/builtin-modules.md) 和 [扩展模块](../module/extension-modules.md)
 
 其中，`main(...)` 中参数，是通过 `task.run` 指定的，例如：
 
@@ -315,4 +315,4 @@ task.run("hello", {color="red"}, arg1, arg2, arg3)
 
 里面的 `arg1, arg2` 这些就是传入 `hello` 任务 `main(...)` 入口的参数列表，而 `{color="red"}` 用来指定任务菜单中的参数选项。
 
-更加详细的 `task.run` 描述，见：[task.run](#task-run)。
+更加详细的 `task.run` 描述，见：**task.run**。

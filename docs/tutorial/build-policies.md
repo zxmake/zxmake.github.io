@@ -5,7 +5,7 @@ xmake 有很多的默认行为，比如：自动检测和映射 flags、跨 targ
 
 因此 xmake 提供默认构建策略的修改设置，开放给用户一定程度上的可配置性。
 
-它主要通过 [set_policy](https://xmake.io/#/zh-cn/manual/project_target?id=targetset_policy) 接口来配置。
+它主要通过 [set_policy](../target/description-scope.md) 接口来配置。
 
 我们通常可以用它来配置修改 target，package 以及工程整体的一些行为策略。
 
@@ -331,19 +331,19 @@ $ xmake f --policies=build.sanitizer.address,build.sanitizer.undefined
 
 ### build.sanitizer.thread
 
-与 [build.sanitizer.address](https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress) 类似，用于检测线程安全问题。
+与 [build.sanitizer.address](../tutorial/build-policies.md) 类似，用于检测线程安全问题。
 
 ### build.sanitizer.memory
 
-与 [build.sanitizer.address](https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress) 类似，用于检测内存问题。
+与 [build.sanitizer.address](../tutorial/build-policies.md) 类似，用于检测内存问题。
 
 ### build.sanitizer.leak
 
-与 [build.sanitizer.address](https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress) 类似，用于检测内存泄漏问题。
+与 [build.sanitizer.address](../tutorial/build-policies.md) 类似，用于检测内存泄漏问题。
 
 ### build.sanitizer.undefined
 
-与 [build.sanitizer.address](https://xmake.io/#/zh-cn/guide/build_policies?id=buildsanitizeraddress) 类似，用于检测 undefined 问题。
+与 [build.sanitizer.address](../tutorial/build-policies.md) 类似，用于检测 undefined 问题。
 
 ### build.always_update_configfiles
 
@@ -424,7 +424,7 @@ $ xmake g --policies=run.autobuild
 
 可用于开启 `add_requires()` 引入的依赖包的版本锁定。
 
-具体看下：[依赖包的锁定和升级](https://xmake.io/#/zh-cn/package/remote_package?id=%e4%be%9d%e8%b5%96%e5%8c%85%e7%9a%84%e9%94%81%e5%ae%9a%e5%92%8c%e5%8d%87%e7%ba%a7)
+具体看下：[依赖包的锁定和升级](../package/remote-package.md)
 
 ### package.fetch_only
 

@@ -56,7 +56,7 @@ $ xmake
 
 ## option_end
 
-这是一个可选 api，显示离开选项作用域，用法和 [target_end](/zh-cn/manual/project_target?id=target_end) 类似。
+这是一个可选 api，显示离开选项作用域，用法和 [target_end](../target/description-scope.md) 类似。
 
 ## option:add_deps
 
@@ -165,7 +165,7 @@ end)
 | boolean | 一般用作参数开关，值范围：`true/false` | `xmake f --optionname=[y/n/yes/no/true/false]` |
 | string  | 可以是任意字符串，一般用于模式判断       | `xmake f --optionname=value`                   |
 
-如果是 `boolean` 值的选项，可以通过 [has_config](/zh-cn/manual/conditions?id=has_config) 来进行判断，选项是否被启用。
+如果是 `boolean` 值的选项，可以通过 [has_config](../tutorial/description-scope.md) 来进行判断，选项是否被启用。
 
 如果是 `string` 类型的选项，可以在内建变量中直接使用，例如：
 
@@ -393,7 +393,7 @@ end)
 
 添加程序运行时动态库的加载搜索目录。
 
-在选项通过检测后，会自动添加到对应的 target 上去，具体使用见：[target.add_rpathdirs](/zh-cn/manual/project_target?id=targetadd_rpathdirs)。
+在选项通过检测后，会自动添加到对应的 target 上去，具体使用见：[target.add_rpathdirs](../target/description-scope.md)。
 
 ## option:add_cincludes
 
@@ -414,7 +414,7 @@ end)
 
 此选项检测是否存在 `pthread.h` 的头文件，如果检测通过那么 `test` 目标程序将会加上 `ENABLE_PTHREAD` 的宏定义。
 
-如果想要更加灵活的检测，可以通过 [lib.detect.has_cincludes](#detect-has_cincludes) 在[option.on_check](#optionon_check)中去实现。
+如果想要更加灵活的检测，可以通过 **lib.detect.has_cincludes** 在[option.on_check](#optionon_check)中去实现。
 
 ## option:add_cxxincludes
 
@@ -441,7 +441,7 @@ end)
 
 此选项检测是否存在 `wchar_t` 的类型，如果检测通过那么 `test` 目标程序将会加上 `HAVE_WCHAR` 的宏定义。
 
-如果想要更加灵活的检测，可以通过 [lib.detect.has_ctypes](#detect-has_ctypes) 在[option.on_check](#optionon_check)中去实现。
+如果想要更加灵活的检测，可以通过 **lib.detect.has_ctypes** 在[option.on_check](#optionon_check)中去实现。
 
 ## option:add_cxxtypes
 
@@ -472,9 +472,9 @@ end)
 
 上述代码，实现对 c++ 的 constexpr 特性的检测，如果检测通过，则启用 constexpr 选项，当然这里只是个例子。
 
-对于编译器特性的检测，有更加方便高效的检测模块，提供更强大的检测支持，具体见：[compiler.has_features](#compiler-has_features) 和 [detect.check_cxsnippets](#detect-check_cxsnippets)
+对于编译器特性的检测，有更加方便高效的检测模块，提供更强大的检测支持，具体见：**compiler.has_features** 和 **detect.check_cxsnippets**
 
-如果想要更加灵活的检测，可以通过 [lib.detect.check_cxsnippets](#detect-check_cxsnippets) 在[option.on_check](#optionon_check)中去实现。
+如果想要更加灵活的检测，可以通过 **lib.detect.check_cxsnippets** 在[option.on_check](#optionon_check)中去实现。
 
 另外我们还可以通过 `{tryrun = true}` 和 `{output = true}` 两个选项用于尝试运行检测和捕获输出。
 

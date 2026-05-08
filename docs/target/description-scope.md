@@ -213,7 +213,7 @@ end)
 
 ### 设置是否启用或禁用目标
 
-如果设置 `set_enabled(false)`，则会直接禁用对应的 target，包括 target 的加载和信息获取，而 [set_default](#target%3Aset_default) 仅仅只是设置默认不去编译，但是 target 还是能获取到相关信息的，默认也会被加载。
+如果设置 `set_enabled(false)`，则会直接禁用对应的 target，包括 target 的加载和信息获取，而 **set_default** 仅仅只是设置默认不去编译，但是 target 还是能获取到相关信息的，默认也会被加载。
 
 ## target:set_default
 
@@ -265,7 +265,7 @@ $ xmake install [-a|--all]
 
 ### 设置关联选项
 
-添加选项依赖，如果通过 [option](#option) 接口自定义了一些选项，那么只有在指定 `target` 目标域下，添加此选项，才能进行关联生效。
+添加选项依赖，如果通过 **option** 接口自定义了一些选项，那么只有在指定 `target` 目标域下，添加此选项，才能进行关联生效。
 
 ```lua
 -- 定义一个 hello 选项
@@ -281,7 +281,7 @@ target("test", function()
 end)
 ```
 
-> 只有调用 `set_options` 进行关联生效后，[option](#option) 中定义的一些设置才会影响到此 `target` 目标，例如：宏定义、链接库、编译选项等等。
+> 只有调用 `set_options` 进行关联生效后，**option** 中定义的一些设置才会影响到此 `target` 目标，例如：宏定义、链接库、编译选项等等。
 
 ## target:set_symbols
 
@@ -372,17 +372,17 @@ end)
 
 如果这个时候，编译配置为：`xmake f -m debug -a armv7`，那么生成的文件名为：`libxxx_debug_armv7.a`
 
-如果还想进一步定制目标文件的目录名，可参考：[set_targetdir](#target%3Aset_targetdir)。
+如果还想进一步定制目标文件的目录名，可参考：**set_targetdir**。
 
-或者通过编写自定义脚本，实现更高级的逻辑，具体见：[after_build](#target%3Aafter_build) 和 [os.mv](/zh-cn/manual/builtin_modules?id=osmv)。
+或者通过编写自定义脚本，实现更高级的逻辑，具体见：**after_build** 和 [os.mv](../module/builtin-modules.md)。
 
 ## target:set_filename
 
 ### 设置目标文件全名
 
-它跟 [set_basename](#target%3Aset_basename) 的区别在于，[set_basename](#target%3Aset_basename)设置名字不带后缀跟前缀，例如：`libtest.a`，basename 如果改成 test2 后就变成了 `libtest2.a`。
+它跟 **set_basename** 的区别在于，**set_basename**设置名字不带后缀跟前缀，例如：`libtest.a`，basename 如果改成 test2 后就变成了 `libtest2.a`。
 
-而 filename 的修改，是修改整个目标文件名，包括前后缀，例如可以直接把 `libtest.a` 改成 `test.dll`，这个对于 [set_basename](#target%3Aset_basename) 是做不到的。
+而 filename 的修改，是修改整个目标文件名，包括前后缀，例如可以直接把 `libtest.a` 改成 `test.dll`，这个对于 **set_basename** 是做不到的。
 
 ## target:set_prefixname
 
@@ -672,7 +672,7 @@ target("test", function()
 end)
 ```
 
-我们也可以指定应用局部文件到规则，具体使用见：[add_files](#targetadd_files)。
+我们也可以指定应用局部文件到规则，具体使用见：**add_files**。
 
 ## target:on_load
 
@@ -1596,7 +1596,7 @@ target("test", function()
 end)
 ```
 
-关于自定义构建规则的使用说明，详细见：[构建规则](#构建规则)。
+关于自定义构建规则的使用说明，详细见：**构建规则**。
 
 可以通过 force 参数来强制禁用 cxflags,cflags 等编译选项的自动检测，直接传入编译器，哪怕编译器有可能不支持，也会设置：
 
@@ -1608,7 +1608,7 @@ add_files("src/*.c", {force = {cxflags = "-DTEST", mflags = "-framework xxx"}})
 
 ### 从前面的源代码文件列表中删除指定文件
 
-通过此接口，可以从前面 [add_files](targetadd_files) 接口添加的文件列表中，删除指定的文件，例如：
+通过此接口，可以从前面 **add_files** 接口添加的文件列表中，删除指定的文件，例如：
 
 ```lua
 target("test", function()
@@ -1619,7 +1619,7 @@ end)
 
 上面的例子，可以从 `src` 目录下添加除 `test.c` 以外的所有文件，当然这个也可以通过 `add_files("src/*.c|test.c")` 来达到相同的目的，但是这种方式更加灵活。
 
-例如，我们可以条件判断来控制删除哪些文件，并且此接口也支持 [add_files](targetadd_files) 的匹配模式，过滤模式，进行批量移除。
+例如，我们可以条件判断来控制删除哪些文件，并且此接口也支持 **add_files** 的匹配模式，过滤模式，进行批量移除。
 
 ```lua
 target("test", function()
@@ -2101,9 +2101,9 @@ end)
 
 用户不再需要自己单独调用 [add_links](#targetadd_links)，[add_includedirs](#targetadd_includedirs), [add_ldflags](#targetadd_ldflags) 等接口，来配置依赖库链接了。
 
-对于如何设置包搜索目录，可参考：[add_packagedirs](/zh-cn/manual/global_interfaces?id=add_packagedirs) 接口
+对于如何设置包搜索目录，可参考：[add_packagedirs](../tutorial/description-scope.md) 接口
 
-此接口也同时支持远程依赖包管理中 [add_requires](/zh-cn/manual/global_interfaces?id=add_requires) 定义的包。
+此接口也同时支持远程依赖包管理中 [add_requires](../tutorial/description-scope.md) 定义的包。
 
 ```lua
 add_requires("zlib", "polarssl")
@@ -2326,7 +2326,7 @@ toolchain("myclang", function()
 end)
 ```
 
-关于这块的详情介绍，可以到 [自定义工具链](/zh-cn/manual/custom_toolchain) 章节查看
+关于这块的详情介绍，可以到 [自定义工具链](../toolchain/custom-toolchains.md) 章节查看
 
 更多详情见：[#780](https://github.com/xmake-io/xmake/issues/780)
 
@@ -2444,7 +2444,7 @@ end)
 上述代码例子中，可以看出，在 target 应用 markdown 规则的时候，通过 set_values 去设置一些 flags 值，提供给 markdown 规则去处理。
 在规则脚本中可以通过 `target:values("markdown.flags")` 获取到 target 中设置的扩展 flags 值。
 
-> 具体扩展配置名，根据不同的 rule，会有所不同，目前有哪些，可以参考相关规则的描述：[内建规则](/zh-cn/manual/custom_rule?id = 内建规则)
+> 具体扩展配置名，根据不同的 rule，会有所不同，目前有哪些，可以参考相关规则的描述：[内建规则](../rule/description-scope.md?id = 内建规则)
 
 下面是一些 xmake 目前支持的一些内置的扩展配置项列表。
 
@@ -3060,7 +3060,7 @@ target("test", function()
 end)
 ```
 
-完整的 policies 支持列表和使用说明，见：[构建策略](/zh-cn/guide/build_policies)
+完整的 policies 支持列表和使用说明，见：[构建策略](../tutorial/build-policies.md)
 
 ### target:set_runtimes
 

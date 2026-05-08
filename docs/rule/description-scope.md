@@ -84,7 +84,7 @@ end)
 
 为所有自定义脚本预先导入扩展模块。
 
-使用方式和说明请见：[target:add_imports](#targetadd_imports)，用法相同。
+使用方式和说明请见：**target:add_imports**，用法相同。
 
 ## rule:set_extensions
 

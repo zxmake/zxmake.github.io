@@ -57,7 +57,7 @@ if is_arch("armv7", "arm64", "armv7s", "armv7-a") then
 end
 ```
 
-如果像上面那样一个个去判断所有 arm 架构，也许会很繁琐，毕竟每个平台的架构类型很多，xmake 提供了比 [add_files](#targetadd_files) 更强的 lua 正则表达式匹配模式，来更加简洁的进行判断：
+如果像上面那样一个个去判断所有 arm 架构，也许会很繁琐，毕竟每个平台的架构类型很多，xmake 提供了比 **add_files** 更强的 lua 正则表达式匹配模式，来更加简洁的进行判断：
 
 ```lua
 -- 如果当前平台是 arm 平台
@@ -125,7 +125,7 @@ end
 * linux
 * macosx
 
-你也可以通过 [$(host)](/zh-cn/manual/builtin_variables?id=varhost) 内置变量或者 [os.host](/zh-cn/manual/builtin_modules?id=oshost) 接口，来进行获取
+你也可以通过 [$(host)](../tutorial/builtin-variables.md) 内置变量或者 [os.host](../module/builtin-modules.md) 接口，来进行获取
 
 ### is_cross
 
@@ -269,7 +269,7 @@ if is_config("test", "hello.*") then
 end
 ```
 
-> 此接口不仅能够判断通过 [option](#option) 定义的自定义配置选项，同时还能判断内置的全局配置、本地配置
+> 此接口不仅能够判断通过 **option** 定义的自定义配置选项，同时还能判断内置的全局配置、本地配置
 
 ### has_config
 
@@ -305,7 +305,7 @@ $ xmake f --test1=no
 $ xmake f --test1=false
 ```
 
-> 此接口不仅能够判断内置的全局配置、本地配置，同时还可以判断通过 [option](#option) 定义的自定义配置选项。
+> 此接口不仅能够判断内置的全局配置、本地配置，同时还可以判断通过 **option** 定义的自定义配置选项。
 
 ### has_package
 
@@ -313,7 +313,7 @@ $ xmake f --test1=false
 
 此接口用于检测远程依赖包是否存在或启用，可用于描述域。
 
-一般配合 [add_requires](/zh-cn/manual/global_interfaces?id=add_requires) 一起使用，例如：
+一般配合 [add_requires](../tutorial/description-scope.md) 一起使用，例如：
 
 ```lua
 add_requires("tbox", {optional = true})
@@ -331,7 +331,7 @@ end)
 
 如果通过 `add_requires` 添加的可选依赖包，远程下载安装失败，或者当前平台不支持导致实际上没有被正常安装上，那么 `has_package` 就会返回 false，表示不存在，然后对其他 flags 定义甚至源文件编译控制做一些特殊处理。
 
-> 此接口跟 [has_config](#has_config) 的区别在于，[has_config](#has_config) 用于 [option](#option)，而它用于 [add_requires](#add_requires)。
+> 此接口跟 [has_config](#has_config) 的区别在于，[has_config](#has_config) 用于 **option**，而它用于 [add_requires](#add_requires)。
 
 ## 全局接口
 
@@ -443,7 +443,7 @@ set_version("1.5.1")
 set_version("1.5.1", {build = "%Y%m%d%H%M"})
 ```
 
-我们也能够添加版本宏定义到头文件，请参考：[add_configfiles](/manual/project_target?id=add-template-configuration-files)
+我们也能够添加版本宏定义到头文件，请参考：[add_configfiles](../target/description-scope.md)
 
 > 我们可以全局设置版本，但现在我们也可以在 target 域去单独设置它。
 
@@ -500,7 +500,7 @@ set_xmakever("2.1.0")
 
 #### 添加模块目录
 
-xmake 内置的扩展模块都在 `xmake/modules` 目录下，可通过 [import](#import) 来导入它们，如果自己在工程里面实现了一些扩展模块，
+xmake 内置的扩展模块都在 `xmake/modules` 目录下，可通过 **import** 来导入它们，如果自己在工程里面实现了一些扩展模块，
 可以放置在这个接口指定的目录下，import 也就会能找到，并且优先进行导入。
 
 ### add_plugindirs
@@ -731,7 +731,7 @@ please input: y (y/n)
 [100%]: linking.release test
 ```
 
-关于这个的完整介绍和所有第三方包的安装使用，可以参考文档：[第三方依赖包安装](https://xmake.io/#/zh-cn/package/remote_package?id=%e7%ac%ac%e4%b8%89%e6%96%b9%e4%be%9d%e8%b5%96%e5%8c%85%e5%ae%89%e8%a3%85)
+关于这个的完整介绍和所有第三方包的安装使用，可以参考文档：[第三方依赖包安装](../package/remote-package.md)
 
 ##### 另一种简化的配置语法
 

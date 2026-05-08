@@ -1,7 +1,7 @@
 
 # 扩展模块
 
-所有扩展模块的使用，都需要通过 [import](/zh-cn/manual/builtin_modules?id=import) 接口，进行导入后才能使用。
+所有扩展模块的使用，都需要通过 [import](../module/builtin-modules.md) 接口，进行导入后才能使用。
 
 ## core.base.option
 
@@ -80,7 +80,7 @@ end)
 
 运行指定任务。
 
-用于在自定义脚本、插件任务中运行 [task](#task) 定义的任务或插件，例如：
+用于在自定义脚本、插件任务中运行 **task** 定义的任务或插件，例如：
 
 ```lua
 task("hello", function()
@@ -211,7 +211,7 @@ json.savefile("/tmp/xxx.json", {1, {a = 1}})
 linker.link("binary", "cc", {"a.o", "b.o", "c.o"}, target:targetfile(), {target = target})
 ```
 
-其中 [target](#target)，为工程目标，这里传入，主要用于获取 target 特定的链接选项，具体如何获取工程目标对象，见：[core.project.project](#core-project-project)
+其中 **target**，为工程目标，这里传入，主要用于获取 target 特定的链接选项，具体如何获取工程目标对象，见：**core.project.project**
 
 当然也可以不指定 target，例如：
 
@@ -272,7 +272,7 @@ local program, argv = linker.linkargv("static", "cxx", {"a.o", "b.o", "c.o"}, ta
 
 其中返回的第一个值是主程序名，后面是参数列表，而 `os.args(table.join(program, argv))` 等价于 `linker.linkcmd`。
 
-我们也可以通过传入返回值给 [os.runv](#os-runv) 来直接运行它：`os.runv(linker.linkargv(..))`
+我们也可以通过传入返回值给 **os.runv** 来直接运行它：`os.runv(linker.linkargv(..))`
 
 ### linker.linkflags
 
@@ -293,7 +293,7 @@ end
 
 判断指定链接选项是否支持。
 
-虽然通过 [lib.detect.has_flags](detect-has_flags) 也能判断，但是那个接口更加底层，需要指定链接器名称
+虽然通过 **lib.detect.has_flags** 也能判断，但是那个接口更加底层，需要指定链接器名称
 而此接口只需要指定 target 的目标类型，源文件类型，它会自动切换选择当前支持的链接器。
 
 ```lua
@@ -316,7 +316,7 @@ end
 compiler.compile("xxx.c", "xxx.o", "xxx.h.d", {target = target})
 ```
 
-其中 [target](#target)，为工程目标，这里传入主要用于获取 target 的特定编译选项，具体如何获取工程目标对象，见：[core.project.project](#core-project-project)
+其中 **target**，为工程目标，这里传入主要用于获取 target 的特定编译选项，具体如何获取工程目标对象，见：**core.project.project**
 
 而 `xxx.h.d` 文件用于存储为此源文件的头文件依赖文件列表，最后这两个参数都是可选的，编译的时候可以不传它们：
 
@@ -387,7 +387,7 @@ end
 
 - 判断指定编译选项是否支持
 
-虽然通过 [lib.detect.has_flags](detect-has_flags) 也能判断，但是那个接口更加底层，需要指定编译器名称。
+虽然通过 **lib.detect.has_flags** 也能判断，但是那个接口更加底层，需要指定编译器名称。
 而此接口只需要指定语言类型，它会自动切换选择当前支持的编译器。
 
 ```lua
@@ -406,7 +406,7 @@ end
 
 - 获取所有编译器特性
 
-虽然通过 [lib.detect.features](detect-features) 也能获取，但是那个接口更加底层，需要指定编译器名称。
+虽然通过 **lib.detect.features** 也能获取，但是那个接口更加底层，需要指定编译器名称。
 而此接口只需要指定语言类型，它会自动切换选择当前支持的编译器，然后获取当前的编译器特性列表。
 
 ```lua
@@ -494,7 +494,7 @@ local features = compiler.features("cxx", {target = target, configs = {defines =
 
 判断指定的编译器特性是否支持。
 
-虽然通过 [lib.detect.has_features](detect-has-features) 也能获取，但是那个接口更加底层，需要指定编译器名称。
+虽然通过 **lib.detect.has_features** 也能获取，但是那个接口更加底层，需要指定编译器名称。
 而此接口只需要指定需要检测的特姓名称列表，就能自动切换选择当前支持的编译器，然后判断指定特性在当前的编译器中是否支持。
 
 ```lua
@@ -625,7 +625,7 @@ end
 
 ## core.project.project
 
-用于获取当前工程的一些描述信息，也就是在 `xmake.lua` 工程描述文件中定义的配置信息，例如：[target](#target)、[option](#option) 等。
+用于获取当前工程的一些描述信息，也就是在 `xmake.lua` 工程描述文件中定义的配置信息，例如：**target**、**option** 等。
 
 ### project.load
 
@@ -654,7 +654,7 @@ end
 
 获取当前工程目录，也就是 `xmake -P xxx` 中指定的目录，否则为默认当前 `xmake` 命令执行目录。
 
-> 建议使用 [os.projectdir](#os-projectdir) 来获取。
+> 建议使用 **os.projectdir** 来获取。
 
 ### project.target
 
@@ -733,7 +733,7 @@ end
 
 获取当前工程名。
 
-也就是获取 [set_project](#set_project) 的工程名配置。
+也就是获取 **set_project** 的工程名配置。
 
 ```lua
 print(project.name())
@@ -743,7 +743,7 @@ print(project.name())
 
 获取当前工程版本号。
 
-也就是获取 [set_version](#set_version) 的工程版本配置。
+也就是获取 **set_version** 的工程版本配置。
 
 ```lua
 print(project.version())
@@ -880,7 +880,7 @@ print(language.sourcekind_of("/xxxx/test.cpp"))
 
 查找文件。
 
-这个接口提供了比 [os.files](#os-files) 更加强大的工程， 可以同时指定多个搜索目录，并且还能对每个目录指定附加的子目录，来模式匹配查找，相当于是 [os.files](#os-files) 的增强版。
+这个接口提供了比 **os.files** 更加强大的工程， 可以同时指定多个搜索目录，并且还能对每个目录指定附加的子目录，来模式匹配查找，相当于是 **os.files** 的增强版。
 
 例如：
 
@@ -1362,7 +1362,7 @@ local ok = check_cxsnippets("void test() {}")
 local ok = check_cxsnippets({"void test(){}", "#define TEST 1"}, {types = "wchar_t", includes = "stdio.h"})
 ```
 
-此接口是 [detect.has_cfuncs](#detecthas_cfuncs), [detect.has_cincludes](#detecthas_cincludes) 和[detect.has_ctypes](detect-has_ctypes)等接口的通用版本，也更加底层。
+此接口是 [detect.has_cfuncs](#detecthas_cfuncs), [detect.has_cincludes](#detecthas_cincludes) 和**detect.has_ctypes**等接口的通用版本，也更加底层。
 
 因此我们可以用它来检测：types, functions, includes 还有 links，或者是组合起来一起检测。
 
@@ -1422,7 +1422,7 @@ end
 
 安静运行原生 shell 命令。
 
-具体用法可参考：[os.run](#os-run)。
+具体用法可参考：**os.run**。
 
 ```lua
 import("privilege.sudo")
@@ -1434,31 +1434,31 @@ sudo.run("rm /system/file")
 
 安静运行原生 shell 命令，带参数列表。
 
-具体用法可参考：[os.runv](#os-runv)。
+具体用法可参考：**os.runv**。
 
 ### sudo.exec
 
 回显运行原生 shell 命令。
 
-具体用法可参考：[os.exec](#os-exec)。
+具体用法可参考：**os.exec**。
 
 ### sudo.execv
 
 回显运行原生 shell 命令，带参数列表。
 
-具体用法可参考：[os.execv](#os-execv)。
+具体用法可参考：**os.execv**。
 
 ### sudo.iorun
 
 安静运行原生 shell 命令并获取输出内容。
 
-具体用法可参考：[os.iorun](#os-iorun)。
+具体用法可参考：**os.iorun**。
 
 ### sudo.iorunv
 
 安静运行原生 shell 命令并获取输出内容，带参数列表。
 
-具体用法可参考：[os.iorunv](#os-iorunv)。
+具体用法可参考：**os.iorunv**。
 
 ## devel.git
 

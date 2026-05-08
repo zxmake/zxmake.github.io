@@ -47,7 +47,7 @@ end)
 
 下面是与 xmake 集成的整体架构和编译流程。
 
-<img src="https://xmake.io/assets/img/index/package_arch.png" width="650px" />
+<img src="../assets/images/index/package_arch.png" width="650px" />
 
 ## 快速上手
 
