@@ -78,6 +78,7 @@ extra:
 nav:
   - 最佳实践: practices/best-practices.md
   - 特性:
+    - 远程 Toolchain、Rule 和 Option: features/remote-toolchain-rules-options.md
     - 远程编译: features/remote-build.md
     - 分布式编译: features/distcc-build.md
     - 编译缓存: features/build-cache.md
