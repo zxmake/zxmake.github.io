@@ -131,7 +131,7 @@ print(string.format("shown=%d, total=%d",
 查看是否有删除 package / cache 的日志：
 
 ```bash
-grep -RIn --include='*-hourly-cleaner.log' -E 'cleanup \[.*(/packages/|/cache/packages/)' /tmp/.xmake0
+grep -RIn --include='*-hourly-cleaner.log' 'cleanup' /tmp/.xmake0 | tail -50
 ```
 
 获取 package / cache 未使用时长分布（通过 `xmake lua` 运行）：
