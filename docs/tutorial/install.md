@@ -33,7 +33,7 @@ xmake --version
 bash scripts/install.sh --runtime=luajit
 ```
 
-关于验证运行时、测量收益以及出现兼容性问题时如何回退，可以参考：[启用 LuaJIT 优化 xmake 构建](../practices/enable-luajit.md)。
+关于验证运行时、测量收益以及出现兼容性问题时如何回退，可以参考：[启用 LuaJIT 优化 xmake 构建](../best-practices/enable-luajit.md)。
 
 ### 仅更新 lua 脚本
 

@@ -77,8 +77,18 @@ extra:
 
 nav:
   - 最佳实践:
-    - 总览: practices/best-practices.md
-    - 启用 LuaJIT 优化: practices/enable-luajit.md
+    - 构建性能:
+      - 启用 LuaJIT 优化: best-practices/enable-luajit.md
+      - 链接器选择: best-practices/linker.md
+    - 性能优化:
+      - PGO: best-practices/pgo.md
+    - 代码质量:
+      - clang-tidy: best-practices/clang-tidy.md
+      - cpplint: best-practices/cpplint.md
+      - Sanitizer: best-practices/sanitizer.md
+      - 单元测试: best-practices/unittest.md
+    - 编码规范:
+      - pre-commit: best-practices/pre-commit.md
   - 特性:
     - 远程 Toolchain、Rule 和 Option: features/remote-toolchain-rules-options.md
     - 远程编译: features/remote-build.md

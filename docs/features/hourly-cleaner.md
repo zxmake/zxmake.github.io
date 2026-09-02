@@ -4,7 +4,7 @@
 
 ## 清理范围
 
-这里的 package 是通过 `add_requires` 使用的远程包。它和 `xmake f --ccache` 使用的 C/C++ 编译缓存不是同一套缓存，后者请参考[编译缓存](build-cache.md)。
+这里的 package 是通过 `add_requires` 使用的远程包。它和 `xmake f --ccache` 使用的 C/C++ 编译缓存不是同一套缓存，后者请参考[编译缓存](ccache.md)。
 
 默认目录如下，实际路径可能被环境变量或全局配置覆盖：
 
