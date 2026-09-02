@@ -25,13 +25,15 @@ git clone https://gitee.com/tomocat/xmake.git
 xmake --version
 ```
 
-### 启用 Luajit
+### 启用 LuaJIT
 
-对于一些大型项目（比如包含 300+ targets），我们可以启用 Luajit 加速构建，提升构建速度。
+对于一些大型项目（比如包含 300+ targets），我们可以启用 LuaJIT 加速构建，提升构建速度。
 
 ```bash
 bash scripts/install.sh --runtime=luajit
 ```
+
+关于验证运行时、测量收益以及出现兼容性问题时如何回退，可以参考：[启用 LuaJIT 优化 xmake 构建](../practices/enable-luajit.md)。
 
 ### 仅更新 lua 脚本
 

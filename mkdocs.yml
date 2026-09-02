@@ -76,12 +76,14 @@ extra:
       link: https://github.com/zxmake
 
 nav:
-  - 最佳实践: practices/best-practices.md
+  - 最佳实践:
+    - 总览: practices/best-practices.md
+    - 启用 LuaJIT 优化: practices/enable-luajit.md
   - 特性:
     - 远程 Toolchain、Rule 和 Option: features/remote-toolchain-rules-options.md
     - 远程编译: features/remote-build.md
     - 分布式编译: features/distcc-build.md
-    - 编译缓存: features/build-cache.md
+    - ccache: features/ccache.md
     - Package 和 Cache 轮转清理: features/hourly-cleaner.md
     - Unity 编译加速: features/unity-build.md
     - 自动扫描源码生成工程: features/autogen.md
