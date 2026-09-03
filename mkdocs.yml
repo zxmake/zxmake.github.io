@@ -79,6 +79,7 @@ nav:
   - 最佳实践:
     - 构建性能:
       - 编译屏障: best-practices/build-performance/build-fence.md
+      - ccache: best-practices/build-performance/ccache.md
       - 启用 LuaJIT 优化: best-practices/build-performance/enable-luajit.md
       - 链接器选择: best-practices/build-performance/linker.md
     - 性能优化:
