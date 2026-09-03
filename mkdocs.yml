@@ -78,17 +78,22 @@ extra:
 nav:
   - 最佳实践:
     - 构建性能:
-      - 启用 LuaJIT 优化: best-practices/enable-luajit.md
-      - 链接器选择: best-practices/linker.md
+      - 编译屏障: best-practices/build-performance/build-fence.md
+      - 启用 LuaJIT 优化: best-practices/build-performance/enable-luajit.md
+      - 链接器选择: best-practices/build-performance/linker.md
     - 性能优化:
-      - PGO: best-practices/pgo.md
+      - PGO: best-practices/performance-optimization/pgo.md
+      - LTO: best-practices/performance-optimization/lto.md
     - 代码质量:
-      - clang-tidy: best-practices/clang-tidy.md
-      - cpplint: best-practices/cpplint.md
-      - Sanitizer: best-practices/sanitizer.md
-      - 单元测试: best-practices/unittest.md
+      - clang-tidy: best-practices/code-quality/clang-tidy.md
+      - cpplint: best-practices/code-quality/cpplint.md
+      - Sanitizer: best-practices/code-quality/sanitizer.md
+      - 单元测试: best-practices/code-quality/unittest.md
     - 编码规范:
-      - pre-commit: best-practices/pre-commit.md
+      - pre-commit: best-practices/coding-standards/pre-commit.md
+    - 二进制与发布:
+      - 剔除符号: best-practices/binary-and-release/strip-symbols.md
+      - 隐藏符号: best-practices/binary-and-release/symbol-visibility.md
   - 特性:
     - 远程 Toolchain、Rule 和 Option: features/remote-toolchain-rules-options.md
     - 远程编译: features/remote-build.md
